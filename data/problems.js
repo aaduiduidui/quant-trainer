@@ -2968,30 +2968,42 @@ window.QUANT_DATA = {
                 "geometric probability"
               ],
               "statement": "For a simple polygon with $N$ vertices and no holes, guards may stand at vertices and see along segments entirely inside the polygon. Prove that $\\lfloor N/3\\rfloor$ stationary guards suffice.",
-              "hint": "",
-              "solution": "Triangulate the polygon and three-color the vertices so each triangle has all three colors. The smallest color class contains at most $\\lfloor N/3\\rfloor$ vertices. Guards at those vertices see every triangle, proving the art gallery theorem.",
-              "keyIdea": "",
+              "hint": "Cut a triangulated polygon along an internal diagonal. After coloring the two pieces separately, can you rename the colors on one piece so they agree at both endpoints?",
+              "solution": "Let $P$ denote the closed polygonal region, including its boundary. We will construct a set of at most $\\lfloor N/3\\rfloor$ vertices that sees all of $P$.\n\n### 1. Triangulate using only original vertices\n\nBy the triangulation theorem for simple polygons, $P$ can be partitioned into triangles by noncrossing interior diagonals, without adding any vertices. The triangles have disjoint interiors and their union is $P$. If the boundary lists a redundant vertex between its two collinear neighbors, it may first be removed: this changes neither the region nor the eligibility of any retained vertex, and the bound for the smaller vertex count is no larger than the original one.\n\n### 2. Prove that every triangle can have all three colors\n\nUse colors $1,2,3$ and induct on the number of vertices in the triangulated polygon. For a single triangle, give its three vertices distinct colors.\n\nFor a larger polygon, choose any internal diagonal $uv$ of the triangulation. Cutting along $uv$ splits the polygon into two smaller simple polygons, with the given triangulation restricted to each piece. The pieces share just the edge $uv$, so their only common vertices are $u$ and $v$. By induction, color each piece separately so that every triangle has all three colors. On each piece, $u$ and $v$ have different colors, because $uv$ is an edge of a triangle on that side.\n\nNow **permute the names of the three colors on the entire second piece**: send its color at $u$ to the first piece's color at $u$, its color at $v$ to the first piece's color at $v$, and the remaining color to the remaining color. This is a permutation because the two endpoint colors are distinct on each side. It preserves the three distinct colors on every triangle and makes the two colorings agree on their only common vertices. Hence they combine into one consistent coloring of $P$.\n\n### 3. Select one color class and prove coverage\n\nLet $n_1,n_2,n_3$ count the vertices of each color. Their sum is the number of retained vertices, at most $N$, so\n$$\\min(n_1,n_2,n_3)\\le \\left\\lfloor\\frac{N}{3}\\right\\rfloor.$$\nPlace one stationary guard at **every vertex of the smallest color class**. To check coverage, take any point $x\\in P$ and choose a triangle $T$ of the triangulation containing $x$. Since $T$ has all three colors, it has a guarded vertex $g$. A triangle is convex, so the entire segment $[g,x]$ lies in $T\\subseteq P$. This gives a valid line of sight even if $P$ itself is not convex. As $x$ was arbitrary, the guards cover the whole polygon.\n\nThis proves a universal sufficient bound; it does not claim that every polygon needs that many guards.\n\nReference: [Steve Fisk, *A short proof of Chvátal's Watchman Theorem* (1978)](https://doi.org/10.1016/0095-8956(78)90059-X).",
+              "keyIdea": "A diagonal splits the triangulation into two smaller ones. Their three-colorings can be glued by permuting colors across the shared edge. Each color class hits every triangle, and the smallest class has at most floor(N/3) vertices.",
               "kind": "math",
-              "reviewStatus": "pending",
+              "reviewStatus": "verified",
               "familyId": "3.6:art-gallery",
-              "rubric": [],
-              "verification": [],
+              "rubric": [
+                "Use a triangulation without adding vertices, so every selected vertex is a legal guard position.",
+                "Prove the three-coloring by splitting along an internal diagonal and consistently permuting colors at both shared endpoints.",
+                "Select the smallest color class and justify the floor bound by averaging and integrality.",
+                "Use convexity of each triangle to show that every point has a line of sight to a selected vertex."
+              ],
+              "verification": [
+                "Checked the diagonal-splitting induction, the consistency of the color permutation on the common edge, and the pointwise visibility argument against the stated hypotheses."
+              ],
               "followups": [],
               "sources": [
                 {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0078"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://doi.org/10.1016/0095-8956(78)90059-X",
+                  "locator": "Steve Fisk, A short proof of Chvátal’s Watchman Theorem, 1978"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "对无洞的简单N边形，守卫可放在顶点，视线为完全位于多边形内的线段。证明⌊N/3⌋个静止守卫足够。",
-                  "solution": "对简单多边形作三角剖分，并将顶点三染色，使每个三角形三色齐全。最小颜色类至多有⌊N/3⌋个顶点，在这些点放守卫即可覆盖所有三角形。",
+                  "solution": "设 $P$ 是包含边界的闭多边形区域。我们要选出至多 $\\lfloor N/3\\rfloor$ 个原顶点，让它们能看到 $P$ 中的每一点。\n\n### 1. 用原顶点做三角剖分\n\n根据简单多边形的三角剖分定理，可以用彼此不交叉（可以共端点）的内部对角线把 $P$ 分成若干三角形，无需添加顶点。这些三角形的内部互不重叠，并集恰好是 $P$。若边界上有夹在两个共线邻点之间的冗余顶点，可以先删去：区域不变，保留的点仍是原来的合法守卫位置，而且按更小的顶点数得到的上界不会变大。\n\n### 2. 证明可以让每个三角形都恰有三种颜色\n\n使用颜色 $1,2,3$，对剖分后的多边形顶点数归纳。只有一个三角形时，三个顶点分别染成三种颜色即可。\n\n若多边形有更多顶点，从剖分中任选一条内部对角线 $uv$。沿它切开，得到两个更小的简单多边形，原来的三角剖分也分别限制在两块中。两块只共用边 $uv$，因此它们的公共顶点只有 $u,v$。由归纳假设，两块可以分别染色，使各自的每个三角形都有三种颜色。由于 $uv$ 在每块中都是一个三角形的边，$u,v$ 在每块中一定异色。\n\n接下来**整体重命名第二块的三种颜色**：把第二块中 $u$ 的颜色换成第一块中 $u$ 的颜色，把 $v$ 的颜色也对应起来，剩下的颜色对剩下的颜色。例如第一块中 $u,v$ 为红、蓝，第二块中为绿、红，就在第二块统一做“绿→红、红→蓝、蓝→绿”。这是一次颜色置换，不会改变任何三角形的三点异色性质。现在公共顶点的颜色都一致，两块的染色可以无冲突地拼成全局染色。\n\n### 3. 选择最小颜色类，并证明看得见\n\n设三种颜色的顶点数为 $n_1,n_2,n_3$。它们的和是保留的顶点数，至多为 $N$，所以最少的一类满足\n$$\\min(n_1,n_2,n_3)\\le \\left\\lfloor\\frac{N}{3}\\right\\rfloor.$$\n在**最小颜色类的每个顶点**放一个静止守卫。任取 $x\\in P$，它至少属于剖分中的一个三角形 $T$。因为 $T$ 的三个顶点三色齐全，其中必有一个放了守卫的顶点 $g$。三角形是凸集，所以从 $g$ 到 $x$ 的整条线段 $[g,x]$ 都在 $T$ 内，进而都在 $P$ 内。即使整个多边形有凹角，这条视线也不会穿出边界。由于 $x$ 是任意选的，所有点都能被覆盖。\n\n这证明了对任意这种多边形，所给数量的守卫都足够；具体多边形可能用得更少。\n\n参考：[Steve Fisk 的三染色证明（1978）](https://doi.org/10.1016/0095-8956(78)90059-X)。",
                   "title": "美术馆守卫",
-                  "hint": "",
-                  "keyIdea": "",
+                  "hint": "沿三角剖分的一条内部对角线把多边形切成两块。两块分别染色后，能否统一重命名其中一块的颜色，让公共边的两个端点都对齐？",
+                  "keyIdea": "沿内部对角线归纳，整体重命名一侧的颜色，使公共边两端一致，从而拼出全局三染色。每个颜色类都覆盖所有三角形，选最小的一类放守卫。",
                   "tags": [
                     "几何概率"
                   ]
