@@ -63,8 +63,12 @@ test('only concrete mathematical tasks are retained from finance chapter', () =>
   const chapter = data.chapters.find(ch => ch.num === 6);
   const expected = new Set(['Put-Call Parity','Black-Scholes-Merton Differential Equation','Delta','Binary Options','Exchange Options','Portfolio Optimization']);
   const found = chapter.topics.flatMap(t => t.problems);
-  assert.equal(found.length, expected.size);
-  for (const p of found) assert(expected.has(p.title));
+  for (const p of found) {
+    if (expected.delete(p.title)) continue;
+    assert.equal(p.kind, 'math');
+    assert(p.sources.some(s => s.reference.startsWith('https://quantlabshark.github.io/read/material-')));
+  }
+  assert.equal(expected.size, 0);
   assert(!flat.some(p => p.title === 'Dynamic Programming (DP) Algorithm'));
 });
 

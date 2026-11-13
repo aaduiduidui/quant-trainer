@@ -132,6 +132,120 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "2.1:early-station-pickup",
+              "title": "Early Station Pickup",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "A driver normally reaches the station at 17:00 and returns along the same road. A passenger starts walking home at 16:00, meets the normally scheduled driver, and gets home ten minutes early. How long did they walk?",
+              "solution": "The car saves the same omitted leg in each direction, five minutes each. They meet at 16:55, so the walk takes 55 minutes.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.1:early-station-pickup",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-035/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "提前接站",
+                  "statement": "司机平时 17:00 到车站后原路返回。乘客 16:00 开始向家走，途中遇上按原时刻出发的司机，到家早十分钟。求步行时长。",
+                  "hint": "",
+                  "solution": "往返各省去同一段路，各节省五分钟。16:55 相遇，步行 55 分钟。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.1:tire-rotation-distance",
+              "title": "Tire Rotation Distance",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Two tires last 10 km in front or 12 km in back under linear wear. Maximize distance by swapping positions.",
+              "solution": "Each km spends total life 1/10+1/12=11/60 across the two tires. Initial total life is two, so at most 120/11 km. Swap halfway at 60/11 km to equalize the two tires' exposure and reach the bound.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.1:tire-rotation-distance",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 12"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "轮胎换位里程",
+                  "statement": "两条轮胎在前轮能用 10 公里、后轮能用 12 公里，磨损线性累加，可换位。求最大里程。",
+                  "hint": "",
+                  "solution": "每公里共消耗两胎寿命 1/10+1/12=11/60，总寿命 2，故最多 120/11 公里。在 60/11 公里处交换，各胎前后用量相同，达到上界。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.1:maximum-integer-product",
+              "title": "Maximum Integer Product",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Partition 2021 into positive integers to maximize their product. Give an optimal partition and product.",
+              "solution": "One can absorb any 1 into a larger part. A part k≥5 improves upon splitting into 3 and k−3, and a 4 can be replaced by two 2s. Three 2s are worse than two 3s. Since 2021≡2 modulo 3, take one 2 and 673 threes for product 2·3^673.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.1:maximum-integer-product",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-second/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "整数拆分最大乘积",
+                  "statement": "将 2021 拆成正整数使乘积最大，给最优拆分及乘积。",
+                  "hint": "",
+                  "solution": "把 1 并入较大项能增积。k≥5 拆 3 与 k−3 更好；4 可等价为两个 2，三个 2 不及两个 3。2021 模 3 余 2，故取一个 2、673 个 3，乘积 2·3^673。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -358,9 +472,9 @@ window.QUANT_DATA = {
                 "number theory",
                 "factorials"
               ],
-              "statement": "How many trailing zeros does $100!$ have in decimal notation? Explain.",
+              "statement": "How many trailing zeros does $100!$ have in decimal notation? Explain.\n\nGeneralize to n!.",
               "hint": "Each trailing zero needs a factor of 10 = 2 × 5. Count the 5s — they are rarer than the 2s.",
-              "solution": "Each trailing zero requires a factor of $10=2\\times5$. There are more factors of 2 than of 5, so the answer is $\\lfloor100/5\\rfloor+\\lfloor100/25\\rfloor=20+4=24$.",
+              "solution": "Each trailing zero requires a factor of $10=2\\times5$. There are more factors of 2 than of 5, so the answer is $\\lfloor100/5\\rfloor+\\lfloor100/25\\rfloor=20+4=24$.\n\nIn general the count is the sum of floor(n/5^j) over positive integers j. Multiples of 5^j contribute one extra factor of five each; factors of two are at least as numerous term by term.",
               "keyIdea": "Count factors of 5; Multiples of 25 contribute an extra factor; 24 trailing zeros",
               "id": "2.2:trailing-zeros",
               "kind": "math",
@@ -382,16 +496,21 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0194"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-025/",
+                  "locator": "Question 11"
                 }
               ],
               "verification": [
                 "Legendre's formula counts the contribution of each power of 5."
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
-                  "statement": "100! 的十进制末尾有多少个连续0？说明原因。",
-                  "solution": "末尾0对应因子10=2×5，因子2更多，数因子5即可：⌊100/5⌋+⌊100/25⌋=20+4=24。",
+                  "statement": "100! 的十进制末尾有多少个连续0？说明原因。\n\n推广到一般 n!。",
+                  "solution": "末尾0对应因子10=2×5，因子2更多，数因子5即可：⌊100/5⌋+⌊100/25⌋=20+4=24。\n\n一般为对所有正整数 j 求和 floor(n/5^j)。每个 5^j 的倍数再提供一个因子 5；逐项比较可知因子 2 不少于因子 5。",
                   "keyIdea": "计数因子5；25贡献额外因子；24",
                   "title": "阶乘末尾零",
                   "hint": "末尾零来自2×5，数更稀缺的因子5。",
@@ -689,9 +808,14 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0221"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-046/",
+                  "locator": "Question 4"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "去掉大小王的一副扑克牌中，A 任选 `5` 张交给 B，B 看过后选出 `4` 张给 C 展示。C 如何根据这 `4` 张牌准确说出第 `5` 张牌？",
@@ -703,6 +827,505 @@ window.QUANT_DATA = {
                     "构造",
                     "信息编码",
                     "扑克牌"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:eight-balls-and-a-balance",
+              "title": "Eight Balls and a Balance",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Among eight visually identical balls exactly one is heavier. Find the minimum worst-case number of balance weighings without weights and give a strategy.",
+              "solution": "One weighing yields at most three outcomes, so cannot distinguish eight candidates. Weigh three against three. The candidate set is the heavier triple, or the leftover pair on a tie. Weigh one candidate against another: the heavier one wins, and a tie in a triple identifies its third ball.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:eight-balls-and-a-balance",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-010/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "八球找重球",
+                  "statement": "八颗外观相同的球中恰有一颗较重。只用无砝码天平，找重球的最少最坏称量次数是多少？",
+                  "hint": "",
+                  "solution": "一次至多三种结果，不能区分八个候选。先三对三称；不平衡则保留重侧三颗，平衡则保留未称的两颗。再挑两颗对称，较重即答案，三候选时若相等则第三颗为答案。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:four-liters-with-two-jugs",
+              "title": "Four Liters with Two Jugs",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "With unmarked 5 L and 7 L jugs, you can fill, empty, or pour until one jug is full or the other empty. Produce exactly 4 L.",
+              "solution": "Record amounts as (5-jug,7-jug). A sequence is (0,7)→(5,2)→(0,2)→(2,0)→(2,7)→(5,4). Each transition is a legal full fill, empty, or maximal transfer.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:four-liters-with-two-jugs",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-010/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "五升与七升壶量四升",
+                  "statement": "用无刻度 5 升、7 升容器，只能装满、倒空或倒到一边满或另一边空。量出恰好 4 升。",
+                  "hint": "",
+                  "solution": "按 (五升壶,七升壶) 记录： (0,7)→(5,2)→(0,2)→(2,0)→(2,7)→(5,4)。每步都是装满、倒空或倒到满／空，终点七升壶内恰有四升。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:directional-prize-search",
+              "title": "Directional Prize Search",
+              "difficulty": "hard",
+              "tags": [
+                "logic"
+              ],
+              "statement": "One of 100 ordered slips pays integer X; slips left and right of it pay 0.5 and 1. Each draw costs 2 and may be chosen adaptively. Find the smallest X guaranteeing positive net profit, first when stopping at the prize and then when all slips must be opened.",
+              "solution": "In half-dollar units the costs of a miss are 3 for searching right and 2 for searching left. With budget b for misses a decision tree covers at most N(b)=1+N(b−2)+N(b−3), where N(b)=0 for b<0. Equality is achieved by splitting the ordered interval into the capacities of the two branches. N(14)=85 and N(15)=113; worst search cost is 7.50 plus the prize draw's 2, so X=10. Drawing all costs 200; smallest non-prize payout is 99/2, giving X=151.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:directional-prize-search",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 4"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "方向提示抽奖",
+                  "statement": "一百张纸片排成一排，一张奖 X 元，左侧奖 0.5，右侧奖 1。每抽成本 2，可按反馈选下一个。求找到大奖就停、以及必须全抽两种规则下保证净收益为正的最小整数 X。",
+                  "hint": "",
+                  "solution": "以半元为单位，猜偏后向右、向左的成本分别为 3、2。漏猜预算 b 时决策树最多覆盖 N(b)=1+N(b−2)+N(b−3)，负 b 取 0；按两支容量选分割点可达。N(14)=85、N(15)=113，最坏漏猜成本为 7.50，加大奖本次 2 元，故 X=10。全抽成本 200，其他纸片最少共 99/2 元，故 X=151。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:weighted-guessing-game",
+              "title": "Weighted Guessing Game",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Guess an adversary's number 1 to 100; correct guesses pay the guessed number. Find minimax payoff and compare a uniform opponent or one who sees your realized guess.",
+              "solution": "Choose probability p_j=(1/j)/H_100, making j p_j=1/H_100. No larger common lower bound is possible because Σp_j=1. Against uniform play guess 100 for expectation 1; a reacting opponent always picks another number.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:weighted-guessing-game",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-030/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "有权重的猜数博弈",
+                  "statement": "猜对手的 1 至 100 整数，猜中得该数。求极小极大收益，并比较对手均匀选数或能看见你的实际猜测两种情况。",
+                  "hint": "",
+                  "solution": "按 p_j=(1/j)/H_100 随机猜，各 j 的期望均为 1/H_100。若都更高，概率和便大于 1。对手均匀时猜 100 得期望 1；看见实际猜测的对手可避开，得 0。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:power-of-two-removal",
+              "title": "Power of Two Removal",
+              "difficulty": "hard",
+              "tags": [
+                "logic"
+              ],
+              "statement": "From a row of 31 blocks, alternately remove a contiguous run of power-of-two length, with gaps permanent. Who wins normal play?",
+              "solution": "Remove the central block and mirror each opponent move on the other side. The two length-15 sides are symmetric after every pair of moves; a mirrored interval has the same length and cannot overlap the opponent's side.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:power-of-two-removal",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-031/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "二次幂移除博弈",
+                  "statement": "31 块积木排成直线，轮流取走当前相连且长度为二的幂的一段，空隙保留。不能动者输，谁必胜？",
+                  "hint": "",
+                  "solution": "先取正中一块，之后每次在另一侧镜像回应。两侧长度 15，成对操作后恢复对称，镜像段长度合法且与对手操作不相交。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:birthday-dialogue",
+              "title": "Birthday Dialogue",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Possible birthdays are Mar 4/5/8, Jun 4/7, Sep 1/5, Dec 1/2/8. Month-holder says neither person knows; day-holder now knows; month-holder now knows. Find the date.",
+              "solution": "Days 7 and 2 occur once, so eliminate June and December. Day 5 remains ambiguous, hence remove it. March still has 4 and 8, September only 1. Thus September 1.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:birthday-dialogue",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 10"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "生日对话推理",
+                  "statement": "候选为 3 月 4/5/8、6 月 4/7、9 月 1/5、12 月 1/2/8。知月者说两人都不知道，知日者随后知道，知月者最后也知道。求生日。",
+                  "hint": "",
+                  "solution": "7 日和 2 日初始唯一，故排除六月和十二月。5 日仍跨两个月，第二句话排除 5 日。三月剩 4、8 两天，九月只剩 1 日，故为 9 月 1 日。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:restricted-rps",
+              "title": "Restricted RPS",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "The older player can play rock, paper or scissors; the younger can play only rock or paper. What fee from older to younger makes the unit-stake zero-sum game fair?",
+              "solution": "If younger plays rock with probability q, the older player's rock, paper and scissors payoffs are q−1,q,1−2q. Their upper envelope is minimized at q=1/3 with value 1/3. Older mixes paper 2/3 and scissors 1/3 to make both columns worth 1/3. The fee is 1/3.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:restricted-rps",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-035/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "受限石头剪刀布",
+                  "statement": "哥哥可出石头、布、剪刀，弟弟只可出石头或布。赢方收 1 元，哥哥预付多少使博弈公平？",
+                  "hint": "",
+                  "solution": "弟弟以 q 出石头，哥哥三行动收益为 q−1、q、1−2q。最大值的最小点 q=1/3，价值 1/3。哥哥以 2/3 出布、1/3 出剪刀，使两列收益均为 1/3；公平预付 1/3 元。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:number-word-place-values",
+              "title": "Number Word Place Values",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Given Hausa phrase/value pairs Dari bakwai da hamsin da shida=756, Dubu shida da ɗari bakwai da biyar=6705, Saba'in da biyar dari da sittin=7560, decode Dari shida da hamsin da bakwai, Hamsin da shida dari da saba'in, and Dubu biyar da dari shida da bakwai. Encode 65 under the same convention.",
+              "solution": "Under the given pattern shida=6, bakwai=7, biyar=5, hamsin=50, sittin=60 and saba'in=70. Dubu marks thousands, and dari either introduces a one-digit hundreds value or follows the compound hundreds multiplier. Results are 657, 5670, 5607 and Sittin da biyar.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:number-word-place-values",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-053/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "数词位值推理",
+                  "statement": "已知三组豪萨语数词与整数对应：Dari bakwai da hamsin da shida=756，Dubu shida da ɗari bakwai da biyar=6705，Saba'in da biyar dari da sittin=7560。解读 Dari shida da hamsin da bakwai、Hamsin da shida dari da saba'in、Dubu biyar da dari shida da bakwai，并表示 65。",
+                  "hint": "",
+                  "solution": "依给定模式，shida、bakwai、biyar 分别是 6、7、5；hamsin、sittin、saba'in 分别是 50、60、70。Dubu 标千，dari 引出一位百数或置于复合百数乘数之后。结果 657、5670、5607，65 表示为 Sittin da biyar。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:sum-product-dialogue",
+              "title": "Sum Product Dialogue",
+              "difficulty": "hard",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Two integers satisfy 2≤x<y≤100. Sum-holder says both initially lack the pair, knowing the product-holder cannot know. Product-holder then knows, followed by sum-holder. Recover the pair.",
+              "solution": "Enumerate all ordered-by-size pairs. Group by sum and product. Drop every sum group of size one or containing any pair whose original product group is a singleton. Regroup survivors by product and retain singleton groups. Regroup those by sum and retain singletons again. Iterating x=2…99 and y=x+1…100 yields (4,13).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:sum-product-dialogue",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "和与积对话",
+                  "statement": "整数 2≤x<y≤100。知和者说自己不知道，且知道知积者也不知道；知积者随后知道，知和者最后也知道。求数对。",
+                  "hint": "",
+                  "solution": "枚举 x=2…99、y=x+1…100，分别按和与积分组。删除大小为一、或含任一原积组唯一数对的和组。把幸存数对按积重新分组并只留唯一组，再按和分组只留唯一组，得到 (4,13)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:cube-edge-pursuit",
+              "title": "Cube Edge Pursuit",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "A snail moves along cube edges at up to triple each turtle's speed. Give a guaranteed capture bound and identify what proving the exact minimum would require.",
+              "solution": "Eight suffice. Designate one turtle per vertex and let all go to their vertex; an earlier meeting already wins. Once occupied, a surviving snail is inside one edge. Send an endpoint guard toward it while the other endpoint remains blocked. It cannot cross the approaching guard or pass the blocked endpoint, so capture occurs within the time to traverse that edge. A minimum claim additionally needs an evasion strategy against any smaller team, or a tighter matching upper bound.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:cube-edge-pursuit",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-046/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "立方体棱上追逃",
+                  "statement": "蜗牛沿立方体棱以至多乌龟三倍速度移动。给出保证捕获的数量上界，说明证明最少数量还需什么。",
+                  "hint": "",
+                  "solution": "八只足够，每顶点派一只到位，途中相遇已捕获。占满顶点后存活蜗牛位于某棱内部，令该棱一端守卫前进、另一端保持阻挡。蜗牛无法穿过迎来的乌龟或另一端，至多走完整棱的时间即捕获。证明最少还需对更少队伍构造逃逸策略，或给出与下界匹配的更强上界。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:capped-stone-removal",
+              "title": "Capped Stone Removal",
+              "difficulty": "hard",
+              "tags": [
+                "logic"
+              ],
+              "statement": "A first move removes any positive number short of all N stones. Thereafter each move removes at most the previous number. Classify winning N and give a strategy.",
+              "solution": "For a general position with n stones and cap c, it is winning iff c≥lowbit(n), the largest power of two dividing n. Taking lowbit(n) leaves either no stones or a remainder with larger lowbit, so the next cap is insufficient. For any move j<lowbit(n), lowbit(n−j)=lowbit(j)≤j, yielding a winning reply. This proves the characterization by induction. Initial cap N−1 wins exactly when N is not a power of two.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:capped-stone-removal",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-zhuoshi/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "限额取石子",
+                  "statement": "首步取正数但不能取完 N 颗，之后每步不超过上手数量。判断必胜 N 并证明策略。",
+                  "hint": "",
+                  "solution": "一般状态剩 n、限额 c 时，必胜当且仅当 c≥lowbit(n)，即整除 n 的最大二次幂。取 lowbit(n) 后要么结束，要么剩数 lowbit 更大，使对手限额不足。若取 j<lowbit(n)，则 lowbit(n−j)=lowbit(j)≤j，对手可胜。归纳成立。初始限额 N−1，所以 N 非二次幂时必胜。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:horse-race-rankings",
+              "title": "Horse Race Rankings",
+              "difficulty": "hard",
+              "tags": [
+                "logic"
+              ],
+              "statement": "With 25 distinct-speed horses, rank only within a race of at most five and use no clock. Find the minimum races to identify fastest three; give a plan for fastest five.",
+              "solution": "Race five groups, then their winners. In group order A,B,C,D,E, the top-three candidates besides A1 are A2,A3,B1,B2,C1. Race those five, take its top two. For a six-race lower bound, finding the fastest already needs eliminating 24 unbeaten candidates, at most four per race. Thus in any six-race success each race has five unbeaten entrants. In the final such race the runner-up and third finishers are known, but an adversary can select a prior winner as final winner (at least the fifth-race winner is still unbeaten); a direct prior loser to it remains incomparable with the final runner-up because only unbeaten horses have been raced. The top three are not fixed, since the final third may be pushed below them. For top five, maintain the five groups as sorted lists and repeatedly race remaining group heads to merge them, removing each newly selected fastest; omit races when only one head remains.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:horse-race-rankings",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-hande/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "赛马排名",
+                  "statement": "25 匹速度互异，每场至多五匹，只知赛内排名。求找最快三匹的最少场次，给出找最快五匹的方案。",
+                  "hint": "",
+                  "solution": "先五组比赛，再比组头。按组头成绩列 A 至 E，除 A1 外前三候选只有 A2、A3、B1、B2、C1，再比五匹取前二。六场下界：找第一须淘汰 24 个未败者，每场最多四个，故若六场能完成，每场必须由五匹未败马参赛。末场可由对手指定一个此前赢过的组头取胜（五场之后至少一匹未败马曾赢过，末场包含全部未败者）。它较早战胜的直接对手与末场第二、第三的相对快慢仍无比较，因此第三名不确定。求前五可将五组作为排序表，反复比赛未选的各组表头并移除最快者，只有一个表头时无需比赛。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.2:three-coin-bags",
+              "title": "Three Coin Bags",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Three bags have uniform coin weights 9,10,11 grams in unknown order, 100 coins each. Find the minimum precise weighings and decode them.",
+              "solution": "Take 1,3,9 coins from the bags and subtract 9(1+3+9) from total weight. The result in base three has digits 0,1,2 indicating the bags' excess gram weights in that order from least significant. At least one observation is required because initially all permutations are possible.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.2:three-coin-bags",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-second/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三袋硬币称量",
+                  "statement": "三袋各百枚，同袋等重，单枚重量 9、10、11 克顺序未知。求最少精确称量次数及解码。",
+                  "hint": "",
+                  "solution": "取 1、3、9 枚，读数减 9(1+3+9)。结果三进制从低到高的三位为各袋超出 9 克的 0、1、2。零次无法区分初始排列，所以一次最少。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
                   ]
                 }
               }
@@ -1387,6 +2010,234 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "2.5:mental-product",
+              "title": "Mental Product",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Compute 98×88 mentally and check it using a different expansion.",
+              "solution": "Subtract twice 88 from 8800 to get 8624. Independently, (90+8)(90−2)=8100+540−16=8624.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.5:mental-product",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-010/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "口算九十八乘八十八",
+                  "statement": "口算 98×88，并换一种展开核验。",
+                  "hint": "",
+                  "solution": "由 8800−176 得 8624。另用 (90+8)(90−2)=8100+540−16=8624 核验。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.5:nested-addition-count",
+              "title": "Nested Addition Count",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "A function starts its result at 1 and adds each integer from 1 to x, inclusive. Count executions of the addition in f(f(f(3))).",
+              "solution": "f(x)=1+x(x+1)/2. The three call arguments are 3,7,29, so the count is 3+7+29=39. The final return value is not itself another argument.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.5:nested-addition-count",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-020/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "嵌套函数的加法次数",
+                  "statement": "函数从结果 1 出发，依次加上 1 至 x。求 f(f(f(3))) 中该加法的执行次数。",
+                  "hint": "",
+                  "solution": "f(x)=1+x(x+1)/2。三次调用参数依次为 3、7、29，总加法数为 39；最后返回值不再用于下一次调用。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.5:block-integer-multiplication",
+              "title": "Block Integer Multiplication",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Compute 1234321 × 4321234 exactly using a reproducible decomposition.",
+              "solution": "Use 1234321=1234·1000+321. Compute 4321234·1234=5,332,402,756 and 4321234·321=1,387,116,114 by decimal place expansion; shift the first result three places and add. The product is 5,333,789,872,114.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.5:block-integer-multiplication",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "整数分块乘法",
+                  "statement": "用可复核的分块算式精确计算 1234321×4321234。",
+                  "hint": "",
+                  "solution": "把 1234321 拆成 1234×1000+321。按十进制位展开得到 4321234×1234=5,332,402,756，4321234×321=1,387,116,114。第一项左移三位后相加，得 5,333,789,872,114。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.5:decimal-concatenation-sum",
+              "title": "Decimal Concatenation Sum",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Sum int(str(x)+str(y)) for all x,y=0,…,99, without zero padding.",
+              "solution": "Each term is x·10^digits(y)+y, counting zero as one digit. Σx=Σy=4950 and Σ10^digits(y)=10·10+90·100=9100. The total is 4950(9100+100)=45,540,000.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.5:decimal-concatenation-sum",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-041/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "十进制拼接求和",
+                  "statement": "求 x,y=0 至 99 时 int(str(x)+str(y)) 的总和，不补零。",
+                  "hint": "",
+                  "solution": "每项为 x·10^digits(y)+y，0 计一位。Σx=Σy=4950，Σ10^digits(y)=10·10+90·100=9100，总和 4950(9100+100)=45,540,000。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.5:signed-weighted-squares",
+              "title": "Signed Weighted Squares",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Minimize Σ_(n=1)^100 a_n n² over independently chosen integers with 1≤abs(a_n)≤n.",
+              "solution": "Since n² is positive, choose a_n=−n independently. The result is −Σn³=−(100·101/2)²=−25,502,500.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.5:signed-weighted-squares",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-second/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "带符号加权平方和",
+                  "statement": "各整数系数独立满足 1≤abs(a_n)≤n，最小化 Σ_(n=1)^100 a_n n²。",
+                  "hint": "",
+                  "solution": "因 n² 为正，每项独立取 a_n=−n，结果为 −Σn³=−(100·101/2)²=−25,502,500。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.5:sum-without-double-zero",
+              "title": "Sum Without Double Zero",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Compute the sum of integers 0 through 9999 whose unpadded representation has no adjacent zero digits, without individual summation.",
+              "solution": "For each length, track count and total ending in zero or nonzero. Appending zero gives count C₁ and sum 10S₁. Appending a nonzero digit gives count 9(C₀+C₁) and sum 90(S₀+S₁)+45(C₀+C₁). Initialize positive one-digit count and sum at 9,45 in nonzero state. Sum across lengths one through four; zero adds nothing. Result 49,094,595.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.5:sum-without-double-zero",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-032/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "避开双零的整数和",
+                  "statement": "求 0 至 9999 不补零表示中无连续两个 0 的整数之和，避免逐项相加。",
+                  "hint": "",
+                  "solution": "按长度维护末位零或非零的计数和数值和。添零后计数 C₁、和 10S₁；添非零后计数 9(C₀+C₁)、和 90(S₀+S₁)+45(C₀+C₁)。一位正数仅非零态计数 9、和 45。累加一至四位，数字零无贡献。结果 49,094,595。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -1591,6 +2442,44 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "2.6:three-points-in-a-small-disk",
+              "title": "Three Points in a Small Disk",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Place 51 points in a unit square including its boundary. Prove some disk of radius 1/7 contains at least three.",
+              "solution": "Divide into 25 squares of side 1/5, assigning shared boundary points to one cell. A cell gets at least three points. Its center covers the cell within distance √2/10<1/7.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.6:three-points-in-a-small-disk",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-028/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "小圆覆盖三个点",
+                  "statement": "单位正方形含边界放 51 个点。证明某半径 1/7 的圆至少包含三个。",
+                  "hint": "",
+                  "solution": "分成 25 个边长 1/5 的格，公共边点只指派一格。某格至少三点；格中心到任一点不超过 √2/10<1/7。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -1719,6 +2608,272 @@ window.QUANT_DATA = {
                   "tags": [
                     "不变量",
                     "模运算"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.7:repeating-reciprocal",
+              "title": "Repeating Reciprocal",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Find positive integers X whose reciprocal is a repeating two-digit decimal 0.ababab…, allowing 0.999…=1. Then require the minimal period to be exactly two.",
+              "solution": "The repeated block represents k/99 with integer 1≤k≤99, so X divides 99: 1,3,9,11,33,99. A one-digit block represents j/9, so remove divisors of 9. The exact-period answers are 11,33,99.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.7:repeating-reciprocal",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "两位循环小数的倒数",
+                  "statement": "求使 1/X 可写为 0.ababab… 的正整数 X，允许 0.999…=1。再要求最短循环节恰为两位。",
+                  "hint": "",
+                  "solution": "重复块表示 k/99，1≤k≤99，故 X 为 99 的因数：1、3、9、11、33、99。一位重复块形如 j/9，因此剔除 9 的因数，恰两位的答案是 11、33、99。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.7:four-switches-by-binary-queries",
+              "title": "Four Switches by Binary Queries",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Exactly one of four switches toggles a lamp. In a round flip any subset and observe whether the lamp changed. Find the minimum worst-case rounds.",
+              "solution": "Assign labels 00,01,10,11. In each round flip switches with a 1 in the corresponding bit; the two responses identify the switch. A round gives at most one bit, so fewer than two cannot distinguish four possibilities.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.7:four-switches-by-binary-queries",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "四开关的二进制识别",
+                  "statement": "四个开关仅一个能切换灯。每轮可翻任意子集，并观察灯是否变化。最少需要几轮？",
+                  "hint": "",
+                  "solution": "标为 00、01、10、11。每轮翻转对应位为 1 的开关，两次结果即编码。每轮至多一比特，少于两轮无法区分四种。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.7:missing-digit-of-two-to-twenty-nine",
+              "title": "Missing Digit of Two to Twenty-Nine",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "The nine digits of 2²⁹ are all distinct. Find the missing decimal digit without expanding the integer.",
+              "solution": "The digit sum is 45−d and congruent to 2²⁹ mod 9. Since 2⁶≡1, the residue is 2⁵≡5, so d≡4 mod 9. Only 4 is possible among 0,…,9.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.7:missing-digit-of-two-to-twenty-nine",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-027/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "二的二十九次幂缺失数字",
+                  "statement": "2²⁹ 的九个十进制数字互异。不展开大数，求缺的数字。",
+                  "hint": "",
+                  "solution": "位和 45−d 与 2²⁹ 模 9 同余。2⁶≡1，故后者余数为 2⁵≡5，得 d≡4；0 至 9 中只有 4。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.7:conjugate-power-digit",
+              "title": "Conjugate Power Digit",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Find the units digit of floor((3+2√2)^2024) without computing the huge real power.",
+              "solution": "Let s_n be the sum of the nth powers of conjugates 3±2√2. The smaller power is strictly between zero and one, so the floor is s_n−1. Use s_0=2,s_1=6 and s_n=6s_(n−1)−s_(n−2). Modulo ten the sequence repeats 2,6,4,8,4,6; 2024≡2 mod 6, giving digit 3.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.7:conjugate-power-digit",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-038/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "代数幂的个位",
+                  "statement": "不用计算巨大的实数幂，求 floor((3+2√2)^2024) 的个位。",
+                  "hint": "",
+                  "solution": "设 s_n 为共轭 3±2√2 的 n 次幂之和。小的幂严格介于 0 和 1，向下取整为 s_n−1。由 s_0=2、s_1=6、s_n=6s_(n−1)−s_(n−2)，模十循环为 2、6、4、8、4、6。2024 模六余二，个位 3。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.7:digit-sum-divisibility",
+              "title": "Digit Sum Divisibility",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Find all positive d such that d divides N iff it divides the digit sum of N, in bases eight and sixteen.",
+              "solution": "Any divisor of b−1 works because b≡1 mod d. Conversely choose N whose d digits are all one, so digit sum d forces its divisibility; replacing one 1 in position 0 by an extra 1 in a higher unused position gives b^j≡1 mod d for all j≥d. Two consecutive such powers imply b≡1 mod d. Thus {1,7} and {1,3,5,15}.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.7:digit-sum-divisibility",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-041/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "数位和整除",
+                  "statement": "在八进制和十六进制，求所有使 d 整除 N 当且仅当 d 整除数位和的正整数 d。",
+                  "hint": "",
+                  "solution": "b−1 的约数都成立，因为 b 模 d 余一。反过来取 d 个 1 构成的数字，数位和 d 故被 d 整除；将个位 1 移到任意未占用高位 j≥d，差 b^j−1 也被 d 整除。取连续两个 j 得 b≡1 mod d。答案 {1,7} 与 {1,3,5,15}。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.7:modular-coin-flips",
+              "title": "Modular Coin Flips",
+              "difficulty": "medium",
+              "tags": [
+                "logic"
+              ],
+              "statement": "There are 100 initially heads-up coins labeled 0…99. Person i=1…100 flips coin ki modulo 100 for k=1…100. How many remain heads?",
+              "solution": "With d=gcd(i,100), that person flips each multiple of d exactly d times. Only odd d=1,5,25 contribute to parity; their respective numbers of people are φ(100)=40, φ(20)=8 and φ(4)=2, all even. Hence every coin is flipped an even number of times and all 100 stay heads.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.7:modular-coin-flips",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "模步长硬币翻转",
+                  "statement": "100 枚硬币全正面，编号 0 至 99。第 i 人（1 至 100）翻 ki 模 100 的硬币，k=1 至 100。最终多少枚正面？",
+                  "hint": "",
+                  "solution": "令 d=gcd(i,100)，该人给每个 d 的倍数翻 d 次。仅奇 d=1、5、25 影响奇偶，对应人数 φ(100)=40、φ(20)=8、φ(4)=2，均偶。因此每枚总翻偶数次，100 枚全正面。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.7:two-color-ball-invariant",
+              "title": "Two Color Ball Invariant",
+              "difficulty": "easy",
+              "tags": [
+                "logic"
+              ],
+              "statement": "Start with 20 blue and 14 red balls. Replace a same-color pair with blue, a mixed pair with red, until one remains. What color is it?",
+              "solution": "Red count decreases by two on two reds, by zero for two blues or a mixed pair. Its initial even parity is invariant. The last ball is therefore blue.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "2.7:two-color-ball-invariant",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-second/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "双色球替换不变量",
+                  "statement": "20 蓝 14 红，每次同色对换一蓝、异色对换一红，直到剩一个。最后什么颜色？",
+                  "hint": "",
+                  "solution": "两红操作让红球数减二；两蓝或混色让红数不变。红数奇偶保持为偶，最后必为蓝。",
+                  "keyIdea": "",
+                  "tags": [
+                    "逻辑"
                   ]
                 }
               }
@@ -2042,9 +3197,14 @@ window.QUANT_DATA = {
                   "type": "upstream",
                   "reference": "https://github.com/ellenzishanli/quant_interview_trainer/blob/f0192f17bf602457d0a8f43857e83304b56d7771/data/problems.js",
                   "locator": "3.1 / Basics of Derivatives"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-031/",
+                  "locator": "Question 6"
                 }
               ],
-              "revision": 2,
+              "revision": 3,
               "translations": {
                 "zh": {
                   "title": "对数求导",
@@ -2216,6 +3376,482 @@ window.QUANT_DATA = {
                   "tags": [
                     "导数",
                     "不等式"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:right-triangle-tilings",
+              "title": "Right Triangle Tilings",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Tile a larger isosceles right triangle with congruent unit-leg copies whose edge directions belong to one common 45-degree grid. Characterize tile counts and list the first six beyond one.",
+              "solution": "Let its leg length be a+b√2 and hypotenuse length c+d√2, counting unit and diagonal boundary edges. Full exposed edges may be counted along each straight side: an edge crossing a corner would force a tile outside. Then c=2b,d=a. Area gives count a²+2b²+2ab√2, an integer, so ab=0. Squares follow standard triangular grids; two copies form a larger similar triangle by joining their unit legs, and scaling that tile yields twice squares. First six: 2,4,8,9,16,18.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:right-triangle-tilings",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-031/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "等腰直角三角形拼接",
+                  "statement": "用直角边长 1 的全等小等腰直角三角形拼大相似三角形，边方向属于同一组相差 45° 的方向。刻画块数并列出大于一的前六项。",
+                  "hint": "",
+                  "solution": "设大直角边及斜边长为 a+b√2、c+d√2，系数为沿边的小直角边、斜边数。边界由整边铺满，越过拐角的边会超出大三角形。斜边关系给 c=2b、d=a。面积比为 a²+2b²+2ab√2，须为整数，故 ab=0。标准三角网格构造平方数，两片沿直角边合成相似三角形，再放大网格构造两倍平方数。前六为 2、4、8、9、16、18。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:fold-grid-segments",
+              "title": "Fold Grid Segments",
+              "difficulty": "easy",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Fold a rectangle n times in each axis. On opening, count interior crease segments cut at intersections, including n=10.",
+              "solution": "There are 2^n−1 interior lines in each direction and 2^n pieces per line, giving 2·2^n(2^n−1). At n=10 this is 2,095,104.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:fold-grid-segments",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-031/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "折痕网格线段",
+                  "statement": "矩形沿两方向各对折 n 次，展开后在交点分割折痕。不计外边，求段数及 n=10 结果。",
+                  "hint": "",
+                  "solution": "每方向有 2^n−1 条内部线，每条分成 2^n 段，共 2·2^n(2^n−1)。n=10 得 2,095,104。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:exact-integer-squaring",
+              "title": "Exact Integer Squaring",
+              "difficulty": "easy",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Compute 314159265358 squared without floating point.",
+              "solution": "Split at six digits: (314159·10⁶+265358)²=314159²·10¹²+2·314159·265358·10⁶+265358²=98696044010278258868164. Arbitrary precision integer arithmetic gives the same result.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:exact-integer-squaring",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "整数精确平方",
+                  "statement": "不用浮点数计算 314159265358 的平方。",
+                  "hint": "",
+                  "solution": "按六位分块：(314159·10⁶+265358)²=314159²·10¹²+2·314159·265358·10⁶+265358²=98696044010278258868164，可用任意精度整数核验。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:circular-lamp-flips",
+              "title": "Circular Lamp Flips",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "On a ring, pressing a position toggles it and both neighbors. Characterize solvability; in particular prove every initial configuration of 100 lamps has exactly one parity solution for all on.",
+              "solution": "Over F₂ the equations are x_(i−1)+x_i+x_(i+1)=b_i. Try the four initial parity pairs, propagate, and check closure. The homogeneous recurrence has period three, so for 3∤n its only circular solution is zero, giving an invertible map. For 3 divides n, check the two independent linear constraints given by orthogonality to the period-three kernel; each reachable target has four solutions.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:circular-lamp-flips",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 13"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "环形翻转",
+                  "statement": "环上每次翻转该位置及相邻两个位置，刻画何时可解；特别证明 100 盏灯任意初态到全亮的按压奇偶方案唯一。",
+                  "hint": "",
+                  "solution": "在 F₂ 上方程为 x_(i−1)+x_i+x_(i+1)=b_i。枚举四组首项奇偶，递推并检查闭环。齐次递推三周期，当 n 非三的倍数时仅零解，映射可逆。n 为三的倍数时，目标须正交于二维三周期零空间，即满足两条独立约束；可达时有四解。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:quadrilateral-angle",
+              "title": "Quadrilateral Angle",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "A convex quadrilateral has AB=2, BC=3, CD=1, angles ABC=75° and BCD=120°. Find angle CDA.",
+              "solution": "Place B=(0,0), C=(3,0), A=(2cos75°,2sin75°), D=(7/2,√3/2). The answer is arccos[(C−D)·(A−D)/norm(A−D)], since norm(C−D)=1. This is approximately 79.67°.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:quadrilateral-angle",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-052/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "四边形夹角",
+                  "statement": "凸四边形 AB=2、BC=3、CD=1，∠ABC=75°、∠BCD=120°。求 ∠CDA。",
+                  "hint": "",
+                  "solution": "取 B=(0,0)、C=(3,0)、A=(2cos75°,2sin75°)、D=(7/2,√3/2)。因 CD 长 1，所求为 arccos[(C−D)·(A−D)/norm(A−D)]，约 79.67°。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:constant-force-speeds",
+              "title": "Constant Force Speeds",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Under constant acceleration, speeds at times 0,1,2 are v,v/2,v/4. Find speed at time 3.",
+              "solution": "Velocity is affine in time, hence its squared norm is quadratic with constant second differences. In units v² the first differences are −3/4 and −3/16, second difference 9/16. Next square is 1/16−3/16+9/16=7/16, so speed is √7 v/4.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:constant-force-speeds",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-053/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "恒力下的速率",
+                  "statement": "恒加速度下，时刻 0、1、2 速率为 v、v/2、v/4。求时刻 3 的速率。",
+                  "hint": "",
+                  "solution": "速度向量是时间的仿射函数，速率平方为二次函数，二阶差恒定。以 v² 为单位，一阶差为 −3/4、−3/16，二阶差 9/16。下一平方为 7/16，速率 √7 v/4。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:clock-hand-geometry",
+              "title": "Clock Hand Geometry",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Use ideal clock hands to mark 12,11,59,719 equally spaced directions. For two equal-length hands displaying 5:12, give their angles from noon, smaller separation and whether swapping gives another valid time.",
+              "solution": "Hour positions at integer hours give 12. Over 12 hours, the minute–hour, second–minute and second–hour relative turns are 11,708 and 719. Minute–hour coincidences give 11 equally spaced directions using the hour hand; second–minute coincidences give 59 distinct directions in one hour using the minute hand; second–hour coincidences give 719 using the hour hand over 12 hours. At 5:12 angles are 156° and 72°, separation 84°. Swapping gives minute angle 156° (26 minutes), while hour angle at any h:26 is 30h+13°, which cannot equal 72° modulo 360.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:clock-hand-geometry",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 4"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiukun-2/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "钟针角度",
+                  "statement": "用理想钟针标记 12、11、59、719 个等角方向。两根等长针显示 5:12 时，求相对十二点角度、较小夹角及互换是否为合法时刻。",
+                  "hint": "",
+                  "solution": "整点的时针位置给 12。十二小时内分时、秒分、秒时相对转数分别 11、708、719。分时重合取十二小时内时针方向给 11，秒分重合取一小时内分针方向给 59，秒时重合取十二小时内时针方向给 719。5:12 的角度为 156°、72°，较小夹角 84°。互换后分针指 26 分，时针应为 30h+13°，模 360 不可能等于 72°。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:odd-cube-product",
+              "title": "Odd Cube Product",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Compare the product of 1+2/j³ over odd j=3,5,…,2023 with √(3/2).",
+              "solution": "log P≤2Σ_odd j≥3 j^(−3)≤2[1/27+(1/2)∫₃^∞x^(−3)dx]=7/54. Meanwhile log √(3/2)≥(1/2)(.5/1.5)=1/6 by integrating 1/x over [1,1.5]. Thus P is smaller.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:odd-cube-product",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-038/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "奇数立方乘积",
+                  "statement": "比较对奇数 j=3、5、…、2023 的 1+2/j³ 连乘与 √(3/2)。",
+                  "hint": "",
+                  "solution": "log P≤2Σ_{奇 j≥3}j^(−3)≤2[1/27+(1/2)∫₃^∞x^(−3)dx]=7/54。另由积分 log √(3/2)≥(1/2)(.5/1.5)=1/6，故乘积更小。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:mirror-room-blocking",
+              "title": "Mirror Room Blocking",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Can finitely many point guards block every valid billiard trajectory from one interior point of a unit square to another, stopping on first return to shooter or first target hit? Extend to a cube.",
+              "solution": "Unfold reflections: target images have coordinates ±t_i+2k_i. A trajectory is the folded straight segment to an image. Its midpoint coordinates are (s_i±t_i)/2+k_i. Folding has period two in each coordinate, so each coordinate has at most four possibilities, and midpoint images give at most 4^d guards. A midpoint folding to shooter or target contradicts first termination at the endpoint for a valid shot, so discard those candidates. This works for d=2 and d=3.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:mirror-room-blocking",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-046/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "反射房间拦截",
+                  "statement": "单位方形镜面房间，两内点为枪手和目标。弹道首次返回枪手或击中目标停止。有限个点护卫能否拦截全部合法弹道？推广到立方体。",
+                  "hint": "",
+                  "solution": "展开反射后，目标镜像坐标为 ±t_i+2k_i。弹道为到镜像直线的折回，直线中点坐标为 (s_i±t_i)/2+k_i。每坐标的折回周期为二，所以最多四种，中点像至多 4^d 个。中点若折回枪手或目标，则与合法弹道在终点首次终止矛盾，删去这些候选。二维、三维同理。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:rational-jump-function",
+              "title": "Rational Jump Function",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Enumerate rationals r_n once each, and define f(x)=Σ_(r_n<x)2^(−n). Determine continuity on the real line and on the rational domain.",
+              "solution": "At irrational x, every finite partial sum is constant nearby; tails are uniformly bounded by 2^(−N), so f is continuous. At rational r_j the right limit exceeds f(r_j) by exactly 2^(−j), as follows by dominated convergence on the summable weights. Rational arguments can approach from above, so restricting to Q leaves every domain point discontinuous.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:rational-jump-function",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "有理数跳跃函数",
+                  "statement": "有理数无重复枚举 r_n，定义 f(x)=Σ_(r_n<x)2^(−n)。分别在实数域和有理数域判断连续性。",
+                  "hint": "",
+                  "solution": "无理 x 附近任意有限部分和局部恒定，余尾统一界为 2^(−N)，所以连续。有理 r_j 的右极限比 f(r_j) 大 2^(−j)，由可求和权重控制收敛可得。有理数也能从右逼近，故定义域限为 Q 后处处不连续。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:four-limit-techniques",
+              "title": "Four Limit Techniques",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Find at x→0 (sin x−atan x)/(tan x−atan x) and x^−2−cot²x. Find f(x)=lim_(t→∞)(x+e^(tx))/(1+e^(tx)) and its discontinuity. Evaluate lim_(n→∞) Σ_(j=1)^n (j/n)^n.",
+              "solution": "Cubic terms give (−1/6+1/3)/(1/3+1/3)=1/4. cot x=1/x−x/3+O(x³), giving 2/3. For x<0, x=0, x>0 the parameter limit is x,1/2,1 respectively; zero is a jump. In the sum substitute k=n−j: each (1−k/n)^n→e^(−k) and is bounded by e^(−k) (extend by zero beyond n). Dominated summation gives 1/(1−e^(−1)).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:four-limit-techniques",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 9"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 10"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 18"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "四类极限计算",
+                  "statement": "求 x→0 时 (sin x−atan x)/(tan x−atan x) 与 x^−2−cot²x。求 f(x)=lim_(t→∞)(x+e^(tx))/(1+e^(tx)) 并判断间断。求 lim_(n→∞)Σ_(j=1)^n(j/n)^n。",
+                  "hint": "",
+                  "solution": "三阶项给 (−1/6+1/3)/(1/3+1/3)=1/4。cot x=1/x−x/3+O(x³)，故第二极限为 2/3。参数极限对 x<0、x=0、x>0 分别为 x、1/2、1，零点跳跃。求和令 k=n−j，各项趋 e^(−k) 且不超过 e^(−k)，超过长度补零。控制求和得 1/(1−e^(−1))。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.1:internal-common-tangents",
+              "title": "Internal Common Tangents",
+              "difficulty": "easy",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Unit circles centered at (0,0) and (0,4) have outer tangents x=±1. Find and verify both inner tangents.",
+              "solution": "Opposite signed distances imply the tangent passes through midpoint (0,2). In form ax+b(y−2)=0, distance at either center is 2abs(b)/√(a²+b²)=1, so a²=3b². Lines are y=2±√3 x; signed distances are ±1.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.1:internal-common-tangents",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-032/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "两圆内公切线",
+                  "statement": "单位圆圆心 (0,0)、(0,4)，外公切线 x=±1。求并验证两条内公切线。",
+                  "hint": "",
+                  "solution": "两圆心有符号距离相反，切线经过中点 (0,2)。写 ax+b(y−2)=0，距离 2abs(b)/√(a²+b²)=1，故 a²=3b²。两线 y=2±√3x，圆心有符号距离分别 ±1。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
                   ]
                 }
               }
@@ -2438,6 +4074,82 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "3.2:traction-limited-acceleration",
+              "title": "Traction Limited Acceleration",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Starting at rest, a motorcycle stays on a circle of radius R with total acceleration bounded by μg. Find the least arc length to reach maximum maintainable speed.",
+              "solution": "Normal acceleration is v²/R. Set tangential acceleration to its upper bound √((μg)²−v⁴/R²) at each speed, which minimizes ds=v dv/a_t. Substitute u=v²/(μgR), integrating from 0 to 1 to obtain (R/2)∫du/√(1−u²)=πR/4.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.2:traction-limited-acceleration",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-052/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "摩擦限制下加速",
+                  "statement": "摩托车从静止沿半径 R 圆周运动，总加速度不超过 μg。求达到可维持最高速度的最短路程。",
+                  "hint": "",
+                  "solution": "法向加速度为 v²/R；每一速度把切向加速度取到 √((μg)²−v⁴/R²) 上界以最小化 ds=v dv/a_t。代 u=v²/(μgR)，从 0 到 1 积分得到 πR/4。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.2:fuel-cache-transport",
+              "title": "Fuel Cache Transport",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Move 1000 liters using a 200-liter truck that burns one liter per km from its cargo. Intermediate caches are free and no final return is needed. Maximize delivered fuel at 20,100,200 km.",
+              "solution": "While total forward stock requires k loads, crossing a short segment costs at least k forward and k−1 return traversals; shuttling between adjacent caches attains cost rate 2k−1. Drop k each time stock loses another 200. Breakpoint distances are 200/9, then +200/7,+200/5,+200/3. Delivery at 20 is 820; at 100 it is 400−3(100−200/9−200/7−40)=7820/21. At 200, one load remains and delivery is 200−(200−200/9−200/7−40−200/3)=9920/63.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.2:fuel-cache-transport",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-046/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "燃油分段运输",
+                  "statement": "用载量 200 升的车搬运 1000 升，沿途每公里消耗所载一升。可缓存，最终无需返回。求 20、100、200 公里的最大送达量。",
+                  "hint": "",
+                  "solution": "前移库存需 k 车时，每段至少 k 次前行与 k−1 次返回；相邻缓存往返可实现单位耗油 2k−1。库存每少 200 就降一车。分段距离依次 200/9、200/7、40、200/3。20 公里送达 820；100 公里送达 400−3(100−200/9−200/7−40)=7820/21；200 公里剩一车，送达 200−(200−200/9−200/7−40−200/3)=9920/63。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -2536,6 +4248,82 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "3.3:rounded-box-volume",
+              "title": "Rounded Box Volume",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Find the volume within distance one of a solid 1 by 2 by 3 box, including its interior.",
+              "solution": "Partition by nearest point: interior 6; face slabs with total area 22 and unit thickness; edge quarter-cylinders with total edge length 24, contributing 6π; eight corner octants sum to a unit ball, 4π/3. Total 28+22π/3.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.3:rounded-box-volume",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-052/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "长方体外扩体积",
+                  "statement": "求到实心 1×2×3 长方体的距离小于 1 的区域体积，包含内部。",
+                  "hint": "",
+                  "solution": "按最近点分类：内部 6；面外单位厚度薄层总面积 22；棱长总计 24，对应四分之一圆柱共 6π；八角拼成单位球，4π/3。合计 28+22π/3。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.3:ratio-integral-limit",
+              "title": "Ratio Integral Limit",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "On [0,1]^n integrate Σx_i²/Σx_i, defining the origin value zero. Find the limit as n grows and justify it.",
+              "solution": "Realize all integrals as expectations on one space of IID uniform variables. Strong laws give numerator average→1/3 and denominator average→1/2, so ratio→2/3 almost surely. The ratio is in [0,1] since x_i²≤x_i, hence bounded convergence yields 2/3 for the integrals.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.3:ratio-integral-limit",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "多维比值积分极限",
+                  "statement": "在 [0,1]^n 积分 Σx_i²/Σx_i，原点定义零。求 n 趋无穷极限并证明。",
+                  "hint": "",
+                  "solution": "把各维积分视为同一 IID 均匀序列上的期望。强大数定律使分子均值趋 1/3、分母趋 1/2，比值几乎必然趋 2/3。由 x_i²≤x_i，比值界于 [0,1]，有界收敛给积分极限 2/3。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -2613,9 +4401,14 @@ window.QUANT_DATA = {
                   "type": "upstream",
                   "reference": "https://github.com/ellenzishanli/quant_interview_trainer/blob/f0192f17bf602457d0a8f43857e83304b56d7771/data/problems.js",
                   "locator": "3.4 / Newton's Method"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 5"
                 }
               ],
-              "revision": 2,
+              "revision": 3,
               "translations": {
                 "zh": {
                   "title": "牛顿法",
@@ -2665,6 +4458,44 @@ window.QUANT_DATA = {
                   "tags": [
                     "约束优化",
                     "拉格朗日"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.4:convexity-constraints-and-newton",
+              "title": "Convexity Constraints and Newton",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Define convexity and give a Hessian test and gradient descent convergence conditions. Minimize −(x+1)(y+2) under x+2y≤50, then add x,y≥0. Derive and implement Newton iteration for √2.",
+              "solution": "Convexity bounds f on a chord by the linear interpolation; for twice differentiable f on an open convex domain this is equivalent to PSD Hessian. For L-smooth convex f with attained minimum, fixed step 1/L yields objective gap O(1/k); strong convexity gives linear convergence. Here x=y=−t makes f unbounded below. With nonnegative coordinates use x=50−2y to maximize the product (51−2y)(y+2); its vertex is y=47/4,x=53/2, value of f −3025/8. Newton gives z←(z+2/z)/2 from z>0; from 1, iterate until abs(z_new−z)≤tol.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.4:convexity-constraints-and-newton",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-hande/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "凸性约束与牛顿法",
+                  "statement": "定义凸性，给出 Hessian 判别和梯度下降收敛条件。最小化 −(x+1)(y+2)，先仅有 x+2y≤50，再加 x,y≥0。推导并实现 √2 牛顿迭代。",
+                  "hint": "",
+                  "solution": "凸性指弦上函数值不超过线性插值；开凸域二阶可微时等价于 Hessian 半正定。凸且 L 光滑、最小值达到时，步长 1/L 的梯度下降目标差 O(1/k)，强凸时线性收敛。取 x=y=−t 可使本题无下界。加非负约束后用 x=50−2y 最大化 (51−2y)(y+2)，顶点 y=47/4、x=53/2，f=−3025/8。牛顿从 z>0 用 z←(z+2/z)/2；可从 1 迭代至 abs(z_new−z)≤tol。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
                   ]
                 }
               }
@@ -2834,6 +4665,44 @@ window.QUANT_DATA = {
                   "tags": [
                     "常微分方程",
                     "特解"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.5:fastest-rod-pivot",
+              "title": "Fastest Rod Pivot",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "A uniform rod of length L falls from horizontal rest about a frictionless pivot a from its midpoint. Which 0<a≤L/2 minimizes time to vertical?",
+              "solution": "Energy gives Iω²/2=mga sinθ with I=m(L²/12+a²). Integrating dθ/ω from zero to π/2 yields a positive constant independent of a times √(a+L²/(12a)). AM–GM minimizes at a=L/√12, within the allowed interval.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.5:fastest-rod-pivot",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-035/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最快下摆支点",
+                  "statement": "长 L 的均匀杆绕距中点 a 的无摩擦支点从水平静止下摆。哪个 0<a≤L/2 使到竖直用时最短？",
+                  "hint": "",
+                  "solution": "能量守恒给 Iω²/2=mga sinθ，I=m(L²/12+a²)。对 dθ/ω 从 0 到 π/2 积分，结果为与 a 无关的正常数乘 √(a+L²/(12a))。均值不等式给最优 a=L/√12，在允许范围内。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
                   ]
                 }
               }
@@ -3742,9 +5611,14 @@ window.QUANT_DATA = {
                   "type": "reference",
                   "reference": "https://quantlabshark.github.io/read/material-020/",
                   "locator": "Question 6"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-024/",
+                  "locator": "Question 5"
                 }
               ],
-              "revision": 1,
+              "revision": 2,
               "translations": {
                 "zh": {
                   "title": "等相关系数的可行区间",
@@ -3755,6 +5629,429 @@ window.QUANT_DATA = {
                   "tags": [
                     "相关矩阵",
                     "特征值"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:construct-equicorrelated-variables",
+              "title": "Construct Equicorrelated Variables",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Starting from n independent centered unit-variance variables, construct n centered unit-variance variables with off-diagonal correlation r for −1/(n−1)≤r≤1.",
+              "solution": "Split Z into its mean vector and the deviations. The orthogonal projections P=11ᵀ/n and I−P have zero cross covariance for Cov(Z)=I. Set X=√(1+(n−1)r)PZ+√(1−r)(I−P)Z. Its covariance is (1−r)I+r11ᵀ, including both singular endpoints.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:construct-equicorrelated-variables",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-024/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "构造等相关变量",
+                  "statement": "由 n 个相互独立的零均值单位方差变量，构造两两相关为 r 的 n 个零均值单位方差变量，−1/(n−1)≤r≤1。",
+                  "hint": "",
+                  "solution": "用 P=11ᵀ/n 与 I−P 将 Z 投影为均值向量和离均差；Cov(Z)=I 使两块交叉协方差为零。令 X=√(1+(n−1)r)PZ+√(1−r)(I−P)Z，协方差即 (1−r)I+r11ᵀ，两端退化情形也成立。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:equiangular-vectors-with-signed-angles",
+              "title": "Equiangular Vectors with Signed Angles",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Find the maximum number of nonzero vectors in Rⁿ with one common nonzero pairwise angle, and construct a maximizer.",
+              "solution": "Normalize vectors. Their Gram matrix has diagonal 1 and off-diagonal c<1, so it has eigenvalue 1−c>0 with multiplicity m−1. Its rank at most n gives m≤n+1. Center the n+1 standard basis vectors in R^(n+1) to get a regular simplex in the n-dimensional zero-sum hyperplane.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:equiangular-vectors-with-signed-angles",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-024/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "通常夹角相同的向量",
+                  "statement": "Rⁿ 中两两通常夹角相同且非零的一组向量最多几个？构造取等。",
+                  "hint": "",
+                  "solution": "先单位化。Gram 矩阵对角 1、非对角 c<1，特征值 1−c>0 的重数 m−1。秩至多 n，故 m≤n+1。把 R^(n+1) 的基向量减去重心，所得正则单纯形落在 n 维零和超平面。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:block-covariance-feasibility",
+              "title": "Block Covariance Feasibility",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Positive definite marginal covariance blocks A and B are combined with cross-block C. Test PSD and give a repair if it fails.",
+              "solution": "Eliminate the A-block by block congruence: PSD iff B−CᵀA⁻¹C is PSD. Equivalently the largest singular value of A⁻¹/²CB⁻¹/² is at most 1. Shrink C by a scalar until this holds, or clip these singular values, retaining A and B; use a strict margin for positive definiteness.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:block-covariance-feasibility",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-025/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "分块协方差的半正定条件",
+                  "statement": "边际协方差块 A、B 正定，交叉块为 C。给出整体半正定的判据和失败时的修复。",
+                  "hint": "",
+                  "solution": "做分块合同消去 A，整体半正定恰当 B−CᵀA⁻¹C 半正定，等价于 A⁻¹/²CB⁻¹/² 的最大奇异值不超过 1。按比例收缩 C 或截断白化交叉块的奇异值，可保留 A、B；要求正定则留严格余量。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:spectrum-of-a-matrix-sum",
+              "title": "Spectrum of a Matrix Sum",
+              "difficulty": "easy",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Symmetric matrices A and B have spectra inside [a,b] and [c,d]. Bound the spectrum of their sum. Is commutation needed?",
+              "solution": "For every unit x, a≤xᵀAx≤b and c≤xᵀBx≤d by orthogonal diagonalization. Add these inequalities and apply to unit eigenvectors of A+B. The result is [a+c,b+d], with no common eigenbasis needed.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:spectrum-of-a-matrix-sum",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "对称矩阵和的谱区间",
+                  "statement": "对称矩阵 A、B 的谱分别在 [a,b]、[c,d]。界定 A+B 的谱，是否需要可交换？",
+                  "hint": "",
+                  "solution": "对任一单位 x，由正交对角化得 a≤xᵀAx≤b、c≤xᵀBx≤d。相加并取 A+B 的单位特征向量，得区间 [a+c,b+d]，无需共同特征基。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:orthogonal-polynomials-on-unit-interval",
+              "title": "Orthogonal Polynomials on Unit Interval",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Apply Gram–Schmidt to 1,x,x² in L²[0,1]. Give projections, norms and normalized polynomials.",
+              "solution": "First q₀=1. Subtract 1/2 from x; the residual has norm 1/√12, giving q₁=√3(2x−1). For x² the projections on the unnormalized basis are 1/3 and x−1/2 (cross integral with x−1/2 is 1/12). Residual x²−x+1/6 has squared norm 1/180. Thus q₂=√5(6x²−6x+1).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:orthogonal-polynomials-on-unit-interval",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "单位区间的正交多项式",
+                  "statement": "在 L²[0,1] 对 1、x、x² 做 Gram–Schmidt，列出投影、范数和标准正交结果。",
+                  "hint": "",
+                  "solution": "先取 q₀=1。x 减 1/2，余项范数 1/√12，得 q₁=√3(2x−1)。x² 在未归一基上的投影分别为 1/3 与 x−1/2，后者交叉积分为 1/12。余项 x²−x+1/6 的平方范数 1/180，故 q₂=√5(6x²−6x+1)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:maximum-projection-variance",
+              "title": "Maximum Projection Variance",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "For covariance R maximize Var(uᵀX) over unit u. Evaluate when R has diagonal 1 and correlations R₁₂=.3,R₁₃=.4,R₂₃=0, giving an optimal direction.",
+              "solution": "The Rayleigh quotient is a convex combination of eigenvalues in an eigenbasis, maximized in the top eigenspace. The nonidentity part exchanges the first axis with (0,.6,.8) at strength .5 and vanishes on their perpendicular direction. Hence maximum 1.5, attained at ±(1,.6,.8)/√2.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:maximum-projection-variance",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "投影的最大方差",
+                  "statement": "给定协方差 R，在单位 u 中最大化 Var(uᵀX)。对角为 1，相关 R₁₂=.3、R₁₃=.4、R₂₃=0 时，求值及方向。",
+                  "hint": "",
+                  "solution": "在特征基上 Rayleigh 商是特征值的凸组合，最大值取于最大特征空间。去单位阵部分以 .5 的系数互换第一轴与 (0,.6,.8)，并在其正交补上为零。因此最大为 1.5，方向 ±(1,.6,.8)/√2。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:perpendicular-endpoint-distance",
+              "title": "Perpendicular Endpoint Distance",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "B is on the y-axis, C on the x-axis, BC=√3 and AB=1 perpendicular to BC. Maximize distance from A to the origin.",
+              "solution": "Write B=(0,b), C=(c,0), b²+c²=3. Then A=B±(b,c)/√3 and squared norm is 1+b²±2bc/√3. Maximize the quadratic form using the largest eigenvalue of the symmetric matrix with diagonal 1,0 and off-diagonal 1/√3. The maximum distance is √((5+√21)/2).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:perpendicular-endpoint-distance",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-053/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "垂线端点最大距离",
+                  "statement": "B 在 y 轴、C 在 x 轴，BC=√3，AB=1 且垂直 BC。求 A 到原点的最大距离。",
+                  "hint": "",
+                  "solution": "令 B=(0,b)、C=(c,0)，b²+c²=3。A=B±(b,c)/√3，距离平方为 1+b²±2bc/√3。对角为 1、0、非对角为 1/√3 的对称矩阵的最大特征值给出二次型最大值，最终距离 √((5+√21)/2)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:rank-under-invertible-product",
+              "title": "Rank Under Invertible Product",
+              "difficulty": "easy",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "A is 8×4 of rank two. U is upper triangular with diagonal 2,5,16,5 and an extra entry 4 at (3,4). Find rank(AU) and prove the general claim.",
+              "solution": "U maps the domain onto itself because its determinant is the product of nonzero diagonal entries. Thus image(AU)=image(A), giving rank two. Equivalently multiply back by U⁻¹ for the reverse rank inequality.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:rank-under-invertible-product",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "右乘可逆矩阵的秩",
+                  "statement": "A 为秩二的 8×4 矩阵，U 上三角，对角 2、5、16、5，(3,4) 元素为 4。求 AU 的秩，证明一般结论。",
+                  "hint": "",
+                  "solution": "U 对角积非零，故满射到 A 的整个定义域。于是 image(AU)=image(A)，秩为二。也可再乘 U⁻¹ 得反向秩不等式。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:odd-skew-determinant",
+              "title": "Odd Skew Determinant",
+              "difficulty": "easy",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Prove every odd-dimensional real skew-symmetric matrix is singular, and give an even-dimensional counterexample.",
+              "solution": "det A=det Aᵀ=det(−A)=(−1)^n det A, giving zero for odd n. The two-by-two matrix with zero diagonal and off-diagonal entries 1,−1 has determinant one.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:odd-skew-determinant",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "奇阶反对称行列式",
+                  "statement": "证明奇阶实反对称矩阵奇异，并给偶阶反例。",
+                  "hint": "",
+                  "solution": "det A=det Aᵀ=det(−A)=(−1)^n det A，n 奇数时必零。对角零、非对角 1、−1 的二阶矩阵行列式为一。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:ranks-of-matrix-powers",
+              "title": "Ranks of Matrix Powers",
+              "difficulty": "medium",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "Determine which rank sequences for L¹…L⁶ are possible: (5,3,1,0,0,0), (5,3,1,1,1,1), (5,4,3,2,1,0). Construct examples.",
+              "solution": "A nilpotent shift block of size s contributes max(s−k,0) to rank L^k; an identity block contributes its size. The first uses blocks 4 and 3, the second two blocks of size 3 plus one identity dimension, the third one block of size 6. Each construction is real.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:ranks-of-matrix-powers",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "矩阵幂的秩",
+                  "statement": "判断 L¹ 至 L⁶ 的秩序列 (5,3,1,0,0,0)、(5,3,1,1,1,1)、(5,4,3,2,1,0) 是否可实现，给构造。",
+                  "hint": "",
+                  "solution": "s 阶幂零移位块对秩贡献 max(s−k,0)，恒等块贡献其维数。第一用 4、3 阶块，第二用两个 3 阶块加一维恒等，第三用一块 6 阶，均为实矩阵。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:normality-without-inversion",
+              "title": "Normality Without Inversion",
+              "difficulty": "hard",
+              "tags": [
+                "mathematics"
+              ],
+              "statement": "A real square matrix satisfies A²Aᵀ=AAᵀA. Prove AAᵀ=AᵀA without assuming invertibility.",
+              "solution": "Let D=AAᵀ−AᵀA, symmetric, with AD=0. Transposing gives DAᵀ=0, so tr(D AᵀA)=tr(A D Aᵀ)=0. Also A commutes with B=AAᵀ by hypothesis. Thus tr(B²)=tr(AAᵀAAᵀ)=tr((AᵀA)²) by cyclicity, and tr(D²)=2tr((AᵀA)²)−2tr(B AᵀA)=−2tr(D AᵀA)=0. The symmetric D has zero squared Frobenius norm.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "3.6:normality-without-inversion",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 20"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "不取逆的正规性证明",
+                  "statement": "实方阵满足 A²Aᵀ=AAᵀA，不假设可逆，证明 AAᵀ=AᵀA。",
+                  "hint": "",
+                  "solution": "令 D=AAᵀ−AᵀA，对称，且 AD=0。于是 tr(D AᵀA)=tr(A D Aᵀ)=0。设 B=AAᵀ，迹循环给 tr(B²)=tr((AᵀA)²)。展开 tr(D²)=2tr((AᵀA)²)−2tr(B AᵀA)=−2tr(D AᵀA)=0。D 对称，其 Frobenius 范数平方为零。",
+                  "keyIdea": "",
+                  "tags": [
+                    "数学"
                   ]
                 }
               }
@@ -4506,9 +6803,9 @@ window.QUANT_DATA = {
                 "linear regression",
                 "geometric probability"
               ],
-              "statement": "Let $(X,Y)$ be uniform on the triangle with vertices $(0,1),(1,0),(1,1)$. Find the population $R^2$ when regressing $Y$ on $X$ with an intercept.",
+              "statement": "Let $(X,Y)$ be uniform on the triangle with vertices $(0,1),(1,0),(1,1)$. Find the population $R^2$ when regressing $Y$ on $X$ with an intercept.\n\nAlso find the population intercept, slope and correlation.",
               "hint": "",
-              "solution": "The density is 2. Integration gives $E[X]=E[Y]=2/3$, $\\operatorname{Var}(X)=\\operatorname{Var}(Y)=1/18$, $E[XY]=5/12$, and covariance $-1/36$. Hence $\\rho=-1/2$ and the population simple-regression $R^2=\\rho^2=1/4$.",
+              "solution": "The density is 2. Integration gives $E[X]=E[Y]=2/3$, $\\operatorname{Var}(X)=\\operatorname{Var}(Y)=1/18$, $E[XY]=5/12$, and covariance $-1/36$. Hence $\\rho=-1/2$ and the population simple-regression $R^2=\\rho^2=1/4$.\n\nGiven X=x, Y is uniform on [1−x,1], so its conditional mean is 1−x/2. Hence the population intercept is 1 and the slope is −1/2.",
               "keyIdea": "Uniform density 2; Compute the moments; Population R² equals squared correlation with an intercept",
               "kind": "math",
               "reviewStatus": "verified",
@@ -4527,13 +6824,18 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0139"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-009/",
+                  "locator": "Question 1"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
-                  "statement": "(X,Y) 在顶点为 (0,1)、(1,0)、(1,1) 的三角形内均匀分布。以带截距的总体线性回归拟合 Y 对 X，求 R²。",
-                  "solution": "密度为2，E[X]=E[Y]=2/3，Var(X)=Var(Y)=1/18，E[XY]=5/12，Cov=-1/36。相关系数=-1/2，带截距一元回归总体 R²=ρ²=1/4。",
+                  "statement": "(X,Y) 在顶点为 (0,1)、(1,0)、(1,1) 的三角形内均匀分布。以带截距的总体线性回归拟合 Y 对 X，求 R²。\n\n另求总体回归截距、斜率和相关系数。",
+                  "solution": "密度为2，E[X]=E[Y]=2/3，Var(X)=Var(Y)=1/18，E[XY]=5/12，Cov=-1/36。相关系数=-1/2，带截距一元回归总体 R²=ρ²=1/4。\n\n给定 X=x，Y 均匀于 [1−x,1]，故条件均值是 1−x/2，总体截距 1、斜率 −1/2。",
                   "keyIdea": "均匀密度2；矩计算；总体带截距 R²=ρ²",
                   "title": "三角域回归",
                   "hint": "",
@@ -4863,6 +7165,310 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "4.1:sphere-visibility",
+              "title": "Sphere Visibility",
+              "difficulty": "hard",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Nine finite points lie outside an opaque sphere. Prove a point on its surface sees at most three. For nine directions at infinity show some observer sees at least four.",
+              "solution": "A surface normal u sees point p exactly when u·p≥R. Choose two nonparallel point directions if available and let u be perpendicular to both. The pair u,−u sees neither selected point; choose u in the plane perpendicular to the common direction if all are parallel. Each of the seven others is seen at most once across antipodes, so the smaller count is at most three. For distant stars choose an axis avoiding all horizons; the antipodal counts sum to nine, giving at least five on one side.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.1:sphere-visibility",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 10"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "球面可见点",
+                  "statement": "不透明球外有九个有限点，证明球面上有点至多看见三个。若改为九个无穷远方向，证明有点能看见至少四个。",
+                  "hint": "",
+                  "solution": "法向 u 能见 p 当且仅当 u·p≥R。挑两个外点方向，让 u 同时垂直于它们；若都平行，取公共方向的任意法向。u 与 −u 均看不到这两个点，另七个点各至多在一端可见，所以较少一端至多三个。星光情形选避开所有地平线的轴，对跖点可见数之和为九，至少一端能见五颗。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:switching-card-piles",
+              "title": "Switching Card Piles",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Piles A,B contain respectively four and three ones, with remaining cards worth seven up to ten cards each. Select a pile uniformly and remove a one. Should the second draw stay or switch?",
+              "solution": "Bayes gives original-pile probabilities 4/7 and 3/7. Staying gives P(7)=(4·6+3·7)/(7·9)=5/7. Switching gives (4·7+3·6)/70=23/35, so stay.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.1:switching-card-piles",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-030/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "换牌堆",
+                  "statement": "A、B 各十张，分别有四张、三张 1，其余面值 7。等概率选择不知身份的一堆，抽走一张 1。第二张应留下还是换堆？",
+                  "hint": "",
+                  "solution": "贝叶斯更新后原堆为 A、B 的概率是 4/7、3/7。留下抽到 7 的概率为 (4·6+3·7)/(7·9)=5/7，换堆为 (4·7+3·6)/70=23/35，故留下。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:first-shared-birthday",
+              "title": "First Shared Birthday",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "For IID birthdays uniform on 365 days, which queue position most often has the first birthday shared with a predecessor?",
+              "solution": "For k≥2, p_k=(k−1)/365 times ∏_{i=0}^{k−2}(1−i/365). The ratio p_{k+1}/p_k=k(366−k)/(365(k−1)) exceeds 1 exactly if k(k−1)<365. It changes from increasing at k=19 to decreasing at k=20, so choose 20.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.1:first-shared-birthday",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-030/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "首次生日重复",
+                  "statement": "生日独立均匀于 365 天，队伍中哪一位置最可能首次与前人生日重复？",
+                  "hint": "",
+                  "solution": "第 k 位获奖概率为 (k−1)/365 乘 ∏_{i=0}^{k−2}(1−i/365)。相邻比值 k(366−k)/(365(k−1)) 大于 1 等价于 k(k−1)<365，在 19 后仍增、20 后下降，故选第 20 位。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:envelope-switching",
+              "title": "Envelope Switching",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Envelopes contain 20000,5000,5000. After you choose, a host reveals an unchosen 5000 and offers a switch. Compare winning probabilities and expected values.",
+              "solution": "Keeping wins exactly when the initial random choice is high, probability 1/3 and value 10000. Switching wins in the complementary case, probability 2/3 and value 15000.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.1:envelope-switching",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-031/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "换红包",
+                  "statement": "三红包为 20000、5000、5000 元。选后主持人打开另一只 5000 元红包，允许换选。比较中奖概率和金额期望。",
+                  "hint": "",
+                  "solution": "不换在首次选中高额时赢，概率 1/3、期望 10000 元。换选在其补事件赢，概率 2/3、期望 15000 元。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:first-color-exhaustion",
+              "title": "First Color Exhaustion",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Draw three red and two green beans without replacement. Find the probability all reds are drawn before all greens.",
+              "solution": "Red is exhausted first exactly if the last bean of a full shuffle is green, so the chance is 2/5.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.1:first-color-exhaustion",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-031/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "先取完某种颜色",
+                  "statement": "无放回抽取三红两绿，求红豆先抽完的概率。",
+                  "hint": "",
+                  "solution": "完整随机排列中，红先抽完等价于最后一粒是绿，概率 2/5。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:optimal-dice-rerolls",
+              "title": "Optimal Dice Rerolls",
+              "difficulty": "hard",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Roll three fair dice and then reroll any subset once to maximize chance of total 7. How often is the optimal number rerolled exactly two? Check for ties across subset sizes.",
+              "solution": "Count n_j(s), the number of ordered j-die outcomes summing to s, by n₀(0)=1 and convolution by faces 1 to 6. For each of the 216 ordered initial triples and each of eight subsets, score n_j(7−sum kept)/6^j. Comparing exact fractions gives optimum-size counts 15,132,42,27 for j=0,1,2,3 and no ties across sizes. Thus 42/216=7/36.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.1:optimal-dice-rerolls",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-052/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最优重掷骰子",
+                  "statement": "三枚公平骰先掷一次，再重掷任意子集一次以最大化总和为 7 的概率。最优重掷数恰为两颗的概率是多少？检查不同重掷数的并列。",
+                  "hint": "",
+                  "solution": "用 n₀(0)=1 与点数 1 至 6 卷积得到 j 枚骰点数和的计数 n_j(s)。枚举 216 个初始三元组及八个子集，以 n_j(7−保留和)/6^j 比较。精确分数统计 j=0、1、2、3 的最优计数为 15、132、42、27，跨规模无并列，结果 7/36。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:last-two-airplane-seats",
+              "title": "Last Two Airplane Seats",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "One hundred travelers use the usual misplaced-seat rule: first chooses uniformly, everyone else uses their own seat if available, otherwise chooses a random free seat. Find the probability both last two sit correctly.",
+              "solution": "Track the chain of displaced passengers. The first seat encountered among 1,99,100 is symmetric among these three because all are always available for chain choices until first hit. Both last seats are correct exactly if seat 1 is hit first. Probability 1/3.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.1:last-two-airplane-seats",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "飞机最后两座",
+                  "statement": "百人依次登机，首人随机，其余优先坐本座，本座被占则随机空座。求最后两人均坐本座的概率。",
+                  "hint": "",
+                  "solution": "跟踪被挤占的选座链。首次命中 1、99、100 三座之一前，这三个座位在每次链选择中对称可用。最后两座都正确当且仅当先命中 1，概率 1/3。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:coin-and-urn-basics",
+              "title": "Coin and Urn Basics",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Find the chance of exactly two heads in four fair tosses and the chance the first of two draws from 3 red,2 blue is red given the second is red.",
+              "solution": "Coin outcomes give C(4,2)/16=3/8. By exchangeability, condition on the second being a specified red; the first comes from the other four with two red, giving 1/2.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.1:coin-and-urn-basics",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "硬币与抽球基础",
+                  "statement": "求公平硬币四次恰两正面的概率；三红两蓝无放回抽两次，已知第二次红，求第一次也红的概率。",
+                  "hint": "",
+                  "solution": "硬币按组合数得 C(4,2)/16=3/8。由顺序对称，固定第二球为一红后，第一球在余四球中抽取，其中两红，故 1/2。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -5116,12 +7722,17 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0104"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 4"
                 }
               ],
               "verification": [
                 "Use $D_n=(n-1)(D_{n-1}+D_{n-2})$, with $D_0=1,D_1=0$."
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "5封不同的信随机一一投递给5个人，所有5!种对应等可能。求每个人都没拿到自己信的概率。",
@@ -5697,6 +8308,358 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "4.2:perfect-square-self-powers",
+              "title": "Perfect Square Self Powers",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "How many integers n from 100 through 400 have nⁿ a perfect square?",
+              "solution": "Every even n works, giving 151. If n is odd, multiplying prime exponents by n preserves parity, so n itself must be square. Odd roots in [10,20] are 11,13,15,17,19. The total is 156.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:perfect-square-self-powers",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-020/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "幂 n 的 n 次方何时为平方",
+                  "statement": "100 至 400（含端点）有多少整数 n，使 nⁿ 为完全平方？",
+                  "hint": "",
+                  "solution": "偶数 n 全部成立，共 151。奇数 n 不改变质因数指数的奇偶，因此 n 本身须为平方。10 至 20 的奇根有 11、13、15、17、19，共 5 个，合计 156。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:extra-coins-head-count",
+              "title": "Extra Coins Head Count",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "A tosses n+d fair coins and B tosses n, all independent. Find P(A has strictly more heads) for d=1,2 and n≥0.",
+              "solution": "Add B's tails to A's heads. The sum has Bin(2n+d,1/2), and A wins iff it exceeds n. For d=1 symmetry gives 1/2. For d=2 the central outcome n+1 also wins, so the probability is 1/2+binom(2n+2,n+1)/2^(2n+3).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:extra-coins-head-count",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-028/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-028/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "多一或两枚硬币的正面数",
+                  "statement": "A 抛 n+d 枚公平币、B 抛 n 枚，全部独立。求 d=1、2 时 A 正面数严格更多的概率，n≥0。",
+                  "hint": "",
+                  "solution": "把 B 的反面数加到 A 的正面数，和服从 Bin(2n+d,1/2)，A 胜恰为和大于 n。d=1 对称性给 1/2；d=2 中心值 n+1 也算胜，故为 1/2+binom(2n+2,n+1)/2^(2n+3)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:identical-red-boxes",
+              "title": "Identical Red Boxes",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Distribute 30 identical balls among two interchangeable red boxes and one distinct green box, allowing empties.",
+              "solution": "For m balls in the red boxes, choose the smaller red count from 0 to floor(m/2). Sum floor(m/2)+1 over m=0…30 to get 256.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:identical-red-boxes",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-035/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "相同红盒分球",
+                  "statement": "30 个相同球放入两个可交换红盒和一个不同的绿盒，允许空盒。求放法数。",
+                  "hint": "",
+                  "solution": "红盒总数 m 给定时，较少一盒可取 0 至 floor(m/2)，共 floor(m/2)+1 种。对 m=0…30 求和得 256。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:decreasing-prefix-counts",
+              "title": "Decreasing Prefix Counts",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Count permutations with longest strictly decreasing prefix exactly k. For strings of length n over 1…4 with repetition, count wholly decreasing or nonincreasing strings and prefixes of exact length k.",
+              "solution": "For permutations, a decreasing prefix of at least k appears in n!/k! orders, since exactly one ordering of its first k elements descends. Subtract n!/(k+1)! for k<n. For strings, descending prefixes of length k give C(4,k)4^(n−k) and nonincreasing prefixes C(k+3,3)4^(n−k), by choosing a set or multiset. Again subtract the next length; at k=n there is nothing to subtract.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:decreasing-prefix-counts",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiukun-2/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "递减前缀计数",
+                  "statement": "计算排列中最长严格递减前缀恰为 k 的数量。对 1 至 4 可重复的长 n 串，计算整串严格递减或非增、及最长相应前缀恰为 k 的数量。",
+                  "hint": "",
+                  "solution": "排列前 k 位集合确定后只有一个递减次序，至少 k 位共 n!/k!；k<n 时减 n!/(k+1)!。字符串严格递减或非增前缀分别选择集合、多重集合，共 C(4,k)4^(n−k)、C(k+3,3)4^(n−k)，再减下一长度。k=n 时无需相减。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:binomial-tail-bound",
+              "title": "Binomial Tail Bound",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Prove C(n,k)≤(en/k)^k and bound the sum of C(n,j) from j=0 through k.",
+              "solution": "Take t=k/n≤1. For j≤k, t^j≥t^k, so the entire partial sum is at most t^(−k)(1+t)^n≤(en/k)^k. The single coefficient is bounded by the same expression.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:binomial-tail-bound",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiukun-2/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "组合数量上界",
+                  "statement": "证明 C(n,k)≤(en/k)^k，并估计从 j=0 至 k 的组合数和。",
+                  "hint": "",
+                  "solution": "取 t=k/n≤1。j≤k 时 t^j≥t^k，故部分和不超过 t^(−k)(1+t)^n≤(en/k)^k。单项同样受此上界约束。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:acute-polygon-triangles",
+              "title": "Acute Polygon Triangles",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Choose three distinct vertices of a regular odd n-gon uniformly. Find the probability of an acute triangle.",
+              "solution": "No diameter joins vertices, so right triangles cannot occur. An obtuse triangle fits in one open semicircle and has a unique clockwise start just after the long empty arc. For each start choose the other two among its next (n−1)/2 vertices. The acute probability is 1−n C((n−1)/2,2)/C(n,3).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:acute-polygon-triangles",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 13"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "正多边形锐角三角形",
+                  "statement": "从奇数 n 的正多边形均匀选三个顶点，求锐角三角形概率。",
+                  "hint": "",
+                  "solution": "没有直径连顶点，故无直角。钝角三角形可放入开半圆，长空弧后的顺时针起点唯一。每起点从随后 (n−1)/2 个顶点中选两个。锐角概率为 1−n C((n−1)/2,2)/C(n,3)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:independent-subset-counts",
+              "title": "Independent Subset Counts",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Count nonempty subscriptions among four distinct newspapers. Also count simple undirected labeled graphs on n vertices modulo 10^9+7, including n=4.",
+              "solution": "Each newspaper is an independent binary choice; exclude the empty set to get 2⁴−1=15. Each of C(n,2) unordered vertex pairs is an independent edge choice; modular exponentiation of 2^C(n,2) gives 64 when n=4.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:independent-subset-counts",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 13"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-huajun/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "独立子集计数",
+                  "statement": "求四种不同报纸的非空订阅组合数；另求 n 个有标号顶点的简单无向图数量，模 10^9+7，计算 n=4。",
+                  "hint": "",
+                  "solution": "每种报纸独立二选，去空集得 2⁴−1=15。每个无序顶点对独立选择是否连边，对 2^C(n,2) 做模快速幂，n=4 得 64。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:binary-strings-without-neighbors",
+              "title": "Binary Strings Without Neighbors",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Count binary strings of length n without adjacent ones, both as a line and as a ring for n≥2. Give small examples.",
+              "solution": "Line counts A₀=1,A₁=2 and A_n=A_(n−1)+A_(n−2) by splitting on the first digit. For n≥3 a ring has A_(n−1)+A_(n−3), as leading one forces both neighbors zero. For n=2 the ring has 00,01,10; n=3 has four ring strings and five line strings.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:binary-strings-without-neighbors",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-zhuoshi/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "无相邻一的二进制串",
+                  "statement": "长度 n 的二进制串无相邻 1，分别在线性及 n≥2 首尾相邻时计数，给小例。",
+                  "hint": "",
+                  "solution": "线性 A₀=1、A₁=2，按首位分得 A_n=A_(n−1)+A_(n−2)。n≥3 的环首位为 1 则两邻皆零，共 A_(n−1)+A_(n−3)。n=2 环有 00、01、10；n=3 环有四种、线性有五种。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:one-fixed-seat",
+              "title": "One Fixed Seat",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Five people uniformly permute among their assigned seats. Find probability exactly one sits in their own seat.",
+              "solution": "Choose the fixed person in five ways. The remaining four must derange; inclusion–exclusion gives 4!Σ_(k=0)^4(−1)^k/k!=9. Divide 45 by 5!, obtaining 3/8.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.2:one-fixed-seat",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "恰好一个固定座位",
+                  "statement": "五人均匀随机坐五个对应座位，求恰一人坐本座的概率。",
+                  "hint": "",
+                  "solution": "固定者有五种选法，余四人错排。容斥得 4!Σ_(k=0)^4(−1)^k/k!=9。45 除以 5! 得 3/8。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -6137,9 +9100,14 @@ window.QUANT_DATA = {
                   "type": "upstream",
                   "reference": "https://github.com/ellenzishanli/quant_interview_trainer/blob/f0192f17bf602457d0a8f43857e83304b56d7771/data/problems.js",
                   "locator": "4.3 / Candies in a Jar"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-030/",
+                  "locator": "Question 2"
                 }
               ],
-              "revision": 2,
+              "revision": 3,
               "translations": {
                 "zh": {
                   "title": "糖果剩余事件",
@@ -6799,6 +9767,211 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "4.3:beta-posterior-after-tails",
+              "title": "Beta Posterior After Tails",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "A coin has unknown head probability θ with Beta(a,b) prior. Given five independent tails conditional on θ, find the posterior density, mean, and predictive probability of heads. Specialize to a uniform prior.",
+              "solution": "Multiply the prior kernel by (1−θ)^5: the density is θ^(a−1)(1−θ)^(b+4)/B(a,b+5). The mean is a/(a+b+5), also the predictive head probability by averaging θ. A uniform prior gives Beta(1,6) and 1/7.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.3:beta-posterior-after-tails",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "五次反面后的 Beta 后验",
+                  "statement": "正面概率 θ 的先验为 Beta(a,b)。给定 θ 时各次独立，现观察到五次反面。求后验密度、均值与下一次正面的预测概率，并计算均匀先验情形。",
+                  "hint": "",
+                  "solution": "先验乘似然 (1−θ)^5，归一化密度为 θ^(a−1)(1−θ)^(b+4)/B(a,b+5)。后验均值为 a/(a+b+5)，对 θ 积分也正是下一次正面的预测概率。均匀先验得到 Beta(1,6) 和 1/7。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.3:shooter-given-a-hit",
+              "title": "Shooter Given a Hit",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "At most one of A,B,C shoots with respective probabilities .3,.4,.2; otherwise no shot. Their hit rates are .4,.3,.3. Given a hit, identify the probability it was A.",
+              "solution": "The three joint hit probabilities are .12,.12,.06. Their sum is .30, so A given hit has probability .12/.30=2/5.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.3:shooter-given-a-hit",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-024/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "命中后的射手识别",
+                  "statement": "A、B、C 出手概率分别为 .3、.4、.2，至多一人出手，其余情况无人出手；命中率分别 .4、.3、.3。已知命中，求 A 出手的概率。",
+                  "hint": "",
+                  "solution": "三者出手且命中的概率为 .12、.12、.06。命中总概率 .30，故 A 的后验为 2/5。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.3:rare-positive-test",
+              "title": "Rare Positive Test",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Prevalence is 1%; sensitivity and specificity are both 95%. Find the posterior positive probability after a positive test. Does 95% overall accuracy alone suffice?",
+              "solution": "True positive mass .01·.95 and false positive mass .99·.05 sum to .059, so posterior is .0095/.059=19/118. Overall accuracy is only one weighted constraint on two class-conditional rates; different rates give different posteriors.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.3:rare-positive-test",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "低基率下的阳性后验",
+                  "statement": "基率 1%，灵敏度和特异度均 95%。检测阳性后真阳性概率是多少？只给总体准确率 95% 是否足够？",
+                  "hint": "",
+                  "solution": "真阳性概率 .01·.95、假阳性 .99·.05，总阳性 .059，后验 19/118。总体准确率只约束两个类别条件准确率的一个加权和，不足以决定后验。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.3:bayesian-attribution",
+              "title": "Bayesian Attribution",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Given red, find chance of first box in two models: (a) prior 1/3 and boxes with red shares 2/5,3/4; (b) uniform prior and shares 4/6,2/7. Given a correct answer, find chance a candidate knew it if prior is 1/2 and an uninformed guess has chance 1/5.",
+              "solution": "Bayes normalizes each prior multiplied by its evidence likelihood. The ratios are (2/15)/(2/15+1/2)=4/19, (1/3)/(1/3+1/7)=7/10, and (1/2)/(1/2+1/10)=5/6.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.3:bayesian-attribution",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 10"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 8"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 13"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "贝叶斯归因",
+                  "statement": "已知抽到红，分别求来自甲盒的概率：(a) 甲先验 1/3、两盒红比例 2/5、3/4；(b) 等先验、红比例 4/6、2/7。另设会做先验 1/2、不会时猜对率 1/5，已知答对求会做概率。",
+                  "hint": "",
+                  "solution": "按贝叶斯对各先验乘似然再归一。三个结果分别为 (2/15)/(2/15+1/2)=4/19、(1/3)/(1/3+1/7)=7/10、(1/2)/(1/2+1/10)=5/6。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.3:uniform-posterior-interval",
+              "title": "Uniform Posterior Interval",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Prior a~U(10,20), and X given a is uniform on [a−.5,a+.5]. Observe 12; find posterior density, mean, variance and endpoint treatment.",
+              "solution": "Likelihood as a function of a is constant on [X−.5,X+.5] and zero elsewhere. Intersect with [10,20] and normalize by interval length. At 12 this is U(11.5,12.5), density 1, mean 12 and variance 1/12. For an interval of positive length near an endpoint use its midpoint and length squared over 12.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.3:uniform-posterior-interval",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-weiguan/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "均匀后验区间",
+                  "statement": "先验 a~U(10,20)，给定 a 时 X 均匀于 [a−.5,a+.5]。观测 12，求后验密度、均值、方差及先验端点附近的处理。",
+                  "hint": "",
+                  "solution": "视 a 为变量，似然在 [X−.5,X+.5] 上恒定，其余零。与 [10,20] 取交后按长度归一。观测 12 时为 U(11.5,12.5)，密度一，均值 12，方差 1/12。端点附近若交集长度为正，用交集的中点及长度平方除以 12。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -7156,9 +10329,9 @@ window.QUANT_DATA = {
                 "expectation",
                 "expectation and variance"
               ],
-              "statement": "Let X, Y, Z be independent U(0,6) variables. Find the probability that every pairwise absolute difference is strictly greater than 1.",
+              "statement": "Let X, Y, Z be independent U(0,6) variables. Find the probability that every pairwise absolute difference is strictly greater than 1.\n\nRepeat when the draws are independent and uniform on the integers 0,…,6.",
               "hint": "",
-              "solution": "Sort the three values and subtract 0, 1, and 2 from them, respectively. This transforms the admissible ordered region into the ordered simplex of an interval of length 4. Its volume ratio is $(4/6)^3=8/27$.",
+              "solution": "Sort the three values and subtract 0, 1, and 2 from them, respectively. This transforms the admissible ordered region into the ordered simplex of an interval of length 4. Its volume ratio is $(4/6)^3=8/27$.\n\nFor integers the sorted values have adjacent gaps at least two. Subtract 0,1,2 from the sorted values to biject with strictly increasing triples from 0,…,4. Each triple has six permutations, so the probability is 6 C(5,3)/7³=60/343.",
               "keyIdea": "",
               "kind": "math",
               "reviewStatus": "pending",
@@ -7171,13 +10344,18 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0131"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-053/",
+                  "locator": "Question 4"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
-                  "statement": "X、Y、Z独立服从U(0,6)，求两两绝对差均严格大于1的概率。",
-                  "solution": "先将三值排序，再分别减去0、1、2，满足相邻差大于1的有序区域转成长度4区间内的有序单纯形。体积比为(4/6)³=8/27。",
+                  "statement": "X、Y、Z独立服从U(0,6)，求两两绝对差均严格大于1的概率。\n\n再求三次独立均匀抽取整数 0 至 6 时的概率。",
+                  "solution": "先将三值排序，再分别减去0、1、2，满足相邻差大于1的有序区域转成长度4区间内的有序单纯形。体积比为(4/6)³=8/27。\n\n整数情形排序后相邻差至少二。依次减 0、1、2，与从 0 至 4 中选的严格递增三元组一一对应。每组三元组有六种排列，概率 6 C(5,3)/7³=60/343。",
                   "title": "均匀样本间距",
                   "hint": "",
                   "keyIdea": "",
@@ -7328,6 +10506,396 @@ window.QUANT_DATA = {
                   "tags": [
                     "联合密度",
                     "独立性"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:quarter-hour-arrival-probability",
+              "title": "Quarter-Hour Arrival Probability",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "A homogeneous Poisson arrival process has probability 0.8 of at least one arrival per hour. Find that probability per fifteen minutes.",
+              "solution": "Let q be the probability of zero arrivals in a quarter hour. Independent stationary increments give q⁴=0.2. The required probability is 1−0.2^(1/4).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:quarter-hour-arrival-probability",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "十五分钟至少一车的概率",
+                  "statement": "齐次泊松到达中一小时至少一车的概率是 0.8。求十五分钟内至少一车的概率。",
+                  "hint": "",
+                  "solution": "设十五分钟零到达概率为 q。由平稳独立增量，q⁴=0.2。答案 1−0.2^(1/4)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:three-uniform-sum",
+              "title": "Three Uniform Sum",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "For three independent U(0,1) draws, find P(the sum is below 2.2).",
+              "solution": "By replacing each draw x with 1−x, the complement is the simplex with nonnegative coordinates summing to at most .8. It lies inside the cube and has volume .8³/6, giving 343/375.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:three-uniform-sum",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-035/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三个均匀变量之和",
+                  "statement": "三个独立 U(0,1) 抽样，求和小于 2.2 的概率。",
+                  "hint": "",
+                  "solution": "将 x 换成 1−x，补事件为非负坐标之和不超过 .8 的单纯形，完全在立方体内。体积 .8³/6，故结果 343/375。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:two-point-three-point-teams",
+              "title": "Two Point Three Point Teams",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Each team takes n shots. Team A always scores two per shot, B scores three with independent probability 2/3. Find B win and tie probabilities and evaluate n=1,2,3.",
+              "solution": "For X~Bin(n,2/3), win sums the mass over X≥floor(2n/3)+1; tie is mass at 2n/3 if integral. The (win,tie) pairs for n=1,2,3 are (2/3,0),(4/9,0),(8/27,4/9).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:two-point-three-point-teams",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 14"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "两分与三分球队",
+                  "statement": "各投 n 次，甲每次得 2 分，乙独立以 2/3 概率得 3 分。求乙胜率与平率，计算 n=1、2、3。",
+                  "hint": "",
+                  "solution": "X~Bin(n,2/3)，胜率对 X≥floor(2n/3)+1 求和，若 2n/3 为整数则取该点概率作平率。n=1、2、3 分别 (2/3,0)、(4/9,0)、(8/27,4/9)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:short-random-chords",
+              "title": "Short Random Chords",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Find P(chord length<R) using independent uniform endpoints, a uniform-area midpoint, and a uniform radial distance with uniform orientation.",
+              "solution": "A chord is short iff its minor central angle is below π/3 or its midpoint radius exceeds √3R/2. The minor angle is uniform on [0,π] in the endpoint model, giving 1/3. Annulus area gives 1/4; a uniform radius gives 1−√3/2.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:short-random-chords",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "随机短弦",
+                  "statement": "分别按圆周独立均匀端点、圆盘面积均匀中点、均匀径向距离与方向生成弦，求弦长小于 R 的概率。",
+                  "hint": "",
+                  "solution": "短弦等价于较小圆心角小于 π/3，或中点半径大于 √3R/2。端点模型的较小圆心角均匀于 [0,π]，得 1/3；面积模型用环带面积得 1/4；均匀半径模型得 1−√3/2。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:tails-before-heads",
+              "title": "Tails Before Heads",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Stop on the Kth head of a fair coin. Find the probability there have been at least K+1 tails.",
+              "solution": "This happens exactly if the first 2K tosses have at most K−1 heads. Binomial symmetry gives one half minus half the mass at K, namely [1−C(2K,K)/4^K]/2.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:tails-before-heads",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "第 K 个正面前的反面",
+                  "statement": "公平硬币在第 K 次正面停止，求此前反面至少 K+1 次的概率。",
+                  "hint": "",
+                  "solution": "该事件等价于前 2K 次至多 K−1 个正面。二项分布对称，取一半减去中心概率的一半，得 [1−C(2K,K)/4^K]/2。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:correlated-gaussian-signs",
+              "title": "Correlated Gaussian Signs",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "For jointly standard normal X,Y of correlation ρ, derive P(X<0 given Y<0) and E[min(X,Y)]. Evaluate at ρ=1/√3 and 1/3.",
+              "solution": "Represent (X,Y) as two projections of an isotropic standard Gaussian onto axes separated by arccos ρ. The common negative wedge has angle π−arccos ρ; conditioning gives 1/2+arcsin ρ/π. Since min=(X+Y−abs(X−Y))/2 and X−Y has variance 2(1−ρ), the expectation is −√((1−ρ)/π). Substitute either value of ρ directly.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:correlated-gaussian-signs",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-043/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-weiguan/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "相关正态符号与最小值",
+                  "statement": "联合标准正态 X、Y 的相关为 ρ，推导 P(X<0 给定 Y<0) 和 E[min(X,Y)]，代 ρ=1/√3 与 1/3。",
+                  "hint": "",
+                  "solution": "将 X、Y 写成各向同性标准正态沿夹角 arccos ρ 的两个投影。共同负扇区角 π−arccos ρ，条件概率 1/2+arcsin ρ/π。又 min=(X+Y−abs(X−Y))/2，差的方差 2(1−ρ)，故期望 −√((1−ρ)/π)。分别直接代两组 ρ。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:dice-residue-distribution",
+              "title": "Dice Residue Distribution",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "For m independent fair F-sided dice, compute the probability their sum is k mod N and analyze complexity. Evaluate m=10,F=6,N=7,k=0.",
+              "solution": "Initialize counts d[0]=1. Each die replaces d[r] by Σ_(j=1)^F d[(r−j) mod N]. Divide by F^m; time O(mNF), working memory O(N), or exponentiate cyclic convolution in O(N² log m). For N=7,F=6 each step gives d_new[r]=6^i−d_old[r]; nonuniform parts thus alternate signs. The ten-die answer is (6^10+6)/(7·6^10)=1439671/10077696.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:dice-residue-distribution",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-046/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-046/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "骰子余数分布",
+                  "statement": "m 枚独立公平 F 面骰，求和模 N 为 k 的概率与复杂度。计算十枚六面骰模七余零。",
+                  "hint": "",
+                  "solution": "初始 d[0]=1。每骰更新 d_new[r]=Σ_(j=1)^F d[(r−j) mod N]，再除 F^m；时间 O(mNF)，工作空间 O(N)，或循环卷积快速幂 O(N² log m)。七模六面时 d_new[r]=6^i−d_old[r]（此前 i 枚），非均匀部分每步变号。十骰为 (6^10+6)/(7·6^10)=1439671/10077696。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:handicap-table-tennis",
+              "title": "Handicap Table Tennis",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Weak player wins each point independently with p=1/3. Find win probability in first-to-5 against opponent first-to-11, and with net-two overtime from 4–10.",
+              "solution": "Base win chance is Σ_(j=0)^10 C(4+j,4)p⁵(1−p)^j=8551019/14348907. The score 4–10 is reached with probability C(14,4)p⁴(1−p)^10. Conditional win there changes from p to p²/[p²+(1−p)²]=1/5, since split two-point blocks return to tie. Adjusting gives 4522783/7971615.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:handicap-table-tennis",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-046/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "让分乒乓球",
+                  "statement": "弱方每分独立以 1/3 获胜，弱方先五分或强方先十一分。另设到 4–10 后改为净胜两分制。求两规则下弱方胜率。",
+                  "hint": "",
+                  "solution": "基础胜率为 Σ_(j=0)^10 C(4+j,4)p⁵(1−p)^j=8551019/14348907。到 4–10 的概率 C(14,4)p⁴(1−p)^10。此处条件胜率从 p 变为 p²/[p²+(1−p)²]=1/5，因为两分各赢一分回到平局。调整后得 4522783/7971615。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:ten-thousand-coin-balance",
+              "title": "Ten Thousand Coin Balance",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Find probability exactly 5000 of 10000 fair coins are heads. Give exact, stable numerical and asymptotic forms.",
+              "solution": "The probability is C(10000,5000)/2^10000. Evaluate via exp(lgamma(10001)−2lgamma(5001)−10000log 2), or exact integers. Stirling gives 1/√(5000π) times [1−1/(8·5000)+O(5000⁻²)], approximately .00797865.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:ten-thousand-coin-balance",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-zhuoshi/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "万枚硬币正反平衡",
+                  "statement": "求一万枚公平硬币恰有五千正面的概率，给精确式、稳定数值算法及渐近式。",
+                  "hint": "",
+                  "solution": "概率 C(10000,5000)/2^10000。可用 exp(lgamma(10001)−2lgamma(5001)−10000log 2) 或大整数计算。斯特林近似为 1/√(5000π) 乘 [1−1/(8·5000)+O(5000⁻²)]，约 .00797865。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:linear-discrete-mass",
+              "title": "Linear Discrete Mass",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "For P(X=x)=cx at x=1,…,6 find c, mean and median.",
+              "solution": "Sum x to get 21, so c=1/21. Sum x² to get 91, so mean 13/3. CDF at 4 is 10/21 and at 5 is 15/21, so median is 5.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.4:linear-discrete-mass",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "线性离散概率",
+                  "statement": "P(X=x)=cx，x=1 至 6，求 c、期望和中位数。",
+                  "hint": "",
+                  "solution": "求和 x 得 21，c=1/21；平方和 91，期望 13/3。4 和 5 处累积概率为 10/21 与 15/21，故中位数 5。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
                   ]
                 }
               }
@@ -7523,12 +11091,17 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0119"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 5"
                 }
               ],
               "verification": [
                 "Exchangeable gaps or the minimum-order-statistic formula $(52+1)/(4+1)$."
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "均匀洗匀一副不含大小王的52张牌，不放回依次抽到第一张A为止，含A那次共抽几次的期望是多少？",
@@ -8774,6 +12347,386 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "4.5:random-stake-at-first-tail",
+              "title": "Random Stake at First Tail",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Each independent round draws a stake uniformly from {1,2}, independently of a coin with head chance p<1. A head adds the stake and continues; the first tail subtracts its stake and ends play. Find the net mean and variance.",
+              "solution": "Let K count preceding heads. E K=p/(1−p), Var K=p/(1−p)². Given K, the payoff has mean (3/2)(K−1) and variance (K+1)/4. Hence E Y=3(2p−1)/(2(1−p)) and Var Y=1/(4(1−p))+9p/(4(1−p)²).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:random-stake-at-first-tail",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "首次反面前的随机赌注",
+                  "statement": "每轮独立均匀抽赌注 1 或 2，再独立抛正面率 p<1 的币。正面加赌注并继续，首次反面减去该轮赌注后结束。求净收益均值和方差。",
+                  "hint": "",
+                  "solution": "令 K 为停止前正面数，其均值 p/(1−p)、方差 p/(1−p)²。给定 K，收益均值为 (3/2)(K−1)，方差 (K+1)/4。故 E Y=3(2p−1)/(2(1−p))，Var Y=1/(4(1−p))+9p/(4(1−p)²)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:expected-permutation-cycles",
+              "title": "Expected Permutation Cycles",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Twenty people randomly receive the twenty distinct name labels. Viewing the assignments as a permutation, find the expected number of cycles.",
+              "solution": "For a specified k-person subset, (k−1)! circular orders make it a single cycle, and (20−k)! permutations remain. Sum its indicator over all k-subsets to get 1/k expected cycles of length k. Sum k=1,…,20 to get H₂₀.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:expected-permutation-cycles",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-011/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "随机排列的循环个数",
+                  "statement": "20 人随机各领一张互异姓名标签。把配对视为排列，求循环数期望。",
+                  "hint": "",
+                  "solution": "固定 k 人子集，有 (k−1)! 种成环顺序，其余有 (20−k)! 种排列。对所有 k 元子集的指示变量求和，长度 k 的循环期望为 1/k。合计得 H₂₀。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:st-petersburg-payout",
+              "title": "St Petersburg Payout",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "A fair coin is tossed until its first head at toss N, paying 2^(N−1). Find the mean and the left-continuous inverse-CDF 99th percentile. Define the maximum price for log utility with initial wealth W>0.",
+              "solution": "The expected contribution at each n≥1 is 1/2, so the mean diverges. P(N≤n)=1−2^(−n); n=7 is first reaching 0.99, giving 64. Define willingness to pay as the supremum of prices c with W−c+1>0 and E log(W−c+2^(N−1))≥log W. The expectation is finite for such prices since log payout grows only linearly in N; the worst case forces the strict domain restriction.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:st-petersburg-payout",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "圣彼得堡奖金",
+                  "statement": "公平币首次正面在第 N 次，奖金 2^(N−1)。求期望和按最小满足 CDF≥0.99 的 99% 分位数。初始财富 W>0、对数效用下怎样定义最高票价？",
+                  "hint": "",
+                  "solution": "第 n 项对期望的贡献恒为 1/2，故发散。P(N≤n)=1−2^(−n)，首次达到 0.99 在 n=7，奖金为 64。最高愿付价为满足 W−c+1>0 且 E log(W−c+2^(N−1))≥log W 的 c 的上确界。对数奖金仅随 N 线性增长，故定义域内期望有限；最差结果决定严格正财富约束。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:parallel-exponential-lifetimes",
+              "title": "Parallel Exponential Lifetimes",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Compute the mean of an exponential lifetime with rate λ. Two such independent bulbs start together; find the mean time until both fail.",
+              "solution": "Integrate survival e^(−λt) to obtain 1/λ. The minimum of the two has survival e^(−2λt), hence mean 1/(2λ). Their sum equals minimum plus maximum, so the maximum mean is 3/(2λ).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:parallel-exponential-lifetimes",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-018/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "两只灯泡的并联系统寿命",
+                  "statement": "寿命为速率 λ 的指数变量，求其均值。两只独立同分布灯泡同时点亮，求两只都坏时的期望时间。",
+                  "hint": "",
+                  "solution": "对生存函数 e^(−λt) 积分得 1/λ。两寿命最小值生存函数 e^(−2λt)，均值 1/(2λ)。两寿命之和等于最小值加最大值，因此最大值均值 3/(2λ)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:first-head-entry-price",
+              "title": "First Head Entry Price",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "A fair coin game pays N, the toss count to the first head. With no discounting, give the risk-neutral price by two methods.",
+              "solution": "The tail sum is E N=Σ_(k≥0)2^(−k)=2. Alternatively first-step analysis gives E N=1+E N/2, so again 2. Zero expected net payoff requires the entry price equal the expected prize.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:first-head-entry-price",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-023/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "首次正面的公平入场费",
+                  "statement": "首次正面在第 N 次，奖金为 N。无折现下，用两种方法求风险中性价格。",
+                  "hint": "",
+                  "solution": "尾和 E N=Σ_(k≥0)2^(−k)=2。也可首步分解 E N=1+E N/2，仍得 2。公平入场费等于期望奖金。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:compounded-price-bets",
+              "title": "Compounded Price Bets",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Price independently moves by ±5% with equal probabilities for 100 days. Compare the profit probabilities and expected P&L of fixed-unit long and short positions.",
+              "solution": "With U up days the gross return is 1.05^U .95^(100−U). The threshold U>−100 log(.95)/log(1.05/.95) is U≥52. The short wins for U≤51 and is more likely to win by binomial symmetry. Independence and a mean-one daily multiplier give zero expected P&L for both.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:compounded-price-bets",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-020/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "复利涨跌下注",
+                  "statement": "价格独立等概率涨跌 5%，连续 100 天。比较固定一单位多头和空头的盈利概率与期望盈亏。",
+                  "hint": "",
+                  "solution": "上涨 U 天时总倍率为 1.05^U .95^(100−U)。解大于 1 得 U≥52；空头在 U≤51 时盈利，由二项分布对称性可知空头胜率更高。独立日倍率均值为 1，两者期望盈亏均为零。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:known-deck-betting",
+              "title": "Known Deck Betting",
+              "difficulty": "hard",
+              "tags": [
+                "probability"
+              ],
+              "statement": "A shuffled deck has x red and y black cards. Each round bet up to current wealth on a color at even odds. Find the optimal expected terminal wealth and a strategy with deterministic terminal wealth, including x=2,y=1.",
+              "solution": "Let F be the value per dollar. The two successor weighted values are equal when F(x,y)=2^(x+y)/C(x+y,x), by the binomial recurrence, so any admissible stake is optimal in expectation. Stake signed fraction (x−y)/(x+y) on red: either new bankroll multiplied by its successor F equals old wealth times F. Thus terminal wealth is W₀F, e.g. 8W₀/3 for 2,1.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:known-deck-betting",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "已知牌数下注",
+                  "statement": "洗匀 x 张红牌和 y 张黑牌，每次可按一赔一规则用至多全部资金押颜色。求最优期望终值和终值确定的策略，演示 x=2,y=1。",
+                  "hint": "",
+                  "solution": "设 F 为每元资金的最优价值。F(x,y)=2^(x+y)/C(x+y,x) 使两个后继加权价值相等，由二项递推可验证，所以任何合法下注期望均最优。押红的有符号比例取 (x−y)/(x+y)，无论颜色如何，新资金乘后继 F 都等于原资金乘 F。终值恒为 W₀F，2 红 1 黑时为 8W₀/3。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:two-coin-cashout",
+              "title": "Two Coin Cashout",
+              "difficulty": "hard",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Each round two fair coins are tossed. Mixed faces add $1, doubles add nothing, and seeing both HH and TT forfeits all winnings. Find optimal cashout decisions starting at zero.",
+              "solution": "After one double has occurred, continuing at balance b then stopping has expected change .5−.25b, so stop at b≥2 (indifferent at 2). The threshold is valid by backward induction on a finite horizon, then passage to the limit since survival decays geometrically and balances grow at most linearly. In the one-double state V(1)=1.5 and V(0)=1, solving .75V(b)=.5V(b+1) for b=0,1. Before any double, wait until one occurs: there is no forfeiture and balance never decreases. The number K of mixed results before that is geometric with P(K=k)=2^(−k−1). Thus E[V(K)]=.5×1+.25×1.5+.75=13/8.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:two-coin-cashout",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "双硬币退出策略",
+                  "statement": "每轮抛两枚公平硬币，异面奖金加 1，同面不加；两种同面均已出现时奖金归零并结束。求从零开始的最优退出策略。",
+                  "hint": "",
+                  "solution": "出现一种同面后，余额 b 再玩一轮就停的期望增量为 .5−.25b，故 b≥2 时停（2 时无差异）。有限期倒推可证门槛，存活概率按几何下降、余额至多线性增长，故可取极限。此状态 V(1)=1.5、V(0)=1，由 .75V(b)=.5V(b+1) 得到。首次同面前没有清零风险，余额不减，故等到首次同面。此前异面次数 K 满足 P(K=k)=2^(−k−1)，故 E[V(K)]=.5×1+.25×1.5+.75=13/8。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:mixed-adjacent-seats",
+              "title": "Mixed Adjacent Seats",
+              "difficulty": "easy",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Seat eight men and seven women randomly in a row or a circle. Find the expected number of mixed adjacent pairs.",
+              "solution": "Each fixed undirected edge is mixed with probability 2·8·7/(15·14)=8/15. Multiply by 14 or 15 edges to obtain 112/15 and 8.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:mixed-adjacent-seats",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 10"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "异性相邻座位",
+                  "statement": "八男七女随机坐一排或一圈，求异性相邻对数的期望。",
+                  "hint": "",
+                  "solution": "每条固定无向边的异性概率 2·8·7/(15·14)=8/15。分别乘 14、15 条边，得 112/15、8。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:bonus-turnover-bet",
+              "title": "Bonus Turnover Bet",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Deposit 1000 to get 2000 chips. A fair coin bet X returns 1.4X on success, zero otherwise. After cumulative stakes strictly exceed 4000, withdraw full balance; before that subtract the 1000 bonus. Does any strategy beat 1000 in expected cash withdrawal?",
+              "solution": "Yes. Bet 2000 first; if it wins, balance is 2800 and turnover 2000. Bet 2001 next, which fits the balance and clears the threshold on either result. Conditional expected balance is 2800−.3·2001=2199.7; first loss gives zero, so expected withdrawal is 1099.85. Fractional payouts are allowed; betting 2010 gives the same strict conclusion even if whole-chip payouts are desired.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.5:bonus-turnover-bet",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiwei/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "赠送筹码流水下注",
+                  "statement": "存入 1000 得 2000 筹码，公平硬币押 X，猜中总返 1.4X，猜错为零。流水严格超过 4000 后全额提现，此前扣赠送的 1000。是否有提现期望超过 1000 的策略？",
+                  "hint": "",
+                  "solution": "有。首押 2000，若赢余额 2800、流水 2000。再押 2001，余额够且无论胜负均过流水门槛。条件期望为 2800−.3×2001=2199.7，首输时为零，故提现期望 1099.85。若希望赔付保持整筹码，可改押 2010，仍严格正期望。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -8835,7 +12788,7 @@ window.QUANT_DATA = {
                 "covariance",
                 "correlation"
               ],
-              "statement": "$X_1, X_2$ i.i.d. $U[0,1]$. Let $Y = \\min(X_1,X_2)$ and $Z = \\max(X_1,X_2)$. What is the correlation of $Y$ and $Z$?",
+              "statement": "$X_1, X_2$ i.i.d. $U[0,1]$. Let $Y = \\min(X_1,X_2)$ and $Z = \\max(X_1,X_2)$. What is the correlation of $Y$ and $Z$?\n\nAlso find their covariance.",
               "hint": "Get the marginal densities of $Y$ and $Z$ for $n=2$, then compute $E[YZ]$ using $YZ = X_1 X_2$.",
               "solution": "Plan: get the means and variances of the min $Y$ and max $Z$, then their covariance, then divide. The one clever shortcut is for $E[YZ]$.\n\n**Densities for $n=2$** (from the max/min cdfs): $f_Y(y) = 2(1-y)$ and $f_Z(z) = 2z$. So $E[Y]=\\tfrac13$, $E[Z]=\\tfrac23$, and\n$$E[Y^2] = \\int_0^1 y^2\\cdot 2(1-y)\\,dy = \\tfrac16 \\Rightarrow \\mathrm{Var}(Y) = \\tfrac16 - \\tfrac19 = \\tfrac{1}{18},$$\n$$E[Z^2] = \\int_0^1 z^2\\cdot 2z\\,dz = \\tfrac12 \\Rightarrow \\mathrm{Var}(Z) = \\tfrac12 - \\tfrac49 = \\tfrac{1}{18}.$$\n\n**The shortcut for $E[YZ]$:** the min times the max equals the product of the *original* two values — $\\min\\cdot\\max = X_1 X_2$ — so no integral is needed:\n$$E[YZ] = E[X_1]E[X_2] = \\tfrac12\\cdot\\tfrac12 = \\tfrac14.$$\n\nThen $\\mathrm{Cov}(Y,Z) = \\tfrac14 - \\tfrac13\\cdot\\tfrac23 = \\tfrac{1}{36}$, and\n$$\\mathrm{corr}(Y,Z) = \\frac{1/36}{\\sqrt{(1/18)(1/18)}} = \\frac{1}{2}.$$\n\nThe positive $+\\tfrac12$ makes sense: a large minimum drags the maximum up with it, so they move together.",
               "keyIdea": "Use $\\min\\cdot\\max = X_1X_2$ to get $E[YZ]$ for free; the positive correlation ($1/2$) reflects that a large min forces a large max.",
@@ -8850,13 +12803,23 @@ window.QUANT_DATA = {
                   "type": "upstream",
                   "reference": "https://github.com/ellenzishanli/quant_interview_trainer/blob/f0192f17bf602457d0a8f43857e83304b56d7771/data/problems.js",
                   "locator": "4.6 / Correlation of Max and Min"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 4"
                 }
               ],
-              "revision": 2,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "title": "两样本极值相关",
-                  "statement": "两个独立U(0,1)变量，令Y为较小值、Z为较大值，求Corr(Y,Z)。",
+                  "statement": "两个独立U(0,1)变量，令Y为较小值、Z为较大值，求Corr(Y,Z)。\n\n另求最小值与最大值的协方差。",
                   "solution": "密度分别为2(1-y)、2z，得E[Y]=1/3、E[Z]=2/3，两方差均1/18。由YZ=X₁X₂，E[YZ]=1/4，协方差1/4-2/9=1/36。因此相关系数(1/36)/(1/18)=1/2。",
                   "hint": "利用最小值乘最大值等于原两数之积。",
                   "keyIdea": "乘积恒等式省去联合密度积分。",
@@ -9034,6 +12997,239 @@ window.QUANT_DATA = {
                   "tags": [
                     "无放回抽样",
                     "次序统计量"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.6:first-descent-of-uniform-samples",
+              "title": "First Descent of Uniform Samples",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Draw iid uniform numbers. Stop at the first observation smaller than its predecessor. Count the stopping observation and find the expected number.",
+              "solution": "For n≥1, surviving n draws means the first n values are strictly increasing, which has probability 1/n! by exchangeable orders and no ties. Include P(N>0)=1 in the tail sum; E N=e.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.6:first-descent-of-uniform-samples",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "均匀抽样首次下降",
+                  "statement": "连续独立均匀抽样，首次新值低于前一个时停止，计入终止那次，求期望抽样数。",
+                  "hint": "",
+                  "solution": "n≥1 时，抽完 n 次仍未停止当且仅当前 n 项严格递增；无并列且相对次序等可能，概率 1/n!。加上 P(N>0)=1，尾和为 e。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.6:ten-minute-common-meeting",
+              "title": "Ten-Minute Common Meeting",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "N independent uniform arrivals in one hour each stay ten minutes, possibly past the hour. Find the common meeting probability; evaluate N=3 and describe a simulation.",
+              "solution": "Scale to unit time; let h=1/6. For a unique earliest arrival x, the other N−1 points must fall in [x,min(1,x+h)]. Integrating N times that interval length to power N−1 gives Nh^(N−1)−(N−1)h^N, also 1 for N=1. At N=3 it is 2/27. Simulate iid uniforms and average the indicator max−min≤h; its Monte Carlo standard error is √(p(1−p)/trials).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.6:ten-minute-common-meeting",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-024/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-024/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "十分钟停留的多人会合",
+                  "statement": "N 人独立均匀在一小时内到达，各停十分钟，可跨整点。求共同在场概率、三人特例及模拟方法。",
+                  "hint": "",
+                  "solution": "缩放到单位区间，h=1/6。唯一最早者在 x，其余 N−1 人都须在 [x,min(1,x+h)]。对该区间长度的 N−1 次方积分并乘 N，得 Nh^(N−1)−(N−1)h^N，N=1 也为 1。三人时为 2/27。模拟时反复独立取样，平均 max−min≤h 的指示量，标准误约 √(p(1−p)/试验数)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.6:replacing-the-lowest-card",
+              "title": "Replacing the Lowest Card",
+              "difficulty": "medium",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Draw three cards from a standard deck with ranks 1–13. Replace a lowest card by one random draw, either returning the removed card before replacement or discarding it. Find both expected totals.",
+              "solution": "The original sum has mean 21. The minimum M has mean Σ_(k=1)^13 C(56−4k,3)/C(52,3)=63/17. After returning it, remaining total expected rank is 364−(21−E M) over 50 cards, so final expectation is 10297/425. Without return the remaining sum has mean 343 over 49 cards, hence final expectation 413/17.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.6:replacing-the-lowest-card",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 10"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "换掉最小点数牌",
+                  "statement": "标准牌点数 1–13，先抽三张，把一张最低点数的换成补抽牌。分别在最低牌放回与不放回时求最终点数期望。",
+                  "hint": "",
+                  "solution": "原三张期望和 21。最小 M 的尾和为 Σ_(k=1)^13 C(56−4k,3)/C(52,3)=63/17。放回后 50 张剩余期望总和为 364−(21−E M)，故最终期望 10297/425。不放回时 49 张期望总和 343，故最终期望 413/17。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.6:first-rise-minimum",
+              "title": "First Rise Minimum",
+              "difficulty": "hard",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Draw IID U(0,1) until the first nondecrease after a draw. Find the expected total count and the expected minimum of all observed values.",
+              "solution": "For k≥1, P(N>k)=1/k! by exchangeable ranks, so E N=e. With a=1−x, the chance that N=k+1 and all values exceed x equals a^(k+1) k/(k+1)!: the first k must descend and the final is any rank except the smallest. Summing over k gives (a−1)e^a+1; integrating over x gives 3−e.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.6:first-rise-minimum",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 12"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "首次上升与最小值",
+                  "statement": "独立 U(0,1) 抽样，首次不再下降时停止。求总抽样数和所有已观察值最小值的期望。",
+                  "hint": "",
+                  "solution": "k≥1 时 P(N>k)=1/k!，因为前 k 项须严格下降，所以 E N=e。令 a=1−x，N=k+1 且全大于 x 的概率为 a^(k+1)k/(k+1)!：前 k 项降序，末项秩可以是最小以外任意一个。求和得 (a−1)e^a+1，对 x 积分得 3−e。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.6:longest-random-spacing",
+              "title": "Longest Random Spacing",
+              "difficulty": "hard",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Cut a unit segment at n−1 independent uniform points. Find the expected largest of n lengths.",
+              "solution": "The spacings are uniform on the simplex by the ordered-cut density. For any k specified spacings exceeding x the probability is (1−kx)_+^(n−1), from translation and scaling. Inclusion–exclusion and integrating the tail give Σ_(k=1)^n (−1)^(k+1)C(n,k)/(nk)=H_n/n. The sum identity follows by integrating [1−(1−t)^n]/t on [0,1]. n=1 gives one directly.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.6:longest-random-spacing",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 18"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "随机切分最长段",
+                  "statement": "单位线段以 n−1 个独立均匀点切成 n 段，求最长段期望。",
+                  "hint": "",
+                  "solution": "切点排序后密度恒定，段长在单纯形均匀。指定 k 段都大于 x 的概率由平移缩放得 (1−kx)_+^(n−1)。容斥并积分尾概率得 Σ_(k=1)^n (−1)^(k+1)C(n,k)/(nk)=H_n/n，恒等式可对 [1−(1−t)^n]/t 从 0 到 1 积分证明。n=1 直接为一。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.6:last-straw-weight",
+              "title": "Last Straw Weight",
+              "difficulty": "hard",
+              "tags": [
+                "probability"
+              ],
+              "statement": "Independent uniform [0,1] weights are added until the cumulative weight exceeds one. Find the expected last weight.",
+              "solution": "For t prior draws with sum s≤1, the next draw contributes ∫_(1−s)^1 x dx=s−s²/2 to the unconditional expectation. The t-fold sum density on [0,1] is s^(t−1)/(t−1)! by simplex volume. Sum over t≥1 (the first draw cannot cross) to integrate (s−s²/2)e^s on [0,1], giving 2−e/2. Equivalently the last weight's density at x is ∫_(1−x)^1 e^s ds=e−e^(1−x), favoring heavier draws.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "4.6:last-straw-weight",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-second/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最后一根稻草的重量",
+                  "statement": "独立均匀 [0,1] 重量依次相加，首次累计超过一时停止。求最后一根重量期望。",
+                  "hint": "",
+                  "solution": "若此前 t 项和 s≤1，下一项对期望贡献 ∫_(1−s)^1 x dx=s−s²/2。由单纯形体积，t 项和在 [0,1] 的密度为 s^(t−1)/(t−1)!。对 t≥1 求和（首根无法越界），得到 ∫₀¹(s−s²/2)e^s ds=2−e/2。最后一根在 x 的密度是 ∫_(1−x)^1 e^s ds=e−e^(1−x)，较大值更可能成为最后一根。",
+                  "keyIdea": "",
+                  "tags": [
+                    "概率"
                   ]
                 }
               }
@@ -9622,6 +13818,664 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "5.1:coin-walk-to-plus-or-minus-three",
+              "title": "Coin Walk to Plus or Minus Three",
+              "difficulty": "hard",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Independent tosses with head chance p move a walk ±1 from zero until it hits ±3. Entry costs one; hitting +3 pays a and hitting −3 zero. Find fair a, the gross claim value immediately after a head, and mean toss count.",
+              "solution": "Shift to states 0,…,6, starting at i=3; after a head i=4. For 0<p<1 set r=(1−p)/p. Solving h_i=p h_(i+1)+(1−p)h_(i−1) with endpoints 0,1 gives h_i=(1−r^i)/(1−r^6) when p≠1/2 and i/6 otherwise. Thus a=1/h₃ and claim value h₄/h₃. For p≠1/2, bounded-step stopping gives E T=(6h₃−3)/(2p−1); at p=1/2 solve the second-difference equation to get i(6−i)=9 at i=3. Absorption is integrable since any six successive heads suffice. p=1 gives a=1 and T=3; p=0 has no finite fair prize.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:coin-walk-to-plus-or-minus-three",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "偏币正反差到正负三",
+                  "statement": "正面率 p 的独立抛掷从 0 走 ±1，到 ±3 停。入场费 1，到 +3 付 a、到 −3 付零。求公平 a、首抛正面后的毛奖金权价值，以及平均次数。",
+                  "hint": "",
+                  "solution": "平移为 0 至 6，初始 i=3，首个正面后 i=4。令 r=(1−p)/p。解命中概率递推及边界 h₀=0、h₆=1：p≠1/2 时 h_i=(1−r^i)/(1−r^6)，公平币时 i/6。故 a=1/h₃，正面后的毛奖金权值为 h₄/h₃。偏币时用有界增量停时得 E T=(6h₃−3)/(2p−1)；公平币的二阶差分给 i(6−i)，初值处为 9。连续六次正面足以保证吸收，因此 0<p<1 时有有限均值。p=1 时 a=1、T=3；p=0 无有限公平奖金。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:waiting-for-a-run",
+              "title": "Waiting for a Run",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Independent trials succeed with probability p>0. Find the mean waiting time for k consecutive successes; evaluate three heads of a fair coin and one or two occurrences of a specified die face in a row. If the fair-coin game pays its toss count, give the undiscounted fair price.",
+              "solution": "Let E_j be remaining time after j consecutive successes; E_k=0 and E_j=1+p E_(j+1)+(1−p)E₀. Unrolling gives E₀=(1−p^k)/((1−p)p^k), or k when p=1. Three heads gives 14, also the fair price; the die cases give 6 and 42. Overlapping candidate windows and partial progress make p^(−k) insufficient.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:waiting-for-a-run",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-023/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiukun-2/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "等待连续成功",
+                  "statement": "每次独立成功概率 p>0。求连续 k 次成功的平均等待时间，算公平币三连正面以及公平骰指定点数一连、二连。若公平币局奖金等于次数，求无折现公平价。",
+                  "hint": "",
+                  "solution": "E_j 表示已有 j 连成功后的剩余时间。E_k=0，E_j=1+p E_(j+1)+(1−p)E₀。展开得 E₀=(1−p^k)/((1−p)p^k)，p=1 时为 k。三连正面为 14，也是公平价；指定骰点一连、二连分别为 6、42。候选窗重叠且进度会重置，不能只取 p^(−k)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:finite-exit-time-by-blocks",
+              "title": "Finite Exit Time by Blocks",
+              "difficulty": "easy",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "A walk inside integer interval [0,100] moves left with probability p>1/2, otherwise right, and stops at either endpoint. Prove almost sure exit and bound the mean.",
+              "solution": "Pre-generate increments even after absorption. A block of 100 consecutive left steps, with probability p^100, guarantees exit by its end regardless of the starting interior state. Independent blocks give P(T>100k)≤(1−p^100)^k and E T≤100/p^100.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:finite-exit-time-by-blocks",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-045/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "分块证明退出时间有限",
+                  "statement": "整数区间 [0,100] 内随机游走每步以 p>1/2 左移，否则右移，到端点停止。证明几乎必然退出并给均值上界。",
+                  "hint": "",
+                  "solution": "可预先生成包括吸收后的增量。每个长度 100 的块若全向左（概率 p^100），从任何内部状态出发均在块末前退出。块独立，P(T>100k)≤(1−p^100)^k，故 E T≤100/p^100。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:ruin-boundary-examples",
+              "title": "Ruin Boundary Examples",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "For a ±1 walk started at i between 0 and M, derive the upper-hit chance. Evaluate fair i=49,M=100 (lower hit); fair i=10,M=30 including time; and p=2/3,i=1 for M=3,5,6.",
+              "solution": "The harmonic difference equation gives h_i=i/M at p=1/2 and (1−r^i)/(1−r^M) otherwise, r=(1−p)/p. Fair mean time solves T_i=1+(T_(i−1)+T_(i+1))/2 and vanishes at endpoints, yielding i(M−i). Results: lower hit 51/100; upper hit 1/3 with 200 rounds; biased upper hits 4/7,16/31,32/63 respectively. Target net gain five from one means M=6.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:ruin-boundary-examples",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-045/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-027/",
+                  "locator": "Question 4"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 17"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-hande/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "赌徒破产的边界实例",
+                  "statement": "±1 游走从 i 出发在 0、M 吸收，推导先到上界概率。计算公平币 i=49,M=100 的下界概率，公平币 i=10,M=30 的上界概率与耗时，及 p=2/3,i=1,M=3、5、6。",
+                  "hint": "",
+                  "solution": "命中概率解齐次差分：公平时 h_i=i/M，否则 (1−r^i)/(1−r^M)，r=(1−p)/p。公平耗时解 T_i=1+(T_(i−1)+T_(i+1))/2、端点为零，得 i(M−i)。依次为下界 51/100；上界 1/3、平均 200 局；偏币上界 4/7、16/31、32/63。初始 1 元净赚 5 元对应 M=6。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:last-new-vertex-on-a-cycle",
+              "title": "Last New Vertex on a Cycle",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "On an undirected cycle start at zero and take fair nearest-neighbor steps. Find the last-new-vertex distribution. Evaluate vertex 50 of a 101-cycle and identify the most likely position in an 8-cycle.",
+              "solution": "Fix a candidate v≠0 and cut the cycle there, treating its two copies as absorbing endpoints of a length-n path. To leave v last, visit both endpoint neighbors before absorption. Starting at distance x from one end, first hit one of the two inner ends; from either, probability of reaching the opposite inner end before its adjacent absorbing endpoint is 1/(n−1) by fair gambler’s ruin. Thus all n−1 candidates are uniform: 1/100 or 1/7.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:last-new-vertex-on-a-cycle",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-045/",
+                  "locator": "Question 5"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 19"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "圆环随机游走最后访问点",
+                  "statement": "圆环上从 0 出发，等概率走左右邻点。求最后首次访问点的分布，计算 101 点时的 50，并判断 8 点环上哪处概率最大。",
+                  "hint": "",
+                  "solution": "固定候选 v≠0，在 v 处剪开成长度 n 的线段，v 的两个副本为吸收端。要把 v 留到最后，必须先访问两端的内邻点。先到其中任一内邻点后，在邻近吸收端前到达另一个内邻点的概率，按公平破产公式为 1/(n−1)。所以所有 n−1 个候选等可能，分别为 1/100、1/7。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:knight-return-to-a-corner",
+              "title": "Knight Return to a Corner",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "A knight on a 4×4 board chooses each legal move uniformly. Starting at a corner, find expected first positive return time.",
+              "solution": "Its undirected move graph is connected (breadth-first search from the corner reaches all 16 cells). Degree is 2 at four corners, 3 at eight other boundary cells and 4 at four central cells, summing to 48. The degree-proportional stationary mass of the corner is 2/48. The finite irreducible chain return-time formula gives 24; periodicity does not affect that formula.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:knight-return-to-a-corner",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-027/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "马在四阶棋盘返回角点",
+                  "statement": "马在 4×4 棋盘上每步均匀选合法马步。从角点出发，求首次正时间返回的期望。",
+                  "hint": "",
+                  "solution": "无向马步图连通，从角点广搜可达 16 格。四角度 2，八个非角边格度 3，四个中心格度 4，度和 48。角点平稳概率 2/48；有限不可约链的回归时间公式得 24，周期性不妨碍该公式。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:dice-sum-residue-return",
+              "title": "Dice Sum Residue Return",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Start at residue zero and add independent fair six-sided rolls. Find expected first positive return to zero modulo 5 and modulo 6.",
+              "solution": "In either cyclic group, adding independent increments preserves the uniform distribution because each increment acts as a permutation. The possible increment 1 makes the chain irreducible. The mean positive return is the reciprocal of stationary mass at zero: 5 and 6.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:dice-sum-residue-return",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-028/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "骰子累计余数首次归零",
+                  "statement": "从余数零出发，逐次加独立公平六面骰点数。分别在模 5 与模 6 下求首次正时间回零的期望。",
+                  "hint": "",
+                  "solution": "每个增量在循环群上都是置换，所以均匀分布平稳。增量 1 可达所有状态，故不可约。平均正回归时间等于零点平稳概率的倒数，即 5、6。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:partial-replacement-urn",
+              "title": "Partial Replacement Urn",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Draw three times from an urn initially holding three red and two yellow balls. Replace reds but remove yellows. Find the expected number of removed yellows.",
+              "solution": "Let E(t,k) count expected removals with t draws and k yellows left. E(0,k)=E(t,0)=0 and E(t,k)=(3E(t−1,k)+k(1+E(t−1,k−1)))/(3+k). Thus E(2,1)=7/16, E(2,2)=37/50, and E(3,2)=1019/1000.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:partial-replacement-urn",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 9"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "红球放回黄球不放回",
+                  "statement": "盒中三红两黄，抽三次；红放回、黄取走。求取走黄球数的期望。",
+                  "hint": "",
+                  "solution": "令 E(t,k) 为剩 t 次、k 个黄球时的期望。边界 t=0 或 k=0 为零；递推 E(t,k)=(3E(t−1,k)+k(1+E(t−1,k−1)))/(3+k)。E(2,1)=7/16、E(2,2)=37/50，因此 E(3,2)=1019/1000。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:pattern-waiting-times",
+              "title": "Pattern Waiting Times",
+              "difficulty": "hard",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Find the expected waiting time for any binary pattern in fair coin tosses; evaluate HHH and HHHHTTTT.",
+              "solution": "Sum 2^j over all nonempty lengths j where the prefix equals the suffix, including the full length. Start a new unit-wealth bettor before each toss who parlays fair odds along the target. At completion, surviving bets correspond exactly to those borders and each pays 2^j. Expected total terminal payout equals expected number of bettors, by fair odds and geometric tail bounds from disjoint blocks. HHH gives 14; HHHHTTTT has no proper border and gives 256.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:pattern-waiting-times",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-023/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "模式等待时间",
+                  "statement": "求公平硬币任意模式的首次等待期望，计算 HHH 与 HHHHTTTT。",
+                  "hint": "",
+                  "solution": "对前缀等于后缀的每个非空长度 j（含全长）求和 2^j。每次投前加入一元赌客，沿目标模式把盈利滚投。首次匹配时仍存活者恰对应这些前后缀，分别获 2^j。由公平下注和不相交整块给出的几何尾界，终止总支付期望等于赌客数期望。HHH 得 14，HHHHTTTT 没有真前后缀，得 256。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:alternating-ht-race",
+              "title": "Alternating HT Race",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "A and B alternate tossing, A first, with heads probability p. The person who completes the first HT wins. Compute A's chance at p=2/3 and determine if it can equal one half.",
+              "solution": "The time is the sum of independent geometric waits for first H and then first T. With geometric parameter s, E[(-1)^G]=−s/(2−s). A wins on odd total time, so its chance is [1−p(1−p)/((2−p)(1+p))]/2, giving 9/20 at p=2/3. The product is strictly positive for 0<p<1, so there is no fair interior p.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:alternating-ht-race",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-030/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "轮流等待正反",
+                  "statement": "甲先乙后轮流投币，正面概率 p，首次完成 HT 的人赢。求 p=2/3 时甲的胜率，并判断能否达到 1/2。",
+                  "hint": "",
+                  "solution": "停止时间是首次 H 与其后首次 T 的两个独立几何等待之和。参数 s 的几何变量满足 E[(-1)^G]=−s/(2−s)。甲在奇数轮赢，概率为 [1−p(1−p)/((2−p)(1+p))]/2，代 p=2/3 得 9/20。区间内乘积为正，无法公平。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:normal-draw-stopping",
+              "title": "Normal Draw Stopping",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Observe at most N IID N(μ,σ²) draws, accepting one or being forced to accept the last. Maximize expected accepted value.",
+              "solution": "V₁=μ. With k draws remaining, accept X≥V_(k−1); otherwise the continuation is worth V_(k−1). For z=(V_(k−1)−μ)/σ, V_k=V_(k−1)Φ(z)+μ[1−Φ(z)]+σφ(z), by integrating the upper normal tail.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:normal-draw-stopping",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "正态抽样最优停止",
+                  "statement": "最多观察 N 次独立 N(μ,σ²) 样本，可接受当前或继续，最后必须接受。求最大期望和策略。",
+                  "hint": "",
+                  "solution": "V₁=μ，剩 k 次时在 X≥V_(k−1) 接受，否则继续。令 z=(V_(k−1)−μ)/σ，积分正态上尾得到 V_k=V_(k−1)Φ(z)+μ[1−Φ(z)]+σφ(z)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:upgrade-hitting-time",
+              "title": "Upgrade Hitting Time",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Reach level 15 from 0. Each attempt costs one; with probability one half rise one level, otherwise stay at levels 0–9 or drop a level at levels 10–14. Find expected cost.",
+              "solution": "Let E_i be remaining cost and d_i=E_i−E_(i+1). First-step equations give d_i=2 below 10 and d_i=2+d_(i−1) above, up to 14. Since E_15=0, sum ten copies of 2 and 4+6+8+10+12 to obtain 60.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:upgrade-hitting-time",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "装备升级首达时间",
+                  "statement": "从 0 升到 15，每次花 1 元，概率一半升一级，否则在 0–9 原地、在 10–14 降一级。求期望费用。",
+                  "hint": "",
+                  "solution": "设 E_i 为剩余费用，d_i=E_i−E_(i+1)。一步方程给 10 以下 d_i=2，10 至 14 则 d_i=2+d_(i−1)。由 E_15=0，十个 2 加 4+6+8+10+12，得 60。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:two-toss-stopping-patterns",
+              "title": "Two Toss Stopping Patterns",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "With a fair coin, find the number of tosses expected before completing HT. Separately find the expected number of heads through the first HH, including its final heads.",
+              "solution": "HT waits a mean two tosses for H, then mean two for T; another H still supplies the needed prefix. For HH, let A,B be expected future heads with no pending H or with one. A=.5(1+B)+.5A and B=.5·1+.5A, giving A=3.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:two-toss-stopping-patterns",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-041/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-032/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "两次投掷的停止模式",
+                  "statement": "公平硬币首次出现 HT 的投掷次数期望是多少？另求首次 HH 时累计正面数期望，包含终止的两次正面。",
+                  "hint": "",
+                  "solution": "HT 先等首次 H，均值二，再等 T，均值二；再出 H 仍保留前缀。HH 设 A、B 为没有或已有一个待配 H 时的未来正面期望。A=.5(1+B)+.5A，B=.5·1+.5A，解得 A=3。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:dice-sum-waiting",
+              "title": "Dice Sum Waiting",
+              "difficulty": "hard",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Find the expected rolls until two successive one-die values sum to six. Compare simultaneous two-dice rounds until one or two consecutive six-sums. Also find the chance the first face 6 precedes the first face 5.",
+              "solution": "For previous face 1–5 the expected remaining time is a (same by the equations); for face 6 it is b. Thus a=1+(4a+b)/6, b=1+(5a+b)/6. The initial state is also b=42/5. Simultaneous rolls have success p=5/36; the waits are 1/p=36/5 and (1+p)/p²=1476/25 by a two-state streak recurrence. The first of faces 5 and 6 is symmetric, giving 1/2.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:dice-sum-waiting",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "骰子和的等待时间",
+                  "statement": "求单骰相邻两次点数和为六的等待次数。比较每轮投两骰等待一次、连续两次和为六。另求 6 先于 5 出现的概率。",
+                  "hint": "",
+                  "solution": "前次为 1 至 5 时的余时由方程对称性为 a，前次为 6 时为 b。a=1+(4a+b)/6，b=1+(5a+b)/6。初始同 b=42/5。两骰一轮成功率 p=5/36，一次及连两次的期望为 1/p=36/5、(1+p)/p²=1476/25，后者用连胜状态递推。首次出现 5 或 6 的两种结果对称，概率 1/2。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:countering-hth",
+              "title": "Countering HTH",
+              "difficulty": "hard",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "A chooses HTH, B chooses a different length-three fair-coin pattern. Whichever appears first wins. Find the optimal B pattern and probability.",
+              "solution": "For each candidate, take states consisting of the longest trailing proper prefix of either pattern. Append H or T, paying one for B completion and zero for A completion, otherwise transition to the longest matching suffix. Solve 2v(s)=v(next H)+v(next T) at transient states. HHT is optimal: before the first HT, a prior HH makes HHT win at that first HT; otherwise after HT the remaining prefix is HT and can complete HTH. The state recursion gives HHT probability 2/3 and checking the six other choices proves optimality.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:countering-hth",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-zhuoshi/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "对抗 HTH 的硬币模式",
+                  "statement": "甲选 HTH，乙选另一个长度三的公平硬币模式，先出现者胜。求乙的最优模式和胜率。",
+                  "hint": "",
+                  "solution": "对各候选取两模式的真前缀作状态，记录最长匹配后缀。添 H 或 T，完成乙为一、完成甲为零，其余跳最长后缀。解 2v(s)=v(next H)+v(next T)。最优为 HHT，胜率 2/3；按该递推检验其余六种。直观上首次 HT 之前若已有 HH，此次 HT 即完成 HHT，否则进入可完成 HTH 的 HT 状态。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.1:poisson-at-random-time",
+              "title": "Poisson at Random Time",
+              "difficulty": "easy",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "An independent nonnegative T with mean μ and variance σ² samples a rate-λ Poisson process. Find Cov(T,N(T)) and Var(N(T)).",
+              "solution": "Conditional on T, N(T) has mean and variance λT. Thus Cov(T,N(T))=Cov(T,λT)=λσ² and total variance is E(λT)+Var(λT)=λμ+λ²σ².",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.1:poisson-at-random-time",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 19"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "随机时刻泊松计数",
+                  "statement": "独立非负 T 的均值 μ、方差 σ²，用于观测强度 λ 泊松过程。求 Cov(T,N(T)) 和 Var(N(T))。",
+                  "hint": "",
+                  "solution": "给定 T 后 N(T) 的均值、方差均为 λT，所以协方差 Cov(T,λT)=λσ²，总方差 E(λT)+Var(λT)=λμ+λ²σ²。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -9794,6 +14648,125 @@ window.QUANT_DATA = {
                     "鞅",
                     "期望",
                     "归纳"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.2:fair-games-and-ruin",
+              "title": "Fair Games and Ruin",
+              "difficulty": "hard",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Explain why a fair price multiplying by 1.01 or .99 need not ever rise 10%, even across finitely many uncorrelated assets. Separately, for n independent fair gamblers starting at m and absorbed at zero, find expected casino revenue at round k, its positive-revenue probability and its almost-sure limit. Contrast exactly half winning each round.",
+              "solution": "Price is a nonnegative martingale; the probability of ever reaching 1.1a is at most 1/1.1 by the maximal inequality. The mean log increment is negative, so prices tend to zero almost surely. Independence itself permits simultaneous failure for any finite collection. In the casino, individual wealth stopped at zero is a martingale at finite horizons, so revenue nm minus total wealth has mean zero. Compute the one-person absorbed distribution by nearest-neighbor recursion, convolve n copies, and sum masses below nm. Every gambler reaches zero almost surely, so revenue tends to nm; finite-horizon means do not commute with that limit. Equal winners and losers leave total wealth unchanged per feasible round; odd survivors require an additional rule.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.2:fair-games-and-ruin",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-034/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-034/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "公平过程与破产",
+                  "statement": "解释价格等概率乘 1.01 或 .99 为何可能永远达不到涨 10%，有限个零相关资产是否保证收益。另设 n 个赌客各从 m 开始公平走动、到零停止，求第 k 轮赌场收入期望、正收入概率和几乎处处极限，并比较每轮恰一半人赢。",
+                  "hint": "",
+                  "solution": "价格是非负鞅，由最大不等式触达 1.1a 的概率至多 1/1.1。平均对数增量为负，价格几乎必然趋零。即便独立，有限个资产也可能同时失败。赌场中单个赌客零点吸收的财富在有限期是鞅，故收入 nm 减总财富的期望为零。递推单人吸收分布并卷积 n 次，累加总财富低于 nm 的概率。每个人几乎必然到零，赌场收入趋于 nm；有限期的均值不能与该极限交换。恰一半赢时每个可行回合总财富恒定，剩奇数人时需补规则。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.2:one-sided-random-walk",
+              "title": "One Sided Random Walk",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Starting at zero, a walk moves +1 with probability p and −1 otherwise. With no left boundary, find probability of ever hitting positive integer k.",
+              "solution": "First add an absorbing left boundary −m. Solve the two-point recurrence for hitting k before −m: at zero it is [1−((1−p)/p)^m]/[1−((1−p)/p)^(m+k)] for p≠1/2 in (0,1), and m/(m+k) for fair p. Increase m to infinity; every finite hit is counted eventually. The limit is (p/(1−p))^k when p<1/2, one otherwise, with p=0 giving zero and p=1 one.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.2:one-sided-random-walk",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "单侧随机游走",
+                  "statement": "随机游走从零出发，以 p 右移一格，否则左移一格。左边无限制，求最终到正整数 k 的概率。",
+                  "hint": "",
+                  "solution": "先加左吸收边界 −m。两端值递推在零点为 [1−((1−p)/p)^m]/[1−((1−p)/p)^(m+k)]（0<p<1 且非公平），公平时为 m/(m+k)。令 m 趋无穷，任意有限首达最终均被计入。p<1/2 时极限为 (p/(1−p))^k，其余为一；p=0 为零、p=1 为一。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.2:series-payoff-replication",
+              "title": "Series Payoff Replication",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "With 1000 initial wealth and even odds on every game of a best-of-seven series, replicate 2000 on A series win and zero otherwise. Find first stake.",
+              "solution": "Set terminal values 2000 or zero and working wealth at each score to the average of its successors. Bet half their difference on A, so either result produces its target successor wealth. Values are 2000 times the win probability under a hypothetical fair coin, whether or not actual games are fair. After first A win the fair series win probability is P(Bin(6,1/2)≥3)=42/64; after loss it is 22/64. First stake is 312.50.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.2:series-payoff-replication",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-hande/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "系列赛收益复制",
+                  "statement": "七局四胜制逐场一赔一，初始 1000，要求甲系列赛胜时终值 2000、否则零。求策略和首注。",
+                  "hint": "",
+                  "solution": "终局财富设为 2000 或零，中间各比分取下一局两结果财富的平均。押甲两后继财富差的一半，使任一结果正好进入目标财富。各值等于假想公平硬币胜率乘 2000，与实际赛果概率无关。甲首胜、首负的公平模型胜率分别 42/64、22/64，首注 312.50。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
                   ]
                 }
               }
@@ -10366,6 +15339,310 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "5.3:solid-brick-wall",
+              "title": "Solid Brick Wall",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Count height n width m walls tiled row by row with bricks of lengths 1 through 4, with no vertical joint running through all rows. Evaluate n=2,m=3 and analyze complexity.",
+              "solution": "Let row[0]=1 and row[w]=sum of row[w−j] for valid j=1,…,4. Total walls at width w are T[w]=row[w]^n. Classify nonsolid walls by their first full-height seam at j: the left block is solid and the right arbitrary. Thus solid[w]=T[w]−sum(solid[j]T[w−j],1≤j<w). For n=2, T[1..3]=1,4,16 and solid=1,3,9. O(m²) arithmetic plus m exponentiations, O(m) integer cells.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "5.3:solid-brick-wall",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-017/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "无贯通缝的积木墙",
+                  "statement": "用长 1、2、3、4 的砖逐行铺满高 n 宽 m 的墙，禁止贯通所有行的竖缝。求计数、复杂度及 n=2、m=3 的值。",
+                  "hint": "",
+                  "solution": "设 row[0]=1，row[w] 对末砖长 j=1 至 4 的合法 row[w−j] 求和。任意墙为 T[w]=row[w]^n。按最左贯通缝 j 分类：左块无贯通缝，右块任意，故 solid[w]=T[w]−Σ solid[j]T[w−j]（1≤j<w）。n=2 时宽 1、2、3 的 T 为 1、4、16，无缝数为 1、3、9。除 m 次乘幂外用 O(m²) 次算术及 O(m) 个整数空间。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:longest-common-subsequence",
+              "title": "Longest Common Subsequence",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Find the longest common subsequence length for two strings, and recover one solution. Work through ABCDE and FBDAN and give complexity.",
+              "solution": "Use D[i,j] for prefixes, with empty axes zero. Equal last characters give 1+D[i−1,j−1]; otherwise take max(D[i−1,j],D[i,j−1]). A common subsequence either matches equal last characters or omits at least one unequal last character. Follow an optimal predecessor backward, recording matched characters and reversing them. Example BD, length 2. O(mn) time and table space; length alone needs only two rows.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "5.3:longest-common-subsequence",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 10"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最长公共子序列",
+                  "statement": "求两串最长公共子序列长度，并恢复任意一条。以 ABCDE、FBDAN 为例并分析复杂度。",
+                  "hint": "",
+                  "solution": "D[i,j] 表示两前缀答案，空轴为 0。末字符相等用 1+D[i−1,j−1]，否则取上、左较大值；不等时至少省去一侧末字符。沿最优前驱回溯，记录匹配字符后反转。例子为 BD，长 2。时间与表空间 O(mn)，只求长度可用两行。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:knight-survival-probability",
+              "title": "Knight Survival Probability",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "On an N×N board choose uniformly among all eight knight offsets each step, dying off-board. Starting at (r,c), find survival for K steps, N≤25, K≤100.",
+              "solution": "Start mass one at (r,c). For each of K rounds scatter mass/8 to each legal destination and discard the rest. Sum final mass. The induction invariant is unconditional joint probability of survival and location; dividing by the count of legal destinations would be incorrect. O(KN²) time, O(N²) rolling space.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "5.3:knight-survival-probability",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 10"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "马在棋盘上的存活概率",
+                  "statement": "N×N 棋盘，从 (r,c) 出发，每步从八个马步偏移均匀选，越界即失败。求 K 步存活概率，N≤25、K≤100。",
+                  "hint": "",
+                  "solution": "初始 (r,c) 质量 1，每轮把每格质量的八分之一分给各合法目标，越界部分舍弃。最后求和。不变量是存活且位于该格的无条件概率，不能按合法步数归一。时间 O(KN²)，滚动空间 O(N²)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:red-white-stopping",
+              "title": "Red White Stopping",
+              "difficulty": "hard",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Sample without replacement, earning +1 for red and −1 for white. At least one draw is compulsory. Find optimal expected gain with 3 red and 4 white and the minimum red count for positive gain among 100 balls.",
+              "solution": "At state r,w set C=(r(1+V(r−1,w))+w(−1+V(r,w−1)))/(r+w), dropping zero-weight terms, and V=max(0,C), with V(0,0)=0. Draw precisely if C>0 when allowed to stop. Evaluate states in increasing total by exact fractions; report C initially because drawing is compulsory. C(3,4)=12/35; the first positive C(r,100−r) occurs at r=47.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.3:red-white-stopping",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-034/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "红白球最优停止",
+                  "statement": "无放回抽样，红 +1、白 −1，至少抽一次。求三红四白的最优期望及百球中使期望为正的最少红球数。",
+                  "hint": "",
+                  "solution": "状态 r,w 的继续价值 C=[r(1+V(r−1,w))+w(−1+V(r,w−1))]/(r+w)，零权重项略过，V=max(0,C)，V(0,0)=0。可停时仅在 C>0 继续。按总数递增用有理数计算，初始必须抽取故用 C。C(3,4)=12/35；百球中首次严格为正的红球数为 47。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:fishing-replacement-policy",
+              "title": "Fishing Replacement Policy",
+              "difficulty": "hard",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Over 10 days you may catch one IID U(0,1) fish daily and must finish with three. If holding three, discard a fish before seeing the new one, and keep the replacement. Optimize expected final total.",
+              "solution": "Use V(d,S) for days remaining and sorted retained weights. Terminal V is sum for size three, otherwise infeasible. Compare waiting V(d−1,S) with the integral of V(d−1,sort(S plus x)) when fewer than three, or replacing the smallest when full. That discard dominates other discards by coordinatewise monotonicity of V, proved by induction using coupled draws. If days equal missing slots catching is compulsory. Evaluate the recursion by quadrature on a weight grid, with the optimal expectation V(10,empty).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.3:fishing-replacement-policy",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "捕鱼替换策略",
+                  "statement": "十天内每天可捕一条独立 U(0,1) 重量的鱼，最终须留三条。满仓时必须先放走一条再看新鱼，且必须留下新鱼。求最优期望和策略。",
+                  "hint": "",
+                  "solution": "V(d,S) 表示剩余天数及排序重量，终点三条时为总重，否则不可行。比较等待 V(d−1,S) 和对新重量 x 积分的捕获价值；满三条时替换最轻者。用同一新样本耦合并归纳，V 对各有序重量单调，因此保留较重两条占优。剩余天数等于缺位数时必须捕。可在重量网格上做数值积分，初始期望 V(10,空集)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:seven-candy-strategy",
+              "title": "Seven Candy Strategy",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "From seven candies, a human takes one or two per turn and a robot chooses uniformly from 1…6, taking all if insufficient. Last candy wins. Choose turn order and optimize human win chance.",
+              "solution": "Let H(n),R(n) be human victory chances with human or robot to act. Set H(n)=max over moves of 1 if taking all, else R(n−k); R(n)=Σ_(k=1)^6 1_{k<n}H(n−k)/6. Bottom-up yields H(7)=103/216 and R(7)=59/108, so choose second and follow the maximizing human move at each state.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.3:seven-candy-strategy",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-041/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "七颗糖策略",
+                  "statement": "七颗糖，人每次取一或二，机器人均匀选 1 至 6、不足全取。取最后一颗者胜。求人应选先后手及最大胜率。",
+                  "hint": "",
+                  "solution": "H(n)、R(n) 为轮到人、机器人时人的胜率。H(n) 在取完得 1、否则得 R(n−k) 的可选动作中取最大；R(n)=Σ_(k=1)^6 1_{k<n}H(n−k)/6。自底向上得 H(7)=103/216、R(7)=59/108，应后手并在各状态按 H 的最大项行动。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:three-period-asset-sale",
+              "title": "Three Period Asset Sale",
+              "difficulty": "medium",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Asset increments are +2 or −1 for three periods. First rise chance is 1/2; subsequently it is 1/4 following rise and 3/4 following fall. You may sell after any move and must sell after the third. Optimize expected gain.",
+              "solution": "Track additional value over current price. At time 3 it is zero. At time 2, after rise expected next increment is −1/4 so sell, after fall it is 5/4 so hold. Time 1 continuation values including time 2 decisions are 11/16 after rise and 25/16 after fall, both positive. Therefore hold at time 1, and initial expected total gain is (2−1+11/16+25/16)/2=13/8.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.3:three-period-asset-sale",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-032/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三期资产最优出售",
+                  "statement": "资产三期每次涨 2 或跌 1。首期上涨概率 1/2；此后前次涨则上涨概率 1/4，前次跌则 3/4。每次观察后可售，末期必须售。求最优期望。",
+                  "hint": "",
+                  "solution": "维护相对当前价的附加价值，期末为零。第 2 期后若涨，下期增量期望 −1/4，卖；若跌则为 5/4，持有。第 1 期纳入下一期策略后，涨跌对应继续价值 11/16、25/16，均正，应持有。初始总收益期望 (2−1+11/16+25/16)/2=13/8。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:elevator-pickup-time",
+              "title": "Elevator Pickup Time",
+              "difficulty": "hard",
+              "tags": [
+                "stochastic processes"
+              ],
+              "statement": "Each floor 2…n has one worker. An elevator starts at the top and repeatedly descends then returns empty. With capacity two, each waiting worker independently boards with probability one half when approached with room. Floor transitions cost 2 s, each boarding stop 3 s, and unloading costs 3 s if occupied. Find the ceiling of expected elapsed time until worker m finishes unloading.",
+              "solution": "Let E(S) start at the top with waiting floors S including m; m=1 has value zero. Enumerate each possible picked subset A of size at most two by scanning top down, branching equally on each waiting floor until full. A descent costs d(A)=2(n−1)+3 size(A)+3·1_{A nonempty}. If m∈A, the process ends there; otherwise add return time 2(n−1) and E(S minus A). The empty subset contributes a self-loop; move its coefficient to the left, dividing the remaining cost sum by 1−P(empty). Evaluate in increasing size or memoize and use exact fractions before ceiling.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "5.3:elevator-pickup-time",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-051/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "电梯接送时间",
+                  "statement": "2 至 n 楼各有一名员工，电梯从顶楼反复下降、空载返回。容量二，经过等待楼层且有空位时员工独立以 1/2 上车。每跨一层两秒，每次上客停三秒，有人时下客停三秒。求 m 楼员工完成下梯的期望时间并向上取整。",
+                  "hint": "",
+                  "solution": "令 E(S) 为顶层出发时等待楼层集 S（含 m）的期望，m=1 直接为零。由上向下枚举至多两人的上客集 A，有空位的等待楼层以等概率分支，满员停止分支。下降代价 d(A)=2(n−1)+3×人数+非空时下客 3 秒。m∈A 时结束，否则加返回时间 2(n−1) 与 E(S 去 A)。空集为自环，移项后将其余代价和除以 1−P(空)。按集合大小递增或记忆化，用精确分数后向上取整。",
+                  "keyIdea": "",
+                  "tags": [
+                    "随机过程"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -10606,6 +15883,44 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "6.1:european-option-pricing",
+              "title": "European Option Pricing",
+              "difficulty": "hard",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "Derive the no-dividend Black–Scholes call price and put–call parity. Compare tree, simulation and finite-difference valuation.",
+              "solution": "Assume frictionless continuous trading, geometric Brownian motion, and constant rate and volatility. Delta hedging cancels the diffusion and gives V_t+rSV_S+σ²S²V_SS/2=rV. Equivalently discount the payoff under log S_T=log S+(r−σ²/2)T+σ√T Z. Integrating over Z>d cutoff gives SΦ(d1)−Ke^(−rT)Φ(d2), where d1=[log(S/K)+(r+σ²/2)T]/(σ√T) and d2=d1−σ√T. Payoff subtraction gives C−P=S−Ke^(−rT). A tree averages up/down successors under risk-neutral weights; simulation averages discounted terminal payoffs with standard error proportional to 1/√paths; finite differences march the pricing PDE backward with terminal and boundary values.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.1:european-option-pricing",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-007/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "欧式期权定价",
+                  "statement": "推导无分红股票的 Black–Scholes 欧式看涨价格和看跌平价，比较树、模拟和有限差分定价。",
+                  "hint": "",
+                  "solution": "假设无摩擦连续交易、股价服从几何布朗运动，利率及波动率恒定。Delta 对冲消去随机项，得 V_t+rSV_S+σ²S²V_SS/2=rV。等价地对风险中性终值的收益贴现，log S_T=log S+(r−σ²/2)T+σ√T Z。按行权事件截断积分得 SΦ(d1)−Ke^(−rT)Φ(d2)，其中 d1=[log(S/K)+(r+σ²/2)T]/(σ√T)，d2=d1−σ√T。到期收益相减得 C−P=S−Ke^(−rT)。二叉树对后继节点作风险中性加权；蒙特卡洛取贴现收益均值，标准误与路径数的平方根成反比；有限差分用终值和边界条件逆推 PDE。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -10804,6 +16119,391 @@ window.QUANT_DATA = {
                     "均值方差理论",
                     "均值方差",
                     "分散化"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:leverage-and-sharpe",
+              "title": "Leverage and Sharpe",
+              "difficulty": "easy",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "An excess return R has Sharpe ratio 10. Multiply exposure by ten at the reference funding rate. Compute volatility and Sharpe, and discuss funding spreads and compounding.",
+              "solution": "Excess return becomes 10R, so volatility is ten times higher and the Sharpe remains 10. If nine borrowed units incur extra spread c per period, mean is 10 E R−9c while constant c does not change volatility. Multi-period wealth multiplies gross returns; the mean of logarithms and possible insolvency are not described by the one-period Sharpe.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:leverage-and-sharpe",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-011/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "固定杠杆与夏普比率",
+                  "statement": "超额收益 R 的夏普比率为 10。以基准利率融资把敞口放大十倍，求波动和夏普，并讨论融资利差和复利。",
+                  "hint": "",
+                  "solution": "超额收益变成 10R，波动为原来十倍，夏普仍为 10。若借入的 9 单位每期多付固定利差 c，均值变为 10 E R−9c，固定成本不改波动。多期财富是总收益因子的连乘，对数增长率及可能破产不能由单期夏普刻画。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:negative-capm-alpha",
+              "title": "Negative CAPM Alpha",
+              "difficulty": "easy",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "The market mean is 10%, risk-free rate 4%, and a portfolio with market beta 1/3 has mean 5%. Compute CAPM alpha. Does it establish a riskless arbitrage?",
+              "solution": "CAPM predicts 4%+(10%−4%)/3=6%, so alpha is −1 percentage point. A beta-hedged position can still carry idiosyncratic risk and have negative payoffs in some states. The means and beta alone do not specify a statewise nonnegative payoff or exact replication.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:negative-capm-alpha",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-018/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "负 CAPM 阿尔法与套利",
+                  "statement": "市场预期收益 10%、无风险利率 4%，市场 β 为 1/3 的组合预期收益 5%。求 CAPM 阿尔法，能否据此推出无风险套利？",
+                  "hint": "",
+                  "solution": "CAPM 预测 4%+(10%−4%)/3=6%，阿尔法为 −1 个百分点。对冲 β 后仍可能有特异风险，某些状态会亏损；均值和 β 无法证明逐状态非负收益或精确复制。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:correlation-and-portfolio-risk",
+              "title": "Correlation and Portfolio Risk",
+              "difficulty": "easy",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "Fix two nonzero portfolio weights and positive volatilities. Minimize portfolio variance over the correlation; characterize zero variance for same-sign and opposite-sign weights.",
+              "solution": "Write variance as (w₁σ₁)²+(w₂σ₂)²+2ρw₁w₂σ₁σ₂. It is affine in ρ, minimized at −1 for same signs and +1 for opposite signs. The minimum is (abs(w₁σ₁)−abs(w₂σ₂))², zero exactly when the weighted volatility magnitudes agree.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:correlation-and-portfolio-risk",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-018/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "相关系数与组合方差",
+                  "statement": "两资产波动为正，权重固定且非零。对相关系数最小化组合方差，分别给出同号、异号权重的零方差条件。",
+                  "hint": "",
+                  "solution": "方差为 (w₁σ₁)²+(w₂σ₂)²+2ρw₁w₂σ₁σ₂。关于 ρ 为仿射函数，同号取 −1、异号取 +1。最小值为 (abs(w₁σ₁)−abs(w₂σ₂))²，恰在加权波动绝对值相等时为零。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:covered-currency-parity",
+              "title": "Covered Currency Parity",
+              "difficulty": "easy",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "Spot S is dollars per pound. One-year simple pound and dollar borrowing/lending rates are 27% and 9%. Find the no-arbitrage forward and the pound premium or discount.",
+              "solution": "Replicate one future pound by buying 1/1.27 pounds now and investing them. Financing its dollar cost through maturity yields F=S·1.09/1.27. The pound trades at a forward discount of 1−1.09/1.27=18/127, about 14.17% of spot.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:covered-currency-parity",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-018/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "抛补利率平价",
+                  "statement": "即期 S 以美元每英镑报价，一年英镑、美元借贷简单利率分别 27%、9%。求无套利远期价及英镑升贴水。",
+                  "hint": "",
+                  "solution": "现在买 1/1.27 英镑并存入可复制一年后 1 英镑。将当前美元成本融资到期，F=S·1.09/1.27。相对即期贴水 1−1.09/1.27=18/127，约 14.17%。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:two-asset-minimum-risk",
+              "title": "Two Asset Minimum Risk",
+              "difficulty": "medium",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "Two assets each have annual mean 12%, volatilities .2 and .3, correlation .5. Find the long-only fully invested minimum-variance allocation, volatility and expected return.",
+              "solution": "Covariance is .03. For weight w in the first asset, differentiate .04w²+.09(1−w)²+.06w(1−w): minimizer w=(.09−.03)/(.04+.09−.06)=6/7 inside [0,1]. Variance is .0027/.07=27/700, volatility √(27/700)≈19.64%; mean remains 12%.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:two-asset-minimum-risk",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 6"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "两资产最小方差配置",
+                  "statement": "两资产年均收益同为 12%，波动 .2、.3，相关 .5。求全额投资、禁止做空的最小方差权重、波动与期望收益。",
+                  "hint": "",
+                  "solution": "协方差 .03。第一项权重 w 的方差为 .04w²+.09(1−w)²+.06w(1−w)，求导得 w=(.09−.03)/(.04+.09−.06)=6/7，位于区间内。方差 .0027/.07=27/700，波动约 19.64%，期望仍 12%。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:tournament-odds-arbitrage",
+              "title": "Tournament Odds Arbitrage",
+              "difficulty": "hard",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "H plays U and G plays S. Twelve unit-price contracts pay only on the respective events: U,H,G,S winning their semifinals at 3,3/2,5/2,5/3; final pairs SU,SH,GU,GH at 5,10/3,6,3; champions S,H,G,U at 8/5,20/3,20/3,40/3. With long and short notionals L and S₀, maximize constant profit c divided by max(L,S₀).",
+              "solution": "Normalize max(L,S₀) to one. Enumerate eight outcomes (four finalist pairs and two champions). Set M_(ij)=payout of contract j in outcome i minus 1. Solve the linear program max c subject to M(l−s)=c·1, Σl≤1, Σs≤1 and l,s≥0. For an exact arithmetic implementation enumerate full-rank active sets of the reduced linear system; its best feasible vertex gives the requested value, with holdings l−s. One optimal position is long contracts 3,5,6 by 8/9,2/45,1/15 and short 7,8 by 1/3,2/3. Its c is 2/9. For a certificate, order the finalist pairs SU,GU,SH,GH with the U or H finalist winning first within each pair. Outcome weights (1/12,5/36,0,4/27,−7/54,25/54,8/27,0) sum to one and give every entry of Mᵀw in [−1/9,1/9]. Hence any constant-profit normalized portfolio has c=wᵀM(l−s)≤(Σl+Σs)/9≤2/9.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:tournament-odds-arbitrage",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-034/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "锦标赛赔率套利",
+                  "statement": "H 对 U、G 对 S。12 份单价 1 的合约仅在对应事件支付：U、H、G、S 赢半决赛分别支付 3、3/2、5/2、5/3；决赛对阵 SU、SH、GU、GH 分别为 5、10/3、6、3；冠军 S、H、G、U 分别为 8/5、20/3、20/3、40/3。多空本金 L、S₀，最大化各赛果等利润 c 与 max(L,S₀) 的比。",
+                  "hint": "",
+                  "solution": "将 max(L,S₀) 归一为 1。枚举四组决赛对阵和各自两种冠军的八种赛果，令 M_(ij)=合约 j 在赛果 i 的支付减 1。求线性规划 max c，约束 M(l−s)=c·1、Σl≤1、Σs≤1、l,s≥0。精确算法枚举约简方程的满秩活跃约束组，选目标最大的可行顶点，仓位为 l−s。一个最优仓位为做多 3、5、6 号各 8/9、2/45、1/15，做空 7、8 号各 1/3、2/3，c=2/9。按 SU、GU、SH、GH 排赛果，每组 U 或 H 夺冠在前，权重 (1/12,5/36,0,4/27,−7/54,25/54,8/27,0) 的和为一，Mᵀw 各项在 [−1/9,1/9]，故 c=wᵀM(l−s)≤(Σl+Σs)/9≤2/9。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:independent-analyst-allocation",
+              "title": "Independent Analyst Allocation",
+              "difficulty": "medium",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "Allocate nonnegative weights totaling W among independent excess returns with means a_i>0 and deviations b_i>0 to maximize mean divided by deviation. Discuss nonpositive means.",
+              "solution": "Cauchy–Schwarz on (w_i b_i) and (a_i/b_i) gives optimum √Σ(a_i/b_i)², reached by weights proportional to a_i/b_i². If some means are positive, discard nonpositive assets and apply the same proof to positive parts. If none is positive, select one with maximal a_i/b_i: for negative ratios, Σw_i b_i≥√Σ(w_i b_i)² shows no mixture improves it.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:independent-analyst-allocation",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "独立分析师资金分配",
+                  "statement": "独立超额收益均值 a_i>0、标准差 b_i>0，分配非负总资金 W 使均值除标准差最大。讨论非正均值。",
+                  "hint": "",
+                  "solution": "对 (w_i b_i) 与 (a_i/b_i) 用柯西不等式，最大 √Σ(a_i/b_i)²，权重与 a_i/b_i² 成正比。有正均值时去掉非正项，对正部用同一证明。没有正均值时选 a_i/b_i 最大的一项；因 Σw_i b_i≥√Σ(w_i b_i)²，混合不能改进非正比率。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:minimum-variance-target-beta",
+              "title": "Minimum Variance Target Beta",
+              "difficulty": "medium",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "Two stocks have deviations .10,.20, correlation .6 and betas .45,.9. Find minimum-variance weights with beta one, allowing cash and leverage; repeat with weights summing to one.",
+              "solution": "For covariance Σ, Lagrange minimization gives w=Σ⁻¹β/(βᵀΣ⁻¹β). Here Σ has diagonals .01,.04 and cross .012, yielding w=(10/9,5/9), ratio two. Imposing both constraints gives the unique pair (−2/9,11/9); if long-only, beta one is infeasible.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:minimum-variance-target-beta",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 10"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "目标贝塔最小方差",
+                  "statement": "两股票波动率 .10、.20，相关 .6，贝塔 .45、.9。求可用现金与杠杆时贝塔为一的最小方差权重；另加权重和为一再求。",
+                  "hint": "",
+                  "solution": "协方差为 Σ，拉格朗日解 w=Σ⁻¹β/(βᵀΣ⁻¹β)。Σ 对角 .01、.04，交叉 .012，得 (10/9,5/9)，比为二。再加权重和为一只有 (−2/9,11/9)；只做多时无法实现贝塔一。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:fair-gamble-utility",
+              "title": "Fair Gamble Utility",
+              "difficulty": "easy",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "For nonconstant zero-mean payoff X, use expected utility to explain a strictly risk-averse decision. When can participation be rational in an expanded model?",
+              "solution": "For strictly concave u and deterministic starting wealth W, Jensen gives E[u(W+X)]<u(W) when the expectations exist. With random background wealth, payoff may hedge it; fees, entertainment utility and different subjective probabilities also change the comparison.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:fair-gamble-utility",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-041/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "公平赌博效用",
+                  "statement": "非恒定零均值收益 X 下，用期望效用解释严格风险厌恶者的决策。扩展模型中何时可能合理参加？",
+                  "hint": "",
+                  "solution": "确定初始财富 W 下，严格凹效用由 Jensen 给 E[u(W+X)]<u(W)（期望存在时）。若背景财富随机，收益可能具有对冲作用；额外支付、娱乐效用与主观概率也会改变比较。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "6.4:common-factor-portfolio-moments",
+              "title": "Common Factor Portfolio Moments",
+              "difficulty": "medium",
+              "tags": [
+                "financial mathematics"
+              ],
+              "statement": "Returns r_i=r_m+ε_i with independent common and IID idiosyncratic terms of given means and variances. Find mean and variance for equal weights, balanced ±1/N weights, and independent N(0,σ_h²) weights independent of returns.",
+              "solution": "For fixed weights w, mean=(μ_m+μ_ε)Σw and variance σ_m²(Σw)²+σ_ε²Σw². Equal weights give mean μ_m+μ_ε and variance σ_m²+σ_ε²/N; balanced give zero and σ_ε²/N. For random zero-mean weights, condition on returns: mean zero and conditional variance σ_h²Σr_i², hence unconditional variance Nσ_h²[σ_m²+σ_ε²+(μ_m+μ_ε)²].",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "6.4:common-factor-portfolio-moments",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-hande/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "共同因子组合矩",
+                  "statement": "收益 r_i=r_m+ε_i，共同项与独立同分布特质项独立、矩已知。分别求等权、均衡 ±1/N 权重、及独立于收益的 IID N(0,σ_h²) 权重下的均值方差。",
+                  "hint": "",
+                  "solution": "固定权重时均值 (μ_m+μ_ε)Σw，方差 σ_m²(Σw)²+σ_ε²Σw²。等权得到 μ_m+μ_ε 与 σ_m²+σ_ε²/N，均衡权重得到零与 σ_ε²/N。随机权重条件于收益时均值零、方差 σ_h²Σr_i²，故总方差 Nσ_h²[σ_m²+σ_ε²+(μ_m+μ_ε)²]。",
+                  "keyIdea": "",
+                  "tags": [
+                    "金融数学"
                   ]
                 }
               }
@@ -11153,9 +16853,9 @@ window.QUANT_DATA = {
                 "dynamic programming",
                 "one pass"
               ],
-              "statement": "Given an array of (possibly negative) numbers, find the contiguous subarray with the largest sum.",
+              "statement": "Given an array of (possibly negative) numbers, find the contiguous subarray with the largest sum.\n\nRequire a nonempty subarray of a nonempty input. Evaluate [-1,3,4,-2,5,-7].",
               "hint": "Scan once, tracking the best sum that *ends at* the current position.",
-              "solution": "**Kadane's algorithm**, a one-pass DP. Track `cur` = the largest subarray sum *ending at the current element*. At each element you either **extend** the previous run or **start fresh** at this element — whichever is larger:\n```\ncur = best = a[0];\nfor (i = 1; i < n; ++i) {\n    cur = max(a[i], cur + a[i]);   // extend, or restart here\n    best = max(best, cur);\n}\nreturn best;\n```\nThe insight: if the running sum ever goes negative, it can only *hurt* what follows, so you drop it and restart. This is **$O(n)$** time, $O(1)$ space — far better than the $O(n^2)$ brute force over all subarrays.",
+              "solution": "**Kadane's algorithm**, a one-pass DP. Track `cur` = the largest subarray sum *ending at the current element*. At each element you either **extend** the previous run or **start fresh** at this element — whichever is larger:\n```\ncur = best = a[0];\nfor (i = 1; i < n; ++i) {\n    cur = max(a[i], cur + a[i]);   // extend, or restart here\n    best = max(best, cur);\n}\nreturn best;\n```\nThe insight: if the running sum ever goes negative, it can only *hurt* what follows, so you drop it and restart. This is **$O(n)$** time, $O(1)$ space — far better than the $O(n^2)$ brute force over all subarrays.\n\nFor this example [3,4,-2,5] gives 10. First-element initialization handles all-negative arrays, returning their largest element. Use 64-bit integer sums for up to 10⁶ terms each of magnitude up to 10⁷.",
               "keyIdea": "Kadane: maintain the best sum ending here; restart whenever the running sum turns negative. One $O(n)$ pass, because a negative prefix can never help the future.",
               "id": "7.1:maximum-contiguous-subarray",
               "kind": "programming",
@@ -11168,14 +16868,19 @@ window.QUANT_DATA = {
                   "type": "upstream",
                   "reference": "https://github.com/ellenzishanli/quant_interview_trainer/blob/f0192f17bf602457d0a8f43857e83304b56d7771/data/problems.js",
                   "locator": "7.1 / Maximum Contiguous Subarray"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-huajun/",
+                  "locator": "Question 2"
                 }
               ],
-              "revision": 2,
+              "revision": 3,
               "translations": {
                 "zh": {
                   "title": "最大连续子数组",
-                  "statement": "给定可能含负数的数组，求和最大的连续子数组。",
-                  "solution": "Kadane算法维护cur为以当前位置结尾的最大子数组和，best为全局最好。每步选择延长前段或从当前重启：\n\n```\ncur = best = a[0];\nfor (i = 1; i < n; ++i) {\n    cur = max(a[i], cur + a[i]);   // extend, or restart here\n    best = max(best, cur);\n}\nreturn best;\n```\n\n时间O(n)、空间O(1)。初始化为a[0]可处理全负数组；空数组需事先定义行为。负前缀不会改善后续收益。",
+                  "statement": "给定可能含负数的数组，求和最大的连续子数组。\n\n输入和所求区间都须非空。计算 [-1,3,4,-2,5,-7]。",
+                  "solution": "Kadane算法维护cur为以当前位置结尾的最大子数组和，best为全局最好。每步选择延长前段或从当前重启：\n\n```\ncur = best = a[0];\nfor (i = 1; i < n; ++i) {\n    cur = max(a[i], cur + a[i]);   // extend, or restart here\n    best = max(best, cur);\n}\nreturn best;\n```\n\n时间O(n)、空间O(1)。初始化为a[0]可处理全负数组；空数组需事先定义行为。负前缀不会改善后续收益。\n\n示例 [3,4,-2,5] 得 10。以首项初始化可处理全负数组，返回其最大元素。至多 10⁶ 项、每项绝对值至多 10⁷ 时，整数和用 64 位保存。",
                   "hint": "跟踪“恰在当前位置结尾”的最优和。",
                   "keyIdea": "丢弃负前缀，局部状态支持一次扫描。",
                   "tags": [
@@ -12058,6 +17763,2307 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "7.1:temporal-attention-mask",
+              "title": "Temporal Attention Mask",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Given L time-ordered rows of F features, specify attention shapes, position information and the correct causal mask when predicting either after the window or at every position.",
+              "solution": "Map rows to L×d embeddings and add positional or elapsed-time features. A head produces Q,K,V with L rows; apply row softmax to QKᵀ/√d_k and multiply by V. A single post-window forecast may use bidirectional attention inside the fully observed window. For output at row i, mask keys j>i before softmax. Use point-in-time features, chronological validation, and embargo overlapping forward label windows; compare against a simpler baseline.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:temporal-attention-mask",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-001/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-038/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "时序注意力掩码",
+                  "statement": "给定按时间排序的 L×F 特征窗，说明注意力张量形状、时间编码，以及只在窗末预测和逐位置预测时分别需要怎样的因果掩码。",
+                  "hint": "",
+                  "solution": "将每行投影到 d 维并加入位置或时间间隔编码。每个头的 Q、K、V 都有 L 行，先对 QKᵀ/√d_k 按行做 softmax，再乘 V。只在完整历史窗结束后预测时，窗内可双向；逐位置预测时在 softmax 前屏蔽 j>i。特征按当时可见数据构建，验证按时间分割并隔离重叠标签区间，与简单基线比较。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:rolling-variance-with-missing-data",
+              "title": "Rolling Variance with Missing Data",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "For each position use the last w positions, excluding NaN, to compute sample variance. Return NaN before the first full window or with fewer than two valid values. Use linear time and no library variance routine.",
+              "solution": "Maintain valid count c, mean μ, and centered sum M₂. Inserting x updates μ′=μ+(x−μ)/(c+1), M₂′=M₂+(x−μ)(x−μ′). Removing x for c>1 uses μ′=μ−(x−μ)/(c−1), M₂′=M₂−(x−μ)(x−μ′); reset at zero count. Skip NaNs on entry and exit and output M₂/(c−1). Each position enters and exits once; use O(w) storage for a stream. Centering avoids the worst cancellation of raw squares, though floating-point removal may accumulate error.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:rolling-variance-with-missing-data",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "忽略缺失的滚动样本方差",
+                  "statement": "对每个位置取最近 w 个位置，忽略 NaN 后计算样本方差。未满窗口或有效值不足两个返回 NaN。要求线性时间，不调用库方差。",
+                  "hint": "",
+                  "solution": "维护有效计数 c、均值 μ 和中心平方和 M₂。加入 x 时 μ′=μ+(x−μ)/(c+1)，M₂′=M₂+(x−μ)(x−μ′)。c>1 时移除 x 用 μ′=μ−(x−μ)/(c−1)，M₂′=M₂−(x−μ)(x−μ′)；有效数变零则重置。进出窗口都跳过 NaN，满足条件时输出 M₂/(c−1)。每个位置进出各一次，流式空间 O(w)。中心化避免原始平方和的严重消减，但浮点移除仍可能累积误差。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:prior-five-day-panel-scaling",
+              "title": "Prior Five-Day Panel Scaling",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Given unique (date,ticker) factor records covering a trading calendar, standardize each factor using all valid observations pooled across the preceding five trading dates, excluding the current date. Preserve all rows; insufficient history or zero scale gives missing.",
+              "solution": "Aggregate each date into count, sum, and squared sum. Align with the trading calendar, shift these aggregates by one session, then sum five rows. For count c>0 calculate μ=S/c and σ²=Q/c−μ². Join these daily moments back by date and output (x−μ)/σ only where defined. This pools observations, so dates with more valid stocks receive more weight. After sorting, the rolling scan and join are linear in rows plus sessions.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:prior-five-day-panel-scaling",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "过去五日全股票标准化",
+                  "statement": "给定键 (date,ticker) 唯一且覆盖交易日历的因子表。以此前五个交易日所有有效观测合并后的均值、总体标准差标准化当日，排除当前日。保留所有行；历史不足或标准差为零记缺失。",
+                  "hint": "",
+                  "solution": "按日聚合有效个数、和、平方和；对齐交易日历后把这些量滞后一日，再对五行求和。c>0 时 μ=S/c、σ²=Q/c−μ²。按日期接回原表，只在可定义且 σ>0 时输出 (x−μ)/σ。按观测合并意味着有效股票多的日期权重较大；排序后滚动与连接对行数和交易日数均为线性量级。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:robust-panel-residuals",
+              "title": "Robust Panel Residuals",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Two factor panels A,B have unique date/ticker keys. Daily, estimate each factor’s mean and population sd from its 1–99 percentile interval, standardize all values and clip to [−3,3]. Compute paired daily Pearson correlations and monthly means. Regress daily standardized A on B with intercept and return residuals aligned to every A row.",
+              "solution": "Compute cutoffs separately by date and factor; missing values do not contribute. Use the same estimated center and scale on all finite rows; absent or zero scale makes the result missing. Left-join B to A by the full key. Within each date compute Pearson and OLS on complete pairs; require at least two pairs and nonconstant B for slope, and nonconstant A as well for correlation. Slope is centered cross-product over B sum of squares, intercept is mean A minus slope times mean B. Write residuals only to fitted pairs. Average defined daily correlations by calendar year and month without weighting by pair count.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:robust-panel-residuals",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "稳健截面标准化与残差",
+                  "statement": "A、B 两因子表键为唯一的日期与股票。逐日用各自 1% 至 99% 分位区间的样本估计均值和总体标准差，对所有值标准化后截断到 [−3,3]。计算配对日 Pearson 相关及月均值，再逐日含截距回归 A 对 B，残差与 A 全部原行对齐。",
+                  "hint": "",
+                  "solution": "每日期、每因子分别计算阈值，忽略缺失；用区间内的参数变换所有有效行，无有效尺度则记缺失。用完整键把 B 左连接到 A。逐日只在完整配对上计算 Pearson 和 OLS；估斜率需至少两对且 B 不为常数，相关还要求 A 不为常数。斜率为中心化交叉和除以 B 中心平方和，截距为 A 均值减斜率乘 B 均值。仅拟合样本写残差，按年月等权平均有效日相关。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:recursive-expression-parser",
+              "title": "Recursive Expression Parser",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Parse nonnegative decimal literals, whitespace, parentheses, binary + − × ÷ and unary signs. Use real division; explain invalid input and evaluate 2+3×(4−1).",
+              "solution": "Tokenize numbers and punctuation. Use expression=term followed by zero or more add/sub terms, term=unary followed by zero or more mul/div unary operands, unary=sign unary or primary, primary=number or parenthesized expression. The loops give left association, while the nesting enforces precedence. Require closing parentheses and end-of-input, reject bad tokens or missing operands, and signal division by zero. Each token is consumed once, O(n) time and O(n) worst-case stack/token storage. The example evaluates to 11.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:recursive-expression-parser",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-009/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "四则表达式计算器",
+                  "statement": "解析非负十进制整数字面量、空白、括号、四则运算及一元正负号。除法为实除；说明非法输入，计算 2+3×(4−1)。",
+                  "hint": "",
+                  "solution": "先分词。表达式读取一项后循环加减；项读取一个一元式后循环乘除；一元式遇符号递归，否则读取数字或括号表达式。循环实现左结合，嵌套实现优先级。必须读到匹配右括号及输入末尾，非法词元或缺操作数时报错，零除单独报错。词元只消费一次，时间 O(n)，栈与词元最坏 O(n)。例子得 11。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:missing-ascii-letters",
+              "title": "Missing ASCII Letters",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Return the missing ASCII letters a–z in sorted order from any string, ignoring case and all non-ASCII letters.",
+              "solution": "Maintain a set or 26-bit mask. Before lowercasing, accept only characters explicitly in A–Z or a–z, so Unicode case folding cannot introduce false hits. Return the alphabet characters whose bits are unset. Empty input returns the entire alphabet. Time O(n), extra space O(1).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:missing-ascii-letters",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-016/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "缺失的英文字母",
+                  "statement": "给定任意字符串，忽略大小写及所有非 ASCII 字母，升序返回未出现的 a 至 z。",
+                  "hint": "",
+                  "solution": "维护集合或 26 位掩码。先显式判断字符在 A–Z 或 a–z，再转小写，避免 Unicode 大小写映射引入假命中。遍历字母表输出未标记字母。空串返回全部字母。时间 O(n)，辅助空间 O(1)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:stock-trades-with-a-count-limit",
+              "title": "Stock Trades with a Count Limit",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Given a known daily price path, hold at most one share, no shorting or fees, and buy strictly before selling. Find optimal profit for one trade (also return dates), unlimited trades, and at most k trades; allow no trade.",
+              "solution": "For each sell date subtract the smallest earlier price and track its date; keep the best positive result, or zero and no dates. Unlimited trades collect every positive adjacent change, grouping runs into buy/sell pairs. For k trades keep flat[j], hold[j] by exact completed sales, starting flat[0]=0 and other states impossible. For price p, update from yesterday: hold[j]=max(old_hold[j],old_flat[j]−p), flat[j]=max(old_flat[j],old_hold[j−1]+p), omitting the sale transition for j=0. Maximize final flat states. Time O(nk), memory O(k); one and unlimited trades need constant working space. When k≥floor(n/2), the unlimited profit suffices (merge consecutive rising days).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:stock-trades-with-a-count-limit",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-016/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 8"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 9"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 15"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-018/",
+                  "locator": "Question 10"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "限交易次数的股票买卖",
+                  "statement": "给定已知日价格，最多持一股，无做空、无费用，买日严格早于卖日。分别求一次交易（返回买卖日期）、不限次数和最多 k 次的最优利润，可不交易。",
+                  "hint": "",
+                  "solution": "对每个卖日减去此前最低价并记录该买日，取最大正差；无正差返回零和空日期。不限次数把相邻正差相加，把上涨段合并为交易。k 次时用 flat[j]、hold[j] 记录恰已完成 j 次卖出时空仓或持仓的最大现金；初始仅 flat[0]=0。价格 p 当日从前日更新：hold[j]=max(旧hold[j],旧flat[j]−p)，flat[j]=max(旧flat[j],旧hold[j−1]+p)，j=0 无卖出项。结束取所有空仓最大值。时间 O(nk)、空间 O(k)；一次与不限次数只需常数辅助空间。k≥⌊n/2⌋ 可用不限次数算法（把上涨日合并为上涨段）。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:panel-convolution-shapes",
+              "title": "Panel Convolution Shapes",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Use each stock’s last L≥3 observations with F features to predict next return, with one width-3, stride-1, valid Conv1D output channel. Specify shapes, parameters, prediction head and temporal validation.",
+              "solution": "With channels-first convention use (batch,F,L); do not cross stock boundaries. A kernel has 3F weights plus one bias and returns (batch,1,L−2). Feed the last output, a pooling, or all outputs into a scalar head; a flattened affine head adds L−2 weights and one bias. Form targets one step after each window and separate training and testing chronologically, avoiding overlapping target leakage.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:panel-convolution-shapes",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-017/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "面板一维卷积的尺寸",
+                  "statement": "用每股最近 L≥3 个时点的 F 个特征预测下期收益。采用单输出通道、核宽 3、步长 1、无填充的一维卷积。说明尺寸、参数、预测层与时间验证。",
+                  "hint": "",
+                  "solution": "按通道优先约定输入 (批量,F,L)，窗口不得跨股票。卷积有 3F 个权重和一个偏置，输出 (批量,1,L−2)。可取末位置、池化或展平后接标量预测层；展平线性层另有 L−2 个权重和一个偏置。标签取窗末后一期；按时间隔离训练测试及重叠标签。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:quadratic-sorting-scale",
+              "title": "Quadratic Sorting Scale",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Bubble sorting 200 comparable random items costs 200 ms. Estimate the count at 800 ms assuming quadratic cost; check using n(n−1)/2 comparisons.",
+              "solution": "A fourfold time increase doubles n, so estimate 400. Setting n(n−1)=4·200·199 gives a positive root near 399.5. At n=400 the comparison ratio is 400·399/(200·199)≈4.01. This is a model, not a hardware guarantee.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:quadratic-sorting-scale",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-019/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "二次排序的耗时尺度",
+                  "statement": "冒泡排序 200 个相近随机元素用 200 ms。假设二次项主导，估计 800 ms 可排多少个，并用 n(n−1)/2 核对。",
+                  "hint": "",
+                  "solution": "耗时四倍对应规模约翻倍，估计 400。令 n(n−1)=4·200·199，正根约 399.5；n=400 的比较次数比约 4.01。实际耗时仍取决于常数和机器。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:asymptotic-growth-order",
+              "title": "Asymptotic Growth Order",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Order log log n, log n, √n, n log n, n³, 2ⁿ, n!, nⁿ by asymptotic growth; justify polynomial, exponential and factorial comparisons.",
+              "solution": "The displayed order is increasing with every adjacent ratio tending to zero. Logarithms grow more slowly than powers, and taking logs gives 3 log n=o(n log 2). For factorial, n!≥(n/2)^floor(n/2), beating 2ⁿ. At least floor(n/2) factors of n!/nⁿ are ≤1/2, so that last ratio tends to zero.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:asymptotic-growth-order",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-020/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "常见函数的增长阶",
+                  "statement": "按渐近增长率排序 log log n、log n、√n、n log n、n³、2ⁿ、n!、nⁿ，说明多项式、指数及阶乘的比较。",
+                  "hint": "",
+                  "solution": "题中顺序即由慢到快，相邻前项除后项均趋零。对数慢于正幂；取对数得 3 log n=o(n log 2)。n! 至少有 ⌊n/2⌋ 个因子不小于 n/2，故快于 2ⁿ；n!/nⁿ 至少有 ⌊n/2⌋ 个比值因子不超过 1/2，故趋零。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:six-digit-ticker-filter",
+              "title": "Six-Digit Ticker Filter",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Select strings with exactly six ASCII digits starting 51 and suffix .SZ from 600036.SH, 522663.SH, 159996.SZ, 500001.SZ, 300005.SZ, 51205.HK, 510559.SZ, 151665.SZ. Give a regular expression.",
+              "solution": "Use Python re.fullmatch(r'51[0-9]{4}\\.SZ', code). The literal dot must be escaped and the match must span the whole string. Only 510559.SZ matches.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:six-digit-ticker-filter",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "六位证券代码筛选",
+                  "statement": "从 600036.SH、522663.SH、159996.SZ、500001.SZ、300005.SZ、51205.HK、510559.SZ、151665.SZ 中筛出以 51 开头的六位 ASCII 数字、后缀 .SZ 的项。写正则。",
+                  "hint": "",
+                  "solution": "用 Python re.fullmatch(r'51[0-9]{4}\\.SZ', code)。点号需转义，且要求匹配整个字符串。只有 510559.SZ 符合。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:parallel-delivery-deadline",
+              "title": "Parallel Delivery Deadline",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Each task i is either delivered in time d_i with all deliveries starting at zero, or collected serially in time p_i. Minimize completion time; evaluate p=[1,2,3,2,1], d=[4,8,5,6,3].",
+              "solution": "A deadline t is feasible iff sum(p_i for d_i>t)≤t: those items must be collected, and delivering all others cannot worsen feasibility. Sort unique d values including zero. Between successive values the required collection time S is constant, so test max(lower endpoint,S) if within the interval; a suffix sum after sorting gives O(n log n). For t<5, items with d=5,6,8 alone require 7, while t=5 requires 2+2=4. Thus answer 5.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:parallel-delivery-deadline",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-045/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "并行配送与串行自取",
+                  "statement": "每项 i 要么耗时 d_i 同时从零开始配送，要么耗时 p_i 由一人串行自取。求完成所有项的最早时间，并算 p=[1,2,3,2,1]、d=[4,8,5,6,3]。",
+                  "hint": "",
+                  "solution": "时限 t 可行恰当 d_i>t 的项目自取时间之和 ≤t；其余全配送不会变差。对 d 去重排序并加入零，相邻阈值间自取总时间 S 固定，检查 max(左端点,S) 是否落在该区间。后缀和使总复杂度 O(n log n)。t<5 时仅 d=5、6、8 的项就需 7；t=5 时必自取的仅需 4，故最早为 5。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:sorting-feasibility-estimates",
+              "title": "Sorting Feasibility Estimates",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "For 10⁵,10⁸,10¹⁰ eight-byte integers, estimate storage and average quicksort comparisons. Can each sort in a second?",
+              "solution": "Raw sizes are 0.8 MB, 0.8 GB, 80 GB. For distinct keys and randomized pivots the average is 2(n+1)H_n−4n, approximately 2n ln n: millions, billions, hundreds of billions. A time verdict also needs comparison throughput, bandwidth, memory and implementation; the count alone gives no universal seconds figure.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:sorting-feasibility-estimates",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-024/",
+                  "locator": "Question 9"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-045/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "大规模排序的工作量估算",
+                  "statement": "对 10⁵、10⁸、10¹⁰ 个八字节整数，估算存储与快排平均比较次数。能否一秒完成？",
+                  "hint": "",
+                  "solution": "原数据约 0.8 MB、0.8 GB、80 GB。互异键且随机枢轴时均值 2(n+1)H_n−4n，主阶 2n ln n，依次为百万、十亿、数千亿量级。还需实测比较吞吐、带宽、内存容量及实现，不能仅凭复杂度给出统一耗时。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:position-reconciliation",
+              "title": "Position Reconciliation",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Reconcile account and three strategy CSVs containing long and short positions with three JSONs keyed by contract, strategy account and CurrentPst. Return discrepancies and a pass flag.",
+              "solution": "Normalize contract and account keys using the supplied mapping; aggregate CSV longs minus shorts by key. Flatten JSON into the same keys, rejecting duplicate or invalid mappings. Full outer join strategy CSV and JSON; compare values and flag missing records separately. Sum strategies by contract and outer join the account total. Report both levels of differences; pass only if all discrepancies satisfy the agreed missing and tolerance rules.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:position-reconciliation",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-012/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "持仓核对",
+                  "statement": "用含多空持仓的账户及三份策略 CSV，与按合约、策略账户和 CurrentPst 嵌套的三份 JSON 对账。返回差异与通过标记。",
+                  "hint": "",
+                  "solution": "用给定映射统一合约和账户键，按键汇总 CSV 多仓减空仓。把 JSON 展平成相同键，拒绝重复或无效映射。策略 CSV 与 JSON 全外连接，比较数值并单列缺失。再按合约汇总策略，与账户总量全外连接。分别报告两层差异，按约定的缺失与容差规则给出是否通过。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:order-book-tick-analytics",
+              "title": "Order Book Tick Analytics",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Compute three-day price and turnover summaries, validate turnover increments, and resample morning 09:30–11:30 and afternoon 13:00–14:56:57 to inclusive three-second grids. Compute relative spread for bid 10 and ask 10.02, rolling 20-tick volatility and directional movement, weighted depth imbalance, and aggressor volume for 100 shares costing 1001.40 at the quoted endpoints. Compute signed flow and classified coverage for buy/sell/unknown 70/30/20. Infer cancellations when depth falls 100 to 70 and executions are 20.",
+              "solution": "Use daily extrema, last close over first previous close minus 1, sum of final daily turnovers, and means of daily (high−low)/previous close and quote-change counts excluding each first tick. Difference cumulative counters within sessions: a drop suggests reset/correction/out-of-order data; a large rise merits checking trades and volume (200000/1000=200). Grids have 2401+2340=4741 points; as-of quotes within sessions, sum flow increments by bin. Spread is .02/10.01≈.1998%; inspect stale or crossed quotes and depth. Use √Σr² and abs(Σr)/Σabs(r): ±1% versus +1%,+1% have equal first-order volatility and direction scores 0 versus 1. Imbalance is Σw(B−A)/Σw(B+A), validate against forward returns with time splits and net costs. Solving Q_a+Q_b=100 and 10.02Q_a+10Q_b=1001.40 gives 70/30. Flow is .4 on classified volume, coverage 5/6; sum numerators and denominators before division. Align depth by price: additions minus cancellations is −10, so cancellations equal additions+10, or 10 if additions are zero.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:order-book-tick-analytics",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 4"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 5"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 6"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 8"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-013/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "逐笔盘口计算",
+                  "statement": "计算三日价量统计并核查累计成交额变化；将 09:30–11:30 和 13:00–14:56:57 对齐至含端点的三秒网格。买一 10、卖一 10.02 时求相对价差，并构造 20 Tick 波动和单边指标、加权多档不平衡。假设成交只发生在两个报价端点，100 股成交额 1001.40 时估计主动买卖量；买卖未知量为 70/30/20 时求净流与分类覆盖率。挂量由 100 降至 70、成交 20 时分析撤单量。",
+                  "hint": "",
+                  "solution": "取每日极值，用末日收盘除以首日前收减 1，累加各日最终成交额；日振幅按（最高−最低）/前收计算并取均值，买卖一变动计数不计日首条。累计量在同一时段差分：减少检查重置、修订和乱序，骤增核对成交和成交量（200000/1000=200）。网格共 2401+2340=4741 点，报价在各时段内向后取最近观测，成交增量分桶求和。价差 .02/10.01≈.1998%，异常时查过时、交叉报价及深度。用 √Σr² 与 abs(Σr)/Σabs(r)，两组一阶波动相同，方向分数分别 0 和 1。深度不平衡为 Σw(B−A)/Σw(B+A)，用时间切分检验未来收益并计成本。两端成交量方程解为买 70、卖 30。分类净流 .4、覆盖率 5/6，窗口先聚合分子分母。盘口按价格对齐，新增减撤单为 −10，所以撤单等于新增加 10；无新增时为 10。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:cross-market-oil-spread",
+              "title": "Cross Market Oil Spread",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Build one-second, one-minute and five-minute Shanghai minus Brent spreads in CNY/barrel from time-stamped futures and FX quotes for July 1 night session through July 8 day close, 2022. Evaluate 720, 105 and 6.70.",
+              "solution": "Normalize exchange timestamps, units and contract selection; use a common trading calendar and backward as-of joins with staleness limits for both legs and FX. Compute S−BF, then take the last valid spread in each requested interval, documenting gaps. The example is 16.50 CNY/barrel.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:cross-market-oil-spread",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-014/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "跨市场原油价差",
+                  "statement": "用 2022 年 7 月 1 日夜盘至 7 月 8 日日盘结束的上海原油、布伦特与外汇报价构建秒、分钟及五分钟价差（元/桶）。计算 720、105、6.70 对应价差。",
+                  "hint": "",
+                  "solution": "统一交易所时区、报价单位和合约选择；按共同交易日历回看连接两腿和外汇，设报价时效上限。计算 S−BF，每种频率取桶内最后有效价差并标明缺口。示例为 16.50 元/桶。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:dataframe-summary-operations",
+              "title": "DataFrame Summary Operations",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "For a numeric DataFrame indexed by date and ticker, retrieve ticker A, row medians, and row sample deviations above 0.5. Implement positional complete-case Pearson correlation without corr.",
+              "solution": "Use df.xs('A',level='ticker'), df.median(axis=1), and df.where(df.gt(.5)).std(axis=1,ddof=1). Convert correlation inputs to arrays, mask entries jointly and require at least two pairs. Center each vector, optionally scale by its max absolute value first to avoid overflow, and divide the centered dot product by both norms. Return NaN if either norm is zero.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:dataframe-summary-operations",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-018/",
+                  "locator": "Question 8"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-018/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "数据表汇总操作",
+                  "statement": "对按 date 和 ticker 索引的数值表，提取 A 股票、逐行中位数和大于 0.5 元素的样本标准差。另实现按位置配对删除缺失的 Pearson 相关。",
+                  "hint": "",
+                  "solution": "用 df.xs('A',level='ticker')、df.median(axis=1) 和 df.where(df.gt(.5)).std(axis=1,ddof=1)。相关输入转数组、应用共同掩码，有效样本不足两个返回 NaN。分别中心化，必要时先除以最大绝对值避免溢出，再用内积除以两个范数；范数为零也返回 NaN。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:swap-constrained-concatenation",
+              "title": "Swap Constrained Concatenation",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Maximize the decimal concatenation of a permutation of 1…n with at most k arbitrary swaps. Demonstrate [1,3,2,4], k=1; distinguish single- and multi-digit entries.",
+              "solution": "For single digits, greedily put the largest remaining digit at the first differing position, spending one swap; no improvement farther right can outweigh it. Swapping 1 and 4 in the example gives 4321. For multiple digits, lexical element order may disagree with full string order. Enumerate reachable permutation states by BFS up to k, deduplicate states by earliest depth, compare full strings (their lengths agree).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:swap-constrained-concatenation",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "限次交换最大拼接",
+                  "statement": "排列 1…n 最多交换任意两项 k 次，求最大十进制拼接。演示 [1,3,2,4]、k=1，并区分单数字与多数字。",
+                  "hint": "",
+                  "solution": "单数字时从左至右把剩余最大数换到首个有差异的位置，花一次交换，后缀收益无法压过该位；示例得 4321。多数字时元素大小顺序不等于拼接顺序；广搜枚举深度至 k 的排列，按首次深度去重，比较等长的完整字符串。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:peak-rolling-deviation",
+              "title": "Peak Rolling Deviation",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Given D finite closes and window N≥2, return the largest sample standard deviation and earliest ending day in linear time.",
+              "solution": "Maintain rolling sums S,Q of values and squares, adding entering and subtracting exiting observations. Compare (Q−S²/N)/(N−1), replacing the best only on strict improvement, and take one square root. For numerical stability use centered sums or an add/remove centered-moment algorithm and handle small roundoff negatives.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:peak-rolling-deviation",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最大滚动标准差",
+                  "statement": "给定 D 个收盘价及 N≥2 的窗口，在线性时间内求样本标准差最大值与最早达到的结束日。",
+                  "hint": "",
+                  "solution": "维护滚动和值 S 和平方和 Q，每步增新删旧。比较 (Q−S²/N)/(N−1)，仅严格更大时更新，最后只开一次方。数值上可先中心化或维护可增删的中心矩，并处理舍入导致的微小负值。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:sequential-number-picks",
+              "title": "Sequential Number Picks",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Three players choose distinct integers 1–100 in order, first 27. Uniform target pays the unique closest pick; ties pay zero. Find the second player's best pick against the third player's best response, breaking the third player's ties against the second.",
+              "solution": "For each second pick b and each legal third pick c, count targets for which each is strictly closer than both others. Keep only c maximizing its own count; score b by the minimum second-player count across those c. Enumerating b gives 75 and 76 both guaranteeing 49 targets, the maximum. Direct loops over b,c,target provide reproducible O(100³) enumeration.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:sequential-number-picks",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-035/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "顺序选数",
+                  "statement": "三人依次选不同的 1 至 100 整数，首人选 27。均匀目标奖励唯一最近者，并列无奖。第三人最优响应，其并列对第二人取最坏。求第二人的最优选数。",
+                  "hint": "",
+                  "solution": "枚举第二人的 b 和第三人的 c，逐个目标统计各人严格最近次数。只保留使第三人计数最大的 c，以其中第二人最小计数作为 b 的分数。三重循环枚举得到 75、76 均保证覆盖 49 个目标，为最大。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:longest-keypad-path",
+              "title": "Longest Keypad Path",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Grid points 1–6 occupy two rows of three, and 7 and 8 occupy the left and right positions of the third row. Find the longest Euclidean path visiting each key at most once, with unrestricted straight segments.",
+              "solution": "An optimum visits all points because one can append any omitted vertex. Use D(mask,j)=max_i[D(mask without j,i)+dist(i,j)] with singleton score zero; store predecessors. Exact comparison or enumerating 8! permutations gives path 6,4,3,7,2,8,1,5 with length 2+3√5+5√2.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:longest-keypad-path",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-052/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最长键盘折线",
+                  "statement": "前三列的前两行依次放 1 至 6，第三行仅左右位置放 7、8。任意点间可直连，每键最多访问一次，求最长欧氏折线。",
+                  "hint": "",
+                  "solution": "可在末尾追加遗漏点，最优一定遍历全部。令 D(mask,j)=max_i[D(mask 去 j,i)+dist(i,j)]，单点为零并保存前驱。比较候选或枚举 8! 个排列，得路径 6、4、3、7、2、8、1、5，长度 2+3√5+5√2。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:recursive-trace",
+              "title": "Recursive Trace",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "trace(0) prints base and returns 1. For n>0, trace(n) prints enter n, calls trace(n−1) saving result L, prints leave n L, and returns L+n. Give all output of trace(3) followed by print('result', returned_value), and complexity.",
+              "solution": "The successive lines are enter 3; enter 2; enter 1; base; leave 1 1; leave 2 2; leave 3 4; result 7. Each recursive level does constant work in the usual unit-cost model, taking Θ(n) time and stack space.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:recursive-trace",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-053/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "递归调用跟踪",
+                  "statement": "trace(0) 打印 base 并返回 1。n>0 时打印 enter n，调用 trace(n−1) 得 L，打印 leave n L 并返回 L+n。求 trace(3) 后再打印 result 与返回值的全部输出和复杂度。",
+                  "hint": "",
+                  "solution": "各行依次为 enter 3、enter 2、enter 1、base、leave 1 1、leave 2 2、leave 3 4、result 7。单位成本模型下每层工作恒定，时间和栈空间均 Θ(n)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:weighted-grid-placement",
+              "title": "Weighted Grid Placement",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Place at most one trophy per cell on an n×n weighted board, with at most two in any adjacent 2×2 square. Maximize total weight, allowing empty cells.",
+              "solution": "Encode row placements by masks. Adjacent masks u,v are compatible iff for every adjacent two-column mask q, popcount(u&q)+popcount(v&q)≤2. Initialize each first-row mask with its row weight; for each later mask take its row weight plus the maximum over compatible predecessors. The maximum final value is optimal since constraints touch at most two successive rows. Time O(n²4^n) by direct checks, or precompute compatibility and transition in O(n4^n); memory O(2^n) excluding compatibility.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:weighted-grid-placement",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiukun-2/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "网格奖杯最大权重",
+                  "statement": "在 n×n 带权棋盘放奖杯，每格至多一个，每个相邻 2×2 至多两个。允许空格，求最大总权重。",
+                  "hint": "",
+                  "solution": "每行用位掩码表示。对相邻两列掩码 q，若所有 popcount(u&q)+popcount(v&q)≤2，则两行掩码 u,v 相容。首行以行权重初始化，后续取本行权重加相容前态的最大值。约束只跨相邻两行，末行最大值即最优。直接检查 O(n²4^n)，可预计算相容性后用 O(n4^n) 转移；不计相容表的工作内存 O(2^n)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:hundred-unit-change",
+              "title": "Hundred Unit Change",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Count unordered change for 100 using unlimited 1,2,5,10,20,50 denominations. Extend to at most N coins.",
+              "solution": "Initialize dp[0]=1. For each denomination c, scan s=c to 100, adding dp[s−c] to dp[s]. Each combination is built in denomination order, and ascending sums allow repeated coins. The result is 4562. With a coin cap, maintain dp[s,k] initialized at dp[0,0]=1 and add dp[s−c,k−1]; sum dp[100,k] through min(N,100).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:hundred-unit-change",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "百元兑换计数",
+                  "statement": "用不限量的 1、2、5、10、20、50 元兑换 100 元，不区分顺序。求组合数，扩展至至多 N 张。",
+                  "hint": "",
+                  "solution": "初始化 dp[0]=1。逐面额 c，按 s=c 至 100 递增执行 dp[s]+=dp[s−c]。面额固定次序保证不重计，正向和允许重复面额。结果 4562。限制张数时维护 dp[s,k]，仅 dp[0,0]=1，转移加 dp[s−c,k−1]，最后累加 k≤min(N,100)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:smaller-elements-to-right",
+              "title": "Smaller Elements to Right",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "For each array element count strictly smaller entries to its right in subquadratic time, including duplicates. Example [5,2,6,1].",
+              "solution": "Compress sorted distinct values to ranks. Scan right to left with a Fenwick frequency tree; query prefix through rank−1 and then add one at rank. This is O(n log n) time and O(n) space; the example returns [2,1,1,0].",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:smaller-elements-to-right",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 12"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "右侧更小元素",
+                  "statement": "次二次时间统计各元素右侧严格更小的个数，处理重复值。示例 [5,2,6,1]。",
+                  "hint": "",
+                  "solution": "将排序去重的值压成秩，从右到左用树状数组维护频次。先查询秩减一的前缀，再给当前秩加一。时间 O(n log n)，空间 O(n)，示例得 [2,1,1,0]。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:disjoint-drawdown-intervals",
+              "title": "Disjoint Drawdown Intervals",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "For positive prices find the largest peak-to-later-trough decline 1−P_t/P_s, then the largest whose closed interval is disjoint from the first. Tie-break by earliest start then end.",
+              "solution": "Scan each subarray holding the maximum earlier price and its earliest index; for a fixed trough it gives maximum decline. Compare candidates by value then indices. After obtaining [s,t], scan only indices strictly before s and strictly after t; compare those best intervals. Use a missing result for segments with fewer than two days or for no positive decline if requiring an actual drawdown.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:disjoint-drawdown-intervals",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 13"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "不重叠回撤区间",
+                  "statement": "正价格序列中找最大峰谷跌幅 1−P_t/P_s，再找与首个闭区间不重叠的最大跌幅。并列按起点、终点最早。",
+                  "hint": "",
+                  "solution": "扫描时保存最大历史价格及其最早日期，对给定谷值它使跌幅最大。候选先比幅度再比索引。得到 [s,t] 后分别扫描严格早于 s、严格晚于 t 的区间并比较。少于两日时返回缺失；若定义要求实际下跌，无正跌幅时也返回缺失。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:positive-road-shortest-path",
+              "title": "Positive Road Shortest Path",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "For each undirected positive-weight graph, find distance from vertex 1 to N, allowing parallel edges; read cases until 0 0 and report unreachable vertices explicitly.",
+              "solution": "Build adjacency lists including both directions and use a min heap initialized with (0,1). Pop the least tentative distance, discard stale entries, and relax neighbors; first nonstale pop of N is final by nonnegative edge weights. If heap empties first, return unreachable. Time O((N+M)log(N+M)) for lazy heap.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:positive-road-shortest-path",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-038/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "正权道路最短路",
+                  "statement": "多组正权无向图求 1 至 N 的最短路，允许平行边，读到 0 0 结束，不可达用约定标记。",
+                  "hint": "",
+                  "solution": "双向建邻接表，最小堆从 (0,1) 开始。弹出最小候选，跳过过期项并松弛邻接点；正权保证 N 第一次有效出堆即最短。堆先空则不可达。惰性堆用时 O((N+M)log(N+M))。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:gcd-multiset-recovery",
+              "title": "GCD Multiset Recovery",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Recover n positive integers from their shuffled n² ordered pairwise gcds, including diagonal entries. Example [1,4,2,6,3,3,9,2,1].",
+              "solution": "Maintain a descending multiset. Its largest remaining element x is a largest unrecovered original, since each unseen off-diagonal gcd involving an unrecovered value is no larger than that value. Remove x once and gcd(x,y) twice for each previously recovered y. Repeat n times, counting multiplicities even for ties. Example yields [9,6,4].",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:gcd-multiset-recovery",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最大公因数多重集还原",
+                  "statement": "从打乱的 n² 个有序配对最大公因数（含对角线）还原正整数序列。示例 [1,4,2,6,3,3,9,2,1]。",
+                  "hint": "",
+                  "solution": "维护降序多重集。剩余最大 x 是某个尚未还原的最大原数，因为涉及未还原值的非对角最大公因数不超过该值。删一次 x，对每个已恢复 y 删两次 gcd(x,y)。重复 n 次，重复值也计次数。示例得 [9,6,4]。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:minimum-grid-penalty",
+              "title": "Minimum Grid Penalty",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Move right or up from (0,0) to (7,7), paying (x−5)²+(y−5)² at each visited vertex including endpoints. Find minimum and recover a path.",
+              "solution": "Set D(0,0)=50, nonexistent predecessors to infinity, and D(x,y)=cost(x,y)+min(D(x−1,y),D(x,y−1)). Scanning rows yields D(7,7)=211. Save a minimizing predecessor at each vertex and backtrack from (7,7).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:minimum-grid-penalty",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-041/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "网格最小扣分",
+                  "statement": "从 (0,0) 向右或向上至 (7,7)，各访问点含端点扣 (x−5)²+(y−5)²。求最小值并恢复路径。",
+                  "hint": "",
+                  "solution": "令 D(0,0)=50，越界前态为无穷。D(x,y)=本点扣分+min(D(x−1,y),D(x,y−1))。按行计算得 D(7,7)=211，保存最小前驱后从终点回溯。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:increasing-subsequence-enumeration",
+              "title": "Increasing Subsequence Enumeration",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Enumerate distinct nonempty strictly increasing value subsequences of length at most limit and sum below threshold. Values may repeat or be negative.",
+              "solution": "Depth-first search from the next available index, extending with values greater than the last. At each depth skip a value already tried there: its earliest occurrence leaves a superset of suffix indices. Emit any valid nonempty prefix, keep exploring until the length limit, and do not prune merely because the current sum is too high (later negative values may lower it). Runtime is exponential in general.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:increasing-subsequence-enumeration",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-043/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "递增子序列枚举",
+                  "statement": "枚举长度不超过 limit、和严格小于 threshold 的不同非空严格递增值子序列。允许负数和重复输入值。",
+                  "hint": "",
+                  "solution": "深搜从下一可用索引开始，只接严格大于末值的元素。每层已尝试过的值跳过，其首次出现留下的后缀索引最多。合法非空前缀即输出，未达长度上限仍继续；当前和超阈值时不能直接剪枝，因为后续负数仍可能降低总和。最坏指数复杂度。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:slash-path-dictionary",
+              "title": "Slash Path Dictionary",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Implement SlashDict: a/b/c addresses nested maps. Support indexing, assignment, deletion, get, pop and deep_keys, with automatic intermediate dictionaries and recursive plain-map conversion. Empty components are invalid, scalar traversal errors, empty maps have no leaf paths.",
+              "solution": "Split and validate once per operation. Walk all but the last component using each local dict; assignment creates missing intermediate maps, other operations leave missing paths missing. Raise TypeError on scalar traversal; get and pop with default handle only KeyError. Access or remove the final key using its local dictionary. Recursive conversion normalizes mappings on assignment; DFS carries path components and yields joined leaf paths, skipping empty maps.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:slash-path-dictionary",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-043/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "斜杠路径字典",
+                  "statement": "实现 SlashDict，a/b/c 表示多层映射，支持索引、赋值、删除、get、pop 和 deep_keys。自动补建中间字典、递归转换普通字典；禁止空段，经过标量报错，空字典没有叶路径。",
+                  "hint": "",
+                  "solution": "每次操作只分割校验一次。逐层走到末段父节点，赋值可补建缺失映射，其他操作保持缺失状态。中间值为标量报 TypeError，get 和带默认值的 pop 只处理 KeyError。末段由本层字典完成访问或删除。赋值递归规范映射，深搜携带路径并拼接叶路径，跳过空映射。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:shallow-configuration-copy",
+              "title": "Shallow Configuration Copy",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Copy cfg={'windows':[5,20],'cost':.001} with cfg.copy(); set copy['windows'][0]=10 and copy['cost']=.002. Give both objects and independent copy method.",
+              "solution": "Both windows lists read [10,20] because the mapping copy shares value objects. Original cost stays .001, copied cost is .002, because assigning a key changes only one mapping. copy.deepcopy makes this nested list independent.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:shallow-configuration-copy",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "配置浅拷贝",
+                  "statement": "对 cfg={'windows':[5,20],'cost':.001} 调用 cfg.copy()，修改副本 windows[0]=10 和 cost=.002。给出两对象结果和独立复制方法。",
+                  "hint": "",
+                  "solution": "两个 windows 都是 [10,20]，因为浅拷贝共享值对象。原 cost 仍 .001，副本是 .002，因为键赋值只更新一个映射。copy.deepcopy 可使此处嵌套列表独立。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:square-residue-list",
+              "title": "Square Residue List",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Write a one-line Python expression for sorted squares in [1,1000] congruent to one modulo five.",
+              "solution": "Use [n*n for n in range(1,32) if n*n % 5 == 1]. The largest possible root is 31, and increasing positive roots give increasing squares.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:square-residue-list",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "平方数列表",
+                  "statement": "用一行 Python 生成 [1,1000] 中模 5 余 1 的平方数，按升序排列。",
+                  "hint": "",
+                  "solution": "用 [n*n for n in range(1,32) if n*n % 5 == 1]。最大整数平方根是 31，正根递增时平方也递增。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:restoring-palindrome-list",
+              "title": "Restoring Palindrome List",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Check a singly linked list for palindrome in linear time and constant extra space, restoring its links before return.",
+              "solution": "Find the end of the first half using slow/fast pointers. Reverse the second half in place, compare against the first until the reversed half ends, then reverse it again and reconnect. Avoid early return on mismatch until restoration. Empty and singleton lists pass directly.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:restoring-palindrome-list",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 13"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "可恢复的回文链表",
+                  "statement": "线性时间、常数额外空间判断单链表回文，返回前恢复连接。",
+                  "hint": "",
+                  "solution": "快慢指针找前半段末尾，就地反转后半段并和前半段比较至后半结束，再反转恢复并接回。发现不等时记录结果，恢复完成后返回。空表及单节点直接通过。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:josephus-elimination-order",
+              "title": "Josephus Elimination Order",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "With n people indexed 0…n−1, repeatedly remove every Kth survivor starting count one at index zero. Find the survivor and full elimination order.",
+              "solution": "For survivor only use J(1)=0 and J(i)=(J(i−1)+K) mod i, relabeling from the next survivor after one removal. For the order keep alive indicators in a Fenwick tree. With m alive update zero-based rank r=(r+K−1) mod m, locate the (r+1)th one, output and remove it; leave r as the next starting rank before the next modulo. Time O(n log n), versus O(n) for survivor only.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:josephus-elimination-order",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 14"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "约瑟夫出局顺序",
+                  "statement": "n 人编号 0 至 n−1，从零号数一，每数到第 K 个存活者淘汰。求最终幸存者及完整出局次序。",
+                  "hint": "",
+                  "solution": "只求幸存者用 J(1)=0、J(i)=(J(i−1)+K) mod i，即每次以出局后下一人重编号。完整次序用树状数组维护存活位；剩 m 人时 r=(r+K−1) mod m，定位第 r+1 个 1、输出并删除，r 保留为下一起始秩。完整 O(n log n)，单求幸存者 O(n)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:longest-downhill-path",
+              "title": "Longest Downhill Path",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Find the longest four-neighbor path of strictly decreasing heights in a rectangular grid, counting cells.",
+              "solution": "The directed graph is acyclic. Memoize f(v)=1+max over lower neighbors f(u), with empty max zero; take max over all starts. Each cell and its edges is processed once, O(RC) time and space. An iterative alternative evaluates increasing heights.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:longest-downhill-path",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 16"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最长下坡路径",
+                  "statement": "矩形网格四邻可走且高度严格下降，求最长路径包含的格数。",
+                  "hint": "",
+                  "solution": "定向图无环。记忆化计算 f(v)=1+较低邻居 f(u) 的最大值，无邻居取零，最后对所有起点取最大。每格与相邻边只处理一次，时间空间 O(RC)。迭代实现可按高度从低到高处理。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:white-tree-components",
+              "title": "White Tree Components",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Color at most one black vertex white in a tree. Maximize the largest connected white region.",
+              "solution": "Label and count white components by DFS. For each black vertex compute one plus the sum of sizes of adjacent white components. In a tree the same component cannot touch it via two neighbors without a cycle. Compare with the largest original component. Total time and memory O(n).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:white-tree-components",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 17"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "白色树连通块",
+                  "statement": "树上最多将一个黑点染白，最大化白色连通块大小。",
+                  "hint": "",
+                  "solution": "深搜标记白色连通块和大小。对每个黑点算一加所有相邻白块大小。树中同一白块若通过两个邻点相接便成环，所以无需重复计数。再与原最大白块比较，时间空间 O(n)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:matching-endpoint-subarray",
+              "title": "Matching Endpoint Subarray",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Find the largest sum among contiguous subarrays of length at least two with equal endpoints, or None if absent. Handle negative integers in linear time.",
+              "solution": "With prefix P[i] before index i, a candidate ending at j is P[j+1]−P[i]. For each value remember the minimum P[i] over its earlier positions. Query the current value's minimum before updating it, guaranteeing i<j. Scan once with a dictionary; initialize best to missing so negative answers survive.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:matching-endpoint-subarray",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-046/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "同端值最大子数组",
+                  "statement": "在线性时间求长度至少二且首尾值相等的连续子数组最大和，不存在返回 None，允许负整数。",
+                  "hint": "",
+                  "solution": "令 P[i] 为 i 前缀和。以 j 结尾候选是 P[j+1]−P[i]。哈希表记录每个值的先前位置最小 P[i]。先查询后更新保证 i<j。单遍扫描，最优值以缺失初始化以保留负数答案。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:python-text-exercises",
+              "title": "Python Text Exercises",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Print a K of height 2n−1 and width n with stars in columns 0 and abs(i−n+1); show n=3. Count only ASCII letters case-insensitively in Aa,b2B!. Use filter and map to uppercase strings longer than 2 in ['a','ab','abc','python'].",
+              "solution": "Each row with distance d>0 is '*'+' '*(d−1)+'*', else '*'. At n=3 rows are '* *', '**', '*', '**', '* *'. Filter ASCII letters before lowercasing, count and sort keys, giving {'a':2,'b':2}. Use list(map(str.upper,filter(lambda s: len(s)>2,items))) giving ['ABC','PYTHON']; both operations yield lazy iterators in Python 3.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:python-text-exercises",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 4"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "Python 文本练习",
+                  "statement": "用星号在列 0 与 abs(i−n+1) 输出高 2n−1、宽 n 的 K，展示 n=3。仅按 ASCII 英文字母忽略大小写统计 Aa,b2B!。用 filter、map 过滤并大写 ['a','ab','abc','python'] 中长度大于 2 的项。",
+                  "hint": "",
+                  "solution": "每行 d>0 时为 '*'+' '*(d−1)+'*'，否则 '*'。n=3 依次为 '* *'、'**'、'*'、'**'、'* *'。先筛 ASCII 字母再转小写计数、排序，得 {'a':2,'b':2}。用 list(map(str.upper,filter(lambda s: len(s)>2,items))) 得 ['ABC','PYTHON']；Python 3 的两个对象均为惰性迭代器。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:paid-trade-sql",
+              "title": "Paid Trade SQL",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "For trades(trade_id,account_id,amount,status), select paid rows above 1000 and accounts whose total paid amount exceeds 10000.",
+              "solution": "Use SELECT * FROM trades WHERE status='paid' AND amount>1000. For totals: SELECT account_id, SUM(amount) AS paid_total FROM trades WHERE status='paid' GROUP BY account_id HAVING SUM(amount)>10000. SUM skips NULL; do not reuse the amount>1000 predicate in the second query.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:paid-trade-sql",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "已付款交易 SQL",
+                  "statement": "对 trades(trade_id,account_id,amount,status)，查询已付款且大于 1000 的交易，以及已付款总额超过 10000 的账户。",
+                  "hint": "",
+                  "solution": "逐笔用 SELECT * FROM trades WHERE status='paid' AND amount>1000。账户汇总用 SELECT account_id, SUM(amount) AS paid_total FROM trades WHERE status='paid' GROUP BY account_id HAVING SUM(amount)>10000。SUM 跳过 NULL，第二个查询不应用单笔金额门槛。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:array-axis-operations",
+              "title": "Array Axis Operations",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "For rows [4,12,6,9],[10,8,12,7],[6,8,5,2], compute amin by each axis and keepdims. Sum seven weekday binary columns per hero into V_counts. For arrays shaped (2,2) and (3,2), compare column_stack, stack, dstack and concatenate.",
+              "solution": "Axis 1 gives [4,7,2], shape (3,), or (3,1) with keepdims; axis 0 gives [4,8,5,2], shape (4,), or (1,4). Set df['V_counts']=df[weekdays].sum(axis=1); cumulative sum would give partial prefixes. column_stack and dstack require matching leading row sizes here and stack requires identical shapes; all three fail. Default concatenate joins along rows and yields (5,2).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:array-axis-operations",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 8"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 14"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "数组轴操作",
+                  "statement": "三行 [4,12,6,9]、[10,8,12,7]、[6,8,5,2]，比较 amin 的各轴与 keepdims。英雄的七个二值星期列求行和 V_counts。形状 (2,2)、(3,2) 的数组比较 column_stack、stack、dstack、concatenate。",
+                  "hint": "",
+                  "solution": "axis=1 得 [4,7,2]、形状 (3,)，保维为 (3,1)；axis=0 得 [4,8,5,2]、形状 (4,)，保维 (1,4)。df['V_counts']=df[weekdays].sum(axis=1)，累计和给前缀而非单个总数。column_stack、dstack 在这里要求行数相等，stack 要求形状全等，均失败。默认 concatenate 沿行拼，得 (5,2)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:streaming-time-weighted-price",
+              "title": "Streaming Time Weighted Price",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Receive nondecreasing time-stamped quotes, held constant between updates. Implement a moving time average over width W with O(B) memory using B buckets; address incomplete history, equal times, out-of-order updates and error.",
+              "solution": "Use fixed buckets of width Δ=W/B and a circular buffer of B+1 tagged buckets with integral and covered duration. At update, split the previous-price interval across relevant buckets and skip buckets already outside the new window; equal timestamps just replace current price and reversed timestamps raise. Sum full bucket integrals and estimate the left partial bucket by its covered-bucket mean times retained duration, divide by W. Return NaN until t−first≥W. Only the left boundary bucket is approximated, with mean error at most price range within that bucket divided by B.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:streaming-time-weighted-price",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-049/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "流式时间加权均价",
+                  "statement": "报价按非降时间到达，记录之间价格保持。用 B 个桶、O(B) 内存估计宽 W 的时间均价，处理覆盖不足、同刻、逆序及近似误差。",
+                  "hint": "",
+                  "solution": "固定桶宽 Δ=W/B，用 B+1 个带时间标签的环形桶存积分和覆盖长度。新报价到达时按桶积分上一价格，跳过已完全过期的桶；同刻只换当前价，逆序报错。整桶积分精确，左边界用该桶已有均价乘保留时长，再除 W。t−first<W 返回 NaN。只有左边界桶产生近似误差，均价误差至多该桶价格极差除以 B。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:regional-transaction-summaries",
+              "title": "Regional Transaction Summaries",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Given country/state/city, unit price, quantity and payment method, rank cities by total sales; for country and country/state compare unit-weighted and transaction-mean prices with counts and units. Test country–payment association, grouping countries with fewer than 20 trades.",
+              "solution": "Validate units and missing/invalid prices or quantities. Compute sales=price×quantity and group by all three geography keys for city totals, preventing same-name collisions. Country/state aggregates use total sales/total units for weighted price (missing if denominator zero), alongside mean unit price and counts. Make a country×payment contingency table after pooling, test independence with Pearson chi-square, and report Cramér's V=√(χ²/[n min(r−1,c−1)]). If expected counts are small, use a conditional permutation or exact test.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:regional-transaction-summaries",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-055/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-055/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-055/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "地区交易汇总",
+                  "statement": "给定国家、省州、城市、单价、数量和付款方式，按销售额排名城市；按国家及国家与省州汇总销量加权均价、逐笔均价、笔数和销量；不足 20 笔的国家并为 Other 后检验付款方式关联。",
+                  "hint": "",
+                  "solution": "先校验单位、缺失及无效价量，计算销售额=单价×数量。城市按三级全键聚合避免同名混淆。国家、省州分别以总额/总销量求加权单价（分母零则缺失），同时给逐笔均价与计数。合并小样本后作国家×付款方式列联表，用 Pearson 卡方并报告 Cramér V=√(χ²/[n min(r−1,c−1)])；期望频数太小时用条件置换或精确检验。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:lagged-stock-and-attention-features",
+              "title": "Lagged Stock and Attention Features",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Build per-stock previous-five-record average close and average daily return, excluding current row and requiring five valid inputs. From undeleted UTC attention records build Shanghai-date stock attention shares, join to quotes, winsorize by day at 1%/99%, and add daily cross-sectional Pearson/Spearman correlations against lagged mean close before exporting result.csv without changing quote rows.",
+              "solution": "Check unique (code,date) keys and sort within each stock. Form r=CLOSE/PRECLOSE−1 only for positive valid PRECLOSE. For each input use grouped shift(1) then rolling(5,min_periods=5); suspended days count only if recorded, and cumulative return would compound rather than average. Convert UTC timestamps to Asia/Shanghai before date extraction, drop deleted rows, aggregate counts and divide by daily total. Left join many-to-one, keep raw attention, and clip valid values at each day's quantiles. Use joint valid pairs, returning missing if either variable is constant; Spearman is Pearson on average ranks. Join daily results many-to-one and export after checking original keys and row count.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:lagged-stock-and-attention-features",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-055/",
+                  "locator": "Question 5"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-055/",
+                  "locator": "Question 6"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-055/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-055/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "滞后价格收益与热度",
+                  "statement": "按股票计算前五条交易记录的均价及日收益均值，不含当期且须五个有效值。从未删除的 UTC 热度记录生成上海日期股票占比，连回行情并按日 1%/99% 缩尾，再按日与滞后均价计算 Pearson、Spearman，导出 result.csv 且不改变行情行数。",
+                  "hint": "",
+                  "solution": "校验 (代码,日期) 唯一并组内排序。仅当前收有效且为正时算 r=CLOSE/PRECLOSE−1。各字段组内 shift(1) 再 rolling(5,min_periods=5)，停牌只有实际记录才占行，累计收益应连乘。UTC 先转 Asia/Shanghai 再取日期，去删除记录，分股计数除当天总数。多对一左连，保留原热度，对当日有效值按分位数截尾。相关只用共同有效配对，常数列返回缺失；Spearman 对平均秩作 Pearson。日结果多对一连回，核对原键与行数后导出。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:priority-parameter-merge",
+              "title": "Priority Parameter Merge",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Merge key-value groups ordered from lower to higher priority; last value wins, output in order of first key occurrence. Resolve duplicate keys within a group the same way.",
+              "solution": "Use an insertion-ordered mapping. Traverse groups and pairs in supplied order and assign merged[key]=value; reassignment preserves insertion position. Return its values or items in order. Expected O(total pairs) time and O(distinct keys) memory.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:priority-parameter-merge",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-huajun/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "优先级参数合并",
+                  "statement": "按低到高优先级合并键值组，最后值覆盖，输出按键首次出现顺序，组内重复同样处理。",
+                  "hint": "",
+                  "solution": "使用保留插入次序的映射，按顺序遍历组与键值并赋 merged[key]=value；覆盖不移动插入位置。按顺序返回值或键值对。期望时间与总键值数成正比，内存与不同键数成正比。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:strict-pareto-frontier",
+              "title": "Strict Pareto Frontier",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Return points not dominated by another with both strictly higher P&L and strictly smaller drawdown. Preserve duplicates.",
+              "solution": "Sort by decreasing P&L and process tied P&L as a batch. Maintain minimum drawdown among strictly earlier batches. A point is dominated iff that minimum is strictly smaller than its drawdown. Update the minimum after testing the full batch and preserve original order if required. O(n log n).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:strict-pareto-frontier",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-zhuoshi/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "严格支配前沿",
+                  "statement": "若另一点收益严格更高且回撤严格更小，则被支配。返回全部未被支配点，保留重复项。",
+                  "hint": "",
+                  "solution": "收益降序，同收益批处理。维护此前严格更高收益批次的最小回撤，仅当其严格低于当前回撤才被支配。整批判断后才更新；如需要按原索引输出。时间 O(n log n)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:minimum-pnl-segment",
+              "title": "Minimum PnL Segment",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Find the minimum nonempty contiguous P&L sum. Relate it to maximum absolute and relative drawdown.",
+              "solution": "Track end=min(x,end+x) and the minimum end over all positions, initialized at the first item. If cumulative P&L starts at zero, absolute drawdown with zero allowed is max(0,−minimum segment sum). Relative drawdown instead divides equity peak-to-trough loss by positive peak equity and depends on initial equity.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:minimum-pnl-segment",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-zhuoshi/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最小连续损益",
+                  "statement": "求非空连续损益和最小值，并说明与最大绝对、比例回撤的关系。",
+                  "hint": "",
+                  "solution": "以首项初始化，逐项用 end=min(x,end+x) 更新并取全局最小。累计损益从零开始、允许零回撤时，最大绝对回撤为 max(0,−最小区间和)。比例回撤以正的峰值净值为分母，还依赖起始净值。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:stateful-recursive-evaluation",
+              "title": "Stateful Recursive Evaluation",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "rr shares counters c=o=0. Each call increments o. If x<9 increment c and set q=trunc(x/(2 if c<3 else 3)) plus c if c>1. Otherwise q=rr(x−2)+rr(trunc(x/3)). Print I like q when o+q is even, else I hate q; return q. Evaluate rr(rr(rr(13)−3)−5) assuming left then right. What if order is unspecified?",
+              "solution": "Explicitly assign the left call result before the right and consult the counters only after both return. The three outer inputs are 13,12,17 and the returns are 15,22,70. Full output, with + meaning I like and − meaning I hate: −3,+3,−6,+4,+10,+5,+15,−7,+7,−14,+8,+22,+10,−10,−20,−11,−31,−12,+43,−13,+56,−14,−70. Without specified operand order the shared state can change the output and value.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:stateful-recursive-evaluation",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-hande/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "带共享状态的递归求值",
+                  "statement": "rr 共享计数 c=o=0，每次调用先加 o。x<9 时加 c，取 q=trunc(x/(2 若 c<3 否则 3))，c>1 时再加 c；否则 q=rr(x−2)+rr(trunc(x/3))。o+q 偶则打印 I like q，否则 I hate q，返回 q。先左后右时计算 rr(rr(rr(13)−3)−5)，并讨论求值顺序未定。",
+                  "hint": "",
+                  "solution": "将左调用显式求值，再调用右支，两者返回后才检查共享计数。三个外层输入为 13、12、17，返回 15、22、70。以 + 表示 I like、− 表示 I hate，完整输出为 −3、+3、−6、+4、+10、+5、+15、−7、+7、−14、+8、+22、+10、−10、−20、−11、−31、−12、+43、−13、+56、−14、−70。若操作数顺序未指定，共享状态可改变输出和返回值。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:flattened-sample-covariance",
+              "title": "Flattened Sample Covariance",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Compute an unbiased covariance matrix from n IID observations with m coordinates in a flat row-major array. Example [1,2,3,4,5,6] with n=3,m=2.",
+              "solution": "Read entry (i,j) at offset im+j. Compute column means and center; form centered cross-products divided by n−1. The expectation of the centered cross-product sum is nΣ−n Cov(mean)=(n−1)Σ. The example has both centered columns [−2,0,2], so every covariance entry is 4.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:flattened-sample-covariance",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-hande/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "扁平数据样本协方差",
+                  "statement": "从按行平铺的 n 个 IID m 维观测计算无偏样本协方差。示例 [1,2,3,4,5,6]、n=3、m=2。",
+                  "hint": "",
+                  "solution": "元素 (i,j) 的偏移为 im+j。求列均值后中心化，交叉乘积和除以 n−1。中心化乘积和期望为 nΣ−n Cov(均值)=(n−1)Σ。示例两中心列均为 [−2,0,2]，协方差四项均为 4。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:two-valuation-stone-game",
+              "title": "Two Valuation Stone Game",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Alice and Bob alternately take stones, valued a_i by Alice and b_i by Bob. Both optimize final score difference. Determine win, tie or loss under optimal play.",
+              "solution": "If Alice takes set A, her difference equals Σ_(i∈A)(a_i+b_i)−Σ_i b_i. The contest is therefore drafting the largest available combined weights. Exchange argument: taking largest x now can replace a later own pick of x with the smaller displaced item if necessary; if the opponent would get x, swapping ownership with the smaller pick only improves the objective. Thus sort descending by a_i+b_i, alternate, and compare original-score totals.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:two-valuation-stone-game",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-weiguan/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "双估值取石子",
+                  "statement": "两人轮流取石子，Alice 和 Bob 对第 i 颗估值 a_i、b_i，双方优化最终分差。判断最优结果胜平负。",
+                  "hint": "",
+                  "solution": "若 Alice 得集合 A，其分差是 Σ_(i∈A)(a_i+b_i)−Σ_i b_i，变成争夺组合权重。若最大 x 原本后来自己取，可与先取的较小项对换；若原本对手取得 x，交换归属只改善己方目标，因此先取最大项最优。按 a_i+b_i 降序轮取，再比较各自原估值总和。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:matrix-assignment-sum",
+              "title": "Matrix Assignment Sum",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "An initially zero n×n matrix receives whole-row and whole-column assignments. Find final sum without materializing the matrix.",
+              "solution": "Scan operations backward. The first time a row appears, contribute its value times n minus the count of seen columns; mark the row. Similarly a new column contributes across unseen rows. Skip repeated rows or columns, because every cell is charged exactly at its latest assignment. O(operations+n) time and O(n) space with bitsets.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:matrix-assignment-sum",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-weiguan/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "矩阵行列覆盖求和",
+                  "statement": "初始零矩阵 n×n，依次整行或整列赋值。避免构造矩阵，求最终元素和。",
+                  "hint": "",
+                  "solution": "逆序扫描。行首次出现时贡献该值乘 n 减已见列数，并标记行；新列同理只贡献未见行。重复行列跳过，因为各格只在最后一次赋值被计入。位数组实现时间 O(操作数+n)、空间 O(n)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:signal-trading-inventory",
+              "title": "Signal Trading Inventory",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Given prices S₀…S_N and signals F_i=±1 for i<N, compare A trading one signed unit with FIFO closure and B targeting position F_i. Both close at N. Compute positions, P&L, mean holding time and B's expected orders and unit volume for zero mean signals of adjacent correlation r.",
+              "solution": "A positions are cumulative signals, B positions are F_i. Self-financing profit is Σposition_i(S_(i+1)−S_i). Match A closes against an opposite FIFO lot, tracking opening indices, and liquidate remaining lots at N; average close minus open over matched units. B opens a lot at zero and replaces it at every sign flip, so holding lengths sum to N and mean is N/(1+flips). A sign flip has probability (1−r)/2, giving B expected 2+(N−1)(1−r)/2 orders and 2+(N−1)(1−r) units. If distant pairs are independent, the empirical flip fraction need not concentrate solely from that pairwise condition on signals; under an ergodic flip process with r<1 the average converges to 2/(1−r).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:signal-trading-inventory",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiwei/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "信号交易持仓",
+                  "statement": "给定价格 S₀…S_N 和前 N 个信号 F_i=±1。A 每期按信号交易一单位并先进先出平仓，B 每期将仓位调至 F_i，均在 N 平仓。求仓位、盈亏、平均持有期；相邻相关 r 且信号均值零时求 B 的期望订单与单位成交量。",
+                  "hint": "",
+                  "solution": "A 仓位为信号累计和，B 为 F_i；自融资盈亏 Σ仓位_i(S_(i+1)−S_i)。A 用队列按最早开仓时间匹配反向单位，N 全平，平均持有期对平仓与开仓时间差取均值。B 初始开一手、每次翻转换仓，持有期总和 N，均值 N/(1+翻转数)。翻转概率 (1−r)/2，因此期望订单 2+(N−1)(1−r)/2、单位成交 2+(N−1)(1−r)。远距信号两两独立本身不保证翻转率集中；若翻转过程遍历且 r<1，则长期平均趋于 2/(1−r)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:spiral-matrix-position",
+              "title": "Spiral Matrix Position",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Fill a 100×100 matrix from top-left rightward then clockwise inward. Find the one-based position of 2018 and outline ring indexing.",
+              "solution": "For a ring with side s>1, subtract 4(s−1) if the target is beyond it, then increment the top/left index and shrink s by two. Remaining offset is walked across top, right, bottom, left, visiting each corner once. After five rings, side 90 starts at (6,6) and local index is 118. The top row uses 90 indices, then 28 down the right column, giving (34,95).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:spiral-matrix-position",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-second/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "螺旋矩阵定位",
+                  "statement": "100×100 方阵从左上向右再顺时针螺旋填数，求 2018 的一基行列，并说明按圈定位。",
+                  "hint": "",
+                  "solution": "边长 s>1 的一圈有 4(s−1) 个数，超出则减去、起点各加一且 s 减二。剩余序号沿上、右、下、左走，转角只数一次。减五圈后边长 90、起点 (6,6)，局部序号 118。顶行 90 项，再向下 28，得 (34,95)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:neighbor-label-grid",
+              "title": "Neighbor Label Grid",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Fill a 6×6 grid with positive integers totaling 90 so each cell labeled v has all labels 1 through v−1 among its edge-neighbors. Construct and verify a grid.",
+              "solution": "One grid by rows: [1,2,4,3,1,2]; [4,3,1,2,3,4]; [2,4,1,2,4,1]; [1,5,2,1,5,2]; [4,3,2,1,3,4]; [2,1,3,4,2,1]. Row sums 13,17,14,16,17,13 total 90. Verify each cell by forming its set of orthogonal neighbor values and testing that set(range(1,v)) is a subset. Each 5, for instance, has neighbors 1,2,3,4. To find a grid, use binary cell-label indicators (values at most five), one per cell, and for each lower required value impose neighboring indicator sum at least the cell's chosen indicator.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:neighbor-label-grid",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-second/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "邻接数字网格",
+                  "statement": "在 6×6 网格填正整数总和 90，每个 v 所有 1 至 v−1 标签均须出现在共边邻格。构造并验证一张表。",
+                  "hint": "",
+                  "solution": "逐行为 [1,2,4,3,1,2]、[4,3,1,2,3,4]、[2,4,1,2,4,1]、[1,5,2,1,5,2]、[4,3,2,1,3,4]、[2,1,3,4,2,1]。行和为 13、17、14、16、17、13，总 90。逐格建立共边邻值集合，验证包含 set(range(1,v))。例如两个 5 都有 1、2、3、4。构造可用二元格标签变量（值至多五），每格恰选一项，每个较小必需值的邻居指示和至少为本格选中指示。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:order-book-volatility-features",
+              "title": "Order Book Volatility Features",
+              "difficulty": "medium",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Find the range of (ask size−bid size)/(.5 times total size), with example 300,100. Implement opposite-depth weighted price and group realized volatility by instrument, bucket and half-bucket. Give realized variance, mean absolute return, bipower variation and a range-based measure.",
+              "solution": "Imbalance lies in [−2,2], is positive for ask dominance, and is 1 in the example; zero total size is missing. WAP=(bid×askSize+ask×bidSize)/totalSize. Sort each group, compute adjacent valid log returns, then sqrt(sum of squares), taking an empty return set as missing. Define half-open halves and do not bridge gaps or group edges. Realized variance is Σr², mean absolute return is mean abs(r), bipower variation is π/2 Σ adjacent abs products, and Parkinson variance is log(high/low)²/(4log 2) for a driftless continuous diffusion with reliable extrema. Variances have squared return units, mean absolute return and RV have return units.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:order-book-volatility-features",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-eff/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-eff/",
+                  "locator": "Question 4"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-eff/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "盘口波动特征",
+                  "statement": "求 (卖量−买量)/(.5 倍总量) 的范围及 300、100 的值。实现对侧深度加权价及按股票、时段和半段分组的已实现波动率。给已实现方差、平均绝对收益、双幂变差与区间估计。",
+                  "hint": "",
+                  "solution": "量差在 [−2,2]，卖量大为正，例为 1，总量零记缺失。WAP=(买价×卖量+卖价×买量)/总量。各组按时间排序，算相邻有效对数收益再对平方和开方，无收益记缺失。半段用半开区间，收益不跨缺口或组边界。已实现方差 Σr²，平均绝对收益为 mean abs(r)，双幂变差为 π/2 乘相邻绝对收益乘积和。无漂移连续扩散、可靠高低价下 Parkinson 方差为 log(high/low)²/(4log 2)。各方差为收益平方单位，其余为收益单位。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:daily-contract-volume-ranking",
+              "title": "Daily Contract Volume Ranking",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Given five days of RecvTime in 100-nanosecond ticks from year one, ContractId and per-row LastVol, output top ten contracts by daily volume, breaking ties by code.",
+              "solution": "Subtract the platform epoch offset 621355968000000000 to convert UTC Gregorian ticks to Unix 100-ns units, preserving integer precision. Map to exchange-local session dates using the supplied calendar, not midnight for overnight trades. Validate ranges, nonnegative volumes and duplicate feed IDs when available; group sums by trading date and code, sort date, descending volume, ascending code and take ten per date.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:daily-contract-volume-ranking",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-015/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "每日合约成交量排名",
+                  "statement": "给定五日以公元 1 年起 100 纳秒计数的 RecvTime、ContractId 及本条增量 LastVol。求每日累计成交量前十，平手按代码。",
+                  "hint": "",
+                  "solution": "若计数基准为 UTC 公历，减 621355968000000000 得 Unix 的 100 纳秒单位，保持整数精度。转交易所时区并按给定日历归交易日，夜盘不能简单按午夜切分。查时间范围、非负成交量及可用的重复消息编号；按日和合约汇总，再按日、量降序、代码升序取十。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:reverse-riffle-identification",
+              "title": "Reverse Riffle Identification",
+              "difficulty": "hard",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Start with suits C,D,H,S in order, each ordered 2 through A. Each of three rounds may cut the deck, split into two contiguous piles, and interleave while preserving each pile's order. Move the leftmost card to an interior position. Identify it from the final order: D10 CJ CQ S3 H4 H5 D6 SJ DJ SQ S4 H6 CK SA C2 C3 HK C4 / H7 S5 S6 DQ CA D7 C5 HA H8 S7 C6 DK SK H9 DA C7 C8 C9 / H10 S8 C10 D8 H2 D5 HJ D2 D3 HQ D4 S9 H3 S2 D9 S10. A legal history exists.",
+              "solution": "Index cards in initial order and count descents in the sequence of their current positions, including the last-to-first edge. Cutting cyclically rotates the position ranks; each single-rank rotation gains one descent and loses one. If there are c descents, there are c maximal increasing runs along the cyclic labels. A contiguous two-pile split breaks each such run at most once; interleaving preserves the resulting runs, so descents at most double. Starting at one, after three rounds the bound is eight. For every candidate move it to the front, build inverse positions and sum descents. Final count is nine, and only D5 (position 42) restores a count at most eight. Existence makes this necessary test sufficient for identification here.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.1:reverse-riffle-identification",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "逆向洗牌识别",
+                  "statement": "初始牌按 C、D、H、S 花色顺序，每花色从 2 到 A。三轮各可切牌、分成两段并保序交错。再把最左牌移到中间，求它是哪张，保证有合法历史。终局为 D10 CJ CQ S3 H4 H5 D6 SJ DJ SQ S4 H6 CK SA C2 C3 HK C4 / H7 S5 S6 DQ CA D7 C5 HA H8 S7 C6 DK SK H9 DA C7 C8 C9 / H10 S8 C10 D8 H2 D5 HJ D2 D3 HQ D4 S9 H3 S2 D9 S10。",
+                  "hint": "",
+                  "solution": "按初始次序编号，按编号读当前各位置，统计下降次数，含末号到首号。切牌循环移动位置秩；每旋转一位恰增一处下降也减一处。若有 c 个下降，循环标签可分 c 个最大上升段；连续两堆的分界至多切开每段一次，交错仍保留分段次序，所以下降最多翻倍。初始为一，三轮后至多八。枚举每张候选放回最前，重建位置表并计数。终局为九，仅第 42 张 D5 恢复至八以内。由于保证有历史，必要条件足以唯一识别。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -12265,6 +20271,120 @@ window.QUANT_DATA = {
                   "tags": [
                     "拒绝采样",
                     "随机模拟"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.2:decimal-digital-root",
+              "title": "Decimal Digital Root",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Give an arithmetic formula for repeatedly summing digits until a nonnegative integer has one digit. Handle zero and an arbitrarily long decimal string.",
+              "solution": "Base 10 is congruent to 1 modulo 9, so the operation preserves the residue. A positive value stays positive and ends in 1,…,9; answer 1+(n−1)%9, with zero separately. For strings scan digits modulo 9 and track whether any digit is nonzero; O(length) time and constant state.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "programming",
+              "reviewStatus": "pending",
+              "familyId": "7.2:decimal-digital-root",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 12"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "十进制数字根",
+                  "statement": "给出非负整数反复求位和直至一位数的公式，处理零和超长十进制字符串。",
+                  "hint": "",
+                  "solution": "10 模 9 等于 1，位和保持余数。正数保持为正并落在 1 至 9，故 1+(n−1)%9，零单独处理。字符串扫描维护模 9 余数及是否有非零位，线性时间、常数状态。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.2:fair-bit-from-a-one-third-coin",
+              "title": "Fair Bit from a One-Third Coin",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Using independent tosses of a coin with head chance 1/3, generate a fair bit and compute mean toss count.",
+              "solution": "Use pairs: HT and TH each have probability 2/9 and encode opposite outputs. Repeat on HH or TT. Acceptance probability is 4/9; independent two-toss attempts therefore cost 2/(4/9)=9/2 tosses on average.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "7.2:fair-bit-from-a-one-third-coin",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-023/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三分之一偏币生成公平比特",
+                  "statement": "只用正面率 1/3 的独立抛掷生成公平比特，并求平均次数。",
+                  "hint": "",
+                  "solution": "两次一组，HT 和 TH 各为 2/9，分别给相反输出；HH、TT 重试。每组接受率 4/9，因此平均 2/(4/9)=9/2 次。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.2:five-thirteenths-from-fair-bits",
+              "title": "Five Thirteenths from Fair Bits",
+              "difficulty": "easy",
+              "tags": [
+                "algorithms"
+              ],
+              "statement": "Use fair independent bits to produce success with probability 5/13, terminating almost surely. Give the mean number of tosses for your method.",
+              "solution": "Form an integer 0,…,15 from four tosses. Reject 13,…,15; among accepted states report success for 0,…,4. Acceptance rate 13/16 gives expected toss count 64/13.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "7.2:five-thirteenths-from-fair-bits",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-023/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "公平币生成五比十三",
+                  "statement": "用独立公平抛掷生成成功率 5/13 的结果，要求几乎必然停止，求所设计方法的平均次数。",
+                  "hint": "",
+                  "solution": "四次抛掷编码 0 至 15，拒绝 13 至 15。接受时 0 至 4 报成功。接受率 13/16，平均投掷 64/13 次。",
+                  "keyIdea": "",
+                  "tags": [
+                    "算法"
                   ]
                 }
               }
@@ -12941,6 +21061,378 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "8.1:horizon-correlation",
+              "title": "Horizon Correlation",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Compare the Pearson correlation of a signal s with next-day log return r₁ versus two-day log return r₁+r₂. Give examples of both orderings and explain why trading returns need not rank the same way.",
+              "solution": "The two-day numerator is Cov(s,r₁)+Cov(s,r₂), divided by sd(s) times sd(r₁+r₂). Let s and ε be independent standard normals and r₁=s. If r₂=ε the IC falls to 1/√2; if r₂=s while r₁=s+ε instead, IC rises from 1/√2 to 2/√5. Realized portfolio return also depends on position scaling, turnover, costs, timing and risk exposures.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:horizon-correlation",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-002/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "不同期限的预测相关性",
+                  "statement": "比较信号 s 与次日对数收益 r₁、两日累计 r₁+r₂ 的 Pearson IC。构造两种相反的排序，并说明回测收益为何不一定同序。",
+                  "hint": "",
+                  "solution": "两日分子是 Cov(s,r₁)+Cov(s,r₂)，分母为 sd(s)sd(r₁+r₂)。令 s、ε 为独立标准正态。r₁=s、r₂=ε 时 IC 从 1 降到 1/√2；r₁=s+ε、r₂=s 时由 1/√2 升到 2/√5。组合收益还取决于仓位尺度、换手、成本、成交时点与风险暴露。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:nested-fit-and-significance",
+              "title": "Nested Fit and Significance",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "With an intercept, one regressor is added to a full-rank OLS model. Why can training R² improve even though the new coefficient is insignificant? Give the partial F statistic and its link to t.",
+              "solution": "The expanded model can set the new coefficient to zero, so its SSE cannot rise. For full model p coefficients, F=(SSE_reduced−SSE_full)/(SSE_full/(n−p)) equals t² under the usual homoskedastic model. A positive drop is not necessarily large relative to residual variance. Under Gaussian errors the null reference is F(1,n−p).",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:nested-fit-and-significance",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-008/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "拟合改善与显著性",
+                  "statement": "含截距满列秩 OLS 加入一个解释变量，为什么训练 R² 上升但新系数仍不显著？写出部分 F 统计量与 t 的关系。",
+                  "hint": "",
+                  "solution": "扩大模型可令新系数为零，因此 SSE 不增。完整模型有 p 个系数时，经典同方差检验的 F=(SSE_简约−SSE_完整)/(SSE_完整/(n−p)) 等于 t²。SSE 的下降即使为正，相对误差噪声也可能很小。高斯误差下零假设参考分布为 F(1,n−p)。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:reverse-regression-slopes",
+              "title": "Reverse Regression Slopes",
+              "difficulty": "easy",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "For paired observations with positive variances, regress y on x and x on y, both with intercept. Do the two fitted lines intersect in the x-y plane? Give the range of the slope product and characterize its endpoints.",
+              "solution": "Both lines contain the sample centroid. The slopes are sample covariance divided by their respective predictor variances; their product is r² in [0,1]. At zero correlation they are horizontal and vertical; at perfect positive or negative correlation they coincide. Otherwise their sole intersection is the centroid.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:reverse-regression-slopes",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-047/",
+                  "locator": "Question 5"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 6"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 16"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "双向回归斜率",
+                  "statement": "对方差非零的成对观测，分别含截距地回归 y 对 x 及 x 对 y。在 x-y 平面上两条拟合线相交吗？求斜率乘积范围并说明端点。",
+                  "hint": "",
+                  "solution": "两条线都过样本重心。斜率分别为协方差除以各自自变量方差，乘积等于 r²，范围 [0,1]。零相关时分别水平和垂直；完全正或负相关时两线重合，否则只在重心相交。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:joint-regression-correlations",
+              "title": "Joint Regression Correlations",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "For centered standardized y,x₁,x₂ let response correlations be a,b and predictor correlation ρ. Find joint R² and its feasible range when both simple R² are .1, distinguishing full rank and perfect collinearity.",
+              "solution": "For abs(ρ)<1, invert the predictor Gram matrix: R²=(a²+b²−2ρab)/(1−ρ²). With both simple values .1 flip predictor signs to a=b=√.1, giving .2/(1+ρ). PSD requires ρ≥−.8 and full rank requires ρ<1, so R²∈(.1,1]. These are realizable by Gram factorizations in sufficient dimension. If perfect collinearity is allowed, compatible predictors span one direction and add endpoint .1.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:joint-regression-correlations",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 9"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 15"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "联合回归与相关系数",
+                  "statement": "中心化标准化后的 y、x₁、x₂ 中，响应相关为 a,b，自变量相关 ρ。求联合 R²；两个单回归 R² 都为 .1 时求可行区间，区分满秩和完全共线。",
+                  "hint": "",
+                  "solution": "当 abs(ρ)<1，求逆得 R²=(a²+b²−2ρab)/(1−ρ²)。两单回归均 .1 时可翻转变量符号使 a=b=√.1，化为 .2/(1+ρ)。联合半正定要求 ρ≥−.8，满秩需 ρ<1，故 R²∈(.1,1]；维度足够可用 Gram 分解构造。允许完全共线时两自变量仅张成一维，补入端点 .1。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:raw-versus-residualized-regression",
+              "title": "Raw Versus Residualized Regression",
+              "difficulty": "hard",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "After regressing y on x₁ with intercept, regress the residual e on raw x₂. Compare that R² with the joint regression R². If the second-stage slope is .1, find the possible joint x₂ slope. Predictors are noncollinear and residual variance positive.",
+              "solution": "Let r=Corr(x₁,x₂), a=Corr(y,x₁), and c=Cov(e,x₂). FWL uses x₂ residualized against x₁; its covariance with e is still c but variance is multiplied by 1−r². The joint coefficient is .1/(1−r²)∈[.1,∞), realizable by scaling the response. With s=R²(e on raw x₂), partial R²=s/(1−r²)∈[0,1], hence joint R²=a²+(1−a²)s/(1−r²)≥s.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:raw-versus-residualized-regression",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-027/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-035/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "原始解释变量与残差化回归",
+                  "statement": "含截距回归 y 对 x₁ 后，把残差 e 对原始 x₂ 回归。比较这一步 R² 和联合 R²。若该步斜率为 .1，求联合回归 x₂ 斜率范围。自变量不共线，残差方差非零。",
+                  "hint": "",
+                  "solution": "记 r=Corr(x₁,x₂)、a=Corr(y,x₁)、c=Cov(e,x₂)。FWL 要把 x₂ 也残差化，与 e 协方差仍为 c，方差乘 1−r²。联合斜率为 .1/(1−r²)∈[.1,∞)，可调整响应尺度实现。若 s 为第二步原始回归 R²，则偏 R²=s/(1−r²)∈[0,1]，联合 R²=a²+(1−a²)s/(1−r²)≥s。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:high-leverage-outlier",
+              "title": "High Leverage Outlier",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Append (100,100) to 1000 observations uniform on the unit disk. Estimate intercept-fit regression R² using disk moments, choosing closest to 5%,90%,93%,98%.",
+              "solution": "Disk symmetry gives variances 1/4 and cross moment zero. Approximate original centered sums by 250 and 0. Adding the point adds about 1000/1001·10000 to both centered squares and cross-product. Squaring the resulting correlation gives about .952; the closest listed choice is 93%.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:high-leverage-outlier",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "高杠杆离群点",
+                  "statement": "单位圆盘均匀取 1000 点再加 (100,100)。用圆盘矩估计带截距回归的 R²，从 5%、90%、93%、98% 中选最近。",
+                  "hint": "",
+                  "solution": "圆盘对称且半径二阶矩为 1/2，所以两坐标方差 1/4、交叉矩为零。原中心平方和约 250，乘积和约 0。新增点给三个量都增加约 (1000/1001)·10000，相关系数平方约 .952，选项最近为 93%。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:constrained-industry-regression",
+              "title": "Constrained Industry Regression",
+              "difficulty": "hard",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "In Y=FBᵀ+E, each stock has one to three specified industry exposures summing to one. Simulate and estimate B with known F, then discuss identification with unknown F. Separately, handle an intercept plus all exhaustive, exclusive industry dummies.",
+              "solution": "Draw F, supported exposure weights summing to one and independent zero-mean noise. For each stock, eliminate its last exposure: subtract that industry's return from y and regress on the remaining supported return differences. Recover last weight as one minus sum; full difference rank gives uniqueness. With unknown F, if all firms load (.5,.5) on two common industries, shifts (+h,−h) leave predictions unchanged. Use constrained alternating least squares for a fit and anchor exposures or factors for identification. For dummies, their sum equals the intercept. Drop one dummy (baseline and differences), omit intercept (industry means), or impose a weighted-zero sum (overall level plus deviations). Fitted values and residuals agree across equivalent full-rank parameterizations.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:constrained-industry-regression",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-050/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-050/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-032/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "约束行业回归",
+                  "statement": "Y=FBᵀ+E 中各股指定一至三个行业暴露且和为一。F 已知时模拟并估计 B，F 未知时讨论识别性。另说明截距加全部穷尽互斥行业哑变量如何处理。",
+                  "hint": "",
+                  "solution": "生成 F、支撑内和为一的暴露及独立零均值误差。逐股消去最后一项：因变量减该行业收益，回归到其他所属行业与该行业的收益差，最后权重补为一减其余和；差满列秩则唯一。F 未知时，若所有公司对共同两个行业暴露 (.5,.5)，两因子加 (+h,−h) 不改拟合。可约束交替最小二乘求拟合，识别需锚定因子或暴露。行业哑变量之和等于截距。可删一类（基准与差值）、去截距（行业均值）、或加加权零和（整体水平与偏差）。等价参数化的拟合和残差相同。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:lasso-coordinate-descent",
+              "title": "Lasso Coordinate Descent",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Solve scalar half squared error plus λ abs(θ), then derive two-column Lasso coordinate updates and implement ten sweeps from zero.",
+              "solution": "The subgradient condition yields Sλ(x)=sign(x)max(abs(x)−λ,0). For coordinate j, compute r=y−Σ_(k≠j)X_kβ_k and assign β_j=Sλ(X_jᵀr)/(X_jᵀX_j), using zero for a zero column. Initialize both to zero, then repeat j=1 followed by j=2 ten times, recomputing residual with the newly updated coefficient.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:lasso-coordinate-descent",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiwei/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "Lasso 坐标下降",
+                  "statement": "求一维平方损失加 λabs(θ) 的最优解；推导双列 Lasso 坐标更新，并从零做十轮。",
+                  "hint": "",
+                  "solution": "次梯度条件得 Sλ(x)=sign(x)max(abs(x)−λ,0)。更新 j 时用 r=y−Σ_(k≠j)X_kβ_k，令 β_j=Sλ(X_jᵀr)/(X_jᵀX_j)，零列系数取零。两系数从零开始，每轮先更新 1 再更新 2，共十轮，残差使用刚更新的值。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:nonlinear-population-slope",
+              "title": "Nonlinear Population Slope",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "For IID standard normal X and Y=β(X), find the probability limit and limiting distribution of through-origin least-squares slope. Give moments and β(x)=x³ example.",
+              "solution": "With E abs(Xβ(X))<∞, the law of large numbers gives b=E[Xβ(X)] because E X²=1. If E[X²(β(X)−bX)²]<∞, the CLT and Slutsky give √n(b_n−b)→N(0,E[X²(β(X)−bX)²]). At β=x³, b=3 and the variance is E(X⁸−6X⁶+9X⁴)=105−90+27=42.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.1:nonlinear-population-slope",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-jiwei/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "非线性响应的总体斜率",
+                  "statement": "标准正态 IID X、Y=β(X)，求过原点最小二乘斜率的概率极限和渐近分布，给矩条件及 β(x)=x³ 例子。",
+                  "hint": "",
+                  "solution": "E abs(Xβ(X)) 有限时大数定律给 b=E[Xβ(X)]，因为 E X²=1。若 E[X²(β(X)−bX)²] 有限，由中心极限定理与 Slutsky，√n(b_n−b) 渐近 N(0,E[X²(β(X)−bX)²])。β=x³ 时 b=3，方差 105−90+27=42。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -13106,9 +21598,14 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0059"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-025/",
+                  "locator": "Question 4"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "过拟合的解决办法。",
@@ -13152,9 +21649,14 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0060"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 4"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "在线性回归中比较 L1 与 L2 正则化，解释 L1 为什么容易产生精确零系数。",
@@ -13166,6 +21668,464 @@ window.QUANT_DATA = {
                     "统计",
                     "优化",
                     "正则化"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:prediction-losses",
+              "title": "Prediction Losses",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "For residual e=y−f, give squared, absolute, Huber and quantile losses. For binary labels give cross-entropy and hinge loss. Explain their targets and tail sensitivity.",
+              "solution": "Squared e² targets the conditional mean; absolute abs(e) targets the median. Huber is e²/2 for abs(e)≤δ and δ(abs(e)−δ/2) outside, bounding the influence of large residuals. Pinball is τe for e≥0 and (τ−1)e otherwise; its risk is minimized at a conditional τ-quantile. Binary log loss is −y log p−(1−y)log(1−p), minimized at the true conditional probability. For labels s=±1, hinge max(0,1−sf) penalizes insufficient classification margin and does not estimate probabilities directly.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:prediction-losses",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-001/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "预测损失函数",
+                  "statement": "令残差 e=y−f。写出平方、绝对值、Huber 和分位数损失；对二分类写出交叉熵和 hinge 损失。说明估计目标及对极端误差的敏感性。",
+                  "hint": "",
+                  "solution": "平方损失 e² 的目标是条件均值，绝对损失 abs(e) 的目标是条件中位数。Huber 在 abs(e)≤δ 时为 e²/2，外侧为 δ(abs(e)−δ/2)，大残差的梯度有界。分位数损失在 e≥0 时为 τe，否则为 (τ−1)e，最优值是条件 τ 分位数。交叉熵 −y log p−(1−y)log(1−p) 的目标是真实条件概率。对 s=±1，hinge 为 max(0,1−sf)，用于分类间隔而非直接估计概率。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:k-nearest-neighbors-regression",
+              "title": "K Nearest Neighbors Regression",
+              "difficulty": "easy",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Define KNN regression, explain when distances are informative, and choose scaling and k for time-series samples.",
+              "solution": "Predict the average response of the k closest training samples, optionally with nonnegative normalized distance weights. This relies on local smoothness and a useful metric, and weakens in high effective dimension. Fit scaling on training only, tune k with forward validation, and restrict neighbors to observations whose features and responses were available at the forecast time.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:k-nearest-neighbors-regression",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-025/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "近邻回归的预测与验证",
+                  "statement": "给出 KNN 回归预测式，解释距离何时有意义，并为时间序列选择尺度和 k。",
+                  "hint": "",
+                  "solution": "预测为最近 k 个训练样本响应的平均，可用非负归一化距离权重。依赖局部平滑和有效度量，有效维度高时邻域稀疏。标准化只在训练拟合，用前向验证选 k，近邻仅用预测时已知特征和响应。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:pcr-and-ridge-filters",
+              "title": "PCR and Ridge Filters",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "For centered X=UDVᵀ and y, derive fitted values under principal component regression with k retained positive singular values and ridge λ>0. Compare their biases and variances.",
+              "solution": "PCR keeps the first k projections u_i u_iᵀ y unchanged and deletes the rest. Ridge weights each projection by d_i²/(d_i²+λ). Hard deletion and smooth shrinkage trade bias against variance differently; signal alignment, noise and test design determine which predicts better.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:pcr-and-ridge-filters",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-025/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "主成分回归与岭的谱滤波",
+                  "statement": "中心化 X=UDVᵀ、y。推导保留 k 个正奇异值的主成分回归与 λ>0 岭回归的拟合值，比较偏差方差。",
+                  "hint": "",
+                  "solution": "PCR 原样保留前 k 项 u_i u_iᵀy，删除其余；岭给每项乘 d_i²/(d_i²+λ)。硬截断与软收缩的偏差方差权衡不同，预测优劣取决于信号方向、噪声及测试分布。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:mini-batch-gradient-tradeoff",
+              "title": "Mini-Batch Gradient Tradeoff",
+              "difficulty": "easy",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Compare the cost and noise of full-batch versus a uniform mini-batch of b<n for a mean loss on n examples. What determines practical efficiency?",
+              "solution": "Full gradient evaluates n contributions per step. Mini-batch averaging is unbiased for uniform samples, costs b evaluations, and has variance shrinking roughly as 1/b (with finite population correction without replacement). It permits more updates per pass and vectorization, but learning rate, data correlations, hardware and convergence target determine actual gains.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:mini-batch-gradient-tradeoff",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-025/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "小批量梯度的代价与方差",
+                  "statement": "n 个样本的平均损失下，比较全批与均匀抽 b<n 个小批的计算成本与噪声。效率受什么影响？",
+                  "hint": "",
+                  "solution": "全批每步求 n 项。均匀小批平均是无偏梯度，代价 b 项，方差约按 1/b 缩减，无放回另有有限总体修正。每遍更新更多且可向量化，但收益取决于步长、样本相关、硬件及收敛目标。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:three-variable-correlations",
+              "title": "Three Variable Correlations",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Give feasible ranges for three equal correlations and for a missing correlation given the two known correlations a,b. Evaluate (.8,.8), (.6,−.3), (.5,.5), and (.9,.95), the last interpreted as cosines. Compare signed, unsigned and predictive summaries.",
+              "solution": "Standardize, remove the shared unit direction, and apply Cauchy–Schwarz to residuals: c∈ab±√((1−a²)(1−b²)). Every residual cosine is realizable with independent unit-variance factors, including endpoints. The examples are [.28,1], −.18±√.5824, [−.5,1], and .855±√.018525. Equal correlation requires 1+2r≥0 and 1−r≥0, from eigenvalues. Mean signed correlation in [−.5,1] cancels opposing signs; mean absolute correlation in [0,1] loses signs; multiple R² in [0,1] selects one response and loses predictor–predictor structure.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:three-variable-correlations",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-020/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-021/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-031/",
+                  "locator": "Question 5"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 14"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三变量相关",
+                  "statement": "求三相关系数相等，以及已知两个相关 a,b 时第三个相关的可行区间。代入 (.8,.8)、(.6,−.3)、(.5,.5)、(.9,.95)，最后一组解释为向量夹角余弦。比较带符号、无符号及预测型摘要。",
+                  "hint": "",
+                  "solution": "标准化并投影掉共同单位方向，对残差用柯西不等式，得 c∈ab±√((1−a²)(1−b²))。用独立单位方差因子构造任意残差夹角，端点可达。三例为 [.28,1]、−.18±√.5824、[−.5,1]、.855±√.018525。等相关矩阵特征值给出 1+2r≥0 和 1−r≥0。有符号均值范围 [−.5,1]，相反符号可抵消；绝对值均值范围 [0,1]，丢失符号；复相关 R² 范围 [0,1]，依赖指定因变量并压缩预测变量间结构。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:incomplete-covariance-matrix",
+              "title": "Incomplete Covariance Matrix",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Construct a positive definite covariance estimate from 300 assets and 300 dates with incomplete returns. Explain pairwise deletion and shrinkage conditions.",
+              "solution": "Pairwise estimates use different samples and need not form a Gram matrix. Fit a factor covariance plus positive idiosyncratic variances using available data, or estimate a joint PSD matrix by an explicit missing-data model. Shrink a PSD estimate S toward T≻0 via (1−λ)S+λT for 0<λ≤1. If S is indefinite, first project onto the PSD cone or choose λ large enough to make the smallest eigenvalue positive. Validate the missingness assumptions, variance estimates and out-of-sample risk.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:incomplete-covariance-matrix",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "缺失收益协方差",
+                  "statement": "用 300 个资产、300 天且部分缺失的收益估计正定协方差，说明逐对删除的隐患与收缩条件。",
+                  "hint": "",
+                  "solution": "逐对删除使用不同日期，不保证矩阵为 Gram 矩阵。可拟合因子协方差加正的特质方差，或用明确的缺失模型联合估计半正定矩阵。若 S 半正定、T 正定，(1−λ)S+λT 在 0<λ≤1 时正定；S 不定时可先投影到半正定锥，或选足够大的 λ 使最小特征值为正。核查缺失机制假设与样本外风险。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:ridge-normal-equations",
+              "title": "Ridge Normal Equations",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Derive the gradient and minimizer of squared-error ridge regression; discuss zero, positive, and large penalties.",
+              "solution": "The gradient is 2Aᵀ(Ax−b)+2αx. For α>0 the Hessian is positive definite, giving x=(AᵀA+αI)⁻¹Aᵀb. At zero, solutions are unique exactly for full column rank; otherwise add any nullspace vector to the pseudoinverse solution. In singular coordinates each coefficient multiplier is s/(s²+α), tending to zero as α grows, except any separately unpenalized intercept.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:ridge-normal-equations",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-043/",
+                  "locator": "Question 2"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "岭回归正规方程",
+                  "statement": "推导平方损失岭回归的梯度和最优解，讨论惩罚为零、为正和趋于无穷的情况。",
+                  "hint": "",
+                  "solution": "梯度为 2Aᵀ(Ax−b)+2αx。α>0 时 Hessian 正定，解为 (AᵀA+αI)⁻¹Aᵀb。α=0 时仅满列秩才唯一，否则伪逆解可加任意零空间向量。奇异方向系数乘子 s/(s²+α) 随惩罚增大趋零，单列的不惩罚截距另计。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:regression-stability-and-increment",
+              "title": "Regression Stability and Increment",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Test whether intercept and slope change between earlier 1000 and later 100 observations. Separately quantify incremental linear contribution of a feature f beyond existing X and validate it out of sample.",
+              "solution": "Regress y on 1,x,D,Dx with a late-period indicator D. Jointly test coefficients of D,Dx equal zero with a Wald test, using appropriate robust covariance or block bootstrap for heteroskedastic time series. Residualize f and y on X including intercept; regress residual y on residual f. A zero residual feature has no identifiable contribution. Compare nested models on the same chronological splits, tuning only on training data.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:regression-stability-and-increment",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 8"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "回归稳定性与增量",
+                  "statement": "检验前 1000、后 100 个观测之间斜率截距是否变化；另估计特征 f 超出已有 X 的增量线性作用并做样本外验证。",
+                  "hint": "",
+                  "solution": "回归 y 对 1、x、D、Dx，D 表示后期，联合检验 D 和 Dx 系数为零；异方差或序列相关下用相应稳健协方差或区块自助法。对含截距的 X 分别残差化 f 与 y，以残差做单变量回归；若特征残差为零，增量不可识别。用同一时间切分比较嵌套模型，调参只用训练数据。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:ols-residual-sum",
+              "title": "OLS Residual Sum",
+              "difficulty": "easy",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Show that fitted residuals sum to zero with an intercept. Explain no intercept, weighting and held-out residuals.",
+              "solution": "The first-order condition for the intercept is −2Σe_i=0. Without an intercept the constant vector need not be in the design span. Weighted fitting gives Σw_ie_i=0; held-out residuals obey no fitted normal equation.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:ols-residual-sum",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 15"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最小二乘残差和",
+                  "statement": "证明有截距的 OLS 拟合残差和为零，讨论无截距、加权和样本外残差。",
+                  "hint": "",
+                  "solution": "截距的一阶条件为 −2Σe_i=0。无截距时常数向量未必在设计列空间中。加权拟合给 Σw_ie_i=0，样本外残差没有对应的拟合正规方程。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:forecast-accuracy-comparison",
+              "title": "Forecast Accuracy Comparison",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Forecasters get 96/120 and 1500/2500 directions right. Compare accuracy under an IID common-task model, and identify data required to value the forecasts.",
+              "solution": "Rates are .8 and .6. Under a common success rate use the pooled proportion 1596/2620 in the two-proportion z statistic; the difference .2 is about 4.39 pooled standard errors if samples are independent. For paired observations use discordant counts instead. Service value additionally depends on dates, baseline, payoff asymmetry, costs and genuinely held-out performance.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:forecast-accuracy-comparison",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "方向预测准确率比较",
+                  "statement": "两位预测者分别答对 96/120、1500/2500。按 IID 同类任务模型比较准确率，并指出评估预测价值还需要什么。",
+                  "hint": "",
+                  "solution": "准确率 .8 与 .6。共同成功率原假设下用合并比例 1596/2620，独立样本时差 .2 约为 4.39 个合并标准误。配对样本改用两人对错不一致的计数。服务价值还需考虑日期、基线、盈亏不对称、成本及真正样本外的表现。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.2:inverted-dropout-moments",
+              "title": "Inverted Dropout Moments",
+              "difficulty": "easy",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Given activation a and Bernoulli(q) mask m, find conditional mean and variance of ma/q. Explain evaluation behavior.",
+              "solution": "The conditional mean is a and variance a²(1−q)/q. Evaluation uses a directly, matching the training conditional mean and removing random masking; switch modes to disable masking.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.2:inverted-dropout-moments",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "反向 Dropout 的矩",
+                  "statement": "激活 a、掩码 m~Bernoulli(q)，求 ma/q 的条件均值方差，说明推理模式。",
+                  "hint": "",
+                  "solution": "条件均值为 a，方差 a²(1−q)/q。推理直接用 a，保留训练条件均值并消除随机掩码，因此需要切换评估模式。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
                   ]
                 }
               }
@@ -13460,6 +22420,82 @@ window.QUANT_DATA = {
                     "概率",
                     "最优停止",
                     "最优策略"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.3:revenue-outlier-fences",
+              "title": "Revenue Outlier Fences",
+              "difficulty": "easy",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "For days 1–16 revenues are 257,480,107,595,466,515,348,1100,506,686,88,272,429,631,399,1200. Use linear-interpolation quartiles and 1.5 IQR fences to flag dates.",
+              "solution": "After sorting, zero-based fractional positions (16−1)p are 3.75 and 11.25. Interpolate 272 to 348 and 595 to 631, giving Q1=329, Q3=604 and IQR=275. Fences are −83.5 and 1016.5; days 8 and 16 are flagged.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.3:revenue-outlier-fences",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "营业额异常边界",
+                  "statement": "第 1–16 天营业额为 257、480、107、595、466、515、348、1100、506、686、88、272、429、631、399、1200。用线性插值四分位数和 1.5 IQR 标记异常日期。",
+                  "hint": "",
+                  "solution": "排序后零基位置 (16−1)p 为 3.75、11.25。在 272 与 348、595 与 631 间插值得 Q1=329、Q3=604、IQR=275。边界 −83.5、1016.5，标记第 8、16 天。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.3:regular-exponential-families",
+              "title": "Regular Exponential Families",
+              "difficulty": "medium",
+              "tags": [
+                "statistics"
+              ],
+              "statement": "Write Poisson, fixed-n binomial and exponential densities in exponential-family form. Is U(0,θ) regular with parameter-independent support?",
+              "solution": "Poisson: exp(x log λ−λ)/x! on nonnegative integers. Binomial: C(n,x)exp(xη−n log(1+e^η)) with η=log(p/(1−p)). Exponential: exp(ηx−A(η)) on x≥0, η=−rate<0 and A=−log(−η). All have open natural parameter ranges for interior parameters. Uniform support (0,θ) depends on θ and fails the stipulated fixed-support form.",
+              "hint": "",
+              "keyIdea": "",
+              "kind": "math",
+              "reviewStatus": "pending",
+              "familyId": "8.3:regular-exponential-families",
+              "rubric": [],
+              "verification": [],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-higgs-first/",
+                  "locator": "Question 15"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "正则指数族",
+                  "statement": "写出泊松、固定 n 二项、指数分布的指数族形式。U(0,θ) 是否是支持集与参数无关的正则指数族？",
+                  "hint": "",
+                  "solution": "泊松为 exp(x log λ−λ)/x!，支持非负整数。二项为 C(n,x)exp(xη−n log(1+e^η))，η=log(p/(1−p))。指数在 x≥0 为 exp(ηx−A(η))，η=−速率<0、A=−log(−η)。内部参数的自然参数域均开。均匀分布的支持 (0,θ) 随 θ 变化，不满足固定支持条件。",
+                  "keyIdea": "",
+                  "tags": [
+                    "统计"
                   ]
                 }
               }
