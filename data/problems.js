@@ -3212,15 +3212,21 @@ window.QUANT_DATA = {
               "tags": [
                 "mathematics"
               ],
-              "statement": "What is the largest number of nonzero vectors in $n$-dimensional real Euclidean space whose pairwise angles are strictly obtuse? Prove the upper bound and give a construction attaining it.",
+              "statement": "What is the largest number of nonzero vectors in $n$-dimensional real Euclidean space whose pairwise angles are strictly obtuse? Prove the upper bound and give a construction attaining it.\n\nIn dimension three, decide explicitly whether five such vectors are possible.",
               "hint": "",
-              "solution": "The maximum is $n+1$, attained by the centered vertex vectors of a regular simplex. This answer gives the construction; an upper-bound proof is still required.",
+              "solution": "The maximum is $n+1$, attained by the centered vertex vectors of a regular simplex.\n\nFor the upper bound, suppose $m\\ge n+2$. The $m$ lifted vectors $(v_i,1)\\in\\mathbb R^{n+1}$ are linearly dependent. Choose a nonzero dependence with coefficients $a_i$; then $\\sum_i a_i=0$ and $\\sum_i a_i v_i=0$. Both positive and negative coefficients occur. The vector $w=\\sum_{a_i>0}a_i v_i$ also equals $\\sum_{a_j<0}(-a_j)v_j$. Taking the inner product between these two expressions gives $\\|w\\|^2<0$, since every cross inner product is negative. Contradiction. For attainment, the $n+1$ vectors $e_i-\\mathbf 1/(n+1)$ in the $n$-dimensional zero-sum hyperplane of $\\mathbb R^{n+1}$ have pairwise inner product $-1/(n+1)$. Thus the maximum is $n+1$: four in dimension three, not five.",
               "keyIdea": "",
               "kind": "math",
-              "reviewStatus": "pending",
+              "reviewStatus": "verified",
               "familyId": "3.6:obtuse-vectors",
-              "rubric": [],
-              "verification": [],
+              "rubric": [
+                "Derive an affine dependence when there are at least n+2 vectors.",
+                "Separate its positive and negative coefficients and obtain the contradiction.",
+                "Construct n+1 vectors and specialize to n=3."
+              ],
+              "verification": [
+                "Checked the affine-dependence upper bound and computed all distinct inner products of the centered coordinate vectors."
+              ],
               "followups": [],
               "sources": [
                 {
@@ -3234,11 +3240,11 @@ window.QUANT_DATA = {
                   "locator": "Question 8"
                 }
               ],
-              "revision": 4,
+              "revision": 5,
               "translations": {
                 "zh": {
-                  "statement": "在n维实欧氏空间中，两两夹角严格为钝角的一组非零向量最多有多少个？证明上界并构造达到上界的例子。",
-                  "solution": "最大为n+1，可由以原点为中心的正则单纯形的顶点向量达到。该解析只给出了构造，上界证明仍需补充。",
+                  "statement": "在n维实欧氏空间中，两两夹角严格为钝角的一组非零向量最多有多少个？证明上界并构造达到上界的例子。\n\n特别地，三维中是否可能有 5 个这样的向量？",
+                  "solution": "最大为n+1，可由以原点为中心的正则单纯形的顶点向量达到。\n\n证明上界：若 $m\\ge n+2$，则 $\\mathbb R^{n+1}$ 中的 $m$ 个向量 $(v_i,1)$ 线性相关。取一组非零相关系数 $a_i$，满足 $\\sum_i a_i=0$ 和 $\\sum_i a_i v_i=0$。系数必有正有负，因此 $w=\\sum_{a_i>0}a_i v_i=\\sum_{a_j<0}(-a_j)v_j$。把这两个表示作内积，每一对来自不同组，内积均为负，故 $\\|w\\|^2<0$，矛盾。达到上界的构造：在 $\\mathbb R^{n+1}$ 的 $n$ 维零和超平面取 $n+1$ 个向量 $e_i-\\mathbf1/(n+1)$，不同向量的内积都是 $-1/(n+1)$。所以最大数为 $n+1$；三维最多 4 个，不可能有 5 个。",
                   "title": "钝角向量",
                   "hint": "",
                   "keyIdea": "",
@@ -3344,9 +3350,9 @@ window.QUANT_DATA = {
                 "combinatorics",
                 "counting"
               ],
-              "statement": "For $n\\ge1$, count the $n\\times n$ binary matrices whose row sums and column sums are all odd.",
+              "statement": "For $n\\ge1$, count the $n\\times n$ binary matrices whose row sums and column sums are all odd.\n\nEvaluate the answer at n=4 and explain why the eight row and column parity constraints are not independent.",
               "hint": "",
-              "solution": "Fill the upper-left $(n-1)\\times(n-1)$ block arbitrarily. Row and column parity then uniquely determine the last column and row. The two requirements at the bottom-right corner agree because both target parity totals equal $n\\bmod2$. The count is $2^{(n-1)^2}$, including one matrix for $n=1$.",
+              "solution": "Fill the upper-left $(n-1)\\times(n-1)$ block arbitrarily. Row and column parity then uniquely determine the last column and row. The two requirements at the bottom-right corner agree because both target parity totals equal $n\\bmod2$. The count is $2^{(n-1)^2}$, including one matrix for $n=1$.\n\nAt n=4 the count is 512. Over the field with two elements, the sum of the four row parity equations equals the sum of the four column equations, since both sum every entry once. The free 3 by 3 block has nine bits and determines the other seven entries, so exactly seven independent conditions remain.",
               "keyIdea": "Count free entries; Complete the last row and column; Check corner consistency; Handle n=1",
               "kind": "math",
               "reviewStatus": "verified",
@@ -3378,11 +3384,11 @@ window.QUANT_DATA = {
                   "locator": "Question 5"
                 }
               ],
-              "revision": 4,
+              "revision": 5,
               "translations": {
                 "zh": {
-                  "statement": "n≥1，求每行和与每列和都为奇数的 n×n 二进制矩阵个数。",
-                  "solution": "任填左上(n-1)×(n-1)块，再由各行各列奇偶要求唯一决定最后一列和最后一行；最后右下角两个约束一致，因为目标行奇偶总和与列奇偶总和都等于n mod2。故2^((n-1)^2)。n=1也给1个矩阵。",
+                  "statement": "n≥1，求每行和与每列和都为奇数的 n×n 二进制矩阵个数。\n\n计算 n=4 的答案，并解释为什么四行和四列的八条奇偶约束并不独立。",
+                  "solution": "任填左上(n-1)×(n-1)块，再由各行各列奇偶要求唯一决定最后一列和最后一行；最后右下角两个约束一致，因为目标行奇偶总和与列奇偶总和都等于n mod2。故2^((n-1)^2)。n=1也给1个矩阵。\n\nn=4 时答案为 512。在模 2 下，四个行方程相加等于四个列方程相加，因为两者都把每个元素加一次。左上 3×3 的 9 个比特任填后唯一决定另外 7 格，所以恰有 7 个独立条件。",
                   "keyIdea": "自由变量数量；补行列；右下角一致性；n=1",
                   "title": "奇和二进制矩阵",
                   "hint": "",
@@ -5471,9 +5477,9 @@ window.QUANT_DATA = {
               "tags": [
                 "binomial theorem"
               ],
-              "statement": "Without expanding $(1+\\sqrt2)^{2023}$ in decimal, determine its 100th and 200th digits after the decimal point. Explain the role of the exponent parity.",
+              "statement": "Without expanding $(1+\\sqrt2)^{2023}$ in decimal, determine its 100th and 200th digits after the decimal point. Explain the role of the exponent parity.\n\nAlso determine the entire block of the first 100 fractional digits.",
               "hint": "Add the algebraic conjugate to obtain an integer.",
-              "solution": "By the binomial theorem, $(1+\\sqrt2)^k+(1-\\sqrt2)^k$ is an integer. Set $d=(\\sqrt2-1)^k\\in(0,1)$. The fractional part of the positive power is $d$ for odd $k$ and $1-d$ for even $k$. At $k=2023$, $d<2^{-2023}<10^{-600}$ because $2^{10}>10^3$. Both requested digits are zero.",
+              "solution": "By the binomial theorem, $(1+\\sqrt2)^k+(1-\\sqrt2)^k$ is an integer. Set $d=(\\sqrt2-1)^k\\in(0,1)$. The fractional part of the positive power is $d$ for odd $k$ and $1-d$ for even $k$. At $k=2023$, $d<2^{-2023}<10^{-600}$ because $2^{10}>10^3$. Both requested digits are zero.\n\nIn fact the bound on the fractional part makes all of the first 600 digits zero, including the whole first 100-digit block.",
               "keyIdea": "Add the algebraic conjugate to obtain an integer.",
               "kind": "math",
               "reviewStatus": "verified",
@@ -5498,13 +5504,13 @@ window.QUANT_DATA = {
                   "locator": "Question 20"
                 }
               ],
-              "revision": 1,
+              "revision": 2,
               "translations": {
                 "zh": {
                   "title": "共轭幂的小数位",
-                  "statement": "不展开 $(1+\\sqrt2)^{2023}$ 的十进制表示，求小数点后第 100、200 位，并解释指数奇偶性的作用。",
+                  "statement": "不展开 $(1+\\sqrt2)^{2023}$ 的十进制表示，求小数点后第 100、200 位，并解释指数奇偶性的作用。\n\n并说明小数点后前 100 位整体是什么。",
                   "hint": "加上代数共轭得到整数。",
-                  "solution": "由二项式定理，$(1+\\sqrt2)^k+(1-\\sqrt2)^k$ 是整数。令 $d=(\\sqrt2-1)^k\\in(0,1)$。$k$ 为奇数时正底数幂的小数部分为 $d$，偶数时为 $1-d$。当 $k=2023$，由 $\\sqrt2-1<1/2$ 和 $2^{10}>10^3$ 得 $d<2^{-2023}<10^{-600}$，故两位均为 0。",
+                  "solution": "由二项式定理，$(1+\\sqrt2)^k+(1-\\sqrt2)^k$ 是整数。令 $d=(\\sqrt2-1)^k\\in(0,1)$。$k$ 为奇数时正底数幂的小数部分为 $d$，偶数时为 $1-d$。当 $k=2023$，由 $\\sqrt2-1<1/2$ 和 $2^{10}>10^3$ 得 $d<2^{-2023}<10^{-600}$，故两位均为 0。\n\n事实上，小数部分的上界说明前 600 位全为零，当然也包括前 100 位的整个区块。",
                   "keyIdea": "加上代数共轭得到整数。",
                   "tags": [
                     "二项式定理"
@@ -8507,7 +8513,7 @@ window.QUANT_DATA = {
                 "linearity of expectation",
                 "random permutations"
               ],
-              "statement": "Seat 18 men and 16 women in a uniformly random order along a row. Find the expected number of adjacent pairs with one man and one woman.",
+              "statement": "Seat 18 men and 16 women in a uniformly random order along a row. Find the expected number of adjacent pairs with one man and one woman.\n\nWhich of 11, 16, 21, and 26 is closest?",
               "hint": "Use one indicator per adjacent seat pair.",
               "solution": "Each of 33 adjacent seat pairs is mixed with probability $2\\cdot(18/34)(16/33)$. By linearity the mean is $2\\cdot18\\cdot16/34=288/17$, about 16.94; if comparing 11, 16, 21 and 26, choose 16.",
               "keyIdea": "Use one indicator per adjacent seat pair.",
@@ -8529,11 +8535,11 @@ window.QUANT_DATA = {
                   "locator": "Question 9"
                 }
               ],
-              "revision": 1,
+              "revision": 2,
               "translations": {
                 "zh": {
                   "title": "一排座位中的异性邻对",
-                  "statement": "18 名男性和 16 名女性等概率排坐一列，求一男一女相邻座位对的期望数。",
+                  "statement": "18 名男性和 16 名女性等概率排坐一列，求一男一女相邻座位对的期望数。\n\n在 11、16、21、26 中，哪个最接近？",
                   "hint": "每对相邻座位用一个指示变量。",
                   "solution": "33 对相邻座位中的任一对，坐一男一女的概率为 $2\\cdot(18/34)(16/33)$。用期望线性性相加得到 $2\\cdot18\\cdot16/34=288/17\\approx16.94$；若比较 11、16、21、26，最接近 16。",
                   "keyIdea": "每对相邻座位用一个指示变量。",
@@ -11292,9 +11298,9 @@ window.QUANT_DATA = {
                 "probability",
                 "combinatorics"
               ],
-              "statement": "Place n≥1 people in a circle, numbered from 1. Starting at 1, eliminate every second person, continuing from the next person. Implement the survivor function in Python and evaluate it for n=10¹⁵.",
+              "statement": "Place n≥1 people in a circle, numbered from 1. Starting at 1, eliminate every second person, continuing from the next person. Implement the survivor function in Python and evaluate it for n=10¹⁵.\n\nAlso evaluate n=13 and n=33, and derive the closed form.",
               "hint": "",
-              "solution": "```python\ndef survivor(n):\n    if type(n) is not int or n < 1:\n        raise ValueError('n must be positive')\n    p = 1 << (n.bit_length() - 1)\n    return 2 * (n - p) + 1\n```\n\nWrite n=2ᵐ+L with 0≤L<2ᵐ. Then J(n)=2L+1. For n=10¹⁵ the survivor is 874100093157377. No simulation of n eliminations is needed; analyze arbitrary-precision operation costs in terms of bit length.",
+              "solution": "```python\ndef survivor(n):\n    if type(n) is not int or n < 1:\n        raise ValueError('n must be positive')\n    p = 1 << (n.bit_length() - 1)\n    return 2 * (n - p) + 1\n```\n\nWrite n=2ᵐ+L with 0≤L<2ᵐ. Then J(n)=2L+1. For n=10¹⁵ the survivor is 874100093157377. No simulation of n eliminations is needed; analyze arbitrary-precision operation costs in terms of bit length.\n\nWriting J(n) for the one-based survivor, eliminating all evens gives J(2m)=2J(m)−1. With 2m+1 people, person 1 is next eliminated; the remaining order begins at 3 and gives J(2m+1)=2J(m)+1 for m≥1. With J(1)=1 these recurrences yield J(2^k+r)=2r+1 for 0≤r<2^k by induction. Thus J(13)=11 and J(33)=3.",
               "keyIdea": "One-based numbering; Highest power of two; Handle n=1; Avoid large-scale simulation",
               "kind": "programming",
               "reviewStatus": "verified",
@@ -11326,11 +11332,11 @@ window.QUANT_DATA = {
                   "locator": "Question 8"
                 }
               ],
-              "revision": 4,
+              "revision": 5,
               "translations": {
                 "zh": {
-                  "statement": "n人围成一圈，从编号1开始报数，每报到第2人即出局，再从下一人继续。用 Python 实现幸存编号函数，并求 n=10^15 时的结果；n≥1。",
-                  "solution": "```python\ndef survivor(n):\n    if type(n) is not int or n < 1:\n        raise ValueError('n must be positive')\n    p = 1 << (n.bit_length() - 1)\n    return 2 * (n - p) + 1\n```\n\n设 n=2^m+L，0≤L<2^m，J(n)=2L+1。n=10^15 时结果 874100093157377。无需模拟 n 次；大整数操作成本需随位数分析。",
+                  "statement": "n人围成一圈，从编号1开始报数，每报到第2人即出局，再从下一人继续。用 Python 实现幸存编号函数，并求 n=10^15 时的结果；n≥1。\n\n再计算 n=13 与 n=33，并推导闭式公式。",
+                  "solution": "```python\ndef survivor(n):\n    if type(n) is not int or n < 1:\n        raise ValueError('n must be positive')\n    p = 1 << (n.bit_length() - 1)\n    return 2 * (n - p) + 1\n```\n\n设 n=2^m+L，0≤L<2^m，J(n)=2L+1。n=10^15 时结果 874100093157377。无需模拟 n 次；大整数操作成本需随位数分析。\n\n记从 1 编号的答案为 J(n)。淘汰所有偶数后，偶数规模给出 J(2m)=2J(m)−1。若规模为 2m+1，下一位淘汰 1 号，剩余从 3 号开始报数，对应 J(2m+1)=2J(m)+1（m≥1）。由 J(1)=1 归纳得 J(2^k+r)=2r+1，其中 0≤r<2^k。故 J(13)=11、J(33)=3。",
                   "keyIdea": "1基编号；最高2次幂；处理 n=1；避免大规模模拟",
                   "title": "约瑟夫幸存者",
                   "hint": "",
@@ -11352,15 +11358,21 @@ window.QUANT_DATA = {
                 "algorithms",
                 "comparison sorting"
               ],
-              "statement": "In the comparison model, find the second-largest among N≥2 distinct elements using as few worst-case comparisons as possible. First handle powers of two, then general N, and justify a lower bound.",
+              "statement": "In the comparison model, find the second-largest among N≥2 distinct elements using as few worst-case comparisons as possible. First handle powers of two, then general N, and justify a lower bound.\n\nIn particular, report the minimum for finding both the largest and second largest among eight elements.",
               "hint": "",
-              "solution": "Use N-1 tournament comparisons to find the maximum, keeping its direct opponents. The second-largest must be the largest of these opponents. For N a power of two, the winner has log₂N opponents, giving N+log₂N-2 comparisons. A balanced tournament gives at most N+ceil(log₂N)-2 for general N. A matching adversary lower-bound argument is required for a complete optimality proof.",
+              "solution": "Use N-1 tournament comparisons to find the maximum, keeping its direct opponents. The second-largest must be the largest of these opponents. For N a power of two, the winner has log₂N opponents, giving N+log₂N-2 comparisons. A balanced tournament gives at most N+ceil(log₂N)-2 for general N.\n\n**Matching lower bound.** An adversary assigns weight 1 to each undefeated element. When comparing two undefeated elements, let the heavier one win and inherit both weights. In a comparison of an undefeated and a defeated element, let the undefeated one win; among defeated elements use any order consistent with prior outcomes. These answers are consistent: an undefeated element has no known larger element, and the new comparison cannot create a cycle. Each win against an undefeated opponent at most doubles the winner's weight. Certifying a maximum takes $N-1$ first losses, after which the sole undefeated element has weight $N$, so it has beaten at least $\\lceil\\log_2 N\\rceil$ previously undefeated opponents. Each was first defeated by the maximum and remains a possible second maximum unless it also loses to someone other than the maximum. All but one need such a loss, and these comparisons are separate from the $N-1$ first losses. The total is at least $N+\\lceil\\log_2 N\\rceil-2$. A balanced knockout tree with byes gives the matching upper bound, so for eight the answer is nine.",
               "keyIdea": "",
               "kind": "programming",
-              "reviewStatus": "pending",
+              "reviewStatus": "verified",
               "familyId": "7.1:second-largest-element",
-              "rubric": [],
-              "verification": [],
+              "rubric": [
+                "Explain why the runner-up lost directly to the winner.",
+                "Give the balanced knockout comparison count.",
+                "Prove the adversary lower bound and obtain nine for eight elements."
+              ],
+              "verification": [
+                "Checked the balanced knockout upper bound and the undefeated-weight adversary lower bound with separate first and subsequent losses."
+              ],
               "followups": [],
               "sources": [
                 {
@@ -11374,11 +11386,11 @@ window.QUANT_DATA = {
                   "locator": "Question 3"
                 }
               ],
-              "revision": 4,
+              "revision": 5,
               "translations": {
                 "zh": {
-                  "statement": "在比较模型中，从N≥2个互异元素找第二大值，设计最坏比较次数尽量少的算法；先分析N为2的幂，再讨论一般N并论证下界。",
-                  "solution": "先用N-1次锦标赛比较找最大，并保存直接输给它的元素。第二大必在这些对手中。N为2的幂时，对手log₂N个，再用log₂N-1次找其中最大，共N+log₂N-2。一般平衡锦标赛至多N+ceil(log₂N)-2；完整最优性仍需匹配的对抗下界证明。",
+                  "statement": "在比较模型中，从N≥2个互异元素找第二大值，设计最坏比较次数尽量少的算法；先分析N为2的幂，再讨论一般N并论证下界。\n\n特别地，报告 8 个元素中同时找出最大和第二大所需的最少比较次数。",
+                  "solution": "先用N-1次锦标赛比较找最大，并保存直接输给它的元素。第二大必在这些对手中。N为2的幂时，对手log₂N个，再用log₂N-1次找其中最大，共N+log₂N-2。一般平衡锦标赛至多 N+ceil(log₂N)−2 次。\n\n**匹配的下界。** 用对手策略：每个未败元素初始权重为 1。两个未败元素比较，令较重者胜并吸收双方权重；未败与已败比较时令未败者胜；两个已败元素按与已知结果相容的顺序回答。未败者没有已知比它更大的元素，这样回答不会造成比较环。每次击败一个未败对手，胜者权重至多翻倍。确定最大值需 $N-1$ 次首次失败；此时唯一未败者的权重为 $N$，所以它至少直接击败了 $\\lceil\\log_2 N\\rceil$ 个此前未败的对手。它们的首次失败都输给了最大值，若没有再输给其他元素，仍可能是第二大。除真正第二大外，每个候选都必须有这样一次额外失败，且不与首次失败重复计数。因此至少需 $N+\\lceil\\log_2 N\\rceil-2$ 次比较。带轮空的平衡锦标赛达到此界；$N=8$ 时答案为 9。",
                   "title": "第二大元素",
                   "hint": "",
                   "keyIdea": "",
@@ -11903,6 +11915,146 @@ window.QUANT_DATA = {
                   "tags": [
                     "二分查找",
                     "次序统计量"
+                  ]
+                }
+              }
+            },
+            {
+              "title": "Maximum Volume Auction",
+              "statement": "You are given limit orders as (price, quantity, side). Prices are positive multiples of 100, quantities are positive, and side is 1 for a buy or −1 for a sell. At clearing price p, buys with limit at least p and sells with limit at most p qualify. Partial fills are allowed. Return −1 if no volume can trade; otherwise find the smallest and largest prices maximizing traded quantity and return their average, even if it is off the quote grid.",
+              "solution": "The volume is the smaller of eligible demand and supply, since both sides must fill the same quantity. Aggregate quantities by price. As you scan quotes in ascending order, add sell orders at the current quote before measuring volume and remove buy orders there afterward: both inequalities include equality. Between two adjacent quotes the volume is constant. At the left endpoint, demand can only rise compared with the open interval; at the right endpoint, supply can only rise. Thus neither endpoint has less volume, and the endpoints of any positive optimal plateau are found among quotes. Outside the extreme quotes one side is empty. With n orders the sweep takes O(n log n) time and O(n) auxiliary space. For a buy at 300 and an equal-sized sell at 100, the extremes are 100 and 300; return 200.\n\n```python\nfrom collections import Counter\n\ndef clearing_price(orders):\n    buy, sell = Counter(), Counter()\n    for price, qty, side in orders:\n        (buy if side == 1 else sell)[price] += qty\n    demand, supply = sum(buy.values()), 0\n    best = low = high = 0\n    for p in sorted(buy.keys() | sell.keys()):\n        supply += sell[p]\n        volume = min(demand, supply)\n        if volume > best:\n            best, low, high = volume, p, p\n        elif best > 0 and volume == best:\n            high = p\n        demand -= buy[p]\n    return (low + high) // 2 if best else -1\n```",
+              "hint": "At each quote, both buy and sell orders at that quote must count.",
+              "keyIdea": "At each quote, both buy and sell orders at that quote must count.",
+              "tags": [
+                "sweep line",
+                "auction"
+              ],
+              "id": "7.1:maximum-volume-auction",
+              "kind": "programming",
+              "difficulty": "hard",
+              "familyId": "7.1:maximum-volume-auction",
+              "reviewStatus": "verified",
+              "rubric": [
+                "Derive the executable volume.",
+                "Handle equality in the sweep and prove the extrema are quotes.",
+                "Handle tied and zero volumes."
+              ],
+              "verification": [
+                "Compared the embedded sweep with a direct demand/supply evaluation on every price including midpoints for small order books."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-054/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最大成交量撮合",
+                  "statement": "给定一组 (报价, 数量, 方向) 限价委托。报价为 100 的正整数倍，数量为正，买单方向为 1、卖单为 −1。统一成交价为 p 时，买单限价不低于 p、卖单限价不高于 p 才有资格成交；允许部分成交。若最大成交量为零，返回 −1；否则返回使成交量最大的最低价和最高价的平均值，平均值不必在报价网格上。",
+                  "solution": "可成交量等于合格买量和卖量的较小者，因为两边必须配对同样的数量。先按报价聚合，再升序扫描：算当前价的成交量前先加同价卖单，算完再减同价买单，从而保留两侧的等号资格。相邻报价之间成交量不变。相对开区间，左端点只可能增加买量，右端点只可能增加卖量，故两端都不会降低成交量。任意正成交最优区间的极端价格都可在报价中找到；极端报价以外总有一侧为空。n 笔委托的时间为 O(n log n)，辅助空间 O(n)。若只有 300 的买单和 100 的同量卖单，两个极端价为 100 和 300，返回 200。\n\n```python\nfrom collections import Counter\n\ndef clearing_price(orders):\n    buy, sell = Counter(), Counter()\n    for price, qty, side in orders:\n        (buy if side == 1 else sell)[price] += qty\n    demand, supply = sum(buy.values()), 0\n    best = low = high = 0\n    for p in sorted(buy.keys() | sell.keys()):\n        supply += sell[p]\n        volume = min(demand, supply)\n        if volume > best:\n            best, low, high = volume, p, p\n        elif best > 0 and volume == best:\n            high = p\n        demand -= buy[p]\n    return (low + high) // 2 if best else -1\n```",
+                  "hint": "扫描到某个报价时，该价的买卖单都必须计入。",
+                  "keyIdea": "扫描到某个报价时，该价的买卖单都必须计入。",
+                  "tags": [
+                    "扫描线",
+                    "集合竞价"
+                  ]
+                }
+              }
+            },
+            {
+              "title": "Prime Decimal Substrings",
+              "statement": "For an integer 0 ≤ N < 10¹⁰, count nonempty contiguous substrings of its ordinary decimal representation that begin with a nonzero digit and represent a prime. Count occurrences by position, including repeats. Give an algorithm and evaluate N=1303.",
+              "solution": "Skip zero starts and extend every other substring one digit at a time. A composite integer greater than one has a factor at most its square root; after handling even numbers, trial division by odd integers suffices. Cache the primality tests, not the occurrences. For L digits this uses O(L²√(max(1,N))) time in the worst case and O(L²) extra space. At 1303 the hits are 13, 1303, and the two separate occurrences of 3; 03 is invalid. The answer is 4.\n\n```python\nfrom functools import cache\nfrom math import isqrt\n\ndef count_prime_substrings(n):\n    @cache\n    def prime(v):\n        if v < 2:\n            return False\n        if v % 2 == 0:\n            return v == 2\n        return all(v % d for d in range(3, isqrt(v) + 1, 2))\n    s = str(n)\n    total = 0\n    for i, ch in enumerate(s):\n        if ch == '0':\n            continue\n        v = 0\n        for digit in s[i:]:\n            v = 10 * v + int(digit)\n            total += prime(v)\n    return total\n```",
+              "hint": "Cache primality by value, but count by endpoint pair.",
+              "keyIdea": "Cache primality by value, but count by endpoint pair.",
+              "tags": [
+                "number theory",
+                "substrings"
+              ],
+              "id": "7.1:prime-decimal-substrings",
+              "kind": "programming",
+              "difficulty": "medium",
+              "familyId": "7.1:prime-decimal-substrings",
+              "reviewStatus": "verified",
+              "rubric": [
+                "Count occurrences, not distinct values.",
+                "Explain the square-root test and the leading-zero rule.",
+                "Obtain four for 1303."
+              ],
+              "verification": [
+                "Compared the embedded implementation with a sieve and direct substring enumeration for all N from 0 through 9999."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-054/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "不含前导零的素数子串",
+                  "statement": "给定整数 0 ≤ N < 10¹⁰，统计其通常十进制写法中，以非零数字开头且数值为素数的非空连续子串。按位置计数，同一素数出现多次要分别计入。给出算法并计算 N=1303。",
+                  "solution": "跳过以 0 开头的位置，其余起点逐位向右扩展。大于 1 的合数至少有一个因子不超过平方根；单独处理偶数后，试除奇数即可。缓存素性判断，但每个位置照常计数。L 位时最坏时间 O(L²√(max(1,N)))，额外空间 O(L²)。1303 中符合条件的是 13、1303 和两处 3；03 不合法。答案为 4。\n\n```python\nfrom functools import cache\nfrom math import isqrt\n\ndef count_prime_substrings(n):\n    @cache\n    def prime(v):\n        if v < 2:\n            return False\n        if v % 2 == 0:\n            return v == 2\n        return all(v % d for d in range(3, isqrt(v) + 1, 2))\n    s = str(n)\n    total = 0\n    for i, ch in enumerate(s):\n        if ch == '0':\n            continue\n        v = 0\n        for digit in s[i:]:\n            v = 10 * v + int(digit)\n            total += prime(v)\n    return total\n```",
+                  "hint": "按数值缓存素性，按起止位置累计答案。",
+                  "keyIdea": "按数值缓存素性，按起止位置累计答案。",
+                  "tags": [
+                    "数论",
+                    "子串"
+                  ]
+                }
+              }
+            },
+            {
+              "title": "Headless Tank Demo",
+              "statement": "Implement a headless tank demo on a 2000 by 2000 map. The tank is axis-aligned, has width, height, speed, skin and hit points, and moves in four cardinal directions for a specified time. Stones are solid rectangles; grass is passable. The tank may touch a stone or map edge but may not overlap a stone or leave the map during any part of a move. It is hidden only when a single grass rectangle contains its entire footprint. Print its position and visibility after a fixed command sequence. Explain extensions for shots, multiple tanks and timed power-ups. Assume valid terrain rectangles, a legal start, and nonnegative finite times and speed.",
+              "solution": "Separate tank state from terrain and rendering. Transform movement along the negative axis by reflecting the primary coordinate; all cases then move in the positive direction. Clamp the requested travel by the forward map boundary and the nearest forward stone whose perpendicular interval overlaps the tank with positive length. The first contact distance is the forward gap. Checking only the destination would miss a stone traversed in a long move. Recompute hidden after moving by testing whole-rectangle inclusion against each grass patch. The cost per command is O(number of stones + number of grass patches). For shooting, sweep projectile segments and resolve the earliest hit; for multiple tanks, define a deterministic update or simultaneous collision rule; for power-ups, track expiry separately from base attributes.\n\n```python\nfrom dataclasses import dataclass\n\n@dataclass\nclass Tank:\n    box: tuple  # (left, top, right, bottom)\n    speed: float\n    skin: str\n    hp: int\n\ndef move(tank, direction, seconds, stones, grass, size=2000):\n    axis, sign = {'R': (0, 1), 'L': (0, -1),\n                  'D': (1, 1), 'U': (1, -1)}[direction]\n    other = 1 - axis\n    box = list(tank.box)\n    if sign > 0:\n        front = box[axis + 2]\n        gap = size - front\n    else:\n        front = -box[axis]\n        gap = -front\n    distance = min(gap, tank.speed * seconds)\n    for stone in stones:\n        if max(box[other], stone[other]) < min(box[other + 2], stone[other + 2]):\n            face = stone[axis] if sign > 0 else -stone[axis + 2]\n            if face >= front:\n                distance = min(distance, face - front)\n    box[axis] += sign * distance\n    box[axis + 2] += sign * distance\n    tank.box = tuple(box)\n    hidden = any(g[0] <= box[0] and g[1] <= box[1]\n                 and box[2] <= g[2] and box[3] <= g[3] for g in grass)\n    return box[0], box[1], hidden\n\nif __name__ == '__main__':\n    tank = Tank((10, 10, 20, 20), 10, 'blue', 100)\n    stones = [(40, 0, 50, 30)]\n    grass = [(10, 40, 40, 70)]\n    for direction, seconds in [('R', 10), ('D', 4), ('L', 100), ('U', 100)]:\n        print(*move(tank, direction, seconds, stones, grass))\n```",
+              "hint": "Compute first contact along the swept rectangle, then recompute visibility.",
+              "keyIdea": "Compute first contact along the swept rectangle, then recompute visibility.",
+              "tags": [
+                "geometry",
+                "simulation",
+                "state design"
+              ],
+              "id": "7.1:headless-tank-demo",
+              "kind": "programming",
+              "difficulty": "hard",
+              "familyId": "7.1:headless-tank-demo",
+              "reviewStatus": "verified",
+              "rubric": [
+                "Model footprint and maintain legal positions throughout a move.",
+                "Use positive perpendicular overlap and the forward gap to avoid tunneling.",
+                "Distinguish containment from overlap and describe extensions."
+              ],
+              "verification": [
+                "Executed the demo and compared the swept movement against a unit-step oracle for random small integer worlds in all four directions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-054/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "无图形界面坦克 Demo",
+                  "statement": "实现一个 2000×2000 地图上的无图形界面坦克演示。坦克为轴对齐矩形，保存宽高、速度、皮肤和生命值；每条指令给定上下左右之一及持续时间。石块是实体矩形，草地可通行。可以贴边，但移动全程不能越出地图或与石块内部重叠。仅当单块草地完全包含坦克时才隐藏。运行一串预设指令并输出每步位置与隐藏状态，再说明如何扩展射击、多坦克和限时增益。假设地物合法、起始位置合法、速度与时长非负且有限。",
+                  "solution": "把坦克状态、地物和显示分离。对负方向先反射主轴坐标，四种走法都化为沿正轴前进。用前方地图边界限制位移，再找垂直于移动方向的投影与坦克有正长度重叠的前方石块。离坦克最近的前向间隙就是首次接触距离。只检查终点会漏掉长步移动中经过的石块。移动后逐块草地检查完整矩形包含关系，重新计算隐藏状态。每条指令的时间与石块数及草地数之和成正比。射击可对弹道做线段扫掠并取最早命中；多坦克须规定确定性的更新或同时碰撞规则；限时增益单独维护到期时间与基础属性。\n\n```python\nfrom dataclasses import dataclass\n\n@dataclass\nclass Tank:\n    box: tuple  # (left, top, right, bottom)\n    speed: float\n    skin: str\n    hp: int\n\ndef move(tank, direction, seconds, stones, grass, size=2000):\n    axis, sign = {'R': (0, 1), 'L': (0, -1),\n                  'D': (1, 1), 'U': (1, -1)}[direction]\n    other = 1 - axis\n    box = list(tank.box)\n    if sign > 0:\n        front = box[axis + 2]\n        gap = size - front\n    else:\n        front = -box[axis]\n        gap = -front\n    distance = min(gap, tank.speed * seconds)\n    for stone in stones:\n        if max(box[other], stone[other]) < min(box[other + 2], stone[other + 2]):\n            face = stone[axis] if sign > 0 else -stone[axis + 2]\n            if face >= front:\n                distance = min(distance, face - front)\n    box[axis] += sign * distance\n    box[axis + 2] += sign * distance\n    tank.box = tuple(box)\n    hidden = any(g[0] <= box[0] and g[1] <= box[1]\n                 and box[2] <= g[2] and box[3] <= g[3] for g in grass)\n    return box[0], box[1], hidden\n\nif __name__ == '__main__':\n    tank = Tank((10, 10, 20, 20), 10, 'blue', 100)\n    stones = [(40, 0, 50, 30)]\n    grass = [(10, 40, 40, 70)]\n    for direction, seconds in [('R', 10), ('D', 4), ('L', 100), ('U', 100)]:\n        print(*move(tank, direction, seconds, stones, grass))\n```",
+                  "hint": "沿矩形扫掠求首次接触，再重新判断隐藏。",
+                  "keyIdea": "沿矩形扫掠求首次接触，再重新判断隐藏。",
+                  "tags": [
+                    "几何",
+                    "模拟",
+                    "状态设计"
                   ]
                 }
               }
@@ -12743,9 +12895,9 @@ window.QUANT_DATA = {
                 "OLS",
                 "standard errors"
               ],
-              "statement": "An OLS fit with intercept uses $n>p$ observations and $p$ coefficients with full column rank. Duplicate each row and its response once. How do coefficients, $R^2$, conventional standard errors, $t$ and $p$ values change? Assume the relevant variances and $R^2$ are defined. What changes for ridge regression if its objective is the sum of squared residuals plus a fixed penalty coefficient times the squared slope norm?",
+              "statement": "An OLS fit with intercept uses $n>p$ observations and $p$ coefficients with full column rank. Duplicate each row and its response once. How do coefficients, $R^2$, conventional standard errors, $t$ and $p$ values change? Assume the relevant variances and $R^2$ are defined. What changes for ridge regression if its objective is the sum of squared residuals plus a fixed penalty coefficient times the squared slope norm?\n\nFirst derive OLS for $y=X\\beta+\\varepsilon$ with independent $N(0,\\sigma^2)$ errors and unknown $\\sigma^2>0$. Can duplicated rows add independent statistical evidence?",
               "hint": "Track both the residual degrees of freedom and the Gram matrix.",
-              "solution": "Both normal-equation sides double, so coefficients stay fixed; SSE and TSS both double, keeping $R^2$ fixed. With $s^2=\\mathrm{SSE}/(n-p)$, the original estimated covariance is $s^2(X^\\top X)^{-1}$. The new residual variance estimate is $2\\mathrm{SSE}/(2n-p)$ and the inverse Gram matrix halves. The variance ratio is $(n-p)/(2n-p)$, so standard errors are multiplied by its square root. Against the same null, $t$ scales by the reciprocal factor. A naive two-sided $p$ value uses the new statistic with $2n-p$ degrees of freedom (it decreases for a nonzero statistic). It is not valid evidence of new information: the duplicates are perfectly dependent on the originals. For ridge, duplication doubles only the squared-error term; dividing the new objective by 2 shows it is equivalent to halving the penalty coefficient on the original data. Slopes may change.",
+              "solution": "Both normal-equation sides double, so coefficients stay fixed; SSE and TSS both double, keeping $R^2$ fixed. With $s^2=\\mathrm{SSE}/(n-p)$, the original estimated covariance is $s^2(X^\\top X)^{-1}$. The new residual variance estimate is $2\\mathrm{SSE}/(2n-p)$ and the inverse Gram matrix halves. The variance ratio is $(n-p)/(2n-p)$, so standard errors are multiplied by its square root. Against the same null, $t$ scales by the reciprocal factor. A naive two-sided $p$ value uses the new statistic with $2n-p$ degrees of freedom (it decreases for a nonzero statistic). It is not valid evidence of new information: the duplicates are perfectly dependent on the originals. For ridge, duplication doubles only the squared-error term; dividing the new objective by 2 shows it is equivalent to halving the penalty coefficient on the original data. Slopes may change.\n\n**OLS derivation.** For fixed positive $\\sigma^2$, maximizing the Gaussian likelihood in $\\beta$ is equivalent to minimizing $\\|y-X\\beta\\|_2^2$. Profiling over $\\sigma^2$ also preserves the minimizer when the residual sum of squares is positive. The gradient vanishes at $X^\\top X\\hat\\beta=X^\\top y$; full column rank makes $2X^\\top X$ positive definite, so $\\hat\\beta=(X^\\top X)^{-1}X^\\top y$ is the unique least-squares fit.",
               "keyIdea": "Track both the residual degrees of freedom and the Gram matrix.",
               "kind": "math",
               "reviewStatus": "verified",
@@ -12775,13 +12927,13 @@ window.QUANT_DATA = {
                   "locator": "Question 5"
                 }
               ],
-              "revision": 1,
+              "revision": 2,
               "translations": {
                 "zh": {
                   "title": "复制观测与 OLS 显著性",
-                  "statement": "含截距 OLS 原有 $n>p$ 个观测和 $p$ 个系数，设计阵满列秩。将每条观测及响应原样复制一次。系数、$R^2$、常规标准误、$t$ 值和 $p$ 值如何变化？假设相关方差和 $R^2$ 均有定义。 若岭回归用残差平方和加固定系数乘斜率平方范数，复制又有什么影响？",
+                  "statement": "含截距 OLS 原有 $n>p$ 个观测和 $p$ 个系数，设计阵满列秩。将每条观测及响应原样复制一次。系数、$R^2$、常规标准误、$t$ 值和 $p$ 值如何变化？假设相关方差和 $R^2$ 均有定义。 若岭回归用残差平方和加固定系数乘斜率平方范数，复制又有什么影响？\n\n先在 $y=X\\beta+\\varepsilon$、误差独立服从 $N(0,\\sigma^2)$、$\\sigma^2>0$ 未知的条件下推导 OLS。复制观测能增加独立的统计证据吗？",
                   "hint": "同时追踪残差自由度和 Gram 矩阵。",
-                  "solution": "正规方程两边同乘 2，系数不变；残差平方和与总平方和都翻倍，$R^2$ 不变。原估计协方差为 $\\frac{\\mathrm{SSE}}{n-p}(X^\\top X)^{-1}$。复制后误差方差估计为 $\\frac{2\\mathrm{SSE}}{2n-p}$，逆 Gram 矩阵减半。因此方差比为 $(n-p)/(2n-p)$，标准误乘其平方根。同一零假设下，$t$ 值乘该因子的倒数；朴素双侧 $p$ 值用新统计量和 $2n-p$ 自由度计算（非零统计量对应的 $p$ 值变小）。但复制行与原行完全依赖，未增加统计证据。 对岭回归，复制只使残差平方和乘 2。将新目标整体除以 2，等价于在原数据上把惩罚系数减半，因此斜率可能改变。",
+                  "solution": "正规方程两边同乘 2，系数不变；残差平方和与总平方和都翻倍，$R^2$ 不变。原估计协方差为 $\\frac{\\mathrm{SSE}}{n-p}(X^\\top X)^{-1}$。复制后误差方差估计为 $\\frac{2\\mathrm{SSE}}{2n-p}$，逆 Gram 矩阵减半。因此方差比为 $(n-p)/(2n-p)$，标准误乘其平方根。同一零假设下，$t$ 值乘该因子的倒数；朴素双侧 $p$ 值用新统计量和 $2n-p$ 自由度计算（非零统计量对应的 $p$ 值变小）。但复制行与原行完全依赖，未增加统计证据。 对岭回归，复制只使残差平方和乘 2。将新目标整体除以 2，等价于在原数据上把惩罚系数减半，因此斜率可能改变。\n\n**OLS 推导。** 固定正的 $\\sigma^2$，关于 $\\beta$ 最大化高斯似然等价于最小化 $\\|y-X\\beta\\|_2^2$。残差平方和为正时，对 $\\sigma^2$ 做轮廓极大化也不改变该最小点。令梯度为零得 $X^\\top X\\hat\\beta=X^\\top y$；满列秩使 $2X^\\top X$ 正定，故唯一解为 $\\hat\\beta=(X^\\top X)^{-1}X^\\top y$。",
                   "keyIdea": "同时追踪残差自由度和 Gram 矩阵。",
                   "tags": [
                     "最小二乘",
