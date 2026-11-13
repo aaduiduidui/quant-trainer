@@ -9,11 +9,12 @@ vm.runInNewContext(fs.readFileSync(path.join(root,'data/problems.js'),'utf8'),co
 vm.runInNewContext(fs.readFileSync(path.join(root,'js/search.js'),'utf8'),context);
 const api=context.window.ProblemSearch;
 const index=api.buildIndex(context.window.QUANT_DATA);
+const expectedIds=context.window.QUANT_DATA.chapters.flatMap(c=>c.topics.flatMap(t=>t.problems.filter(p=>!p.placeholder).map(p=>p.id)));
 const ids=rows=>Array.from(rows,row=>row.id);
 
 test('all real questions enter the search index with canonical route IDs',()=>{
-  assert.equal(index.length,241);
-  assert.equal(new Set(ids(index)).size,241);
+  assert.deepEqual(ids(index).sort(),Array.from(expectedIds).sort());
+  assert.equal(new Set(ids(index)).size,expectedIds.length);
   assert(index.find(e=>e.id==='5.3:generalized-egg-drop'));
 });
 

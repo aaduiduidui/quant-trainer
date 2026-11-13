@@ -109,9 +109,14 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0067"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 9"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "100只老虎与1只羊。吃羊的老虎立即变羊；老虎完全理性、共同知道规则，优先保命，其次吃羊。按经典逐次单只行动模型，会有老虎吃羊吗？",
@@ -1921,9 +1926,14 @@ window.QUANT_DATA = {
                   "type": "upstream",
                   "reference": "https://github.com/ellenzishanli/quant_interview_trainer/blob/f0192f17bf602457d0a8f43857e83304b56d7771/data/problems.js",
                   "locator": "2.9 / Rainbow Hats (7 Prisoners)"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 10"
                 }
               ],
-              "revision": 2,
+              "revision": 3,
               "translations": {
                 "zh": {
                   "title": "彩虹帽",
@@ -1935,6 +1945,51 @@ window.QUANT_DATA = {
                     "模运算",
                     "协议",
                     "反证"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "2.9:irrationality-of-square-root-three",
+              "title": "Irrationality of Square Root Three",
+              "difficulty": "easy",
+              "tags": [
+                "irrationality",
+                "proof by contradiction"
+              ],
+              "statement": "Prove that $\\sqrt3$ is irrational.",
+              "hint": "Reduce the proposed fraction first, then use prime divisibility.",
+              "solution": "Suppose $\\sqrt3=a/b$ for coprime positive integers. Then $a^2=3b^2$, so $3\\mid a$ because 3 is prime. Write $a=3k$; then $b^2=3k^2$ and $3\\mid b$ as well. This contradicts coprimality.",
+              "keyIdea": "Reduce the proposed fraction first, then use prime divisibility.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "2.9:irrational-number-2",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 12"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "根号三的无理性",
+                  "statement": "证明 $\\sqrt3$ 是无理数。",
+                  "hint": "先把假设的分数约为最简，再用质数整除。",
+                  "solution": "反设 $\\sqrt3=a/b$，其中 $a,b$ 为互质正整数。由 $a^2=3b^2$ 且 3 是质数，得 $3\\mid a$。令 $a=3k$，则 $b^2=3k^2$，于是 $3\\mid b$，与互质矛盾。",
+                  "keyIdea": "先把假设的分数约为最简，再用质数整除。",
+                  "tags": [
+                    "无理性",
+                    "反证法"
                   ]
                 }
               }
@@ -2119,6 +2174,51 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "3.1:comparing-pi-and-e-powers",
+              "title": "Comparing Pi and e Powers",
+              "difficulty": "easy",
+              "tags": [
+                "derivatives",
+                "inequalities"
+              ],
+              "statement": "Compare $\\pi^e$ and $e^\\pi$ without numerical evaluation.",
+              "hint": "Take logarithms and use a monotone ratio.",
+              "solution": "For $x>e$, the derivative of $\\log(x)/x$ is $(1-\\log x)/x^2<0$. As $\\pi>e$, $\\log(\\pi)/\\pi<\\log(e)/e$. Multiplying by $e\\pi$ and exponentiating yields $\\pi^e<e^\\pi$.",
+              "keyIdea": "Take logarithms and use a monotone ratio.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "3.1:comparing-pi-and-e-powers",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "比较圆周率与自然底数的幂",
+                  "statement": "不做数值近似，比较 $\\pi^e$ 与 $e^\\pi$。",
+                  "hint": "取对数，化为一个比值函数的单调性。",
+                  "solution": "函数 $\\log(x)/x$ 在 $x>e$ 时导数为 $(1-\\log x)/x^2<0$。因为 $\\pi>e$，故 $\\log(\\pi)/\\pi<\\log(e)/e$。同乘 $e\\pi$ 后取指数，得 $\\pi^e<e^\\pi$。",
+                  "keyIdea": "取对数，化为一个比值函数的单调性。",
+                  "tags": [
+                    "导数",
+                    "不等式"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -2293,6 +2393,51 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "3.2:mean-distance-to-triangle-sides",
+              "title": "Mean Distance to Triangle Sides",
+              "difficulty": "medium",
+              "tags": [
+                "geometry",
+                "expectation"
+              ],
+              "statement": "Choose a point uniformly by area inside a triangle with sides 45, 60, and 75. Find the expected sum of its perpendicular distances to the three supporting lines.",
+              "hint": "Use the centroid to average affine distance functions.",
+              "solution": "Distance to each side line, restricted to the triangle, is an affine function because its sign is fixed. Its mean is therefore its value at the centroid, one third of the corresponding altitude. The triangle is right, of area 1350. The answer is $\\tfrac{2700}{3}(1/45+1/60+1/75)=47$.",
+              "keyIdea": "Use the centroid to average affine distance functions.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "3.2:mean-distance-to-triangle-sides",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-020/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "随机点到三边的平均距离和",
+                  "statement": "在边长 45、60、75 的三角形内按面积均匀选点，求该点到三条边所在直线的垂直距离和的期望。",
+                  "hint": "利用重心计算仿射距离函数的平均值。",
+                  "solution": "三角形位于每条边线的同一侧，因此三角形内到该边线的距离是仿射函数。均值等于重心处的值，即对应高的三分之一。该直角三角形面积为 1350，故答案为 $\\tfrac{2700}{3}(1/45+1/60+1/75)=47$。",
+                  "keyIdea": "利用重心计算仿射距离函数的平均值。",
+                  "tags": [
+                    "几何",
+                    "期望"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -2343,6 +2488,51 @@ window.QUANT_DATA = {
                     "重积分",
                     "极坐标",
                     "高斯"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.3:gaussian-half-integral",
+              "title": "Gaussian Half Integral",
+              "difficulty": "medium",
+              "tags": [
+                "polar coordinates",
+                "integration"
+              ],
+              "statement": "Evaluate $I=\\int_0^\\infty e^{-x^2}\\,dx$ by squaring the integral and changing coordinates.",
+              "hint": "Squaring creates radial symmetry in the first quadrant.",
+              "solution": "Nonnegativity allows the product to be written as a double integral over the first quadrant. In polar coordinates, $I^2=\\int_0^{\\pi/2}\\int_0^\\infty re^{-r^2}\\,dr\\,d\\theta=\\pi/4$. The radial integral is $1/2$ by $u=r^2$. Taking the positive square root gives $I=\\sqrt\\pi/2$.",
+              "keyIdea": "Squaring creates radial symmetry in the first quadrant.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "3.3:gaussian-half-integral",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "半轴高斯积分",
+                  "statement": "将积分平方并换元，求 $I=\\int_0^\\infty e^{-x^2}\\,dx$。",
+                  "hint": "积分平方后，第一象限上的被积函数具有径向对称性。",
+                  "solution": "被积函数非负，故可把平方写成第一象限上的二重积分。极坐标给出 $I^2=\\int_0^{\\pi/2}\\int_0^\\infty re^{-r^2}\\,dr\\,d\\theta=\\pi/4$；径向积分用 $u=r^2$ 得 $1/2$。取正平方根得 $I=\\sqrt\\pi/2$。",
+                  "keyIdea": "积分平方后，第一象限上的被积函数具有径向对称性。",
+                  "tags": [
+                    "极坐标",
+                    "积分"
                   ]
                 }
               }
@@ -2994,9 +3184,14 @@ window.QUANT_DATA = {
                   "type": "reference",
                   "reference": "https://doi.org/10.1016/0095-8956(78)90059-X",
                   "locator": "Steve Fisk, A short proof of Chvátal’s Watchman Theorem, 1978"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 5"
                 }
               ],
-              "revision": 4,
+              "revision": 5,
               "translations": {
                 "zh": {
                   "statement": "对无洞的简单N边形，守卫可放在顶点，视线为完全位于多边形内的线段。证明⌊N/3⌋个静止守卫足够。",
@@ -3032,9 +3227,14 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0079"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 8"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "在n维实欧氏空间中，两两夹角严格为钝角的一组非零向量最多有多少个？证明上界并构造达到上界的例子。",
@@ -3166,9 +3366,19 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0187"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-041/",
+                  "locator": "Question 6"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-032/",
+                  "locator": "Question 5"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "n≥1，求每行和与每列和都为奇数的 n×n 二进制矩阵个数。",
@@ -3309,6 +3519,236 @@ window.QUANT_DATA = {
                   "tags": [
                     "线性代数",
                     "矩阵分析"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:rank-one-identity-update",
+              "title": "Rank-One Identity Update",
+              "difficulty": "easy",
+              "tags": [
+                "eigenvalues",
+                "rank one"
+              ],
+              "statement": "For $u\\in\\mathbb R^n$, determine the spectrum of $I+uu^\\top$, with multiplicities, including $u=0$.",
+              "hint": "Decompose the space into the update direction and its orthogonal complement.",
+              "solution": "If $u\\ne0$, applying the matrix to $u$ gives $(1+\\|u\\|^2)u$. Every $v$ in $u^\\perp$ satisfies $u^\\top v=0$ and is fixed. These subspaces exhaust $\\mathbb R^n$, so the eigenvalues are $1+\\|u\\|^2$ once and $1$ with multiplicity $n-1$. For $u=0$, all $n$ eigenvalues are $1$.",
+              "keyIdea": "Decompose the space into the update direction and its orthogonal complement.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "3.6:rank-one-identity-update",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "单位阵的秩一更新",
+                  "statement": "给定 $u\\in\\mathbb R^n$，求 $I+uu^\\top$ 的特征值与重数，包含 $u=0$ 的情况。",
+                  "hint": "分解为更新方向及其正交补。",
+                  "solution": "若 $u\\ne0$，矩阵作用于 $u$ 得 $(1+\\|u\\|^2)u$；若 $v\\perp u$，则 $u^\\top v=0$，矩阵固定 $v$。这两块子空间张成整个空间，所以 $1+\\|u\\|^2$ 重数为 1，$1$ 的重数为 $n-1$。若 $u=0$，全部 $n$ 个特征值均为 1。",
+                  "keyIdea": "分解为更新方向及其正交补。",
+                  "tags": [
+                    "特征值",
+                    "秩一矩阵"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:diagonal-dominance-and-quadratic-forms",
+              "title": "Diagonal Dominance and Quadratic Forms",
+              "difficulty": "medium",
+              "tags": [
+                "matrix inequalities",
+                "positive definiteness"
+              ],
+              "statement": "A real square matrix satisfies $a_{ii}>\\sum_{j\\ne i}|a_{ij}|$ in every row. Must its quadratic form be nonnegative? What if the matrix is symmetric?",
+              "hint": "Control each off-diagonal pair; without symmetry row bounds need not control the quadratic form.",
+              "solution": "No. Take $A=\\begin{pmatrix}11&10\\\\0&1\\end{pmatrix}$ and $x=(1,-5)^\\top$; then $x^\\top Ax=-14$. For symmetric $A$, each off-diagonal pair contributes $2a_{ij}x_ix_j\\ge-|a_{ij}|(x_i^2+x_j^2)$. Summing gives $x^\\top Ax\\ge\\sum_i(a_{ii}-\\sum_{j\\ne i}|a_{ij}|)x_i^2>0$ for $x\\ne0$.",
+              "keyIdea": "Control each off-diagonal pair; without symmetry row bounds need not control the quadratic form.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "3.6:diagonal-dominance-and-quadratic-forms",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "对角占优与二次型",
+                  "statement": "实方阵每行满足 $a_{ii}>\\sum_{j\\ne i}|a_{ij}|$。二次型是否必非负？若矩阵还对称呢？",
+                  "hint": "逐对控制交叉项；缺少对称性时行界未必能约束二次型。",
+                  "solution": "不一定。取 $A=\\begin{pmatrix}11&10\\\\0&1\\end{pmatrix}$，$x=(1,-5)^\\top$，则 $x^\\top Ax=-14$。若 $A$ 对称，每对非对角项满足 $2a_{ij}x_ix_j\\ge-|a_{ij}|(x_i^2+x_j^2)$。求和得到 $x^\\top Ax\\ge\\sum_i(a_{ii}-\\sum_{j\\ne i}|a_{ij}|)x_i^2$，只要 $x\\ne0$ 就严格为正。",
+                  "keyIdea": "逐对控制交叉项；缺少对称性时行界未必能约束二次型。",
+                  "tags": [
+                    "矩阵不等式",
+                    "正定性"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:inverse-correlation-trace",
+              "title": "Inverse Correlation Trace",
+              "difficulty": "medium",
+              "tags": [
+                "correlation matrices",
+                "trace"
+              ],
+              "statement": "For an invertible $n\\times n$ correlation matrix $R$, find the minimum of $\\operatorname{tr}(R^{-1})$, identify equality, and decide whether it is bounded above.",
+              "hint": "Fix the sum of the positive eigenvalues and bound the sum of their reciprocals.",
+              "solution": "The eigenvalues $\\lambda_i$ are positive and sum to $n$. Cauchy–Schwarz gives $(\\sum_i\\lambda_i)(\\sum_i1/\\lambda_i)\\ge n^2$, hence the trace is at least $n$. Equality forces all eigenvalues to be 1, so $R=I$. For $n\\ge2$, embed a two-dimensional correlation block with off-diagonal $r\\uparrow1$ in the identity. Its eigenvalue $1-r$ approaches zero, so the inverse trace diverges. For $n=1$, the only value is 1. Continuity of this family also gives every value in $[n,\\infty)$ for $n\\ge2$.",
+              "keyIdea": "Fix the sum of the positive eigenvalues and bound the sum of their reciprocals.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "3.6:inverse-correlation-trace",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "逆相关矩阵的迹",
+                  "statement": "对可逆的 $n$ 阶相关矩阵 $R$，求 $\\operatorname{tr}(R^{-1})$ 的最小值和等号条件，并判断是否有有限上界。",
+                  "hint": "固定正特征值之和，再约束其倒数之和。",
+                  "solution": "特征值 $\\lambda_i$ 均为正，和为 $n$。柯西不等式给出 $(\\sum_i\\lambda_i)(\\sum_i1/\\lambda_i)\\ge n^2$，故逆矩阵的迹至少为 $n$。等号要求特征值全为 1，即 $R=I$。若 $n\\ge2$，在单位阵中嵌入非对角元为 $r$ 的二阶相关块，令 $r\\uparrow1$，其特征值 $1-r$ 趋于零，逆矩阵的迹发散。这条连续路径也说明 $[n,\\infty)$ 内每个值都可取。$n=1$ 时只能取 1。",
+                  "keyIdea": "固定正特征值之和，再约束其倒数之和。",
+                  "tags": [
+                    "相关矩阵",
+                    "迹"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:idempotent-spectrum",
+              "title": "Idempotent Spectrum",
+              "difficulty": "easy",
+              "tags": [
+                "eigenvalues",
+                "projections"
+              ],
+              "statement": "A real square matrix satisfies $A^k=A$ for every positive integer $k$. Determine its possible eigenvalues and prove it diagonalizable. What changes if $k=0$ is also allowed?",
+              "hint": "Use the image and kernel of the projection.",
+              "solution": "The condition is equivalent to $A^2=A$. Every vector splits as $x=Ax+(I-A)x$. The first summand belongs to the 1-eigenspace and the second to the 0-eigenspace, and those spaces intersect only at zero. This gives a basis of eigenvectors with eigenvalues from $\\{0,1\\}$. Requiring $A^0=A$ forces $A=I$.",
+              "keyIdea": "Use the image and kernel of the projection.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "3.6:idempotent-spectrum",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-043/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "幂等矩阵的谱",
+                  "statement": "实方阵对所有正整数 $k$ 满足 $A^k=A$。求可能的特征值并证明可对角化。若 $k=0$ 也必须满足，有何变化？",
+                  "hint": "利用投影的像空间和零空间。",
+                  "solution": "条件等价于 $A^2=A$。任意向量可分解成 $x=Ax+(I-A)x$，第一项在特征值 1 的空间中，第二项在特征值 0 的空间中，两空间仅交于零向量。故可选取一组特征向量基，谱包含于 $\\{0,1\\}$。若还要求 $A^0=A$，则 $A=I$。",
+                  "keyIdea": "利用投影的像空间和零空间。",
+                  "tags": [
+                    "特征值",
+                    "投影"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3.6:equicorrelation-range",
+              "title": "Equicorrelation Range",
+              "difficulty": "medium",
+              "tags": [
+                "correlation matrices",
+                "eigenvalues"
+              ],
+              "statement": "For $n\\ge2$ standardized random variables with every off-diagonal correlation equal to $r$, give the exact range of $r$ and explain both endpoints.",
+              "hint": "Use the eigenspaces parallel and perpendicular to the all-ones vector.",
+              "solution": "The matrix is $(1-r)I+r\\mathbf1\\mathbf1^\\top$. Its eigenvalues are $1+(n-1)r$ in the all-ones direction and $1-r$ on the orthogonal complement. It is positive semidefinite exactly for $-1/(n-1)\\le r\\le1$. Every such matrix is a covariance: multiply an independent standard normal vector by a square root of the matrix. At the lower endpoint the centered variables sum to zero almost surely; at the upper endpoint each pair has zero difference variance and is equal almost surely.",
+              "keyIdea": "Use the eigenspaces parallel and perpendicular to the all-ones vector.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "3.6:equicorrelation-range",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 16"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-020/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "等相关系数的可行区间",
+                  "statement": "$n\\ge2$ 个标准化变量两两相关系数均为 $r$。求 $r$ 的精确可行区间，并说明两个端点的含义。",
+                  "hint": "利用全 1 向量方向及其正交补。",
+                  "solution": "相关矩阵为 $(1-r)I+r\\mathbf1\\mathbf1^\\top$。全 1 方向特征值为 $1+(n-1)r$，正交补上为 $1-r$。半正定恰等价于 $-1/(n-1)\\le r\\le1$。任一此类矩阵都可用其平方根乘独立标准正态向量实现。下端点的标准化变量和几乎必然为零；上端点任意两变量之差方差为零，故几乎必然相等。",
+                  "keyIdea": "利用全 1 向量方向及其正交补。",
+                  "tags": [
+                    "相关矩阵",
+                    "特征值"
                   ]
                 }
               }
@@ -3985,9 +4425,14 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0128"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 14"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "在圆周独立均匀取N≥1个点，求存在一个半圆包含全部点的概率。",
@@ -4319,6 +4764,96 @@ window.QUANT_DATA = {
                     "逻辑",
                     "信息论",
                     "构造"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:century-of-coin-tosses",
+              "title": "Century of Coin Tosses",
+              "difficulty": "easy",
+              "tags": [
+                "union bound",
+                "coin runs"
+              ],
+              "statement": "A fair coin is tossed independently once per second for 100 years of 365.25 days each. Prove that the chance of a run of 100 heads is below 0.00001.",
+              "hint": "Apply a union bound over all possible starting times.",
+              "solution": "There are $T=100\\cdot365.25\\cdot86400=3,155,760,000$ tosses. Each admissible start has probability $2^{-100}$ of beginning a run of 100 heads. There are at most $T$ starts, so the union bound gives at most $T2^{-100}<3\\times10^{-21}<10^{-5}$. Overlapping runs need not be independent for this bound.",
+              "keyIdea": "Apply a union bound over all possible starting times.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.1:century-of-coin-tosses",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "百年抛币中的百连正面",
+                  "statement": "按每年 365.25 天计，连续 100 年每秒独立抛一次公平硬币。证明出现至少一段连续 100 次正面的概率小于 0.00001。",
+                  "hint": "对所有可能起点取并集上界。",
+                  "solution": "总次数为 $T=100\\cdot365.25\\cdot86400=3,155,760,000$。任一合法起点开始的 100 次全为正面的概率是 $2^{-100}$。起点最多 $T$ 个，用并集上界得 $T2^{-100}<3\\times10^{-21}<10^{-5}$。重叠窗口之间无需独立。",
+                  "keyIdea": "对所有可能起点取并集上界。",
+                  "tags": [
+                    "并集上界",
+                    "硬币连串"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.1:intersection-probability-bounds",
+              "title": "Intersection Probability Bounds",
+              "difficulty": "easy",
+              "tags": [
+                "probability bounds",
+                "inclusion exclusion"
+              ],
+              "statement": "For events A and B with probabilities a and b, give the sharp bounds on their intersection. Must the intersection probability be at least ab? At most (a+b)/2?",
+              "hint": "Apply containment and inclusion–exclusion, then construct interval examples.",
+              "solution": "The upper bound is $\\min(a,b)$ by containment, and the lower bound is $\\max(0,a+b-1)$ by inclusion–exclusion and nonnegativity. Both are attained on the unit interval: take nested left intervals for the upper bound, or a left interval of length $a$ and right interval of length $b$ for the lower. In particular the intersection is at most $(a+b)/2$. Disjoint events of probability $1/2$ show it need not be at least $ab$.",
+              "keyIdea": "Apply containment and inclusion–exclusion, then construct interval examples.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.1:intersection-probability-bounds",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 17"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "事件交集的概率界",
+                  "statement": "已知事件 A、B 的概率为 a、b。给出交集概率的最紧上下界，并判断交集概率是否总不小于 ab、是否总不大于 (a+b)/2。",
+                  "hint": "先用包含和容斥，再用区间构造达到界。",
+                  "solution": "由包含关系得上界 $\\min(a,b)$，由容斥和非负性得下界 $\\max(0,a+b-1)$。在单位区间中，两个同从左端开始的区间达到上界；长度为 $a$ 的左端区间与长度为 $b$ 的右端区间达到下界。交集必不超过 $(a+b)/2$。两个概率各为 $1/2$ 的互斥事件说明交集未必至少为 $ab$。",
+                  "keyIdea": "先用包含和容斥，再用区间构造达到界。",
+                  "tags": [
+                    "概率界",
+                    "容斥"
                   ]
                 }
               }
@@ -4837,6 +5372,322 @@ window.QUANT_DATA = {
                     "组合计数",
                     "组合数学",
                     "计数"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:blue-ball-majority",
+              "title": "Blue Ball Majority",
+              "difficulty": "easy",
+              "tags": [
+                "hypergeometric"
+              ],
+              "statement": "An urn contains five black and three blue balls. Draw a uniform three-ball subset. What is the chance that blue is the majority?",
+              "hint": "Count the cases of exactly two and exactly three blue balls.",
+              "solution": "Of $\\binom83=56$ equally likely subsets, $\\binom32\\binom51=15$ have exactly two blues and one subset has three. The probability is $16/56=2/7$.",
+              "keyIdea": "Count the cases of exactly two and exactly three blue balls.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.2:blue-ball-majority",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-019/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "蓝球占多数",
+                  "statement": "袋里有 5 个黑球和 3 个蓝球，等概率选取 3 个不同的球。求蓝球过半的概率。",
+                  "hint": "分别计数恰好两个和恰好三个蓝球。",
+                  "solution": "共有 $\\binom83=56$ 个等可能子集。恰好两个蓝球有 $\\binom32\\binom51=15$ 种，三个全蓝只有一种，故概率为 $16/56=2/7$。",
+                  "keyIdea": "分别计数恰好两个和恰好三个蓝球。",
+                  "tags": [
+                    "超几何分布"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:relabeled-dice-sums",
+              "title": "Relabeled Dice Sums",
+              "difficulty": "medium",
+              "tags": [
+                "generating functions",
+                "dice"
+              ],
+              "statement": "Can two independent fair six-faced dice with positive integer labels, allowing repeated labels, have exactly the sum distribution of two standard dice without both using the standard labeling? Give and verify an example.",
+              "hint": "Redistribute factors of the standard die polynomial.",
+              "solution": "Label the dice $(1,2,2,3,3,4)$ and $(1,3,4,5,6,8)$. The sum counts are coefficients of the product of their face polynomials. Their polynomials are $z(1+z)(1+z+z^2)$ and $z(1+z+z^2)(1+z)(z^2-z+1)^2$, respectively. Their product equals $[z(1+z)(1+z+z^2)(z^2-z+1)]^2=(z+z^2+\\cdots+z^6)^2$. Since there are 36 equally likely physical face pairs, the distributions agree.",
+              "keyIdea": "Redistribute factors of the standard die polynomial.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.2:relabeled-dice-sums",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-043/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "异标六面骰的和",
+                  "statement": "两个独立公平六面骰的面可标任意正整数，允许重复。能否让点数和的分布与两枚标准骰完全相同，而至少一枚不是标准标号？构造并验证。",
+                  "hint": "重新分配标准骰生成多项式的因子。",
+                  "solution": "第一枚标 $(1,2,2,3,3,4)$，第二枚标 $(1,3,4,5,6,8)$。点数和的计数是两枚骰的面值生成多项式乘积的系数。两多项式分别为 $z(1+z)(1+z+z^2)$ 和 $z(1+z+z^2)(1+z)(z^2-z+1)^2$，其乘积等于 $[z(1+z)(1+z+z^2)(z^2-z+1)]^2=(z+z^2+\\cdots+z^6)^2$。36 个物理面组合等可能，故分布相同。",
+                  "keyIdea": "重新分配标准骰生成多项式的因子。",
+                  "tags": [
+                    "生成函数",
+                    "骰子"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:conjugate-powers-and-digits",
+              "title": "Conjugate Powers and Digits",
+              "difficulty": "medium",
+              "tags": [
+                "binomial theorem"
+              ],
+              "statement": "Without expanding $(1+\\sqrt2)^{2023}$ in decimal, determine its 100th and 200th digits after the decimal point. Explain the role of the exponent parity.",
+              "hint": "Add the algebraic conjugate to obtain an integer.",
+              "solution": "By the binomial theorem, $(1+\\sqrt2)^k+(1-\\sqrt2)^k$ is an integer. Set $d=(\\sqrt2-1)^k\\in(0,1)$. The fractional part of the positive power is $d$ for odd $k$ and $1-d$ for even $k$. At $k=2023$, $d<2^{-2023}<10^{-600}$ because $2^{10}>10^3$. Both requested digits are zero.",
+              "keyIdea": "Add the algebraic conjugate to obtain an integer.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.2:conjugate-powers-and-digits",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-017/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 20"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "共轭幂的小数位",
+                  "statement": "不展开 $(1+\\sqrt2)^{2023}$ 的十进制表示，求小数点后第 100、200 位，并解释指数奇偶性的作用。",
+                  "hint": "加上代数共轭得到整数。",
+                  "solution": "由二项式定理，$(1+\\sqrt2)^k+(1-\\sqrt2)^k$ 是整数。令 $d=(\\sqrt2-1)^k\\in(0,1)$。$k$ 为奇数时正底数幂的小数部分为 $d$，偶数时为 $1-d$。当 $k=2023$，由 $\\sqrt2-1<1/2$ 和 $2^{10}>10^3$ 得 $d<2^{-2023}<10^{-600}$，故两位均为 0。",
+                  "keyIdea": "加上代数共轭得到整数。",
+                  "tags": [
+                    "二项式定理"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:fixed-edge-random-graph-degree",
+              "title": "Fixed-Edge Random Graph Degree",
+              "difficulty": "medium",
+              "tags": [
+                "random graphs",
+                "hypergeometric"
+              ],
+              "statement": "Choose $m$ edges uniformly without replacement among the $M=\\binom n2$ edges of the complete simple graph, with $n\\ge2$ and $0\\le m\\le M$. Find the degree distribution and mean for a specified vertex.",
+              "hint": "Sample from the incident and nonincident edge groups.",
+              "solution": "Exactly $n-1$ candidate edges meet the vertex. Thus $P(D=d)=\\binom{n-1}d\\binom{M-n+1}{m-d}/\\binom Mm$, with out-of-range binomial coefficients zero. Each incident edge has inclusion probability $m/M$, giving $E[D]=(n-1)m/M=2m/n$.",
+              "keyIdea": "Sample from the incident and nonincident edge groups.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.2:fixed-edge-random-graph-degree",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-045/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "固定边数随机图的度",
+                  "statement": "在 $n\\ge2$ 个顶点的完全简单图中，从 $M=\\binom n2$ 条候选边均匀无放回选 $m$ 条。求指定顶点度数的分布和期望。",
+                  "hint": "把候选边分成关联边与非关联边。",
+                  "solution": "候选边中恰有 $n-1$ 条与该点相接。因此 $P(D=d)=\\binom{n-1}d\\binom{M-n+1}{m-d}/\\binom Mm$，越界组合数视为 0。每条关联边被选的概率为 $m/M$，故 $E[D]=(n-1)m/M=2m/n$。",
+                  "keyIdea": "把候选边分成关联边与非关联边。",
+                  "tags": [
+                    "随机图",
+                    "超几何分布"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:increasing-permutation-prefix",
+              "title": "Increasing Permutation Prefix",
+              "difficulty": "medium",
+              "tags": [
+                "permutations",
+                "tail probabilities"
+              ],
+              "statement": "Uniformly permute $1,\\ldots,n$. Let $L$ be the length of the longest strictly increasing prefix. Find $P(L=k)$, including $k=n$ and $P(L=1)$ for $n\\ge2$.",
+              "hint": "Compute the tail distribution from the relative order of the prefix.",
+              "solution": "Among the $k!$ equally likely relative orders of the first $k$ entries, one is increasing. So $P(L\\ge k)=1/k!$. Subtract the next tail to obtain $1/k!-1/(k+1)!$ for $1\\le k<n$ and use $1/n!$ for $k=n$. The case $k=1<n$ gives $1/2$.",
+              "keyIdea": "Compute the tail distribution from the relative order of the prefix.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.2:increasing-permutation-prefix",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-037/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "随机排列的递增前缀",
+                  "statement": "均匀排列 $1,\\ldots,n$。记从第一项开始的最长严格递增前缀长度为 $L$。求 $P(L=k)$，包含 $k=n$，并给出 $n\\ge2$ 时的 $P(L=1)$。",
+                  "hint": "由前缀的相对顺序求尾概率。",
+                  "solution": "前 $k$ 项的 $k!$ 种相对顺序等可能，严格递增只有一种，故 $P(L\\ge k)=1/k!$。相邻尾概率相减，$1\\le k<n$ 时得到 $1/k!-1/(k+1)!$，$k=n$ 时为 $1/n!$。当 $k=1<n$ 时答案为 $1/2$。",
+                  "keyIdea": "由前缀的相对顺序求尾概率。",
+                  "tags": [
+                    "排列",
+                    "尾概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:most-likely-three-dice-sum",
+              "title": "Most Likely Three-Dice Sum",
+              "difficulty": "medium",
+              "tags": [
+                "dice",
+                "inclusion exclusion"
+              ],
+              "statement": "Roll three independent standard dice. Find every most probable sum and its probability.",
+              "hint": "Use bounded compositions for one half of the distribution and reflection for the other.",
+              "solution": "For sum $s$, shift each roll down by 1, obtaining bounded nonnegative variables summing to $s-3$. For $3\\le s\\le10$, the count is $\\binom{s-1}2-3\\binom{s-7}2$, where a binomial with top below 2 is zero: at these sums at most one shifted roll can exceed 5. The counts for $s=3,\\ldots,10$ are $1,3,6,10,15,21,25,27$. Reflection of each die face maps sum $s$ to $21-s$. Thus 10 and 11 tie at $27/216=1/8$.",
+              "keyIdea": "Use bounded compositions for one half of the distribution and reflection for the other.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.2:most-likely-three-dice-sum",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 15"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三骰点数和的众数",
+                  "statement": "独立掷三颗标准六面骰。求所有最可能的点数和以及对应概率。",
+                  "hint": "一半用有上界的整数拆分计数，另一半用对称性。",
+                  "solution": "每颗骰的点数减 1，转成三个取值 0 到 5 的非负数。对 $3\\le s\\le10$，容斥给出计数 $\\binom{s-1}2-3\\binom{s-7}2$，上标小于 2 的组合数记为零；这个区间不可能有两个变量同时超过 5。逐项为 $1,3,6,10,15,21,25,27$。把各点数 $x$ 变成 $7-x$，总和 $s$ 对应 $21-s$，所以 10 和 11 并列，概率 $27/216=1/8$。",
+                  "keyIdea": "一半用有上界的整数拆分计数，另一半用对称性。",
+                  "tags": [
+                    "骰子",
+                    "容斥"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.2:permutation-ascents",
+              "title": "Permutation Ascents",
+              "difficulty": "medium",
+              "tags": [
+                "permutations",
+                "recurrences"
+              ],
+              "statement": "For a uniform permutation of 1 through n, count the positions where the next entry is larger. Find its expectation and a recurrence for the number of permutations with exactly k such positions.",
+              "hint": "Insert the new maximum and classify the gaps by their effect on ascents.",
+              "solution": "Each adjacent pair rises with probability $1/2$, so the mean is $(n-1)/2$. Let $A(n,k)$ count permutations with $k$ ascents. Insert the largest entry into a permutation of size $n-1$. Inserting at the beginning or in an ascent gap leaves the count unchanged; inserting at the end or in a descent gap increases it by one. Thus $A(n,k)=(k+1)A(n-1,k)+(n-k)A(n-1,k-1)$, starting from $A(1,0)=1$ and treating invalid indices as zero.",
+              "keyIdea": "Insert the new maximum and classify the gaps by their effect on ascents.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.2:permutation-ascents",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "排列上升位置的计数",
+                  "statement": "均匀排列 1 到 n，统计后一项大于前一项的位置数。求其期望，以及恰有 k 个上升位置的排列数递推。",
+                  "hint": "插入新最大元素，按间隙对上升数的影响分类。",
+                  "solution": "每对相邻位置以 $1/2$ 的概率上升，所以期望为 $(n-1)/2$。记 $A(n,k)$ 为恰有 $k$ 次上升的排列数。向长度 $n-1$ 的排列插入最大元素：在开头或原上升间隙插入，上升数不变；在末尾或原下降间隙插入，上升数加一。故 $A(n,k)=(k+1)A(n-1,k)+(n-k)A(n-1,k-1)$，初值 $A(1,0)=1$，越界计数为零。",
+                  "keyIdea": "插入新最大元素，按间隙对上升数的影响分类。",
+                  "tags": [
+                    "排列",
+                    "递推"
                   ]
                 }
               }
@@ -5762,6 +6613,186 @@ window.QUANT_DATA = {
                   "keyIdea": "指定选手对与所有原始选手对交换对称；相遇后的条件轮数权重就是各轮实际场数，望远镜求和再化为二进制位数公式。"
                 }
               }
+            },
+            {
+              "id": "4.3:repeated-roll-with-random-labels",
+              "title": "Repeated Roll with Random Labels",
+              "difficulty": "medium",
+              "tags": [
+                "conditional probability",
+                "mixtures"
+              ],
+              "statement": "Assign independent uniform labels from 1 to 6 to the six physical faces of a fair die. Keep these labels fixed and roll twice independently. Given the first label is 1, what is the probability the second label is 1?",
+              "hint": "Condition on whether the same physical face was rolled.",
+              "solution": "Conditioning on the first displayed label does not bias the physical face rolled next. It matches the first physical face with probability $1/6$, in which case the label is known to be 1. Otherwise it is a different face, whose independent label is 1 with probability $1/6$. Thus the desired probability is $1/6+(5/6)(1/6)=11/36$.",
+              "keyIdea": "Condition on whether the same physical face was rolled.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.3:repeated-roll-with-random-labels",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "随机标号骰的重复点数",
+                  "statement": "对公平六面骰的六个物理面，各独立均匀赋予 1 到 6 的标签，允许重复。标好后固定，独立掷两次。已知第一次标签为 1，第二次也是 1 的概率是多少？",
+                  "hint": "按是否掷到同一个物理面分情况。",
+                  "solution": "第一次看到标签 1 不改变第二次物理面的均匀分布。第二次与第一次落在同一物理面的概率为 $1/6$，这时标签必为 1；若落在另一面，其标签独立，为 1 的概率是 $1/6$。故所求为 $1/6+(5/6)(1/6)=11/36$。",
+                  "keyIdea": "按是否掷到同一个物理面分情况。",
+                  "tags": [
+                    "条件概率",
+                    "混合模型"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.3:first-six-before-five",
+              "title": "First Six Before Five",
+              "difficulty": "medium",
+              "tags": [
+                "conditional probability",
+                "geometric distribution"
+              ],
+              "statement": "Roll a fair six-sided die independently until the first 6; call the number of rolls N. Condition on no 5 having appeared. What is the conditional mean of N?",
+              "hint": "Distinguish the time of first hitting the set from which value is hit.",
+              "solution": "On the conditioning event, the first roll in $\\{5,6\\}$ is 6. The waiting time for this set is geometric with parameter $1/3$ and is independent of which of the two values occurs: $P(N=k,\\text{no 5})=(2/3)^{k-1}/6$. The event has probability $1/2$, so the normalized distribution is geometric with mean 3.",
+              "keyIdea": "Distinguish the time of first hitting the set from which value is hit.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.3:first-six-before-five",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "无五条件下的首个六",
+                  "statement": "独立掷公平六面骰，首次出现 6 时停止，记投掷次数为 N。已知此前未出现 5，求 N 的条件期望。",
+                  "hint": "区分首次命中集合的时间和命中的点数。",
+                  "solution": "所给事件等价于首次命中 $\\{5,6\\}$ 时命中 6。联合概率为 $P(N=k,\\text{未出现 5})=(2/3)^{k-1}/6$，对 $k\\ge1$ 求和得事件概率 $1/2$。归一化后为参数 $1/3$ 的几何分布，故条件期望为 3。",
+                  "keyIdea": "区分首次命中集合的时间和命中的点数。",
+                  "tags": [
+                    "条件概率",
+                    "几何分布"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.3:gaussian-linear-observation",
+              "title": "Gaussian Linear Observation",
+              "difficulty": "medium",
+              "tags": [
+                "conditional Gaussian",
+                "projections"
+              ],
+              "statement": "Let $X,Y$ be independent standard normals and $Z=3X+4Y$. Compute $E[X\\mid Z=z]$ and explain the interpretation when $P(Z=z)=0$.",
+              "hint": "Remove the projection of X onto the observed linear combination.",
+              "solution": "$R=X-3Z/25$ has covariance zero with $Z$, hence is independent of $Z$ because $(R,Z)$ is jointly normal. Since $E[R]=0$, $E[X\\mid Z]=3Z/25$ almost surely. The continuous function $3z/25$ is the regular conditional-mean version used at a specified real $z$, not a ratio of probabilities on a null event.",
+              "keyIdea": "Remove the projection of X onto the observed linear combination.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.1:conditional-gaussian",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 17"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "正态变量的线性观测",
+                  "statement": "令 $X,Y$ 为独立标准正态，$Z=3X+4Y$。求 $E[X\\mid Z=z]$，并说明在 $P(Z=z)=0$ 时的含义。",
+                  "hint": "从 X 中减掉在观测线性组合上的投影。",
+                  "solution": "$R=X-3Z/25$ 与 $Z$ 协方差为零，而 $(R,Z)$ 联合正态，故独立。由 $E[R]=0$ 得 $E[X\\mid Z]=3Z/25$ 几乎处处成立。在指定 $z$ 处使用连续版本 $3z/25$，而非对零概率事件取概率之比。",
+                  "keyIdea": "从 X 中减掉在观测线性组合上的投影。",
+                  "tags": [
+                    "正态条件分布",
+                    "投影"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.3:dice-sum-race",
+              "title": "Dice Sum Race",
+              "difficulty": "easy",
+              "tags": [
+                "dice",
+                "conditioning"
+              ],
+              "statement": "In each round roll two independent fair six-sided dice. Stop when the sum is either 5 or 7. What is the probability the stopping sum is 5?",
+              "hint": "Ignore rounds that do not determine a winner.",
+              "solution": "Four ordered pairs yield 5 and six yield 7. Rounds outside these ten outcomes restart the same problem, so the stopping outcome is distributed as one round conditioned on belonging to those ten outcomes. The chance is $4/(4+6)=2/5$.",
+              "keyIdea": "Ignore rounds that do not determine a winner.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.3:dice-sum-race",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "两骰和五与和七的竞赛",
+                  "statement": "每轮独立掷两颗公平六面骰，点数和首次为 5 或 7 时停止。终止时为 5 的概率是多少？",
+                  "hint": "忽略不决定输赢的轮次。",
+                  "solution": "和为 5 有 4 个有序组合，和为 7 有 6 个。其余结果只会使问题回到原状态，故最终结果分布等于单轮在这 10 个组合上的条件分布。所求为 $4/(4+6)=2/5$。",
+                  "keyIdea": "忽略不决定输赢的轮次。",
+                  "tags": [
+                    "骰子",
+                    "条件概率"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -6196,6 +7227,101 @@ window.QUANT_DATA = {
                     "概率",
                     "次序统计量",
                     "几何概率"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:acute-circle-triangle",
+              "title": "Acute Circle Triangle",
+              "difficulty": "medium",
+              "tags": [
+                "geometric probability",
+                "circular gaps"
+              ],
+              "statement": "Draw three independent uniform points on a circle. What is the probability that their triangle is acute?",
+              "hint": "Use the complement: all three points fit in a semicircle.",
+              "solution": "Except for a null event, the triangle is acute exactly when all three successive circular gaps are shorter than a semicircle: each angle is half the opposite arc not containing its vertex. Failure means the three points fit in a semicircle. For each sampled point, the probability both other points lie in the clockwise half-circle beginning there is $(1/2)^2$. These three events are disjoint almost surely, because each corresponds to a different gap larger than a half-circle and there can be at most one such gap. The acute probability is $1-3/4=1/4$.",
+              "keyIdea": "Use the complement: all three points fit in a semicircle.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.1:points-in-a-semicircle",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "圆周三点构成锐角三角形",
+                  "statement": "在圆周上独立均匀取三点，求三点构成锐角三角形的概率。",
+                  "hint": "用补事件：三点落在同一半圆。",
+                  "solution": "忽略零概率的退化情形，圆周角等于不含该顶点的对弧所对圆心角的一半，故三个角皆锐等价于三个相邻圆弧间隔都短于半圆。否则三点能放进同一半圆。指定任一点为顺时针半圆起点，其余两点均落入该半圆的概率为 $(1/2)^2$。三种起点事件几乎处处互斥，因为它们对应不同的、长于半圆的间隔，而这样的间隔最多一个。故锐角概率为 $1-3/4=1/4$。",
+                  "keyIdea": "用补事件：三点落在同一半圆。",
+                  "tags": [
+                    "几何概率",
+                    "圆周间隔"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.4:joint-exponential-density",
+              "title": "Joint Exponential Density",
+              "difficulty": "easy",
+              "tags": [
+                "joint densities",
+                "independence"
+              ],
+              "statement": "A joint density is $c e^{-2x-3y}$ for $x,y>0$ and zero elsewhere. Find $c$, the joint CDF, $P(X<Y)$, and determine independence.",
+              "hint": "Normalize first and check whether the density factors.",
+              "solution": "Integration over the positive quadrant gives $c/6=1$. The resulting density factors into $2e^{-2x}$ and $3e^{-3y}$ on their supports, proving independence. The CDF is $(1-e^{-2x})(1-e^{-3y})$ for positive $x,y$, and zero otherwise. Hence $P(X<Y)=\\int_0^\\infty 2e^{-2x}e^{-3x}dx=2/5$.",
+              "keyIdea": "Normalize first and check whether the density factors.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.4:joint-exponential-density",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-023/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "二维指数密度",
+                  "statement": "联合密度在 $x,y>0$ 时为 $c e^{-2x-3y}$，其他处为 0。求 $c$、联合分布函数、$P(X<Y)$，并判断独立性。",
+                  "hint": "先归一化，再看联合密度是否可分解。",
+                  "solution": "对正象限积分得 $c/6=1$。归一化后密度在各自支撑上分解为 $2e^{-2x}$ 与 $3e^{-3y}$，故独立。两参数都为正时联合分布函数为 $(1-e^{-2x})(1-e^{-3y})$，否则为 0。因此 $P(X<Y)=\\int_0^\\infty 2e^{-2x}e^{-3x}dx=2/5$。",
+                  "keyIdea": "先归一化，再看联合密度是否可分解。",
+                  "tags": [
+                    "联合密度",
+                    "独立性"
                   ]
                 }
               }
@@ -6897,9 +8023,14 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0120"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-033/",
+                  "locator": "Question 14"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "需要多少个独立的 `U(0,1)` 随机变量相加，期望上才能第一次超过 1？",
@@ -7232,6 +8363,411 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "4.5:bounded-variance",
+              "title": "Bounded Variance",
+              "difficulty": "easy",
+              "tags": [
+                "variance",
+                "sharp bounds"
+              ],
+              "statement": "A random variable is supported on [0,10]. Find the maximum variance and characterize equality.",
+              "hint": "Measure squared deviations from the midpoint.",
+              "solution": "For any constant $c$, $E[(X-c)^2]=\\operatorname{Var}(X)+(E[X]-c)^2$. Set $c=5$; then the left side is at most 25. Equality requires both $E[X]=5$ and $|X-5|=5$ almost surely, hence mass $1/2$ at each endpoint.",
+              "keyIdea": "Measure squared deviations from the midpoint.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:bounded-variance",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-020/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "有界变量的最大方差",
+                  "statement": "随机变量取值在 [0,10]，求方差最大值并刻画等号条件。",
+                  "hint": "以区间中点为中心计算平方偏差。",
+                  "solution": "对任意常数 $c$，有 $E[(X-c)^2]=\\operatorname{Var}(X)+(E[X]-c)^2$。取 $c=5$，左边不超过 25。取等必须同时满足 $E[X]=5$ 与 $|X-5|=5$ 几乎处处成立，因此两端各取概率 $1/2$。",
+                  "keyIdea": "以区间中点为中心计算平方偏差。",
+                  "tags": [
+                    "方差",
+                    "最优界"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:unequal-dice-payoff",
+              "title": "Unequal Dice Payoff",
+              "difficulty": "medium",
+              "tags": [
+                "dice",
+                "expected payoff"
+              ],
+              "statement": "Player A rolls a fair 60-sided die and B an independent fair 50-sided die, with labels starting at 1. The higher roll wins; B wins ties. The loser pays the winner the winner’s roll. Find A’s expected net payoff.",
+              "hint": "Count the positive and negative payoff contributions separately.",
+              "solution": "For A’s roll $a$, exactly $\\min(50,a-1)$ B rolls pay A $a$. For B’s roll $b$, exactly $b$ A rolls lose and pay B $b$. Thus $E=(\\sum_{a=1}^{60}a\\min(50,a-1)-\\sum_{b=1}^{50}b^2)/3000=353/40$. Splitting the first sum at 50 accounts for the extra ten faces of A.",
+              "keyIdea": "Count the positive and negative payoff contributions separately.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:unequal-dice-payoff",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "异面数骰子的输赢期望",
+                  "statement": "A 掷均匀的 60 面骰，B 独立掷均匀的 50 面骰，点数均从 1 开始。高点数获胜，平局归 B；输家支付赢家点数那么多钱。求 A 的期望净收益。",
+                  "hint": "分开数赢钱与输钱的贡献。",
+                  "solution": "固定 A 点数 $a$，B 有 $\\min(50,a-1)$ 种点数会向 A 支付 $a$。固定 B 点数 $b$，A 有 $b$ 种点数会输并支付 $b$。故期望为 $(\\sum_{a=1}^{60}a\\min(50,a-1)-\\sum_{b=1}^{50}b^2)/3000=353/40$。第一项在 50 处分段即可计算。",
+                  "keyIdea": "分开数赢钱与输钱的贡献。",
+                  "tags": [
+                    "骰子",
+                    "期望收益"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:exponential-scale-covariance",
+              "title": "Exponential Scale Covariance",
+              "difficulty": "medium",
+              "tags": [
+                "conditional expectation",
+                "exponential distribution"
+              ],
+              "statement": "For joint density $f(x,y)=y^{-1}\\exp(-y-x/y)$ on $x,y>0$, compute $\\operatorname{Cov}(X,Y)$.",
+              "hint": "Use the conditional mean of X instead of directly integrating xy.",
+              "solution": "Integrating in $x$ gives the marginal $e^{-y}$, so $Y\\sim\\mathrm{Exp}(1)$. Conditional on $Y=y$, $X$ is exponential with mean $y$. Therefore $E[X]=E[Y]=1$ and $E[XY]=E[Y E(X\\mid Y)]=E[Y^2]=2$. Subtracting the product of the means gives covariance 1.",
+              "keyIdea": "Use the conditional mean of X instead of directly integrating xy.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:exponential-scale-covariance",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "指数尺度模型的协方差",
+                  "statement": "若联合密度为 $f(x,y)=y^{-1}\\exp(-y-x/y)$（$x,y>0$），求 $\\operatorname{Cov}(X,Y)$。",
+                  "hint": "用 X 的条件均值代替直接对 xy 积分。",
+                  "solution": "对 $x$ 积分得到边际密度 $e^{-y}$，故 $Y\\sim\\mathrm{Exp}(1)$。给定 $Y=y$ 时，$X$ 是均值为 $y$ 的指数变量。因此 $E[X]=E[Y]=1$，且 $E[XY]=E[Y E(X\\mid Y)]=E[Y^2]=2$，协方差为 1。",
+                  "keyIdea": "用 X 的条件均值代替直接对 xy 积分。",
+                  "tags": [
+                    "条件期望",
+                    "指数分布"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:mixed-adjacent-pairs",
+              "title": "Mixed Adjacent Pairs",
+              "difficulty": "easy",
+              "tags": [
+                "linearity of expectation",
+                "random permutations"
+              ],
+              "statement": "Seat 18 men and 16 women in a uniformly random order along a row. Find the expected number of adjacent pairs with one man and one woman.",
+              "hint": "Use one indicator per adjacent seat pair.",
+              "solution": "Each of 33 adjacent seat pairs is mixed with probability $2\\cdot(18/34)(16/33)$. By linearity the mean is $2\\cdot18\\cdot16/34=288/17$, about 16.94; if comparing 11, 16, 21 and 26, choose 16.",
+              "keyIdea": "Use one indicator per adjacent seat pair.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:mixed-adjacent-pairs",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "一排座位中的异性邻对",
+                  "statement": "18 名男性和 16 名女性等概率排坐一列，求一男一女相邻座位对的期望数。",
+                  "hint": "每对相邻座位用一个指示变量。",
+                  "solution": "33 对相邻座位中的任一对，坐一男一女的概率为 $2\\cdot(18/34)(16/33)$。用期望线性性相加得到 $2\\cdot18\\cdot16/34=288/17\\approx16.94$；若比较 11、16、21、26，最接近 16。",
+                  "keyIdea": "每对相邻座位用一个指示变量。",
+                  "tags": [
+                    "期望线性性",
+                    "随机排列"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:uncorrelated-normal-marginals",
+              "title": "Uncorrelated Normal Marginals",
+              "difficulty": "medium",
+              "tags": [
+                "normal distribution",
+                "independence"
+              ],
+              "statement": "Two random variables have standard normal marginals and zero correlation. Must they be independent? Give a counterexample and a sufficient additional assumption.",
+              "hint": "Preserve the marginal with a random sign while keeping the magnitude shared.",
+              "solution": "Let $X$ be standard normal and $S$ be an independent uniform sign. Then $Y=SX$ is standard normal by symmetry, and $E[XY]=E[S]E[X^2]=0$. They cannot be independent: $|Y|=|X|$ almost surely, and two independent continuous magnitudes would coincide with probability zero. Joint normality suffices, since the diagonal covariance makes the joint characteristic function factor.",
+              "keyIdea": "Preserve the marginal with a random sign while keeping the magnitude shared.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:uncorrelated-normal-marginals",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-018/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "不相关的正态边际",
+                  "statement": "两个变量各自是标准正态且相关系数为零。它们一定独立吗？给出反例和一个足以保证独立的附加条件。",
+                  "hint": "用随机符号保持边际分布，但令绝对值完全相同。",
+                  "solution": "令 $X$ 为标准正态，$S$ 为独立等概率符号，令 $Y=SX$。由对称性 $Y$ 也是标准正态，且 $E[XY]=E[S]E[X^2]=0$。但 $|Y|=|X|$ 几乎必然成立；若独立，两连续绝对值相等的概率为零。若额外假设联合正态，则对角协方差使联合特征函数分解，从而独立。",
+                  "keyIdea": "用随机符号保持边际分布，但令绝对值完全相同。",
+                  "tags": [
+                    "正态分布",
+                    "独立性"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:fixed-edge-random-graph-triangles",
+              "title": "Fixed-Edge Random Graph Triangles",
+              "difficulty": "medium",
+              "tags": [
+                "random graphs",
+                "linearity of expectation"
+              ],
+              "statement": "In a uniform simple graph with $n$ labeled vertices and exactly $m$ edges, find the expected number of triangles.",
+              "hint": "Use an indicator for each vertex triple, accounting for sampling without replacement.",
+              "solution": "If $n<3$ or $m<3$, the answer is zero. Otherwise let $M=\\binom n2$. For any vertex triple, its three edges are all selected with probability $\\binom{M-3}{m-3}/\\binom Mm$. Sum this probability over the $\\binom n3$ triples. Triangle indicators need not be independent.",
+              "keyIdea": "Use an indicator for each vertex triple, accounting for sampling without replacement.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:fixed-edge-random-graph-triangles",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-045/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "固定边数随机图的三角形",
+                  "statement": "在 $n$ 个带标号顶点、恰有 $m$ 条边的均匀随机简单图中，求三角形数的期望。",
+                  "hint": "对顶点三元组设指示变量，注意边是无放回抽取的。",
+                  "solution": "若 $n<3$ 或 $m<3$，答案为零。否则令 $M=\\binom n2$。任意三个顶点的三条边同时入选的概率为 $\\binom{M-3}{m-3}/\\binom Mm$。对 $\\binom n3$ 个三元组求和即可，无需各三角形指示变量独立。",
+                  "keyIdea": "对顶点三元组设指示变量，注意边是无放回抽取的。",
+                  "tags": [
+                    "随机图",
+                    "期望线性性"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:regions-from-random-chords",
+              "title": "Regions from Random Chords",
+              "difficulty": "medium",
+              "tags": [
+                "geometric probability",
+                "expectation"
+              ],
+              "statement": "Form three chords of a circle by drawing six independent uniform boundary points and pairing them in a fixed way. Find the expected number of regions inside the circle.",
+              "hint": "Insert the chords one at a time and count crossings with indicators.",
+              "solution": "Almost surely the endpoints are distinct and there are no triple intersections. Adding a chord with $j$ crossings adds $j+1$ regions, so the total is 4 plus the number of crossing pairs. For any pair of chords, fix the first chord’s two endpoints in the cyclic order of the four labels. The other chord crosses exactly when its endpoints alternate with the first pair, which occurs with probability $1/3$ (one of the three pairings of four ordered points crosses). Hence the mean is $4+3/3=5$.",
+              "keyIdea": "Insert the chords one at a time and count crossings with indicators.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:regions-from-random-chords",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三条随机弦的区域数",
+                  "statement": "在圆周独立均匀取六点，按固定配对连成三条弦。求圆盘内被分出的区域数的期望。",
+                  "hint": "逐条加入弦，用指示变量计相交弦对。",
+                  "solution": "端点重合与三弦共交的概率为零。新增一条有 $j$ 个交点的弦会增加 $j+1$ 个区域，故区域数为 4 加相交弦对数。对任一弦对，四端点在圆周排定后，三种配对等可能，只有交替配对会相交，概率 $1/3$。于是期望为 $4+3/3=5$。",
+                  "keyIdea": "逐条加入弦，用指示变量计相交弦对。",
+                  "tags": [
+                    "几何概率",
+                    "期望"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:minimum-sum-of-correlations",
+              "title": "Minimum Sum of Correlations",
+              "difficulty": "medium",
+              "tags": [
+                "correlation",
+                "variance"
+              ],
+              "statement": "Three random variables have finite positive variances. Find the minimum sum of their three Pearson correlations, and exhibit equality.",
+              "hint": "The variance of the sum of standardized variables controls the bound.",
+              "solution": "Standardize the variables to $U,V,W$. Nonnegativity of $\\operatorname{Var}(U+V+W)=3+2(\\rho_{UV}+\\rho_{UW}+\\rho_{VW})$ gives the bound $-3/2$. Take independent standard normals $Z,T$ and use $U=Z$, $V=(-Z+\\sqrt3T)/2$, $W=(-Z-\\sqrt3T)/2$. All have unit variance and their sum vanishes, so equality holds.",
+              "keyIdea": "The variance of the sum of standardized variables controls the bound.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:minimum-sum-of-correlations",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-023/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三个相关系数之和的下界",
+                  "statement": "三个随机变量的方差有限且为正。求三对 Pearson 相关系数之和的最小值，并构造取等例子。",
+                  "hint": "标准化变量之和的方差给出下界。",
+                  "solution": "标准化得到 $U,V,W$。由 $\\operatorname{Var}(U+V+W)=3+2(\\rho_{UV}+\\rho_{UW}+\\rho_{VW})\\ge0$ 得下界 $-3/2$。取独立标准正态 $Z,T$，令 $U=Z$、$V=(-Z+\\sqrt3T)/2$、$W=(-Z-\\sqrt3T)/2$。三者方差均为 1 且和恒为零，故达到下界。",
+                  "keyIdea": "标准化变量之和的方差给出下界。",
+                  "tags": [
+                    "相关性",
+                    "方差"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.5:two-anchored-correlations",
+              "title": "Two Anchored Correlations",
+              "difficulty": "medium",
+              "tags": [
+                "correlation bounds",
+                "normal distribution"
+              ],
+              "statement": "Suppose X, Y, Z have standard normal marginals and correlations Corr(X,Y)=0.5 and Corr(X,Z)=0.6. Find every feasible Corr(Y,Z), allowing a singular joint distribution.",
+              "hint": "Subtract the projections onto X and apply Cauchy–Schwarz.",
+              "solution": "For anchored correlations $a,b$, let $U=(Y-aX)/\\sqrt{1-a^2}$ and $V=(Z-bX)/\\sqrt{1-b^2}$. They have unit variance, so $\\rho_{YZ}=ab+\\sqrt{(1-a^2)(1-b^2)}\\,E[UV]$ lies in $[ab-\\sqrt{(1-a^2)(1-b^2)},ab+\\sqrt{(1-a^2)(1-b^2)}]$. With $a=0.5,b=0.6$ this is $[0.3-2\\sqrt3/5,0.3+2\\sqrt3/5]$. To realize any point choose $X,U,W$ independent standard normals, $V=tU+\\sqrt{1-t^2}W$, $-1\\le t\\le1$, and reconstruct $Y,Z$.",
+              "keyIdea": "Subtract the projections onto X and apply Cauchy–Schwarz.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.5:two-anchored-correlations",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "固定两对相关系数的第三对界",
+                  "statement": "X、Y、Z 的边际均为标准正态，Corr(X,Y)=0.5、Corr(X,Z)=0.6。允许联合分布退化，求 Corr(Y,Z) 的全部可行值。",
+                  "hint": "减去在 X 上的投影，对余项用柯西不等式。",
+                  "solution": "设固定的两个相关为 $a,b$，令 $U=(Y-aX)/\\sqrt{1-a^2}$、$V=(Z-bX)/\\sqrt{1-b^2}$。两者方差均为 1，故 $\\rho_{YZ}=ab+\\sqrt{(1-a^2)(1-b^2)}E[UV]$ 的范围为 $ab\\pm\\sqrt{(1-a^2)(1-b^2)}$ 之间。代入得 $[0.3-2\\sqrt3/5,0.3+2\\sqrt3/5]$。取 $X,U,W$ 为独立标准正态，令 $V=tU+\\sqrt{1-t^2}W$（$-1\\le t\\le1$），再由定义重构 $Y,Z$，即可实现每个取值。",
+                  "keyIdea": "减去在 X 上的投影，对余项用柯西不等式。",
+                  "tags": [
+                    "相关系数界",
+                    "正态分布"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -7447,6 +8983,51 @@ window.QUANT_DATA = {
                     "次序统计量",
                     "期望",
                     "期望与方差"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "4.6:first-marked-draw",
+              "title": "First Marked Draw",
+              "difficulty": "medium",
+              "tags": [
+                "sampling without replacement",
+                "order statistics"
+              ],
+              "statement": "Of n balls, m are marked, with 1 ≤ m ≤ n. Draw without replacement until a marked ball appears. Find the expected draw count including the final draw.",
+              "hint": "Use exchangeability of the gaps between marked positions.",
+              "solution": "In the random permutation of the balls, the $m$ marked positions form a uniform subset. The $m+1$ gaps of unmarked balls before, between and after them form a uniform weak composition of $n-m$: the gap vector and marked positions determine each other. Each gap has mean $(n-m)/(m+1)$ by exchangeability. The first marked position is one plus the first gap, so its mean is $(n+1)/(m+1)$.",
+              "keyIdea": "Use exchangeability of the gaps between marked positions.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "4.6:first-marked-draw",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "首次抽到标记球",
+                  "statement": "n 个球中有 m 个标记球，1 ≤ m ≤ n。逐个均匀无放回抽取，遇到首个标记球停止。求包含最后一抽的期望次数。",
+                  "hint": "利用标记位置之间各空档的对称性。",
+                  "solution": "在球的随机排列中，$m$ 个标记球的位置构成均匀子集。前端、相邻标记之间、末端共有 $m+1$ 个空档，放入 $n-m$ 个未标记球。空档向量与标记位置一一对应，所以空档向量等概率，且各分量对称。第一个空档的均值为 $(n-m)/(m+1)$，加上终止那次抽取便得 $(n+1)/(m+1)$。",
+                  "keyIdea": "利用标记位置之间各空档的对称性。",
+                  "tags": [
+                    "无放回抽样",
+                    "次序统计量"
                   ]
                 }
               }
@@ -7670,9 +9251,19 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0051"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-040/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-041/",
+                  "locator": "Question 4"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "独立抛公平硬币，直到第一次出现连续两个正面 HH，求包括结束那次在内的总抛掷次数期望。",
@@ -7980,6 +9571,51 @@ window.QUANT_DATA = {
                   ]
                 }
               }
+            },
+            {
+              "id": "5.1:tetrahedron-cover-time",
+              "title": "Tetrahedron Cover Time",
+              "difficulty": "medium",
+              "tags": [
+                "Markov chain",
+                "cover time"
+              ],
+              "statement": "A walk begins at one vertex of a tetrahedron. Each step chooses uniformly among the other three vertices. Counting the start as visited, find the expected steps to visit all four vertices.",
+              "hint": "Partition the walk into waiting times between discoveries.",
+              "solution": "With $k$ vertices already visited, the current vertex is visited, and exactly $4-k$ of the three possible destinations are new. Until the next discovery this success probability stays fixed. Thus the mean waiting time is $3/(4-k)$ for $k=1,2,3$. The total expectation is $1+3/2+3=11/2$.",
+              "keyIdea": "Partition the walk into waiting times between discoveries.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "5.1:tetrahedron-cover-time",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "四面体随机游走覆盖时间",
+                  "statement": "在正四面体上从任一顶点出发，每步从其余三个顶点中均匀选一个。起点已访问，求访问全部顶点的期望步数。",
+                  "hint": "按发现新顶点划分等待阶段。",
+                  "solution": "已有 $k$ 个顶点被访问时，当前位置已访问；三个可走的目标中有 $4-k$ 个是新顶点。直到下一次发现之前，每步发现新顶点的条件概率一直为 $(4-k)/3$，故平均等待 $3/(4-k)$ 步。对 $k=1,2,3$ 求和得 $1+3/2+3=11/2$。",
+                  "keyIdea": "按发现新顶点划分等待阶段。",
+                  "tags": [
+                    "马尔可夫链",
+                    "覆盖时间"
+                  ]
+                }
+              }
             }
           ],
           "translations": {
@@ -8191,9 +9827,24 @@ window.QUANT_DATA = {
                   "type": "upstream",
                   "reference": "https://github.com/ellenzishanli/quant_interview_trainer/blob/f0192f17bf602457d0a8f43857e83304b56d7771/data/problems.js",
                   "locator": "5.3 / Dice Game (Up to 3 Rolls)"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 5"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-028/",
+                  "locator": "Question 5"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 6"
                 }
               ],
-              "revision": 2,
+              "revision": 3,
               "translations": {
                 "zh": {
                   "title": "三次掷骰选择",
@@ -8572,6 +10223,141 @@ window.QUANT_DATA = {
                   "hint": "先考虑：剩余 $t$ 次投掷、$n$ 个球时，最多能区分多少个连续的临界楼层候选值？一次投掷后，“碎”和“不碎”分支的球数不同。没有球或没有投掷次数时，还能区分几个候选值？",
                   "solution": "**数候选临界值，而非直接套楼层覆盖公式。** 题设恰有 $H$ 个可能的 $X$。令 $C(t,n)$ 为最多 $t$ 次、$n$ 个球能区分的连续候选值数。只剩一个候选时无需投掷，故\n$$C(0,n)=C(t,0)=1.$$\n从 $y$ 层投掷，碎对应 $X\\le y$，不碎对应 $X>y$，因此\n$$C(t,n)=C(t-1,n-1)+C(t-1,n).$$\n由Pascal恒等式，\n$$C(t,n)=\\sum_{i=0}^{\\min(n,t)}\\binom{t}{i}.$$\n答案为\n$$\\boxed{D(n,H)=\\min\\left\\{t\\in\\mathbb Z_{\\ge0}:\\sum_{i=0}^{\\min(n,t)}\\binom{t}{i}\\ge H\\right\\}.}$$\n等价地，从 $i=1$ 开始求和时，右边应为 $H-1$，不是 $H$。\n\n**达到上界的策略。** 维护候选区间 $[L,U]$、剩余次数 $t$ 和球数 $n$，满足 $U-L+1\\le C(t,n)$。若 $L=U$，直接确定 $X=L$。否则选\n$$y=\\min\\{U-1,\\ L+C(t-1,n-1)-1\\}.$$\n碎则保留 $[L,y]$，球数及次数各减一；不碎则保留 $[y+1,U]$，仅次数减一。碎分支候选数至多 $C(t-1,n-1)$；不碎分支若被 $U-1$ 截断则仅一候选，否则至多 $C(t-1,n)$。递归即可。\n\n**最优性证明。** 对投掷预算归纳。任意首投都分为上述两支，按归纳假设最多分别区分 $C(t-1,n-1)$ 与 $C(t-1,n)$ 个候选，其和是所有策略的容量上界。上述区间划分又能达到该上界，故条件既必要又充分。随机化也不能降低保证意义下的最坏次数：每个实现出的决策树仍受此界限制。\n\n**边界核对。** $D(n,1)=0$；$D(1,H)=H-1$。两球时 $C(t,2)=1+t(t+1)/2$，所以\n$$D(2,H)=\\left\\lceil\\frac{\\sqrt{8H-7}-1}{2}\\right\\rceil.$$\n若 $n\\ge\\lceil\\log_2H\\rceil$，则答案为 $\\lceil\\log_2H\\rceil$。例如 $D(2,7)=3$，$D(2,100)=14$。\n\n若改为顶层也可能不碎，则还须加入 $X=H+1$，共 $H+1$ 个候选；那一版本才要求 $C(t,n)\\ge H+1$，亦即 $\\sum_{i=1}^{\\min(n,t)}\\binom ti\\ge H$。",
                   "keyIdea": "以候选临界值数量建模，一个候选无需投掷；碎与不碎的容量递推给出二项式界，并直接构造最优划分策略。"
+                }
+              }
+            },
+            {
+              "id": "5.3:herd-growth",
+              "title": "Herd Growth",
+              "difficulty": "medium",
+              "tags": [
+                "recurrences",
+                "dynamic programming"
+              ],
+              "statement": "At the end of year 1 there is one adult cow. From year 2 onward, each mature cow produces one calf each year. A calf born in year $t$ first gives birth in year $t+3$ and then breeds annually. No cow dies. Compute the herd size at the end of year $n\\ge 1$ and give the running time and space usage.",
+              "hint": "Which cows have been present long enough to produce the newborns in year n?",
+              "solution": "Write $F_n$ for the year-end count. The original adult is the only breeder through year 4: the first calf, born in year 2, starts breeding in year 5. Thus $F_1=1,F_2=2,F_3=3$. For $n\\ge4$, exactly the cows present at the end of year $n-3$ give birth during year $n$: each of those is mature, and every later arrival is still too young. Therefore $F_n=F_{n-1}+F_{n-3}$. This yields $1,2,3,4,6,9$ for the first six years. Keep the last three totals to use $O(n)$ integer additions and $O(1)$ integer variables. These counts treat integer arithmetic as unit cost; the integers themselves grow with $n$.\n\n```python\ndef herd_size(n):\n    if n < 1:\n        raise ValueError(\"n must be positive\")\n    if n <= 3:\n        return n\n    oldest, middle, newest = 1, 2, 3\n    for _ in range(4, n + 1):\n        oldest, middle, newest = middle, newest, newest + oldest\n    return newest\n```\n",
+              "keyIdea": "Separate the existing herd from that year’s newborns; the breeding cohort is the entire herd three years earlier.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "5.3:herd-growth",
+              "rubric": [
+                "Identify the first breeding year and initial conditions.",
+                "Derive the recurrence and analyze rolling storage."
+              ],
+              "verification": [
+                "Checked the recurrence against a year-by-year birth-cohort simulation for n=1 through 40."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-036/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "母牛繁殖递推",
+                  "statement": "第 1 年结束时，牛群里只有一头成年母牛。从第 2 年起，每头成熟母牛每年产一头小母牛。第 $t$ 年出生的小牛首次产仔在第 $t+3$ 年，此后逐年产仔。没有牛死亡。给定 $n\\ge 1$，求第 $n$ 年年末的牛群规模，并分析算法复杂度。",
+                  "hint": "第 n 年的产仔母牛，对应哪个年份结束时的牛群？",
+                  "solution": "记 $F_n$ 为第 $n$ 年年末的总数。第 2 年出生的第一头小牛到第 5 年才首次产仔，所以第 4 年之前及第 4 年都只有原母牛产仔；前三项为 $F_1=1,F_2=2,F_3=3$。从 $n\\ge4$ 开始，凡是第 $n-3$ 年年末已有的牛，第 $n$ 年都能产仔；之后出生的牛都不能。因此当年新增 $F_{n-3}$ 头，得到 $F_n=F_{n-1}+F_{n-3}$。前六项为 $1,2,3,4,6,9$。循环保留最近三个总数，需要 $O(n)$ 次整数加法和 $O(1)$ 个整数变量；这不是按位计算的复杂度，因为数值会随 $n$ 增大。\n\n```python\ndef herd_size(n):\n    if n < 1:\n        raise ValueError(\"n must be positive\")\n    if n <= 3:\n        return n\n    oldest, middle, newest = 1, 2, 3\n    for _ in range(4, n + 1):\n        oldest, middle, newest = middle, newest, newest + oldest\n    return newest\n```\n",
+                  "keyIdea": "将当年新增数与存量分开；产仔群体恰是三年前的整个牛群。",
+                  "tags": [
+                    "递推",
+                    "动态规划"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:trading-with-a-sale-fee",
+              "title": "Trading with a Sale Fee",
+              "difficulty": "medium",
+              "tags": [
+                "dynamic programming",
+                "trading algorithms"
+              ],
+              "statement": "Given a known sequence of positive prices, start and finish flat. You may hold at most one share, cannot short, and pay a fixed nonnegative fee on each sale. Find the maximum profit in linear time.",
+              "hint": "Keep two states, distinguished by whether a share is currently held.",
+              "solution": "After each day keep the maximum cash balance when flat and when holding one share. For either state the last action was to do nothing or to switch from the other state. Buying subtracts the price, selling adds the price minus the fee; both transitions use the previous day. Start at (0, −∞) and return the final flat value. Time O(n), auxiliary space O(1).\n\n```python\ndef max_profit(prices, fee):\n    flat, hold = 0, float(\"-inf\")\n    for price in prices:\n        flat, hold = max(flat, hold + price - fee), max(hold, flat - price)\n    return flat\n```",
+              "keyIdea": "Keep two states, distinguished by whether a share is currently held.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "5.3:trading-with-a-sale-fee",
+              "rubric": [
+                "Derive the algorithm invariant or recurrence.",
+                "Handle the input boundary cases and justify complexity."
+              ],
+              "verification": [
+                "Compared the embedded DP with enumeration of all valid buy, sell, and hold actions for paths of up to five days with prices 1 through 4 and fees 0 through 2."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 6"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "带卖出费用的最优交易",
+                  "statement": "给定一条已知的正价格序列，起止均空仓，最多持有一股，不可做空，每次卖出支付固定非负费用。在线性时间求最大利润。",
+                  "hint": "只保留空仓和持仓两种状态。",
+                  "solution": "每个交易日后保留空仓、持有一股时分别可达到的最大现金余额。最后一步只可能是不动或从另一状态转换。买入扣价，卖出加价减费；两式都读取前一天的状态。初始为 (0, −∞)，返回最终空仓值。时间 O(n)，辅助空间 O(1)。\n\n```python\ndef max_profit(prices, fee):\n    flat, hold = 0, float(\"-inf\")\n    for price in prices:\n        flat, hold = max(flat, hold + price - fee), max(hold, flat - price)\n    return flat\n```",
+                  "keyIdea": "只保留空仓和持仓两种状态。",
+                  "tags": [
+                    "动态规划",
+                    "交易算法"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "5.3:three-or-four-dice-offers",
+              "title": "Three or Four Dice Offers",
+              "difficulty": "medium",
+              "tags": [
+                "optimal stopping",
+                "dice"
+              ],
+              "statement": "A fair die is rolled until you accept a face value as your prize. A reroll forfeits the current value and the last roll is compulsory. Give the optimal rule and value for a cap of three total rolls, and for an initial roll plus up to three rerolls.",
+              "hint": "Compare each visible offer with the value of one fewer remaining roll.",
+              "solution": "Let $V_j$ be the value before the next roll with $j$ rolls left. Then $V_1=7/2$ and $V_j=\\tfrac16\\sum_{i=1}^6\\max(i,V_{j-1})$. Accept $i$ when $i\\ge V_{j-1}$, since all future rolls are fresh. The sequence is $V_2=17/4,V_3=14/3,V_4=89/18$. The first-roll acceptance threshold is 5 for both caps; later, accept 4 or more when there is just one reroll left. The two answers are $14/3$ and $89/18$.",
+              "keyIdea": "Compare each visible offer with the value of one fewer remaining roll.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "5.3:dice-game-up-to-3-rolls",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "三次或四次骰子报价",
+                  "statement": "掷公平六面骰，接受当前点数就领奖结束；重掷会放弃当前点数，最后一次必须接受。分别求总共最多三次、第一次之后最多再掷三次时的最优规则和期望奖金。",
+                  "hint": "把当前点数和少一次机会的期望比较。",
+                  "solution": "记 $V_j$ 为还可掷 $j$ 次、且尚未看到下一点数时的最优期望。则 $V_1=7/2$，且 $V_j=\\tfrac16\\sum_{i=1}^6\\max(i,V_{j-1})$。放弃点数 $i$ 的价值为 $V_{j-1}$，故 $i\\ge V_{j-1}$ 就接受。依次计算 $V_2=17/4,V_3=14/3,V_4=89/18$。两种题意的首次接受门槛都是 5；只剩一次重掷机会时门槛为 4。所求分别为 $14/3$ 和 $89/18$。",
+                  "keyIdea": "把当前点数和少一次机会的期望比较。",
+                  "tags": [
+                    "最优停止",
+                    "骰子"
+                  ]
                 }
               }
             }
@@ -9528,9 +11314,19 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0089"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-019/",
+                  "locator": "Question 4"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 8"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "n人围成一圈，从编号1开始报数，每报到第2人即出局，再从下一人继续。用 Python 实现幸存编号函数，并求 n=10^15 时的结果；n≥1。",
@@ -9571,9 +11367,14 @@ window.QUANT_DATA = {
                   "type": "local",
                   "reference": "git:8c05b8f3069983a48b1007c3a5f1f49739c7cdba:笔面试题目/data/questions.json",
                   "locator": "q0217"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-019/",
+                  "locator": "Question 3"
                 }
               ],
-              "revision": 3,
+              "revision": 4,
               "translations": {
                 "zh": {
                   "statement": "在比较模型中，从N≥2个互异元素找第二大值，设计最坏比较次数尽量少的算法；先分析N为2的幂，再讨论一般N并论证下界。",
@@ -9688,6 +11489,420 @@ window.QUANT_DATA = {
                     "最优停止",
                     "概率",
                     "最优策略"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:equal-count-binary-windows",
+              "title": "Equal-Count Binary Windows",
+              "difficulty": "medium",
+              "tags": [
+                "prefix sums",
+                "hashing"
+              ],
+              "statement": "Given a binary string of length $n$, return two distinct nonempty contiguous intervals of maximum possible length whose counts of zeros match and whose counts of ones match. Intervals may overlap. Use zero-based half-open endpoints and return no result if no pair exists.",
+              "hint": "For windows of a fixed length, how many independent counts need to match?",
+              "solution": "Matching both counts implies equal lengths. For length $L$ it suffices to match the number of ones, since zeros then number $L$ minus the ones. Build the prefix counts of ones so every window count takes constant time. Examine lengths from $n-1$ down to $1$; length $n$ has only one starting position. For each length, remember the first start seen for each count. A repeated count yields distinct starts, and checking lengths in descending order proves the first pair is optimal. If none repeats, no pair exists. For example, $010$ has the intervals $[0,2)$ and $[1,3)$. This takes $O(n^2)$ expected time with hashing and $O(n)$ auxiliary space.\n\n```python\ndef equal_count_windows(s):\n    n = len(s)\n    prefix = [0]\n    for ch in s:\n        prefix.append(prefix[-1] + (ch == \"1\"))\n    for length in range(n - 1, 0, -1):\n        seen = {}\n        for left in range(n - length + 1):\n            ones = prefix[left + length] - prefix[left]\n            if ones in seen:\n                first = seen[ones]\n                return (first, first + length), (left, left + length)\n            seen[ones] = left\n    return None\n```\n",
+              "keyIdea": "Group equal-length windows by their prefix-count difference; the first collision at a descending length gives the optimum.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:equal-count-binary-windows",
+              "rubric": [
+                "Explain why equal lengths and one count suffice.",
+                "Return distinct optimal intervals or no result and justify the search order."
+              ],
+              "verification": [
+                "Ran the embedded Python implementation against exhaustive interval-pair enumeration for all binary strings of lengths 0 through 8."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-036/",
+                  "locator": "Question 2"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "最长等计数二进制区间",
+                  "statement": "给定一个长度为 $n$ 的二进制串，找出两个不同的非空连续区间，要求两段的 0 个数相等、1 个数也相等，并使长度尽可能大。两段可以重叠。返回从 0 开始编号的半开区间端点；无解时返回空结果。",
+                  "hint": "固定区间长度后，两个字符的计数是否都需要单独比较？",
+                  "solution": "两个计数都相等必然意味着区间等长。固定长度 $L$ 后，只需比较 1 的个数，因为 0 的个数可由长度减去 1 的个数得到。先建 1 的前缀计数，便能常数时间求任意窗口的计数。按长度从 $n-1$ 到 $1$ 枚举；长度 $n$ 只有一个起点，不能配对。每个长度单独用哈希表记录每种计数首次出现的起点。重复计数给出两个不同起点，且所有更长长度已被排除，因此首次找到的一对最优。若始终没有重复则无解。例如 $010$ 的最优区间是 $[0,2)$ 和 $[1,3)$。使用哈希表的期望时间为 $O(n^2)$，辅助空间为 $O(n)$。\n\n```python\ndef equal_count_windows(s):\n    n = len(s)\n    prefix = [0]\n    for ch in s:\n        prefix.append(prefix[-1] + (ch == \"1\"))\n    for length in range(n - 1, 0, -1):\n        seen = {}\n        for left in range(n - length + 1):\n            ones = prefix[left + length] - prefix[left]\n            if ones in seen:\n                first = seen[ones]\n                return (first, first + length), (left, left + length)\n            seen[ones] = left\n    return None\n```\n",
+                  "keyIdea": "等长窗口只需要比较前缀计数的差；从最长长度向下寻找首次重复。",
+                  "tags": [
+                    "前缀和",
+                    "哈希"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:prime-step-equalization",
+              "title": "Prime-Step Equalization",
+              "difficulty": "hard",
+              "tags": [
+                "prime numbers",
+                "medians",
+                "optimization"
+              ],
+              "statement": "Given a nonempty list of positive integers, an operation replaces one entry by the nearest strictly greater prime or, if one exists, by the nearest strictly smaller prime. Find the minimum number of operations needed to make all entries equal and describe how to find an optimal common value.",
+              "hint": "After an entry becomes prime, count moves by position in the ordered list of primes rather than by numerical distance.",
+              "solution": "If all entries are equal, the optimum is zero, including for a composite common value. Otherwise some entry must move, so the common value must be a prime. Write $p_j$ for the prime of rank $j\\ge1$ and fix a target $p_t$.\n\n- An input $p_j$ costs $|t-j|$, since moves between primes change the rank by exactly one.\n- For $p_j<a<p_{j+1}$, the first move goes to one of the two neighbors, so the cost is $1+\\min(|t-j|,|t-j-1|)=\\tfrac12+|t-(j+\\tfrac12)|$ for integer $t$.\n- An input of $1$ must first move to $2=p_1$, so its cost is $1+|t-1|$.\n\nThus each input gives a rank or half-rank $r_i$ plus a constant surcharge; minimize $\\sum_i|t-r_i|$ over positive integer $t$. A real minimizer is any point between the two middle ranks (the same rank twice for odd length): to either side of this interval the slope points toward it. If the interval contains an integer, choose it. If not, compare the integers immediately below and above it. Add the constant surcharges and return $p_t$ and the resulting cost. No prime beyond the first prime at or above the largest input is needed, since moving a larger candidate rank toward the data can only decrease the objective. A sieve through that bound and sorting the ranks give a constructive algorithm.",
+              "keyIdea": "Prime ranks turn the problem into absolute deviations plus constants; check integer ranks at the median interval.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:prime-step-equalization",
+              "rubric": [
+                "Handle inputs already equal, including composites.",
+                "Derive rank costs for primes, composites and one.",
+                "Prove the median rule, including the integer constraint."
+              ],
+              "verification": [
+                "Checked the rank formula against shortest paths on the prime-transition graph and exhaustive target enumeration for lists of length 1 through 4 over values 1 through 12."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-036/",
+                  "locator": "Question 3"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "相邻质数步进归一",
+                  "statement": "输入一个非空正整数序列。每次选一个元素，把它改成严格大于它的最近质数，或改成严格小于它的最近质数（若存在）。求使所有元素相同的最少操作数，并说明怎样选最终值。",
+                  "hint": "进入质数序列后，用排序名次的差来计步，而不是用两个数值之差。",
+                  "solution": "若所有输入已经相等，最少操作数为零，即使这个共同值是合数也一样。否则至少要操作一个元素，最终共同值必为质数。令 $p_j$ 表示排名为 $j\\ge1$ 的质数，考虑目标 $p_t$。\n\n- 若输入为 $p_j$，每次沿质数序列走一步，最短路长为 $|t-j|$。\n- 若 $p_j<a<p_{j+1}$，第一步可任选左右相邻质数，因此距离是 $1+\\min(|t-j|,|t-j-1|)=\\tfrac12+|t-(j+\\tfrac12)|$，这里 $t$ 为整数。\n- 若输入为 $1$，第一步只能到 $2=p_1$，距离是 $1+|t-1|$。\n\n因此每个输入对应一个名次或半整数名次 $r_i$，外加不依赖目标的固定代价。只需对正整数 $t$ 最小化 $\\sum_i|t-r_i|$。实数域的最优区间是排序后两个中间名次之间（奇数项时两者是同一个）；区间两侧的斜率都指向该区间。若区间内有整数，任取一个；否则比较紧邻区间的下方和上方整数。最后加回固定代价，返回最少步数和对应的 $p_t$。不必枚举超过「不小于最大输入的第一个质数」的目标，因为这些更大的名次向数据靠近只会降低目标函数。可用筛法生成这段质数，再排序求中位区间。",
+                  "keyIdea": "把质数移动转成排名上的绝对距离；用中位区间处理整数目标。",
+                  "tags": [
+                    "质数",
+                    "中位数",
+                    "最优化"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:reverse-a-linked-list",
+              "title": "Reverse a Linked List",
+              "difficulty": "easy",
+              "tags": [
+                "linked lists"
+              ],
+              "statement": "Reverse an acyclic singly linked list in place. Each node has a next field. Return the new head, or None for an empty list.",
+              "hint": "Save the successor before redirecting the current link.",
+              "solution": "Maintain the reversed prefix and the unprocessed suffix. Before redirecting the current link, save its original successor so the suffix remains accessible. Each node is visited once: O(n) time, O(1) auxiliary space.\n\n```python\ndef reverse_list(head):\n    prev = None\n    while head is not None:\n        successor = head.next\n        head.next = prev\n        prev, head = head, successor\n    return prev\n```",
+              "keyIdea": "Save the successor before redirecting the current link.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:reverse-a-linked-list",
+              "rubric": [
+                "Derive the algorithm invariant or recurrence.",
+                "Handle the input boundary cases and justify complexity."
+              ],
+              "verification": [
+                "Executed the embedded implementation on lengths 0 through 30 and checked identity, reversed order, and terminal links."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 9"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "反转单链表",
+                  "statement": "原地反转无环单链表。结点有 next 字段。返回新头结点；空表返回 None。",
+                  "hint": "先保存后继，再修改当前指针。",
+                  "solution": "维护已反转的前缀和未处理的后缀。修改当前指针前先保存原后继，才能继续访问后缀。每个结点只访问一次，时间 O(n)，辅助空间 O(1)。\n\n```python\ndef reverse_list(head):\n    prev = None\n    while head is not None:\n        successor = head.next\n        head.next = prev\n        prev, head = head, successor\n    return prev\n```",
+                  "keyIdea": "先保存后继，再修改当前指针。",
+                  "tags": [
+                    "链表"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:merge-closed-intervals",
+              "title": "Merge Closed Intervals",
+              "difficulty": "easy",
+              "tags": [
+                "sorting",
+                "intervals"
+              ],
+              "statement": "Given closed intervals [l,r] with l ≤ r, merge overlaps including touching endpoints. Return disjoint intervals sorted by their left endpoints.",
+              "hint": "After sorting, only the last merged interval can interact with the next one.",
+              "solution": "Sort by left endpoint. If the current interval starts no later than the last merged end, extend that end if needed. Otherwise the gap cannot be crossed by any subsequent interval. Sorting costs O(n log n) time and the result uses O(n) space.\n\n```python\ndef merge_intervals(intervals):\n    result = []\n    for left, right in sorted(intervals):\n        if result and left <= result[-1][1]:\n            result[-1][1] = max(result[-1][1], right)\n        else:\n            result.append([left, right])\n    return result\n```",
+              "keyIdea": "After sorting, only the last merged interval can interact with the next one.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:merge-closed-intervals",
+              "rubric": [
+                "Derive the algorithm invariant or recurrence.",
+                "Handle the input boundary cases and justify complexity."
+              ],
+              "verification": [
+                "Checked the embedded algorithm for union coverage and strict separation of output intervals on all multisets of four closed intervals with endpoints 0 through 3."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 11"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "合并闭区间",
+                  "statement": "给定一组满足 l ≤ r 的闭区间 [l,r]。合并所有重叠或端点相接的区间，按左端点递增返回。",
+                  "hint": "排序后，新区间只可能与最后一个合并区间相接。",
+                  "solution": "按左端点排序。当前区间起点不超过最后一个合并区间的终点时，按需延长终点；否则后续区间起点只会更大，无法跨越这段间隙。排序耗时 O(n log n)，结果占 O(n) 空间。\n\n```python\ndef merge_intervals(intervals):\n    result = []\n    for left, right in sorted(intervals):\n        if result and left <= result[-1][1]:\n            result[-1][1] = max(result[-1][1], right)\n        else:\n            result.append([left, right])\n    return result\n```",
+                  "keyIdea": "排序后，新区间只可能与最后一个合并区间相接。",
+                  "tags": [
+                    "排序",
+                    "区间"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:josephus-arbitrary-step",
+              "title": "Josephus Arbitrary Step",
+              "difficulty": "medium",
+              "tags": [
+                "recurrences",
+                "modular arithmetic"
+              ],
+              "statement": "There are n ≥ 1 people labeled 0 through n−1 in a circle. Start at 0 with count 1. Remove every k-th survivor for k ≥ 1 and resume at the next survivor. Return the last label; evaluate n=5, k=3. How does one-based labeling change the output?",
+              "hint": "Renumber the survivors starting immediately after the first removal.",
+              "solution": "In a circle of size m the first removed person has label (k−1) mod m. Renumber the next surviving person as 0 in the smaller circle. Translating the smaller solution back adds k modulo m. Starting with J(1)=0, this gives J(m)=(J(m−1)+k) mod m in O(n) time and O(1) auxiliary space. J(5)=3 for k=3. Add one for one-based labels.\n\n```python\ndef josephus(n, k):\n    survivor = 0\n    for size in range(2, n + 1):\n        survivor = (survivor + k) % size\n    return survivor\n```",
+              "keyIdea": "Renumber the survivors starting immediately after the first removal.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:josephus-survivor",
+              "rubric": [
+                "Derive the algorithm invariant or recurrence.",
+                "Handle the input boundary cases and justify complexity."
+              ],
+              "verification": [
+                "Compared the embedded recurrence with explicit circle deletion for all sizes and steps from 1 through 40."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 10"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-039/",
+                  "locator": "Question 7"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "任意步长的约瑟夫环",
+                  "statement": "n ≥ 1 人按 0 至 n−1 编号围成一圈。从 0 号开始数 1，数到 k ≥ 1 时淘汰当前人，从下一人重新数 1。返回幸存者编号并计算 n=5、k=3。若改从 1 编号，输出如何变化？",
+                  "hint": "从首位出局者的下一位开始重编号。",
+                  "solution": "大小为 m 的圈中，第一位出局者编号为 (k−1) mod m。把下一位幸存者在小圈中重编号为 0，换回原坐标相当于加 k 后模 m。因此 J(1)=0，J(m)=(J(m−1)+k) mod m，时间 O(n)，辅助空间 O(1)。k=3 时 J(5)=3；若从 1 编号则加 1。\n\n```python\ndef josephus(n, k):\n    survivor = 0\n    for size in range(2, n + 1):\n        survivor = (survivor + k) % size\n    return survivor\n```",
+                  "keyIdea": "从首位出局者的下一位开始重编号。",
+                  "tags": [
+                    "递推",
+                    "模运算"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:envelope-nesting",
+              "title": "Envelope Nesting",
+              "difficulty": "medium",
+              "tags": [
+                "sorting",
+                "longest increasing subsequence"
+              ],
+              "statement": "Each envelope has width and height. Rotation is forbidden; nesting requires strict inequality in both dimensions. Return the maximum nesting depth.",
+              "hint": "Handle equal widths before reducing to a one-dimensional subsequence.",
+              "solution": "Sort width ascending and height descending within equal widths. Any strictly increasing subsequence of heights now uses distinct widths, and every valid chain gives such a subsequence. Keep tails[j] as the least possible final height of a strictly increasing subsequence of length j+1. Replace the first tail at least as large as the new height, or append if no such tail exists. The result takes O(n log n) time and O(n) space.\n\n```python\nfrom bisect import bisect_left\n\ndef nesting_depth(envelopes):\n    tails = []\n    for _, height in sorted(envelopes, key=lambda pair: (pair[0], -pair[1])):\n        i = bisect_left(tails, height)\n        if i == len(tails):\n            tails.append(height)\n        else:\n            tails[i] = height\n    return len(tails)\n```",
+              "keyIdea": "Handle equal widths before reducing to a one-dimensional subsequence.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:envelope-nesting",
+              "rubric": [
+                "Derive the algorithm invariant or recurrence.",
+                "Handle the input boundary cases and justify complexity."
+              ],
+              "verification": [
+                "Checked the embedded LIS method against exhaustive nesting chains for up to four envelopes with widths and heights from one through three."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-048/",
+                  "locator": "Question 1"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "信封嵌套",
+                  "statement": "每个信封有宽和高，不能旋转，只有两个尺寸都严格较小时才可嵌套。求最大层数。",
+                  "hint": "先解决同宽冲突，再化为一维递增子序列。",
+                  "solution": "先按宽升序，同宽按高降序。此时高度严格递增的子序列不可能用到两个同宽信封，任何合法嵌套链也都对应这样的子序列。tails[j] 保存长度 j+1 的递增子序列可达到的最小末尾高度；遇到新高度时替换首个不小于它的末尾，若找不到则扩展长度。时间 O(n log n)，空间 O(n)。\n\n```python\nfrom bisect import bisect_left\n\ndef nesting_depth(envelopes):\n    tails = []\n    for _, height in sorted(envelopes, key=lambda pair: (pair[0], -pair[1])):\n        i = bisect_left(tails, height)\n        if i == len(tails):\n            tails.append(height)\n        else:\n            tails[i] = height\n    return len(tails)\n```",
+                  "keyIdea": "先解决同宽冲突，再化为一维递增子序列。",
+                  "tags": [
+                    "排序",
+                    "最长递增子序列"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:break-permutation-cycles",
+              "title": "Break Permutation Cycles",
+              "difficulty": "medium",
+              "tags": [
+                "permutations",
+                "graphs"
+              ],
+              "statement": "The permutation p of 0,…,n−1 gives edges i → p[i]. Removing a vertex’s outgoing edge costs one. Return a minimum set of indices to remove to eliminate all directed cycles.",
+              "hint": "Use that the successor map is a bijection.",
+              "solution": "Every vertex has exactly one predecessor and successor, so the graph is a disjoint union of cycles, including self-loops. Each cycle needs at least one deletion and any single deletion suffices there. Visit each cycle once, taking its start as a representative. Time and auxiliary space are O(n).\n\n```python\ndef break_cycles(p):\n    seen = [False] * len(p)\n    remove = []\n    for start in range(len(p)):\n        if not seen[start]:\n            remove.append(start)\n            i = start\n            while not seen[i]:\n                seen[i] = True\n                i = p[i]\n    return remove\n```",
+              "keyIdea": "Use that the successor map is a bijection.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:break-permutation-cycles",
+              "rubric": [
+                "Derive the algorithm invariant or recurrence.",
+                "Handle the input boundary cases and justify complexity."
+              ],
+              "verification": [
+                "Checked that the embedded traversal breaks all cycles for every permutation of up to six elements; minimality follows from the disjoint-cycle proof."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-044/",
+                  "locator": "Question 12"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "打破排列中的环",
+                  "statement": "排列 p 给出编号 0 至 n−1 上的有向边 i → p[i]。删除一个顶点的出边代价为 1。返回消除所有有向环所需的最小删除下标集合。",
+                  "hint": "利用后继映射是双射。",
+                  "solution": "排列图每个顶点的入度、出度都是 1，所以分解为若干互不相交的环，包括自环。每个环至少删一条边，删任意一条就足够。遍历每个环一次，选起点作删除代表。时间与辅助空间均为 O(n)。\n\n```python\ndef break_cycles(p):\n    seen = [False] * len(p)\n    remove = []\n    for start in range(len(p)):\n        if not seen[start]:\n            remove.append(start)\n            i = start\n            while not seen[i]:\n                seen[i] = True\n                i = p[i]\n    return remove\n```",
+                  "keyIdea": "利用后继映射是双射。",
+                  "tags": [
+                    "排列",
+                    "图论"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:integer-palindrome",
+              "title": "Integer Palindrome",
+              "difficulty": "easy",
+              "tags": [
+                "integer arithmetic"
+              ],
+              "statement": "Decide whether an integer reads the same forward and backward in decimal, without converting it to text. Negative integers are not palindromes.",
+              "hint": "Reverse only the last half of the digits.",
+              "solution": "Negative integers and nonzero numbers ending in zero fail. Move trailing digits one at a time from x into a reversed suffix until the suffix is at least as large as the remaining prefix. For even length the two halves must match; for odd length drop the middle digit from the reversed suffix before comparing. Uses O(d) arithmetic steps and O(1) integer variables for d digits.\n\n```python\ndef is_palindrome(x):\n    if x < 0 or (x != 0 and x % 10 == 0):\n        return False\n    rev = 0\n    while x > rev:\n        x, digit = divmod(x, 10)\n        rev = rev * 10 + digit\n    return x == rev or x == rev // 10\n```",
+              "keyIdea": "Reverse only the last half of the digits.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:integer-palindrome",
+              "rubric": [
+                "Derive the algorithm invariant or recurrence.",
+                "Handle the input boundary cases and justify complexity."
+              ],
+              "verification": [
+                "Compared the embedded arithmetic implementation against string reversal from −100 through 19,999."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-029/",
+                  "locator": "Question 7"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-lingjun-scans/",
+                  "locator": "Question 8"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "整数回文",
+                  "statement": "不把整数转为字符串，判断其十进制各位正反读是否相同。负数不是回文。",
+                  "hint": "只反转末尾约一半数字。",
+                  "solution": "负数以及末位为零的非零数直接失败。逐次取出 x 的末位加入反转后缀，直到该后缀不小于剩余前缀。偶数位时两半应相等；奇数位时丢弃反转后缀的最后一位（中间位）再比。d 位数需要 O(d) 次算术操作和 O(1) 个整数变量。\n\n```python\ndef is_palindrome(x):\n    if x < 0 or (x != 0 and x % 10 == 0):\n        return False\n    rev = 0\n    while x > rev:\n        x, digit = divmod(x, 10)\n        rev = rev * 10 + digit\n    return x == rev or x == rev // 10\n```",
+                  "keyIdea": "只反转末尾约一半数字。",
+                  "tags": [
+                    "整数运算"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.1:median-of-two-sorted-arrays",
+              "title": "Median of Two Sorted Arrays",
+              "difficulty": "hard",
+              "tags": [
+                "binary search",
+                "order statistics"
+              ],
+              "statement": "Two finite real arrays are sorted in nondecreasing order. Either can be empty but not both. Compute the median of their combined values without merging, in O(log(min(m,n)+2)) time and O(1) auxiliary space.",
+              "hint": "Binary-search a cut in the shorter array rather than a value.",
+              "solution": "Partition the shorter array at i and the other at j=(m+n+1)//2−i so that the left partition contains the required number of elements. The cut is valid when each left boundary is at most the opposite right boundary. If the shorter array’s left boundary is too large, decrease i; if the other left boundary is too large, increase i. These directions follow from monotonicity of the sorted boundaries. A valid cut exists by taking the two prefix lengths of the smallest (m+n+1)//2 combined values. Return the largest left value for odd length, or its average with the smallest right value for even length.\n\n```python\ndef two_array_median(a, b):\n    if len(a) > len(b):\n        a, b = b, a\n    m, n = len(a), len(b)\n    half = (m + n + 1) // 2\n    lo, hi = 0, m\n    while lo <= hi:\n        i = (lo + hi) // 2\n        j = half - i\n        al = a[i - 1] if i else float(\"-inf\")\n        ar = a[i] if i < m else float(\"inf\")\n        bl = b[j - 1] if j else float(\"-inf\")\n        br = b[j] if j < n else float(\"inf\")\n        if al > br:\n            hi = i - 1\n        elif bl > ar:\n            lo = i + 1\n        else:\n            left = max(al, bl)\n            return left if (m + n) % 2 else (left + min(ar, br)) / 2\n```",
+              "keyIdea": "Binary-search a cut in the shorter array rather than a value.",
+              "kind": "programming",
+              "reviewStatus": "verified",
+              "familyId": "7.1:median-of-two-sorted-arrays",
+              "rubric": [
+                "Derive the algorithm invariant or recurrence.",
+                "Handle the input boundary cases and justify complexity."
+              ],
+              "verification": [
+                "Ran the embedded binary search on all nonempty pairs of sorted arrays of length at most four over integers −2 through 2, comparing against the merged median."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-042/",
+                  "locator": "Question 4"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "两个有序数组的中位数",
+                  "statement": "两个有限实数数组均非降序，可有一个为空但不能都空。不实际合并，求合并结果中位数，时间 O(log(min(m,n)+2))，额外空间 O(1)。",
+                  "hint": "对较短数组的切分位置二分，而非对数值二分。",
+                  "solution": "在较短数组选择切点 i，另一数组取 j=(m+n+1)//2−i，使左半恰有规定的个数。若两个左边界都不超过对面右边界，切分有效。若较短数组左边界太大则减小 i，反之若较长数组左边界太大则增大 i；这是因为两个数组边界随切点单调移动。合并后最小的 (m+n+1)//2 项在两数组中各取一段前缀，说明有效切分一定存在。奇数时取左半最大值，偶数时取它与右半最小值的平均。\n\n```python\ndef two_array_median(a, b):\n    if len(a) > len(b):\n        a, b = b, a\n    m, n = len(a), len(b)\n    half = (m + n + 1) // 2\n    lo, hi = 0, m\n    while lo <= hi:\n        i = (lo + hi) // 2\n        j = half - i\n        al = a[i - 1] if i else float(\"-inf\")\n        ar = a[i] if i < m else float(\"inf\")\n        bl = b[j - 1] if j else float(\"-inf\")\n        br = b[j] if j < n else float(\"inf\")\n        if al > br:\n            hi = i - 1\n        elif bl > ar:\n            lo = i + 1\n        else:\n            left = max(al, bl)\n            return left if (m + n) % 2 else (left + min(ar, br)) / 2\n```",
+                  "keyIdea": "对较短数组的切分位置二分，而非对数值二分。",
+                  "tags": [
+                    "二分查找",
+                    "次序统计量"
                   ]
                 }
               }
@@ -9853,6 +12068,51 @@ window.QUANT_DATA = {
                   "tags": [
                     "二进制编码",
                     "搜索"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "7.2:one-seventh-from-a-die",
+              "title": "One Seventh from a Die",
+              "difficulty": "medium",
+              "tags": [
+                "rejection sampling",
+                "random simulation"
+              ],
+              "statement": "Using independent rolls of a fair six-sided die, generate an event of probability 1/7 with an almost surely terminating algorithm. Compute the mean number of rolls for your algorithm.",
+              "hint": "Accept a multiple of seven equally likely outcomes.",
+              "solution": "Use two rolls to form a uniform integer $U$ from 0 to 35. Accept only $U<35$; otherwise restart with two fresh rolls. Conditional on acceptance, the 35 outcomes are equally likely; declare success if $U\\bmod7=0$, which happens in five of them. Independent attempts succeed in being accepted with probability $35/36$, so the algorithm terminates almost surely and takes $2\\cdot36/35=72/35$ rolls on average.",
+              "keyIdea": "Accept a multiple of seven equally likely outcomes.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "7.2:probability-simulation",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-022/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "六面骰生成七分之一",
+                  "statement": "只用独立的公平六面骰，设计一个几乎必然停止的算法，生成概率恰为 1/7 的事件，并求该算法平均掷骰次数。",
+                  "hint": "保留个数为 7 的倍数的等可能结果。",
+                  "solution": "每两次掷骰编码出均匀整数 $U\\in\\{0,\\ldots,35\\}$。若 $U=35$ 则用两次新掷骰重试，否则接受。在接受的 35 个等可能结果中恰有 5 个满足 $U\\bmod7=0$，据此宣布成功。每轮独立，接受概率为 $35/36$，所以几乎必然停止，平均用 $2\\cdot36/35=72/35$ 次。",
+                  "keyIdea": "保留个数为 7 的倍数的等可能结果。",
+                  "tags": [
+                    "拒绝采样",
+                    "随机模拟"
                   ]
                 }
               }
@@ -10471,6 +12731,61 @@ window.QUANT_DATA = {
                   "tags": [
                     "统计",
                     "线性回归"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "8.1:duplicating-ols-rows",
+              "title": "Duplicating OLS Rows",
+              "difficulty": "medium",
+              "tags": [
+                "OLS",
+                "standard errors"
+              ],
+              "statement": "An OLS fit with intercept uses $n>p$ observations and $p$ coefficients with full column rank. Duplicate each row and its response once. How do coefficients, $R^2$, conventional standard errors, $t$ and $p$ values change? Assume the relevant variances and $R^2$ are defined. What changes for ridge regression if its objective is the sum of squared residuals plus a fixed penalty coefficient times the squared slope norm?",
+              "hint": "Track both the residual degrees of freedom and the Gram matrix.",
+              "solution": "Both normal-equation sides double, so coefficients stay fixed; SSE and TSS both double, keeping $R^2$ fixed. With $s^2=\\mathrm{SSE}/(n-p)$, the original estimated covariance is $s^2(X^\\top X)^{-1}$. The new residual variance estimate is $2\\mathrm{SSE}/(2n-p)$ and the inverse Gram matrix halves. The variance ratio is $(n-p)/(2n-p)$, so standard errors are multiplied by its square root. Against the same null, $t$ scales by the reciprocal factor. A naive two-sided $p$ value uses the new statistic with $2n-p$ degrees of freedom (it decreases for a nonzero statistic). It is not valid evidence of new information: the duplicates are perfectly dependent on the originals. For ridge, duplication doubles only the squared-error term; dividing the new objective by 2 shows it is equivalent to halving the penalty coefficient on the original data. Slopes may change.",
+              "keyIdea": "Track both the residual degrees of freedom and the Gram matrix.",
+              "kind": "math",
+              "reviewStatus": "verified",
+              "familyId": "8.1:duplicating-ols-rows",
+              "rubric": [
+                "Set up the stated model and justify each step of the calculation or algorithm.",
+                "Obtain the stated result and address any boundary cases in the question."
+              ],
+              "verification": [
+                "Independently derived and checked the solution for the stated assumptions."
+              ],
+              "followups": [],
+              "sources": [
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-026/",
+                  "locator": "Question 3"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-023/",
+                  "locator": "Question 1"
+                },
+                {
+                  "type": "reference",
+                  "reference": "https://quantlabshark.github.io/read/material-027/",
+                  "locator": "Question 5"
+                }
+              ],
+              "revision": 1,
+              "translations": {
+                "zh": {
+                  "title": "复制观测与 OLS 显著性",
+                  "statement": "含截距 OLS 原有 $n>p$ 个观测和 $p$ 个系数，设计阵满列秩。将每条观测及响应原样复制一次。系数、$R^2$、常规标准误、$t$ 值和 $p$ 值如何变化？假设相关方差和 $R^2$ 均有定义。 若岭回归用残差平方和加固定系数乘斜率平方范数，复制又有什么影响？",
+                  "hint": "同时追踪残差自由度和 Gram 矩阵。",
+                  "solution": "正规方程两边同乘 2，系数不变；残差平方和与总平方和都翻倍，$R^2$ 不变。原估计协方差为 $\\frac{\\mathrm{SSE}}{n-p}(X^\\top X)^{-1}$。复制后误差方差估计为 $\\frac{2\\mathrm{SSE}}{2n-p}$，逆 Gram 矩阵减半。因此方差比为 $(n-p)/(2n-p)$，标准误乘其平方根。同一零假设下，$t$ 值乘该因子的倒数；朴素双侧 $p$ 值用新统计量和 $2n-p$ 自由度计算（非零统计量对应的 $p$ 值变小）。但复制行与原行完全依赖，未增加统计证据。 对岭回归，复制只使残差平方和乘 2。将新目标整体除以 2，等价于在原数据上把惩罚系数减半，因此斜率可能改变。",
+                  "keyIdea": "同时追踪残差自由度和 Gram 矩阵。",
+                  "tags": [
+                    "最小二乘",
+                    "标准误"
                   ]
                 }
               }
